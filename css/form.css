@@ -1,0 +1,313 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Import: Font CSS
+ Contents:
+ Quicksand Font Family (and variants)
+ * */
+@import url('fonts.css');
+
+.form-container {
+	width: 82%;
+	height: 600px;
+	overflow: auto;
+	padding: 5px 5px 5px 5px;
+	margin: auto;
+	margin-top: 10px;
+	border: 2px solid #CCC;
+	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
+	-moz-box-shadow: inset 0px 0px 6px 0px #000;
+	box-shadow: inset 0px 0px 6px 0px #000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.form-container h3 {
+	font-size: 16px;
+	color: #039;
+	border-bottom: solid 3px #039;
+}
+pre::-webkit-scrollbar {
+	height: 1ex;
+}
+pre::-webkit-scrollbar-thumb:horizontal {
+	background: rgba(0, 0, 0, .2);
+}
+.error {
+	font-family: inherit;
+	font-size: inherit;
+	color: #F33;
+	border-color: #F33;
+}
+.form-sidebar {
+	width: 12%;
+	margin-top: 10px;
+	margin-left: 8px;;
+	padding-top: 10px;
+	border: 2px solid #CCC;
+	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
+	-moz-box-shadow: inset 0px 0px 6px 0px #000;
+	box-shadow: inset 0px 0px 6px 0px #000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.form-container input {
+	width: 100px;
+	padding: 10px auto;
+}
+input.radio {
+	width: 10px;
+}
+.menu-container {
+	width: 38%;
+	height: auto;
+}
+.menu-container-2 {
+	width: 20%;
+	height: auto;
+	display:inline-block;
+}
+.menu {
+	width: 100%;
+	margin-bottom: 10px;
+	border: 2px solid #CCC;
+	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
+	-moz-box-shadow: inset 0px 0px 6px 0px #000;
+	box-shadow: inset 0px 0px 6px 0px #000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding-bottom: 20px;
+	height: 25px;
+	overflow: hidden;
+	-webkit-transition-property: height;
+	-webkit-transition-duration: 0.75s;
+	-webkit-transition-timing-function: linear;
+	-moz-transition-property: height;
+	-moz-transition-duration: 0.75s;
+	-moz-transition-timing-function: linear;
+	-o-transition-property: height;
+	-o-transition-duration: 0.75s;
+	-o-transition-timing-function: linear;
+	transition-property: height;
+	transition-duration: 0.75s;
+	transition-timing-function: linear;
+}
+.menu:hover {
+	height: 250px;
+}
+.form-sidebar h3 {
+	color: #039;
+}
+.menu h2, .form-sidebar h3 {
+	text-align: center;
+	margin: auto;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	padding-bottom: 5px;
+	border-bottom: #039 solid 3px;
+	width: 70%;
+	margin-bottom: 15px;
+}
+.menu a {
+	text-decoration: none;
+	margin: auto;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 10px;
+	cursor: hand;
+	color: #000;
+}
+.form-sidebar a {
+	margin-left: 18px;
+	margin-top: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.menu a:hover {
+	color: #039;
+}
+.menu ul, .menu ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.menu ul {
+	text-align: center;
+}
+. menu ul li {
+	display: inline;
+	margin-right: .75em;
+}
+#left-radio-buttons, #right-radio-buttons {
+	width: 20%;
+	display: block;
+	position: relative;
+}
+#right-radio-buttons {
+	float: right;
+}
+.message {
+
+	margin: auto;
+	margin-top: 100px;
+	width: 33.5%;
+	background: #FF6666;
+	height: auto;
+	border: 1px solid #999;
+	color: #FFF;
+	text-align: center;
+	font-size: 16px;
+	font: "Verdana";
+	border: 1.4px solid #CC3333;
+	border-radius: 5px;
+}
+/* Parent Container
+ *  Login Form */
+.login {
+	margin: auto;
+	margin-top: 40px;
+	width: 30%;
+	padding: 30px 30px 30px 30px;
+	background: CCC;
+	height: auto;
+	border: 1px solid #999;
+}
+/* Child Form
+ Contents :
+ 1. Input Fields:  Username
+ 2. Password
+ 3. Button: Login
+ *
+ * */
+.form-login {
+	width: 100%;
+	margin: 0 auto;
+	display: inline-block;
+	margin-left: 20px border :2px solid #999;
+}
+/*
+ Input fields within Login Form
+
+ Attribute => Default
+ * */
+.form-login input {
+	padding: 10px 10px 10px 10px;
+	width: 100%;
+	border: 1px solid #999;
+	outline: none;
+	font-family: Quicksand;
+	font-size: 24px;
+}
+/*
+ Input fields within Login Form
+
+ Attribute => Focus
+ * */
+.form-login input:focus {
+	font-family: Quicksand Bold;
+}
+
+/*
+ Button within Login Form
+ * */
+.form-login button {
+	font-family: Quicksand;
+}
+form input, form textarea {
+	border: 1px solid #999;
+	outline: none;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+}
+.form-login input:focus, form input:focus, form textarea:focus {
+	-webkit-box-shadow: inset 0px 3px 6px -3px #000;
+	-moz-box-shadow: inset 0px 3px 6px -3px #000;
+	box-shadow: inset 0px 3px 6px -3px #000;
+	border: 1px solid #3333FF;
+}
+.fancyModal {
+	display: block;
+	width: 560px;
+	position: absolute;
+	top: -310px;
+	left: 170px;
+	padding: 90px 20px 20px 20px;
+	border: solid 1px #999;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
+	-webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-transition: -webkit-transform 0.25s ease-out;
+	-webkit-transform: translateY(-570px);
+}
+#profile-before {
+	right: 10px;
+	width: 170px;
+	height: 30px;
+	overflow: hidden;
+	position: absolute;
+	float: right;
+	border: solid 1px #999;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
+	background: -moz-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
+	-webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+	-moz-border-bottom-left-radius: 6px;
+	-moz-border-bottom-right-radius: 6px;
+	box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	top: -50px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	-webkit-transition-property: height;
+	-webkit-transition-duration: 0.75s;
+	-webkit-transition-timing-function: linear;
+	-moz-transition-property: height;
+	-moz-transition-duration: 0.75s;
+	-moz-transition-timing-function: linear;
+	-o-transition-property: height;
+	-o-transition-duration: 0.75s;
+	-o-transition-timing-function: linear;
+	transition-property: height;
+	transition-duration: 0.75s;
+	transition-timing-function: linear;
+}
+#profile-before:hover {
+
+	height: 150px;
+}
+#profile-before p {
+	text-align: center;
+}
+#profile-fancy {
+	display: block;
+	width: 300px;
+	position: absolute;
+	top: -310px;
+	left: 80%;
+	padding: 90px 20px 20px 20px;
+	border: solid 1px #999;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
+	-webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-transition: -webkit-transform 0.25s ease-out;
+	-webkit-transform: translateY(-570px);
+}
+#profile-fancy h3, #profile-fancy p, #profile-before h3, #profile-before p {
+	text-shadow: 0px 1px 1px #fff;
+	color: rgba(0,0,0,0.75)
+}
+#profile-before p {
+	margin-left: 30px;
+}
+#profile-fancy.show {
+	-webkit-transform: translateY(-80px);
+	-moz-transform: translatey(-80px);
+}
