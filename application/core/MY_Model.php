@@ -1,11 +1,11 @@
 <?php
-## Extend CI_Controller to include Doctrine Entity Manager
+## Extend CI_Model to include Doctrine Entity Manager
 
-class  MY_Controller  extends  CI_Controller  {
+class  MY_Model  extends  CI_Model{
 
 public $em, $response, $the_form;
 
-function __construct()  {
+function __construct() {
 		parent::__construct();
 		
 		/* Instantiate Doctrine's Entity manage so we don't have
@@ -16,9 +16,4 @@ function __construct()  {
 		$this->the_form='';
 	}
 
-function  getRepositoryByFormName($form){
-	$this->the_form=$this->em->getRepository($form);
-	return $this->the_form;
 }
-
-}  

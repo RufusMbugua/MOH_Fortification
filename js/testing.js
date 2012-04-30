@@ -657,8 +657,7 @@ $().ready(function() {
 				
 			},
 			year: {
-				required: true,
-				minlength: 4
+				required: true
 			},
 			fortifiedDate: {
 				required: true
@@ -680,7 +679,7 @@ $().ready(function() {
 			},
 		messages: {
 			saltFactory: "*Required",
-			year: "*Required",
+			year: {required:"*Required"},
 			fortifiedDate:"*Required",
 			fortifiedWeight:{required:"*Required"},
 			compoundWeight:{required:"*Required"},

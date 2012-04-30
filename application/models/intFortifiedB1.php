@@ -3,17 +3,18 @@
 namespace models;
 
 /**
-* @Entity
+* @Entity(repositoryClass="models")
 * @Table(name="internalfortifiedb1")
 */
 
-class IntFortifiedB1{
+class IntFortifiedB1 {
 
 /*
 * @Id
 * @Column(name="transactionNumber", type="int", length=11, nullable=false)
+ * @GeneratedValue(strategy="AUTO")
 * */
-private $transactionNumber;
+private $id;
 
 /*
 * @Column(name="dates", type="date", nullable=true)
@@ -117,7 +118,10 @@ public function getManufacturerCompName() {
 
 public function setManufacturerCompName($manufacturerCompName) { $this -> manufacturerCompName = $manufacturerCompName;
 }
+
+public function submit(){
+	
 }
 
-
+}
 ?>
