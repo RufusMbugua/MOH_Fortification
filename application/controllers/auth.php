@@ -31,6 +31,7 @@ class Auth extends MY_Controller {
 
 			$this -> session -> set_userdata($newdata);
 			
+			//specify user access rights
 			/* Check Authority / User Level
 			 * Where:
 			 * 1. Administrator  =>  HIGHEST
