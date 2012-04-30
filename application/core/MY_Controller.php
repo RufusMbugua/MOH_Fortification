@@ -4,7 +4,7 @@
 
 class  MY_Controller  extends  CI_Controller  {
 
-public $em; 
+public $em, $response, $the_form;
 
 function __construct()  {
 		parent::__construct();
@@ -13,6 +13,13 @@ function __construct()  {
 		   to everytime we want to use Doctrine */
 		   
 		$this->em = $this->doctrine->em;
+		$this->response='';
+		$this->the_form='';
 	}
+
+function  getRepositoryByFormName($form){
+	$this->the_form=$this->em->getRepository($form);
+	return $this->the_form;
+}
 
 }  

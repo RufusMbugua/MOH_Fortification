@@ -330,16 +330,16 @@ class Front extends CI_Controller {
 
 	public function internalFort_B1() {
 		$internalFortified_B1 = '';
-		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() .'data/submit/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
+		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() .'submit/form/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
 						<h3 align="center"> FORTIFIED SALT QC/QA- TABLE B-1</h3>
 						<p align="center"><strong>PRODUCTION LOG FOR IODINE PREMIX</strong></p>
 						<p>Salt factory:<select name="saltFactory" id="saltFactory">
 						<option value="1">Kensalt</option>
 						<option value="2">Magadi Salt</option>
 						</select></p>
-						<p>Year:  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+						<!--<p>Year:  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 						  <select name="year" id="year">
-						  </select></p>
+						  </select></p>-->
 						
 						<table width="100%"><!--beggining of table-->
 						<tr>
