@@ -1,7 +1,3 @@
-
-
- 			
- 
 		//- Run the TAB plugin -->
 		var base_url='http://'+window.location.host+'/fortified/front/vehicles/';
 			$(function() {

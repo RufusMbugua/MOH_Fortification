@@ -3,7 +3,7 @@
 
 class  MY_Controller  extends  CI_Controller  {
 
-public $em, $response, $the_form;
+public $em, $response, $theForm;
 
 function __construct()  {
 		parent::__construct();
@@ -13,12 +13,12 @@ function __construct()  {
 		   
 		$this->em = $this->doctrine->em;
 		$this->response='';
-		$this->the_form='';
+		$this->theForm='';
 	}
 
 function  getRepositoryByFormName($form){
 	$this->the_form=$this->em->getRepository($form);
-	return $this->the_form;
+	return $this->theForm;
 }
 
 }  

@@ -3,7 +3,7 @@
 
 class  MY_Model  extends  CI_Model{
 
-public $em, $response, $the_form;
+public $em, $response, $theForm;
 
 function __construct() {
 		parent::__construct();
@@ -13,7 +13,7 @@ function __construct() {
 		   
 		$this->em = $this->doctrine->em;
 		$this->response='';
-		$this->the_form='';
+		$this->theForm='';
 	}
 
 }

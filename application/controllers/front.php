@@ -1,4 +1,5 @@
 <?php
+
 class Front extends CI_Controller {
 
 	public function __construct() {
@@ -338,7 +339,7 @@ class Front extends CI_Controller {
 						<option value="2">Magadi Salt</option>
 						</select></p>
 						<!--<p>Year:  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-						  <select name="year" id="year">
+						  <select name="year_1" id="year_1">
 						  </select></p>-->
 						
 						<table width="100%"><!--beggining of table-->
