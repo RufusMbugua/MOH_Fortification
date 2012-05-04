@@ -16,7 +16,7 @@ class Auth extends MY_Controller {
           $user = $query->getResult(); */
        
        //Working with an object of the entity
-		$user = $this->em->getRepository('models\SystemUser')
+		$user = $this->em->getRepository('models\Entities\SystemUser')
 						->findOneBy(array('username' => $this -> input -> post('username'), 'password' => $this -> input -> post('secret')));
      
 			

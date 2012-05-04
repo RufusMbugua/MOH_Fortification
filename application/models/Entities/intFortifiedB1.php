@@ -3,64 +3,65 @@
 namespace models\Entities;
 
 /**
- * @Entity(repositoryClass="models")
+ * @Entity
  * @Table(name="internalfortifiedb1")
  */
-
 class IntFortifiedB1 {
 
-	/*
-	 * @Id
-	 * @Column(name="transactionNumber", type="int", length=11, nullable=false)
+	/**
+	 * @Id 
+	 * @Column(name="transactionNumber",type="integer", length=11, nullable=false)
 	 * @GeneratedValue(strategy="AUTO")
 	 * */
 	private $id;
-
-	/*
-	 * @Column(name="dates", type="date", nullable=true)
+	
+	/**
+	 * @Column(name="dates", type="string", nullable=true)
 	 * */
 	private $dates;
 
-	/*
-	 * @Column(name="fillerWeight", type="int", length=11, nullable=true)
+	/**
+	 * @Column(name="fillerWeight", type="integer", length=11, nullable=true)
 	 * */
 	private $fillerWeight;
 
-	/*
-	 * @Column(name="iodineWeight", type="int", length=11, nullable=true)
+	/**
+	 * @Column(name="iodineWeight", type="decimal", length=11, nullable=true)
 	 * */
 	private $iodineWeight;
 
-	/*
-	 * @Column(name="finalPremixWeight1", type="int", length=11, nullable=true)
+	/**
+	 * @Column(name="finalPremixWeight1", type="decimal", length=11, nullable=true)
 	 * */
 	private $finalPremixWeight1;
-	/*
-	 * @Column(name="startTime", type="datetime",  nullable=true)
+	/**
+	 * @Column(name="startTime", type="string", length=8, nullable=true)
 	 * */
 	private $startTime;
-	/*
-	 * @Column(name="endTime", type="datetime", nullable=true)
+	/**
+	 * @Column(name="endTime", type="string", length=8, nullable=true)
 	 * */
 	private $endTime;
-	/*
-	 * @Column(name="finalPremixWeight", type="double",  nullable=true)
+	/**
+	 * @Column(name="finalPremixWeight",  type="decimal",  nullable=true)
 	 * */
 	private $finalPremixWeight;
-	/*
-	 * @Column(name="transactedBy", type="varchar",length=45, nullable=true)
+	/**
+	 * @Column(name="transactedBy", type="string",length=45, nullable=true)
 	 * */
 	private $transactedBy;
-	/*
-	 * @Column(name="manufacturerCompName", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @OneToMany(targetEntity="manufacturerFortified", mappedBy="manufacturerFortName")
+	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
 	 * */
 	private $manufacturerCompName;
 
 	public function getTranscationNumber() {
-		return $this -> transactionNumber;
+		return $this -> id;
 	}
 
-	public function setTransactionNumber($transactionNumber) { $this -> transactionNumber = $transactionNumber;
+	public function setTransactionNumber($transactionNumber) { $this -> id = $transactionNumber;
 	}
 
 	public function getDates() {

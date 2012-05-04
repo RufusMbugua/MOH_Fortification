@@ -1,5 +1,5 @@
 <?php
-namespace models;
+namespace models\Entities;
  
 /**
  * Encryption key adapted from @Joseph Wynn algorithm

@@ -13,8 +13,15 @@ class Form extends MY_Controller{
 		$this->load->model('InternalFortifiedB1');
 		$this->InternalFortifiedB1->addRecord();
 		
-		if($this->internalFortifiedB1->response='ok'){
+		if($this->InternalFortifiedB1->response='ok'){
 			//notify user of success
+			$data['form_id']="";
+			$data['form']='<p><b>'.$this->InternalFortifiedB1->rowsInserted.'</b> records were inserted successfully in 
+			approximately <b>'.$this->InternalFortifiedB1->executionTime.'</b> seconds.</p>';
+			//redirect(base_url() . 'front/vehicles/index', 'location');
+			$this -> load -> view('pages/vehicles/index', $data);
+			
+			
 		}else{
 			//notify user of error/failure
 		}

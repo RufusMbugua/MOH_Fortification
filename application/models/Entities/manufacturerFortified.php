@@ -1,34 +1,35 @@
 <?php
-namespace models;
+namespace models\Entities;
 
 /**
  * @Entity
  * @Table(name="manufacturerfortified")
  */
- class manufacturerFortified{
- 		/*
+ class ManufacturerFortified {
+ 	
+/**
 * @Id
-* @Column(name="manufacturerFortId", type="int", length=11, nullable=false)
+* @Column(name="manufacturerFortId", type="integer", length=11, nullable=false)
 * */
-private $manufacturerFortId;
+protected $manufacturerFortId;
 
-/*
-* @Column(name="manufacturerFortName", type="varchar",length=45, nullable=true)
+/**
+* @Column(name="manufactuerFortName", type="string",length=45, nullable=true)
 * */
-private $manufacturerFortName;
+protected $manufactuerFortName;
 
-/*
-* @Column(name="address", type="varchar",  length=45,nullable=true)
+/**
+* @Column(name="address", type="string",  length=45,nullable=true)
 * */
 private $address;
 
-/*
-* @Column(name="location", type="varchar",  length=45,nullable=true)
+/**
+* @Column(name="location", type="string",  length=45,nullable=true)
 * */
 private $location;
 
-/*
-* @Column(name="phoneNumber", type="varchar",length=45, nullable=true)
+/**
+* @Column(name="phoneNumber", type="string",length=45, nullable=true)
 * */
 private $phoneNumber;
 
@@ -38,6 +39,14 @@ public function getManufacturerFortId() {
 
 public function setManufacturerFortId($manufacturerFortId) { $this -> manufacturerFortId = $manufacturerFortId;
 }
+
+public function getManufacturerFortName() {
+		return $this -> manufactuerFortName;
+}
+
+public function setManufacturerFortName($manufacturerFortName) { $this -> manufactuerFortName = $manufacturerFortName;
+}
+
 public function getAddress() {
 		return $this -> address;
 }

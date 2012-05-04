@@ -3,7 +3,7 @@
 
 class  MY_Controller  extends  CI_Controller  {
 
-public $em, $response, $theForm;
+public $em, $response, $theForm, $rowsInserted, $executionTime;
 
 function __construct()  {
 		parent::__construct();
