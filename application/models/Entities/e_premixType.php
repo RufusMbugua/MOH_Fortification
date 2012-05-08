@@ -5,7 +5,7 @@ namespace models;
  * @Entity
  * @Table(name="premixtype")
  */
- class premixType{
+ class E_PremixType{
  		/*
 * @Id
 * @Column(name="productId", type="int", length=11, nullable=false)

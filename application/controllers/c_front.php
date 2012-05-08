@@ -1,6 +1,6 @@
 <?php
 
-class Front extends CI_Controller {
+class C_Front extends CI_Controller {
 
 	public function __construct() {
 
@@ -27,7 +27,7 @@ class Front extends CI_Controller {
 
 	public function internalFort_A1() {
 		$internalFortified_A1 = '';
-		$internalFortified_A1 .= '<form name="internalFortified_A1" id="internalFortified_A1" method="POST" action="' . base_url() .'data/submit/form_internalFort_A1' . '" >
+		$internalFortified_A1 .= '<form name="internalFortified_A1" id="internalFortified_A1" method="POST" action="' . base_url() .'submit/c_form/c_form_internalFort_A1' . '" >
 	<!-- form for internal salt fortification. 1-a -->
 	<h3 align="center"> FORTIFIED SALT-TABLE A-1</h3>
 	<p align="center">
@@ -217,7 +217,7 @@ class Front extends CI_Controller {
 
 	public function internalFort_A2() {
 		$internalFortified_A2 = '';
-		$internalFortified_A2 .= '<form id="internalFortified_A2" method="post" action="' . base_url(). 'data/submit/form_internalFort_A2' . '">
+		$internalFortified_A2 .= '<form id="internalFortified_A2" method="post" action="'.base_url(). 'submit/c_form/form_internalFort_A2'. '">
 	<!--form for internal monitoring of salt fortification- A2-->
 	<h3 align="center"> FORTIFIED SALT QC/QA- TABLE A-2</h3>
 	<p align="center">
@@ -331,7 +331,7 @@ class Front extends CI_Controller {
 
 	public function internalFort_B1() {
 		$internalFortified_B1 = '';
-		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() .'submit/form/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
+		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() .'submit/c_form/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
 						<h3 align="center"> FORTIFIED SALT QC/QA- TABLE B-1</h3>
 						<p align="center"><strong>PRODUCTION LOG FOR IODINE PREMIX</strong></p>
 						<p>Salt factory:<select name="saltFactory" id="saltFactory">
@@ -403,7 +403,7 @@ class Front extends CI_Controller {
 
 	public function internalFort_B2() {
 		$internalFortified_B2 = '';
-		$internalFortified_B2 .= '<form name="internalFortified_B2" id="internalFortified_B2" method="post" action="' . base_url() .'data/submit/form_internalFort_B2' . '">
+		$internalFortified_B2 .= '<form name="internalFortified_B2" id="internalFortified_B2" method="post" action="' . base_url() .'submit/c_form/form_internalFort_B2' . '">
 	<!--form for internal monitoring of salt fortification-B2-->
 	<h3>SALT FORTIFICATION: TABLE B-2</h3>
 	<h4>WEEKLY CHECK UP OF EQUIPMENT USED IN SALT FORTIFICATION WITH IODINE</h4>
@@ -434,7 +434,7 @@ class Front extends CI_Controller {
 				</select>
 			</section>
 			<section class="right">
-				<input type="text" name="blenderObservations" id="blenderObservations"/>
+				<textarea name="blenderObservations" id="blenderObservations" rows="2"></textarea>
 			</section>
 		</section>
 		<section class="row">
@@ -448,7 +448,7 @@ class Front extends CI_Controller {
 				</select>
 			</section>
 			<section class="right">
-				<input type="text" name="balanceObservations" id="balanceObservations"/>
+				<textarea name="balanceObservations" id="balanceObservations"rows="2"></textarea>
 			</section>
 		</section>
 		<section class="row">
@@ -462,7 +462,7 @@ class Front extends CI_Controller {
 				</select>
 			</section>
 			<section class="right">
-				<input type="text" name="pumpObservations" id="pumpObservations"/>
+				<textarea name="pumpObservations" id="pumpObservations" rows="2"></textarea>
 			</section>
 		</section>
 		<section class="row">
@@ -476,7 +476,7 @@ class Front extends CI_Controller {
 				</select>
 			</section>
 			<section class="right">
-				<input type="text" name="drierObservations" id="drierObservations"/>
+				<textarea name="drierObservations" id="drierObservations"rows="2"></textarea>
 			</section>
 		</section>
 		<section class="row">
@@ -490,7 +490,7 @@ class Front extends CI_Controller {
 				</select>
 			</section>
 			<section class="right">
-				<input type="text" name="sprayerObservations" id="sprayerObservations"/>
+				<textarea name="sprayerObservations" id="sprayerObservations" rows="2"></textarea>
 			</section>
 		</section>
 	</section>
@@ -499,18 +499,33 @@ class Front extends CI_Controller {
 		<label>Name/Signature:</label>
 		<input type="text" name="checkupName" id="checkupName"/>
 </form>';
-
+        
+		
 		$data['form'] = $internalFortified_B2;
 		$data['form_id'] = 'internalFortified_B2';
+		try{
+			//$this->M_InternalFortifiedB2->equipment;
+			$data['devices']=$this->doRetrieveIodizationCentreDevices();
+			
+		}catch(exception $ex){
+			//ignore
+		}
 
 		$this -> load -> view('pages/vehicles/index', $data);
+		
 
+	}
+	
+	private function doRetrieveIodizationCentreDevices(){
+		$this->load->model('M_InternalFortifiedB2');
+		$this->M_InternalFortifiedB2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
+		
 	}
 
 	public function internalFort_C1() {
 		$internalFortified_C1 = '';
 		//php form for internal fortification of salts-C1.
-		$internalFortified_C1 .= '<form name="internalFortified_C1" id="internalFortified_C1" method="post" action="' . base_url() .'data/submit/form_internalFort_C1' . '"><!--form for internal fortification of salts-C1-->
+		$internalFortified_C1 .= '<form name="internalFortified_C1" id="internalFortified_C1" method="post" action="' . base_url() .'submit/c_form/form_internalFort_C1' . '"><!--form for internal fortification of salts-C1-->
                          <h3>FORTIFIED SALT QC/QA- TABLE C-1</h3>
                          <h4> PRODUCTION AND QUALITY CONTROL LOG FOR FORTIFIED SALT<sup>5</sup>WITH IODINE</h4>
                          <table width="99%">
@@ -586,7 +601,7 @@ class Front extends CI_Controller {
 	public function externalFort_B1() {
 		$externalFortified_B1 = '';
 
-		$externalFortified_B1 .= '<form name="externalfortifiedB1" id="externalfortifiedB1" method="post" action="' . base_url() .'data/submit/form_externalFort_B1' . '"><!--form for externalmonitoring of fortified salt-B1-->
+		$externalFortified_B1 .= '<form name="externalfortifiedB1" id="externalfortifiedB1" method="post" action="' . base_url() .'submit/c_form/form_externalFort_B1' . '"><!--form for externalmonitoring of fortified salt-B1-->
 <h3> FORTIFIED SALT- AUDITS AND INSPECTION- TABLE B-1</h3>
  <h4> TECHNICAL AUDIT AND INSPECTION VISIT SESSIONS</h4>
 <table width="100%">
@@ -975,7 +990,7 @@ class Front extends CI_Controller {
 ' . '
 <!--start of fortified salt-audits & inspection table-3: ctechnical audit and inspection preliminary report-->
 ' . '
-<form id="externalFortified_B3" action="' . base_url() .'data/submit/form_externalFort_B3' . '" method="post">
+<form id="externalFortified_B3" action="' . base_url() .'submit/c_form/form_externalFort_B3' . '" method="post">
 	<h2> FORTIFIED SALT-AUDITS AND INSPECTION -TABLE B-3</h2>
 	<p align="center">
 		TECHNICAL AUDIT AND INSPECTION PRELIMINARY REPORT

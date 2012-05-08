@@ -7,9 +7,9 @@ namespace models;
  * @Table(name="externalfortifiedb2")
  */
 
-class ExternalFortifiedB2 {
+class E_ExternalFortifiedB2 {
 
-	/*
+	/**
 	 * @Id
 	 * @Column(name="transactionNumber", type="int", length=11, nullable=false)
 	 * */

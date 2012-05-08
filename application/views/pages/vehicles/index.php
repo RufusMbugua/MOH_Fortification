@@ -185,7 +185,7 @@ $sessionEmail = $this -> session -> userdata('email');
 	});
 
 	$("#close_opened_form").click(function() {
-	document.location='<?php echo base_url().'front/vehicles'?>
+	document.location='<?php echo base_url().'c_front/vehicles'?>
 	';
 	});
 
@@ -269,7 +269,7 @@ $sessionEmail = $this -> session -> userdata('email');
 					<a href="#" data-reveal-id="accountSettings" class="awesome small">Account Settings</a>
 				</li>
 				<li>
-					<?php echo anchor(base_url().'auth/logout','Logout', array('class' => 'awesome small'))
+					<?php echo anchor(base_url().'c_auth/logout','Logout', array('class' => 'awesome small'))
 					?>
 				</li>
 			</ul>
@@ -279,7 +279,7 @@ $sessionEmail = $this -> session -> userdata('email');
 				<section class="within">
 					<nav id="pageheader">
 						<ul>
-							<a class="current" href="index.php">Vehicles</a>
+							<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>">Vehicles</a>
 							<a href="#">Agents</a>
 						</ul>
 					</nav>
@@ -294,37 +294,37 @@ $sessionEmail = $this -> session -> userdata('email');
 											<h2>Forms</h2>
 											<ul>
 												<li>
-													<?php echo anchor('front/internalFort_A1', 'Fortified Salt-Table A-1');?>
+													<?php echo anchor('c_front/internalFort_A1', 'Fortified Salt-Table A-1');?>
 												</li>
 												<li>
-													<?php echo anchor('front/internalFort_A2', 'Fortified Salt QC/QA -Table A-2');?>
+													<?php echo anchor('c_front/internalFort_A2', 'Fortified Salt QC/QA -Table A-2');?>
 												</li>
 												<li>
-													<?php echo anchor('front/internalFort_B1', 'Fortified Salt QC/QA -Table B-1');?>
+													<?php echo anchor('c_front/internalFort_B1', 'Fortified Salt QC/QA -Table B-1');?>
 												</li>
 												<li>
-													<?php echo anchor('front/internalFort_B2', 'Salt Fortification: Table B-2');?>
+													<?php echo anchor('c_front/internalFort_B2', 'Salt Fortification: Table B-2');?>
 												</li>
 												<li>
-													<?php echo anchor('front/internalFort_C1', 'Fortified Salt QC/QA -Table C-1');?>
+													<?php echo anchor('c_front/internalFort_C1', 'Fortified Salt QC/QA -Table C-1');?>
 												</li>
 												<li>
-													<?php echo anchor('front/externalFort_B1', 'Fortified Salt - Audits and Inspection - Table B-1');?>
+													<?php echo anchor('c_front/externalFort_B1', 'Fortified Salt - Audits and Inspection - Table B-1');?>
 												</li>
 												<li>
-													<?php echo anchor('front/externalFort_B2', 'Fortified Salt - Audits and Inspection - Table B-2');?>
+													<?php echo anchor('c_front/externalFort_B2', 'Fortified Salt - Audits and Inspection - Table B-2');?>
 												</li>
 												<li>
-													<?php echo anchor('front/externalFort_B3', 'Fortified Salt - Audits and Inspection - Table B-3');?>
+													<?php echo anchor('c_front/externalFort_B3', 'Fortified Salt - Audits and Inspection - Table B-3');?>
 												</li>
 												<li>
-													<?php echo anchor('front/externalIod_B1', 'Iodized Salt - Audits and Inspection - Table B-1');?>
+													<?php echo anchor('c_front/externalIod_B1', 'Iodized Salt - Audits and Inspection - Table B-1');?>
 												</li>
 												<li>
-													<?php echo anchor('front/smallScale_A1', 'Fortified Salt - QA In Small Scale Operations - Table A-1');?>
+													<?php echo anchor('c_front/smallScale_A1', 'Fortified Salt - QA In Small Scale Operations - Table A-1');?>
 												</li>
 												<li>
-													<?php echo anchor('front/smallScale_A2', 'Fortified Salt - QA In Small Scale Operations - Table A-2');?>
+													<?php echo anchor('c_front/smallScale_A2', 'Fortified Salt - QA In Small Scale Operations - Table A-2');?>
 												</li>
 											</ul>
 										</section><!-- End of Menu: FORMS -->

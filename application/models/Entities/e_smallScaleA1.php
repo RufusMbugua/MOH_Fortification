@@ -5,7 +5,7 @@ namespace models;
  * @Entity
  * @Table(name="smallscalea1")
  */
- class smallScaleA1{
+ class E_SmallScaleA1{
  		/*
 * @Id
 * @Column(name="transactionNumber", type="int", length=11, nullable=false)

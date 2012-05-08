@@ -1,19 +1,18 @@
 <?php
-
 namespace models\Entities;
 
 /**
  * @Entity
  * @Table(name="internalfortifiedb1")
  */
-class IntFortifiedB1 {
+class E_IntFortifiedB1 {
 
 	/**
 	 * @Id 
 	 * @Column(name="transactionNumber",type="integer", length=11, nullable=false)
 	 * @GeneratedValue(strategy="AUTO")
 	 * */
-	private $id;
+	private $transactionNumber;
 	
 	/**
 	 * @Column(name="dates", type="string", nullable=true)
@@ -52,16 +51,16 @@ class IntFortifiedB1 {
 	private $transactedBy;
 	
 	/**
-	 * @OneToMany(targetEntity="manufacturerFortified", mappedBy="manufacturerFortName")
+	 * @ManyToOne(targetEntity="manufacturerFortified", mappedBy="manufacturerFortName")
 	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
 	 * */
 	private $manufacturerCompName;
 
 	public function getTranscationNumber() {
-		return $this -> id;
+		return $this -> transactionNumber;
 	}
 
-	public function setTransactionNumber($transactionNumber) { $this -> id = $transactionNumber;
+	public function setTransactionNumber($transactionNumber) { $this -> transactionNumber = $transactionNumber;
 	}
 
 	public function getDates() {

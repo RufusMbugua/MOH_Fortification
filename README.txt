@@ -1,1 +1,5 @@
-this is a read me file.
+Uses doctrine and codeigniter. 
+Authors:
+1. @Mutono
+2. @Rufus
+3 @Adams

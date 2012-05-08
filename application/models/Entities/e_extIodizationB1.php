@@ -7,7 +7,7 @@ namespace models;
  * @Table(name="externaliodizationb1")
  */
 
-class ExtIodizationB1 {
+class E_ExtIodizationB1 {
 	/*
 	 * @Id
 	 * @Column(name="transactionNumber", type="int", length=11, nullable=false)

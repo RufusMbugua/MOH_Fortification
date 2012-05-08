@@ -1,6 +1,6 @@
 <?php 
 
-class Back extends CI_Controller{
+class C_Back extends CI_Controller{
 	
 	public function _construct() {
 

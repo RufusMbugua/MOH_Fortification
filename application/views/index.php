@@ -24,8 +24,8 @@
 				<p></p>
 				<input  name="secret" type="password" placeholder="Password"/>
 				<p></p>
-				<button type="submit" class="awesome myblue large" formaction="<?php echo base_url().'auth/login'?>" />
-				Login</button> <!--button type="submit" class="awesome myblue large" formaction="<?php echo base_url().'index.php/'.'front/vehicles'?>" />Login</button-->
+				<button type="submit" class="awesome myblue large" formaction="<?php echo base_url().'c_auth/login'?>" />
+				Login</button> 
 			</form>
 		</section>
 	</body>

@@ -8,7 +8,7 @@ namespace models\Entities;
  * @author John O. Adams 
  */
 
-class SystemUser
+class E_SystemUser
 {
 	/**
      * Encryption key used as for password hashing
@@ -36,7 +36,12 @@ class SystemUser
 	/**
 	 * @Column(name="userRights",type="integer", length=1, nullable=false)
 	 */
-	private $access_level;
+	private $userRights;
+	
+	/**
+	 * @Column(name="affiliation",type="string", length=45, nullable=true)
+	 */
+	private $affiliation;
 	
 	
 	 
@@ -65,7 +70,12 @@ class SystemUser
 	}
 	
     public function getPassword() {  return $this->password; }
-	public function getAccessLevel() { return $this->access_level; }
-    public function setAccessLevel($level) { $this->access_level = $level; }
+    
+	
+	public function getUserRights() { return $this->userRights; }
+    public function setUserRights($level) { $this->userRights = $level; }
+	
+	public function getAffiliation() { return $this->affiliation; }
+    public function setAffiliation($affiliation) { $this->affiliation = $affiliation; }
 
 }

@@ -6,7 +6,7 @@ namespace models;
  * @Entity
  * @Table(name="internalfortifieda1")
  */
-class IntFortifiedA1 {
+class E_IntFortifiedA1 {
 
 	/*
 	 *   @Id

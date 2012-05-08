@@ -4,9 +4,9 @@ if (!defined('BASEPATH'))
 /**
  *model to IntFortifiedB1 entity
  */
-use application\models\Entities\IntFortifiedB1;
+use application\models\Entities\E_IntFortifiedB1;
 
-class InternalFortifiedB1 extends MY_Model {
+class M_InternalFortifiedB1 extends MY_Model {
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
 
 	function __construct() {
@@ -15,8 +15,8 @@ class InternalFortifiedB1 extends MY_Model {
 
 	function addRecord() {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
-		//check if a post was made
-		if ($this -> input -> post()) {
+		
+		if ($this -> input -> post()) {//check if a post was made
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
@@ -39,43 +39,25 @@ class InternalFortifiedB1 extends MY_Model {
 				   $this->attr = $this->frags[0];//the attribute name
 				   
 				  $this->theIds[$this->attr]=$this->id;
-			//	print($this->attr."  ".$this->id."  ".$val).'<br />';
+			//print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
 				   if (!empty($val)) 
 					//We then store the value of this attribute for this element.
-					//$this->elements[$this->id][$this->attr] = htmlentities($val);
-					 $this->elements[$this->id][$this->attr]=$val;
+					 $this->elements[$this->id][$this->attr]=htmlentities($val);
 					
 			} //close foreach($_POST)
-			//die(var_dump($this->elements));	
 			
-			
-			
+			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
 			//get manufacturer name by id
-			$manufacturer=$this->em->getRepository('models\Entities\ManufacturerFortified')
+			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerFortified')
 			                       ->findOneBy( array('manufacturerFortId'=>$this->input->post('saltFactory')));
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
-			 	   /*  print 'Found: '.$this->input->post('saltFactory').'<br />';
-					 print 'Found: '.($this->elements[$i]["fortifiedDate"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["fortifiedWeight"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["compoundWeight"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["finalWeight"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["startTime"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["endTime"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["iodineWeight"]).'<br />';
-					 print 'Found: '.($this->elements[$i]["qcReview"]).'<br />';
-					 print '-------End of Row:'.$i.'--------------------------<br />';*/
-					 
-			/*if(strpos($this->elements[$i]["startTime"], "AM")){
-				$this->elements[$i]["startTime"]=date_format(($this->elements[$i]["startTime"]),'H:i:s')->add(new DateInterval('P12H0M0S'));
-			}else{
-				$this->elements[$i]["startTime"]=date_format(($this->elements[$i]["startTime"]),'H:i:s');
-			}*/
-			 $this -> theForm = new \models\Entities\IntFortifiedB1(); //create an object of the model
+			 	
+			 $this -> theForm = new \models\Entities\E_IntFortifiedB1(); //create an object of the model
 		       // $this->theForm->setTransactionNumber('NULL');
 			 	$this -> theForm -> setManufacturerCompName($manufacturer->getManufacturerFortName());
 				$this -> theForm -> setDates($this->elements[$i]['fortifiedDate']);
@@ -90,7 +72,7 @@ class InternalFortifiedB1 extends MY_Model {
 				$this -> em -> persist($this -> theForm);
 
 
-        	//now do a batched insert, default at 20
+        	//now do a batched insert, default at 5
 			  $this->batchSize=5;
 		if($i % $this->batchSize==0){
 		try{

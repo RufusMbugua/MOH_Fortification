@@ -1,32 +1,30 @@
 <?php
-
-namespace models;
+namespace models\Entities;
 
 /**
  * @Entity
  * @Table(name="devices")
  */
 
-class Devices{
+class E_Devices{
 
-	/*
+	/**
 	 * @Id
-	 * @Column(name="deviceSerialNumber", type="varchar", length=50, nullable=false)	 *
+	 * @Column(name="deviceSerialNumber", type="string", length=50, nullable=false)	 *
 	 * */
 	private $deviceSerialNumber;
 
-	/*
-	 *  @Column(name="deviceType", type="varchar", length=45, nullable=true)	 *
+	/**
+	 *  @Column(name="deviceType", type="string", length=45, nullable=true)	 *
 	 * */
 	private $deviceType;
 
-	/*
-	 * @Column(name="remarks", type="varchar", length=45, nullable=true)	 *
+	/**
+	 * @Column(name="remarks", type="string", length=45, nullable=true)	 *
 	 * */
-
 	private $remarks;
 
-    /*
+    /**
 	 * Device Serial Number
 	 * */
 	public function getDeviceSerialNumber() {

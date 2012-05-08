@@ -5,7 +5,7 @@ namespace models;
  * @Entity
  * @Table(name="internalfortifiedc1")
  */
- class intFortifiedC1{
+ class E_IntFortifiedC1{
  		/*
 * @Id
 * @Column(name="transactionNumber", type="int", length=11, nullable=false)

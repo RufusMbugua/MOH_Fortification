@@ -5,7 +5,7 @@ namespace models\Entities;
  * @Entity
  * @Table(name="manufacturerfortified")
  */
- class ManufacturerFortified {
+ class E_ManufacturerFortified {
  	
 /**
 * @Id

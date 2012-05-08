@@ -1,45 +1,56 @@
 <?php
-
-namespace models;
+namespace models\Entities;
 
 /**
  * @Entity
  * @Table(name="internalfortifieda2")
  */
-
-class IntFortifiedA2 {
-	/*
+class E_IntFortifiedA2 {
+	/**
 	 * @Id
-	 * @Column(name="transactionNumber", type="int", length=11, nullable=false)
+	 * @Column(name="transactionNumber", type="integer", length=11, nullable=false)
+	 * @GeneratedValue(strategy="AUTO")
 	 * */
 	private $transactionNumber;
 
-	/*
-	 * @Column(name="dates", type="date", nullable=true)
+	/**
+	 * @Column(name="dates", type="string", nullable=true)
 	 * */
 	private $dates;
-	/*
-	 * @Column(name="supplierCOA", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="supplierCOA", type="string",length=45, nullable=true)
 	 * */
 	private $supplierCOA;
-	/*
-	 * @Column(name="noOfDrums", type="int", length=11, nullable=false)
+	
+	/**
+	 * @Column(name="noOfDrums", type="integer", length=11, nullable=false)
 	 * */
 	private $noOfDrums;
-	/*
-	 * @Column(name="lotId", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="lotId", type="string",length=45, nullable=true)
 	 * */
 	private $lotId;
-	/*
-	 * @Column(name="expiryDate", type="date", nullable=true)
+	
+	/**
+	 * @Column(name="expiryDate", type="string", nullable=true)
 	 * */
 	private $expiryDate;
-	/*
-	 * @Column(name="transactedBy", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="transactedBy", type="string",length=45, nullable=true)
 	 * */
 	private $transactedBy;
-	/*
-	 * @Column(name="manufacturerCompName", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="dateOfReporting", type="date", nullable=true)
+	 * */
+	private $dateOfReporting;
+	
+	/**
+	 * @OneToMany(targetEntity="manufacturerCompound", mappedBy="manufacturerCompName")
+	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
 	 * */
 	private $manufacturerCompName;
 
@@ -90,6 +101,13 @@ class IntFortifiedA2 {
 	}
 
 	public function setTransactedBy($transactedBy) { $this -> transactedBy = $transactedBy;
+	}
+	
+	public function getDateOfReporting() {
+		return $this -> dateOfReporting;
+	}
+
+	public function setDateOfReporting($dateOfReporting) { $this -> dateOfReporting = $dateOfReporting;
 	}
 
 	public function getManufacturerCompName() {
