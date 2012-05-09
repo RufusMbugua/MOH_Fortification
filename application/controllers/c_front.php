@@ -1,11 +1,12 @@
 <?php
 
 class C_Front extends CI_Controller {
+	var $data;
 
 	public function __construct() {
 
 		parent::__construct();
-	
+	    $this->data=array();
 
 	}
 
@@ -426,25 +427,28 @@ class C_Front extends CI_Controller {
 		<section class="row">
 			<section class = "left">
 				<label>1. Blender</label>
+				<input type="hidden" id="blender" name="blender_1" value=""/>
 			</section>
 			<section class="center">
 				<select name="blenderCondition" id="blenderCondition" >
-					<option value="0">Adequate</option>
-					<option value="1">Inadequate</option>
+					<option value="1">Adequate</option>
+					<option value="0">Inadequate</option>
 				</select>
 			</section>
 			<section class="right">
 				<textarea name="blenderObservations" id="blenderObservations" rows="2"></textarea>
+				
 			</section>
 		</section>
 		<section class="row">
 			<section class = "left">
 				<label>2. Balance</label>
+				<input type="hidden" id="balance" name="balance_2" value=""/>
 			</section>
 			<section class="center">
 				<select name="balanceCondition" id="balanceCondition" >
-					<option value="0">Adequate</option>
-					<option value="1">Inadequate</option>
+					<option value="1">Adequate</option>
+					<option value="0">Inadequate</option>
 				</select>
 			</section>
 			<section class="right">
@@ -454,11 +458,12 @@ class C_Front extends CI_Controller {
 		<section class="row">
 			<section class = "left">
 				<label>3. Pump</label>
+				<input type="hidden" id="pump" name="pump_3" value=""/>
 			</section>
 			<section class="center">
 				<select name="pumpCondition" id="pumpCondition" >
-					<option>Adequate</option>
-					<option>Inadequate</option>
+					<option value="1">Adequate</option>
+					<option value="0">Inadequate</option>
 				</select>
 			</section>
 			<section class="right">
@@ -468,11 +473,12 @@ class C_Front extends CI_Controller {
 		<section class="row">
 			<section class = "left">
 				<label>4. Drier</label>
+				<input type="hidden" id="drier" name="drier_4" value=""/>
 			</section>
 			<section class="center">
 				<select name="drierCondition" id="drierCondition">
-					<option>Adequate</option>
-					<option>Inadequate</option>
+					<option value="1">Adequate</option>
+					<option value="0">Inadequate</option>
 				</select>
 			</section>
 			<section class="right">
@@ -482,11 +488,12 @@ class C_Front extends CI_Controller {
 		<section class="row">
 			<section class = "left">
 				<label>5. Spraying/Drip Equipment</label>
+				<input type="hidden" id="sprayingEquipment" name="sprayingEquipment_5" value=""/>
 			</section>
 			<section class="center">
 				<select name="sprayerCondition" id="sprayerCondition" >
-					<option>Adequate</option>
-					<option>Inadequate</option>
+					<option value="1">Adequate</option>
+					<option value="0">Inadequate</option>
 				</select>
 			</section>
 			<section class="right">
@@ -501,26 +508,16 @@ class C_Front extends CI_Controller {
 </form>';
         
 		
-		$data['form'] = $internalFortified_B2;
-		$data['form_id'] = 'internalFortified_B2';
-		try{
-			//$this->M_InternalFortifiedB2->equipment;
-			$data['devices']=$this->doRetrieveIodizationCentreDevices();
-			
-		}catch(exception $ex){
-			//ignore
-		}
-
-		$this -> load -> view('pages/vehicles/index', $data);
+		$this->data['form'] = $internalFortified_B2;
+		$this->data['form_id'] = 'internalFortified_B2';
+		//$this->doRetrieveIodizationCentreDevices();
+       // var_dump($this->data['devices']);
+		//exit;
+		$this -> load -> view('pages/vehicles/index', $this->data);
 		
 
 	}
 	
-	private function doRetrieveIodizationCentreDevices(){
-		$this->load->model('M_InternalFortifiedB2');
-		$this->M_InternalFortifiedB2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
-		
-	}
 
 	public function internalFort_C1() {
 		$internalFortified_C1 = '';
@@ -541,9 +538,9 @@ class C_Front extends CI_Controller {
                          </tr>
                          <tr class="clonable">
                              <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" readonly="readonly" value="" /></td>
-                             <td width="15%"><input type="text" name="saltProduced_1" id="saltProduced_1" class="cloned"/></td>
-                             <td width="15%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned"/></td>
-                             <td width="15%"><input type="text" name="saltFortified_1" id="saltFortified_1" class="cloned"/></td>
+                             <td width="15%"><input type="text" name="saltProduced_1" id="saltProduced_1" class="cloned fromZero"/></td>
+                             <td width="15%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned fromZero"/></td>
+                             <td width="15%"><input type="text" name="saltFortified_1" id="saltFortified_1" class="cloned fromZero"/></td>
                              <td width="18%"><input type="text" name="notes_1" id="notes_1" class="cloned"/></td>
                              <td width="18%"><input type="text" name="comments_1" id="comments_1" class="cloned"/></td>
                             
@@ -570,7 +567,7 @@ class C_Front extends CI_Controller {
                              <td width="15%"><input type="text" name="saltProduced2" id="saltProduced2"/></td>
                              <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2"/></td>
                              <td width="15%"><input type="text" name="saltFortified2" id="saltFortified2"/></td>
-                             <td width="18%"><input type="text" name="notes2" id="notes2"/></td>
+                             <!--td width="18%"><input type="text" name="notes2" id="notes2"/></td-->
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
                              <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
                          </tr>
@@ -579,7 +576,7 @@ class C_Front extends CI_Controller {
                              <td width="15%"><input type="text" name="saltProduced3" id="saltProduced3"/></td>
                              <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3"/></td>
                              <td width="15%"><input type="text" name="saltFortified3" id="saltFortified3"/></td>
-                             <td width="18%"><input type="text" name="notes3" id="notes3"/></td>
+                             <!--td width="18%"><input type="text" name="notes3" id="notes3"/></td-->
                              <td width="18%"></td>
                              <td width="15%"></td>
                          </tr>
@@ -601,7 +598,8 @@ class C_Front extends CI_Controller {
 	public function externalFort_B1() {
 		$externalFortified_B1 = '';
 
-		$externalFortified_B1 .= '<form name="externalfortifiedB1" id="externalfortifiedB1" method="post" action="' . base_url() .'submit/c_form/form_externalFort_B1' . '"><!--form for externalmonitoring of fortified salt-B1-->
+		$externalFortified_B1 .= '<form name="externalfortifiedB1" id="externalfortifiedB1" method="post" action="' . base_url() .'submit/c_form/form_externalFort_B1' . '">
+		<!--form for externalmonitoring of fortified salt-B1-->
 <h3> FORTIFIED SALT- AUDITS AND INSPECTION- TABLE B-1</h3>
  <h4> TECHNICAL AUDIT AND INSPECTION VISIT SESSIONS</h4>
 <table width="100%">
@@ -627,9 +625,9 @@ class C_Front extends CI_Controller {
 <tr>
      <td width="25%">Public health Officer:</td>
      <td width="25%"><select name="phealthOfficer" id="phealthOfficer">
-	 <option value="1">Adams Opiyo</option>
-	 <option value="2">Rufus Mbugua</option>
-	 <option value="3">Nicodemus Maingi</option></select></td></td>
+	 <option value="Adams Opiyo">Adams Opiyo</option>
+	 <option value="Rufus Mbugua">Rufus Mbugua</option>
+	 <option value="Nicodemus Maingi">Nicodemus Maingi</option></select></td></td>
 	
 </tr>
 </table>
@@ -672,7 +670,7 @@ class C_Front extends CI_Controller {
 	public function externalFort_B2() {
 		$externalFortified_B2 = '';
 		$externalFortified_B2 .= '
-<form id="externalFortified_B2" action="#" method="post">
+<form name="externalFortified_B2" id="externalFortified_B2" action="' . base_url() .'submit/c_form/form_externalFort_B2' . '" method="post">
 	<h2> FORTIFIED SALT-AUDITS AND INSPECTION -TABLE B-2</h2>
 	<p align="center">
 		TECHNICAL AUDIT AND INSPECTION PRELIMINARY REPORT
@@ -877,9 +875,9 @@ class C_Front extends CI_Controller {
 		</section>
 		<section class="row">
 			<label> 3.1.1 Storage and handling adequate</label>
-			<input type="radio" name="storage_handling" id="storage_handling_y" value="yes" />
+			<input type="radio" name="storage_handling_area" id="storage_handling_y" value="yes" />
 			<input type="radio" name="storage_handling_area" id="storage_handling_n" value="no" />
-			<input type="radio" name="storage_handling" id="storage_handling_na" value="n/a" />
+			<input type="radio" name="storage_handling_area" id="storage_handling_na" value="n/a" />
 		</section>
 		<section class="row">
 			<label> 3.2 Records of feeder/sprayer performance are available</label>
@@ -940,7 +938,7 @@ class C_Front extends CI_Controller {
 		<section class="row">
 			<label> 4.1.2 External labaratory</label>
 			<input type="radio" name="external_lab" id="external_lab_y" value="yes" />
-			<input type="radio" name="external_lab_n" id="staff_f" value="no" />
+			<input type="radio" name="external_lab_n" id="external_lab_n" value="no" />
 			<input type="radio" name="external_lab" id="external_lab_na" value="n/a" />
 		</section>
 		<section class="row">
@@ -965,7 +963,7 @@ class C_Front extends CI_Controller {
 			<label> 4.5 Fortified salt is stored adequately</label>
 			<input type="radio" name="fortified_salt_stored" id="fortified_salt_stored_y" value="yes" />
 			<input type="radio" name="fortified_salt_stored" id="fortified_salt_stored_n" value="no" />
-			<input type="radio" name="fortified_salt_stored_na" id="staff_f" value="n/a" />
+			<input type="radio" name="fortified_salt_stored_na" id="fortified_salt_stored_na" value="n/a" />
 		</section>
 	</section>
 	<section class="column-wide">

@@ -12,13 +12,13 @@ namespace models\Entities;
     * @ManyToOne(targetEntity="IodizationCenters",inversedBy="iodizationCentreName")
 	* @Column(name="manufacturerCompName", type="string", length=45, nullable=false)
 	* */
-	private $manufacturerCompName;
+	protected $manufacturerCompName;
 	
    /**
     * @OneToOne(targetEntity="Devices",mappedBy="deviceSerialNumber")
 	* @Column(name="deviceCompNumber", type="string",length=45, nullable=false)
 	* */
-	private $deviceCompNumber;
+	protected $deviceCompNumber;
 	
    /**
 	* @Column(name="remarks", type="string",length=45, nullable=true)

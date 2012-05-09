@@ -13,24 +13,23 @@ class M_InternalFortifiedB2 extends MY_Model {
 		parent::__construct();
 	}
 
-	function addRecord() {
+	function addRecord($manufacturerCompName) {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
+		
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-		    //print(($key." ".$val)).'<br \>';
-			   
-			 if($key=="saltFactory"){
-			 	$key="saltFactory_1";
-			 }
-			  
-				
-				//check if posted value is among the cloned ones
+		 //  print(($key." ".$val)).'<br \>';
 			
+			 
+				
+			/*special case for this form..subject to change*/
 					//we separate the attribute name from the number
-					
+					 if(!strpos("_", $key)){
+			  	$key=$key."_1";
+			  }
 					 $this->frags = explode("_", $key);
 				   
 				    $this->id = $this->frags[1];  // the id
@@ -39,7 +38,7 @@ class M_InternalFortifiedB2 extends MY_Model {
 				   $this->attr = $this->frags[0];//the attribute name
 				   
 				  $this->theIds[$this->attr]=$this->id;
-			//print($this->attr."  ".$this->id."  ".$val).'<br />';
+			//print($this->id."  ".$this->attr).'<br />';
 				   
 			
 				   if (!empty($val)) 
@@ -48,27 +47,87 @@ class M_InternalFortifiedB2 extends MY_Model {
 					
 			} //close foreach($_POST)
 			
+			//exit;
+			
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//get manufacturer name by id
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerFortified')
-			                       ->findOneBy( array('manufacturerFortId'=>$this->input->post('saltFactory')));
+			
+			                       
+			/*Iodization centre name is picked from the 
+			 * session variable => 'affiliation' */
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
 			 $this -> theForm = new \models\Entities\E_IntFortifiedB2(); //create an object of the model
-		       // $this->theForm->setTransactionNumber('NULL');
-			 	$this -> theForm -> setManufacturerCompName($manufacturer->getManufacturerFortName());
-				$this -> theForm -> setDates($this->elements[$i]['fortifiedDate']);
-				$this -> theForm -> setFillerWeight($this->elements[$i]["fortifiedWeight"]);
-				$this -> theForm -> setIodineWeight($this->elements[$i]["compoundWeight"]);
-				$this -> theForm -> setFinalPremixWeight1($this->elements[$i]["finalWeight"]);
-
-				$this -> theForm -> setStartTime($this->elements[$i]["startTime"]);
-				$this -> theForm -> setEndTime($this->elements[$i]["endTime"]);
-				$this -> theForm -> setFinalPremixWeight($this->elements[$i]["iodineWeight"]);
-				$this -> theForm -> setTransactedBy($this->elements[$i]['qcReview']);
+		      
+			 	$this -> theForm -> setDates($this->input->post('checkupDate'));
+				
+				switch($i)
+				{
+				 	case 1:
+						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['blender']);
+						$this -> theForm -> setCondition($this->input->post("blenderCondition"));
+						$this -> theForm -> setObservations($this->input->post("blenderObservations"));
+						
+						//wdys
+						/*print $this->elements[$i]['blender'].'<br />';
+						print $this->input->post("blenderCondition").'<br />';
+						print $this->input->post("blenderObservations").'<br />';
+						print 'end of row: '.$i.'-------------------------<br />';*/
+						break;
+				
+					case 2:
+						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['balance']);
+						$this -> theForm -> setCondition($this->input->post("balanceCondition"));
+						$this -> theForm -> setObservations($this->input->post("balanceObservations"));
+						
+						//wdys
+						/*print $this->elements[$i]['balance'].'<br />';
+						print $this->input->post("balanceCondition").'<br />';
+						print $this->input->post("balanceObservations").'<br />';
+						print 'end of row: '.$i.'-------------------------<br />';*/
+						break;
+				
+					case 3:
+						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['pump']);
+						$this -> theForm -> setCondition($this->input->post("pumpCondition"));
+						$this -> theForm -> setObservations($this->input->post("pumpObservations"));
+						
+						//wdys
+						/*print $this->elements[$i]['pump'].'<br />';
+						print $this->input->post("pumpCondition").'<br />';
+						print $this->input->post("pumpObservations").'<br />';
+						print 'end of row: '.$i.'-------------------------<br />';*/
+						break;
+					case 4:
+						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['drier']);
+						$this -> theForm -> setCondition($this->input->post("drierCondition"));
+						$this -> theForm -> setObservations($this->input->post("drierObservations"));
+						
+						//wdys
+						/*print $this->elements[$i]['drier'].'<br />';
+						print $this->input->post("drierCondition").'<br />';
+						print $this->input->post("drierObservations").'<br />';
+						print 'end of row: '.$i.'-------------------------<br />';*/
+						break;
+						
+					case 5:
+						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['sprayingEquipment']);
+						$this -> theForm -> setCondition($this->input->post("sprayerCondition"));
+						$this -> theForm -> setObservations($this->input->post("sprayerObservations"));
+						
+						//wdys
+					/*	print $this->elements[$i]['sprayingEquipment'].'<br />';
+						print $this->input->post("sprayerCondition").'<br />';
+						print $this->input->post("sprayerObservations").'<br />';
+						print 'end of row: '.$i.'-------------------------<br />';*/
+						break;
+				}
+              
+				$this->theForm->setManufacturerCompName($manufacturerCompName);
+				$this -> theForm -> setCheckedBy($this->input->post('checkupName'));
+				
 				$this -> em -> persist($this -> theForm);
 
 
@@ -77,30 +136,33 @@ class M_InternalFortifiedB2 extends MY_Model {
 		if($i % $this->batchSize==0){
 		try{
 					
-				$this -> em -> flush();
+				$this-> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					//die($ex->getMessage());
+					die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
 				
-			} else if($i<$this->batchSize && $i==$this->noOfInsertsBatch){
+			//} else if($i<$this->batchSize && $i==$this->noOfInsertsBatch){
+		}else if($i<$this->batchSize || $i>$this->batchSize || $i==$this->noOfInsertsBatch && 
+			$this->noOfInsertsBatch-$i<$this->batchSize){
 				 //total records less than a batch, insert all of them
 				 try{
 					
-				$this -> em -> flush();
+			    $this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					//die($ex->getMessage());
+					die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
 				 
 				
-			}//end of batch condition
+			}//end of batch condition */
 				
-				 } //end of innner loop
+				 } //end of loop
+				// exit;
 		}//close the this->input->post
 		$e=microtime(true);
 		$this->executionTime=round($e-$s,'4');
@@ -113,13 +175,18 @@ class M_InternalFortifiedB2 extends MY_Model {
 			/*$this->equipment=$this->em->getRepository('models\Entities\E_ManucDevices')
 			                       ->findAll( array('manufacturerCompName'=>$iodizationCentreName));*/
 			                       
-	      //
-								   foreach ($this->equipment as $key => $value) {
-									   print $value[$key];
-								   }
-		    exit;
+			                       
+	      /*using DQL*/
+	      $query = $this->em->createQuery('SELECT d.deviceCompNumber FROM models\Entities\E_ManucDevices d WHERE d.manufacturerCompName = :name');
+          $query->setParameter('name', $iodizationCentreName);
+          $this->equipment = $query->getResult();
+						/*foreach ($this->equipment as $key=>$value) {
+									// print $this->equipment[$key]['deviceCompNumber']."<br />";
+									print $value['deviceCompNumber'].'<br />';
+									// var_dump($this->equipment);
+								  }*/
 		   return $this->equipment;
 		
 	}/*close getManucDevicesByIodizationCenter($iodizationCentreName)*/
 
-}//end of class InternalFortifiedB1
+}//end of class InternalFortifiedB2

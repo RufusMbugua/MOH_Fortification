@@ -1,47 +1,47 @@
 <?php
-namespace models;
+namespace models\Entities;
 
 /**
  * @Entity
  * @Table(name="internalfortifiedb2")
  */
- 
  class E_IntFortifiedB2 { 
  
-	/**
+   /**
 	* @Id
 	* @Column(name="checkNumber", type="integer", length=11, nullable=false)
+	* @GeneratedValue(strategy="AUTO")
 	* */
 	private $checkNumber;
 	
-	/**
-	* @Column(name="dates", type="date", nullable=false)
+   /**
+	* @Column(name="dates", type="string", nullable=false)
 	* */
 	private $dates;
 	
-	/*
-	* @Column(name="condition", type="integer", length=1, nullable=false)
+   /**
+	* @Column(name="deviceCondition", type="integer", length=1, nullable=false)
 	* */
-	private $condition;
+	private $deviceCondition;
 	
-	/*
+   /**
 	* @Column(name="observations", type="string", length=45, nullable=true)
 	* */
 	private $observations;
 	
-	/*
-	* @Column(name="checkedBy", type="string", length=45, nullable=true)
+   /**
+	* @Column(name="checkedBy", type="string", length=45, nullable=false)
 	* */
 	private $checkedBy;
 	
    /**
-	* @ManyToOne(targetEntity="manucdevices", mappedby="deviceCompNumber")
+	* @ManyToOne(targetEntity="manucdevices", inversedBy="deviceCompNumber")
 	* @Column(name="deviceCompNumber", type="string", length=45, nullable=false)
 	* */
 	private $deviceCompNumber;
 	
    /**
-    * @ManyToOne(targetEntity="manucdevices", mappedby="manufacturerCompName")
+    * @ManyToOne(targetEntity="manucdevices", inversedBy="manufacturerCompName")
 	* @Column(name="manufacturerCompName", type="string", length=45, nullable=true)
 	* */
 	private $manufacturerCompName;
@@ -62,7 +62,7 @@ namespace models;
 	       return $this -> condition;
 	}
 	
-	public function setCondition($condition) { $this -> condition = $condition;
+	public function setCondition($condition) { $this -> deviceCondition = $condition;
 	}
 	public function getObservations() {
 			return $this -> observations;

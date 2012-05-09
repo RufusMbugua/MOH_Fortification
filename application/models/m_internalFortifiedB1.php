@@ -85,7 +85,9 @@ class M_InternalFortifiedB1 extends MY_Model {
 					
 				}//end of catch
 				
-			} else if($i<$this->batchSize && $i==$this->noOfInsertsBatch){
+			//} else if($i<$this->batchSize && $i==$this->noOfInsertsBatch){
+				}else if($i<$this->batchSize || $i>$this->batchSize || $i==$this->noOfInsertsBatch && 
+			$this->noOfInsertsBatch-$i<$this->batchSize){
 				 //total records less than a batch, insert all of them
 				 try{
 					

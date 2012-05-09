@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace models\Entities;
 
 /**
  * @Entity
@@ -12,204 +12,256 @@ class E_ExternalFortifiedB2 {
 	/**
 	 * @Id
 	 * @Column(name="transactionNumber", type="int", length=11, nullable=false)
+	 * @GeneratedValue(strategy="AUTO")
 	 * */
 	private $transactionNumber;
-	/*
-	 * @Column(name="dates", type="date", nullable=true)
+	
+	/**
+	 * @Column(name="dates", type="date", nullable=false)
 	 * */
 	private $dates;
-	/*
-	 * @Column(name="publicHealthOfficer", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="publicHealthOfficer", type="string",length=45, nullable=true)
 	 * */
 	private $publicHealthOfficer;
-	/*
-	 * @Column(name="manufacturerCompName", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=false)
+	 * @ManyToOne(targetEntity="iodizationcenters", inversedBy="iodizationCentreName")
 	 * */
 	private $manufacturerCompName;
-	/*
-	 * @Column(name="productionArea", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="productionArea", type="string",length=45, nullable=true)
 	 * */
 	private $productionArea;
-	/*
-	 * @Column(name="packageArea", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="packageArea", type="string",length=45, nullable=true)
 	 * */
 	private $packageArea;
-	/*
-	 * @Column(name="warehouse", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="warehouse", type="string",length=45, nullable=true)
 	 * */
 	private $warehouse;
-	/*
-	 * @Column(name="staffFacilities", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="staffFacilities", type="string",length=45, nullable=true)
 	 * */
 	private $staffFacilities;
-	/*
-	 * @Column(name="hygiene", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="hygiene", type="string",length=45, nullable=true)
 	 * */
 	private $hygiene;
-	/*
-	 * @Column(name="protectiveGear", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="protectiveGear", type="string",length=45, nullable=true)
 	 * */
 	private $protectiveGear;
-	/*
-	 * @Column(name="trainingInTasks", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="trainingInTasks", type="string",length=45, nullable=true)
 	 * */
 	private $trainingInTasks;
-	/*
-	 * @Column(name="writtenProcedures", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="writtenProcedures", type="string",length=45, nullable=true)
 	 * */
 	private $writtenProcedures;
-	/*
-	 * @Column(name="receiptsStoragePremix", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="receiptsStoragePremix", type="string",length=45, nullable=true)
 	 * */
 	private $receiptStoragePremix;
-	/*
-	 * @Column(name="premixDilution", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="premixDilution", type="string",length=45, nullable=true)
 	 * */
 	private $premixDilution;
-	/*
-	 * @Column(name="feederVerification", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="feederVerification", type="string",length=45, nullable=true)
 	 * */
 	private $feederVerification;
-	/*
-	 * @Column(name="QCSaltSampling", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="QCSaltSampling", type="string",length=45, nullable=true)
 	 * */
 	private $QCSaltSampling;
-	/*
-	 * @Column(name="iodineTest", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineTest", type="string",length=45, nullable=true)
 	 * */
 	private $iodineTest;
-	/*
-	 * @Column(name="iodineCompupdate", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineCompupdate", type="string",length=45, nullable=true)
 	 * */
 	private $iodineCompupdate;
-	/*
-	 * @Column(name="coaperLot", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="coaperLot", type="string",length=45, nullable=true)
 	 * */
 	private $coaperLot;
-	/*
-	 * @Column(name="iodineStorageAdequate", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineStorageAdequate", type="string",length=45, nullable=true)
 	 * */
 	private $iodineStorageAdequate;
-	/*
-	 * @Column(name="fifoSystem", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="fifoSystem", type="string",length=45, nullable=true)
 	 * */
 	private $fifoSystem;
-	/*
-	 * @Column(name="iodineCompHandling", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineCompHandling", type="string",length=45, nullable=true)
 	 * */
 	private $iodineCompHandling;
-	/*
-	 * @Column(name="premixPreparation", type="varchar",length=10, nullable=true)
+	
+	/**
+	 * @Column(name="premixPreparation", type="string",length=10, nullable=true)
 	 * */
 	private $premixPreparation;
-	/*
-	 * @Column(name="prmixStorageHandling", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="prmixStorageHandling", type="string",length=45, nullable=true)
 	 * */
 	private $premixStorageHandling;
-	/*
-	 * @Column(name="feederSprayerRecord", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="feederSprayerRecord", type="string",length=45, nullable=true)
 	 * */
 	private $feederSprayerRecord;
-	/*
-	 * @Column(name="feederLevelAdequate", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="feederLevelAdequate", type="string",length=45, nullable=true)
 	 * */
 	private $feederLevelAdequate;
-	/*
-	 * @Column(name="saltPrductionPremixRecords", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="saltPrductionPremixRecords", type="string",length=45, nullable=true)
 	 * */
 	private $saltProductionPremixRecords;
-	/*
-	 * @Column(name="saltSamplingEachShift", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="saltSamplingEachShift", type="string",length=45, nullable=true)
 	 * */
 	private $saltSamplingEachShift;
-	/*
-	 * @Column(name="saltProductionPremixRight", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="saltProductionPremixRight", type="string",length=45, nullable=true)
 	 * */
 	private $saltProductionPremixRight;
-	/*
-	 * @Column(name="iodineResultLess40MgPerKg", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineResultLess40MgPerKg", type="string",length=45, nullable=true)
 	 * */
 	private $iodineResultLess40MgPerKg;
-	/*
-	 * @Column(name="saltSamplesAnalyzed", type="varchar",length=10, nullable=true)
+	
+	/**
+	 * @Column(name="saltSamplesAnalyzed", type="string",length=10, nullable=true)
 	 * */
 	private $saltSamplesAnalyzed;
-	/*
-	 * @Column(name="internalTest", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="internalTest", type="string",length=45, nullable=true)
 	 * */
 	private $internalTest;
-	/*
-	 * @Column(name="externalTest", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="externalTest", type="string",length=45, nullable=true)
 	 * */
 	private $externalTest;
-	/*
-	 * @Column(name="dailyCompositeSamples", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="dailyCompositeSamples", type="string",length=45, nullable=true)
 	 * */
 	private $dailyCompositeSamples;
-	/*
-	 * @Column(name="last30SamplesAvailable", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="last30SamplesAvailable", type="string",length=45, nullable=true)
 	 * */
 	private $last30SamplesAvailable;
-	/*
-	 * @Column(name="labellingSpecifications", type="tinyint",length=1, nullable=true)
+	
+	/**
+	 * @Column(name="labellingSpecifications", type="integer",length=1, nullable=true)
 	 * */
 	private $labelingSpecifications;
-	/*
-	 * @Column(name="fortifiedSaltStorageAdequate", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="fortifiedSaltStorageAdequate", type="string",length=45, nullable=true)
 	 * */
 	private $fortifiedSaltStorageAdequate;
-	/*
-	 * @Column(name="recommendations", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="recommendations", type="string",length=45, nullable=true)
 	 * */
 	private $recommendations;
-	/*
-	 * @Column(name="correctiveActions", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="correctiveActions", type="string",length=45, nullable=true)
 	 * */
 	private $correctiveActions;
-	/*
-	 * @Column(name="comments", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="comments", type="string",length=45, nullable=true)
 	 * */
 	private $comments;
-	/*
-	 * @Column(name="nonCompliances", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="nonCompliances", type="string",length=45, nullable=true)
 	 * */
 	private $nonCompliances;
-	/*
-	 * @Column(name="suggestionsForImprovement", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="suggestionsForImprovement", type="string",length=45, nullable=true)
 	 * */
 	private $suggestionsForImprovement;
-	/*
-	 * @Column(name="idComposite", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="idComposite", type="string",length=45, nullable=true)
 	 * */
 	private $idComposite;
-	/*
-	 * @Column(name="iodineMgPerKg0", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineMgPerKg0", type="string",length=45, nullable=true)
 	 * */
 	private $iodineMgPerKg0;
-	/*
-	 * @Column(name="refIodine", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="refIodine", type="string",length=45, nullable=true)
 	 * */
 	private $refIodine;
-	/*
-	 * @Column(name="iodineMgPerKg1", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineMgPerKg1", type="string",length=45, nullable=true)
 	 * */
 	private $iodineMgPerKg1;
-	/*
-	 * @Column(name="idOther", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="idOther", type="string",length=45, nullable=true)
 	 * */
 	private $idOther;
-	/*
-	 * @Column(name="iodineMgPerKg2", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineMgPerKg2", type="string",length=45, nullable=true)
 	 * */
 	private $iodineMgPerKg2;
-	/*
-	 * @Column(name="iodineMgPerKg3", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="iodineMgPerKg3", type="string",length=45, nullable=true)
 	 * */
 	private $iodineMgPerKg3;
-	/*
-	 * @Column(name="supervisorName", type="varchar",length=45, nullable=true)
+	
+	/**
+	 * @Column(name="supervisorName", type="string",length=45, nullable=true)
 	 * */
 	private $supervisorName;
+	
 
 	public function getTransactionNumber() {
 		return $this -> transactionNumber;

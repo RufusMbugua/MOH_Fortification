@@ -281,5 +281,33 @@ Achieved:
 2. Work running synchronously
 
 Next:
-1.
+1. Clear the salt module
+2. Some issues unclear in the app logic visavi the data logic
 ######################## END OF  WEEK 6 #############################################
+
+########################START OF  WEEK 7 #############################################
+Mon 7th May 2012
+-------------------------
+Achieved:
+1. Upto 3 tables sending data to db
+2. UI for the other modules almost done
+3. Meeting with the supervisor, informed of the scheduled meeting with the MOH officials
+
+Next:
+1. Get all components working in the salt module
+2. Redesign of some of the form elements for ease of use
+3. Including the MOH design template
+
+Tue 8th May 2012
+------------------------
+Achieved:
+1. 
+2.
+
+Next:
+1.
+2.
+######################## END OF  WEEK 7 #############################################
+
+
+

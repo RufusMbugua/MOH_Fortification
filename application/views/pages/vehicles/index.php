@@ -111,8 +111,32 @@ $sessionEmail = $this -> session -> userdata('email');
 					 $("#iodineDrums_"+no+",#iodineDispatched_"+no).on("keyup",function(){
 		                $('#iodineStock_'+no).val($('#iodineDrums_'+no).val()- $('#iodineDispatched_'+no).val());
 						});
+					 break;
+					  case '#internalFortified_C1':
+					  $("#saltProduced_"+no+",#premixUsed_"+no+",#saltFortified_"+no).on("keyup",function(){
+				      sp=0;pu=0;sf=0;
+				      for(i=1;i<=no;++i){
+					  sp=sp+$('#saltProduced_'+i).val();
+					  pu=pu+$('#premixUsed_'+i).val();
+					  sf=sf+$('#saltFortified_'+i).val();
+					  
+					 // alert(sp+' '+pu+' '+sf);
+					  }
+					  
+					   $('#saltProduced2').val(sp);
+					  $('#premixUsed2').val(pu);
+					  $('#saltFortified2').val(sf);
+					 /*  $('#saltProduced2').val($('#saltProduced_'+no).val());
+					  $('#premixUsed2').val($('#premixUsed_'+no).val());
+					  $('#saltFortified2').val($('#saltFortified_'+no).val());*/
+					  
+					 $('#saltProduced3').val($('#saltProduced2').val());
+					  $('#premixUsed3').val($('#premixUsed2').val());
+					  $('#saltFortified3').val($('#saltFortified2').val());
+						}); 
+					break;
 			
-	               } 
+	               } /*end of the case*/
 	                });
 		 
 					return  false;
@@ -126,7 +150,7 @@ $sessionEmail = $this -> session -> userdata('email');
 	
 		<!--initialize all date pickers-->
 		<script>
-			var visit_site = '';
+			var visit_site = ''; var devices="";
 			var form_id = '#<?php echo $form_id ?>';
 
 	$(function() {
@@ -188,7 +212,19 @@ $sessionEmail = $this -> session -> userdata('email');
 	document.location='<?php echo base_url().'c_front/vehicles'?>
 	';
 	});
-
+	
+	/*get devices...in the long term, do it nicely :)
+	 */
+	$(function(){
+		devices=['drier','balance','pump','sprayingEquipment','blender'];
+		<?php if($this -> session -> userdata('devices'))
+		foreach($this -> session -> userdata('devices') as $key=>$value){?>
+			$('#'+devices['<?php print $key ?>']).val('<?php print $value['deviceCompNumber']?>');
+			<?php }?>
+		
+	});
+	
+      
 	$(function(){
 	//time
 	//$('#startTime').scroller({preset:'time'});
@@ -203,6 +239,17 @@ $sessionEmail = $this -> session -> userdata('email');
 	//$('#productionTime').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
 	//$('#visitTime').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
 
+	});
+	
+	$("#saltProduced_1,#premixUsed_1,#saltFortified_1").keyup(function(){
+				
+	      $('#saltProduced2').val($('#saltProduced_1').val());
+		  $('#premixUsed2').val($('#premixUsed_1').val());
+		  $('#saltFortified2').val($('#saltFortified_1').val());
+		  
+		  $('#saltProduced3').val($('#saltProduced2').val());
+		  $('#premixUsed3').val($('#premixUsed2').val());
+		  $('#saltFortified3').val($('#saltFortified2').val());
 	});
 	
 	$("#controlKg_1,#amountUsed_1").keyup(function(){

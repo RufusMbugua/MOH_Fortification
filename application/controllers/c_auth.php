@@ -16,6 +16,8 @@ class C_Auth extends MY_Controller {
 			          'affiliation'=>$this->M_SystemUser->affiliation);
 
 			$this -> session -> set_userdata($newdata);
+			
+			$this->doRetrieveIodizationCentreDevices();
 			//specify user access rights
 			/* Check Authority / User Level
 			 * Where:
@@ -47,6 +49,19 @@ class C_Auth extends MY_Controller {
 			$this -> load -> view('index', $data);
 		}
 
+	}
+
+   public function doRetrieveIodizationCentreDevices(){/**gets the devices by the iodization centre and stores in the session*/
+		$this->load->model('M_InternalFortifiedB2');
+		try{
+		$this->M_InternalFortifiedB2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
+		$device_array=array('devices'=>$this->M_InternalFortifiedB2->equipment);
+		$this -> session -> set_userdata($device_array);
+		
+		}catch(exception $ex){
+			//ignore
+		}
+		
 	}
 	
 	

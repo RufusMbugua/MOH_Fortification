@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace models\Entities;
 
 /**
  * @Entity
@@ -11,41 +11,49 @@ class E_ExtFortifiedB1 {
 
 	/**
 	 * @Id
-	 * @Column(name="transactionNumber", type="int", length=11, nullable=false)	 *
+	 * @Column(name="transactionNumber", type="integer", length=11, nullable=false)
+	 * @GeneratedValue(strategy="AUTO")
 	 * */
 	private $transactionNumber;
 
-	/*
-	 * @Column(name="dates", type="date", nullable=true)	 *
+    /**
+	 * @Column(name="dates", type="date", nullable=true)
 	 * */
-
 	private $dates;
-	/*
-	 * @Column(name="manufacturerCompName", type="varchar", length=45, nullable=true)	 *
+	
+	/**
+	 * @Column(name="manufacturerCompName", type="string", length=45, nullable=false)
+	 * @ManyToOne(targetEntity="iodizationcenters", inversedBy="iodizationCentreName")
 	 * */
 	private $manufacturerCompName;
-	/*
-	 * @Column(name="publicHealthOfficer", type="varchar", length=45, nullable=true)	 *
+	
+	/**
+	 * @Column(name="publicHealthOfficer", type="string", length=45, nullable=true)
 	 * */
 	private $publicHealthOfficer;
-	/*
-	 * @Column(name="name", type="varchar", length=45, nullable=false)	 *
+	
+	/**
+	 * @Column(name="name", type="string", length=45, nullable=false)	 *
 	 * */
 	private $name;
-	/*
-	 * @Column(name="position", type="varchar", length=45, nullable=false)	 *
+	
+	/**
+	 * @Column(name="position", type="string", length=45, nullable=false)	 *
 	 * */
 	private $position;
-	/*
-	 * @Column(name="signature", type="varchar", length=15, nullable=false)	 *
+	
+	/**
+	 * @Column(name="signature", type="string", length=15, nullable=false)	 *
 	 * */
 	private $signature;
-	/*
-	 * @Column(name="opening", type="varchar", length=45, nullable=true)	 *
+	
+	/**
+	 * @Column(name="opening", type="string", length=45, nullable=true)	 *
 	 * */
+	 
 	private $opening;
-	/*
-	 * @Column(name="closing", type="varchar", length=45, nullable=true)	 *
+	/**
+	 * @Column(name="closing", type="string", length=45, nullable=true)	 *
 	 * */
 	private $closing;
 

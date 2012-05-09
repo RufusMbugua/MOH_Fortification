@@ -712,15 +712,15 @@ $().ready(function() {
 			notes1:"required",
 			comments1:"required",
 			logDate1:"required",
-			saltProduced2:"required",
-			premixUsed2:"required",
-			salFortified2:"required",
+			saltProduced2:{required:true,zeroAndAbove:true},
+			premixUsed2:{required:true,zeroAndAbove:true},
+			salFortified2:{required:true,zeroAndAbove:true},
 			notes2:"required",
 			responsible:"required",
 			sigNature:"required",
-			saltProduced3:"required",
-			premixUsed3:"required",
-			saltFortified3:"required",
+			saltProduced3:{required:true,zeroAndAbove:true},
+			premixUsed3:{required:true,zeroAndAbove:true},
+			saltFortified3:{required:true,zeroAndAbove:true},
 			notes3:"required",
 			
 			
@@ -773,15 +773,15 @@ $().ready(function() {
 				
 			},
 			saltProduced2: {
-				required: true
+				required: true,zeroAndAbove:true
 				
 			},
 			premixUsed2: {
-				required: true
+				required: true,zeroAndAbove:true
 				
 			},
 			saltFortified2: {
-				required: true
+				required: true,zeroAndAbove:true
 				
 			},
 			notes2: {
@@ -797,15 +797,15 @@ $().ready(function() {
 				
 			},
 			saltProduced3: {
-				required: true
+				required:true,zeroAndAbove:true
 				
 			},
 			premixUsed3: {
-				required: true
+				required:true,zeroAndAbove:true
 				
 			},
 			saltFortified3: {
-				required: true
+				required:true,zeroAndAbove:true
 				
 			},
 			notes3: {
@@ -831,9 +831,6 @@ $().ready(function() {
 			notes1:"*Required",
 			comments1:"*Required",
 			logDate1:"*Required",
-			saltProduced2:"*Required",
-			premixUsed2:"*Required",
-			saltFortified2:"*Required",
 			notes2:"*Required",
 			responsible:"*Required",
 			sigNature:"*Required",
