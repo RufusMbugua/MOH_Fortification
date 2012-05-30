@@ -52,7 +52,7 @@ class C_Auth extends MY_Controller {
 	}
 
    public function doRetrieveIodizationCentreDevices(){/**gets the devices by the iodization centre and stores in the session*/
-		$this->load->model('M_InternalFortifiedB2');
+		$this->load->model('models_salt/M_InternalFortifiedB2');
 		try{
 		$this->M_InternalFortifiedB2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
 		$device_array=array('devices'=>$this->M_InternalFortifiedB2->equipment);

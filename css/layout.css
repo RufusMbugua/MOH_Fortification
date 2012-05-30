@@ -1,5 +1,13 @@
 @charset "utf-8";
-/* CSS Document */
+/** 
+ * ----------------------
+ * LAYOUT CSS FILE
+ * ---------------------
+ * 
+ * Description -> Handles the look and feel of the front end views
+ * 
+ * 
+ * */
 
 body {
 	margin: auto;
@@ -9,11 +17,11 @@ body {
 	margin: auto;
 }
 .container {
-	margin-top: -10px;
-	width: 950px;
+	margin-top: -1%;
+	width: 60%;
 	background: white;
 	padding-bottom: 20px;
-	height: 1100px;
+	height: 1000px;
 	margin: auto;
 	-webkit-box-shadow: 0px 0px 9px 1px #999;
 	-moz-box-shadow: 0px 0px 9px 1px #999;
@@ -60,6 +68,8 @@ nav {
 	border-bottom: groove 2px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	background-size: 100%;
+	background: url('../images/banner.jpg');
 }
 .credentials {
 	margin-top: 10px;
@@ -79,7 +89,7 @@ nav a {
 	font-family: "Times New Roman", Times, serif;
 	text-decoration: none;
 	padding: 5px;
-	color: #000;
+	color: #FFF;
 	margin-right: 10px;
 	-webkit-transition-property: color, background, border-bottom;
 	-webkit-transition-duration: 0.75s, 1s, 0.25s;
@@ -95,8 +105,7 @@ nav a {
 	transition-timing-function: linear, ease-in, ease-in;
 }
 nav a:hover, a.current {
-	color: #039;
-	border-bottom: solid 3px #039;
+	border-bottom: dotted 2px #FFFFFF;
 }
 ul, li {
  list-style: none;
@@ -124,7 +133,7 @@ ul, li {
 	width: 100%;
 	margin-top: 30px;
 }
-*/
+/*
 
 * {
 	margin: 0;

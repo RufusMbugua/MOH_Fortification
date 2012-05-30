@@ -301,13 +301,86 @@ Next:
 Tue 8th May 2012
 ------------------------
 Achieved:
-1. 
-2.
+1. 5 forms were submitting data appropriately
+2. Merged changes from the different upadtes
 
 Next:
-1.
+1. Review work progress with the supervisor
 2.
+
+
+Wed 9th May 2012
+------------------------
+Achieved:
+1. Reviewed work so far with the supervisor
+2. Given a green light for the progress so far
+
+Next:
+1. Upload the code to the public server
+2. Continue working on the pending forms and design and the db schema for the oil module
+
+Thur 10th May 2012
+------------------------
+Achieved:
+1. Uploaded the code in progress to the CHAI's public server
+2. Sketching the schema for the oil module
+
+Next:
+1. Meeting with the supervisor
+2. Work on the pending work on form data submission
+
+Fri 11th May 2012
+------------------------
+Achieved:
+1. Met with the supervisor
+2. Notified that the budget had been approved
+3. Issued with new work stations :)
+
+Next:
+1. Iron up on the Salt module and start on the Oil module
 ######################## END OF  WEEK 7 #############################################
 
+######################## START OF  WEEK 8 #############################################
+Mon 14th May 2012
+-----------------
+Achieved:
+1.Reviewd progress with the supervisor
+2. All salt forms could insert validated data
+
+Next:
+1. Upload changes to the CHAI server
+2. Design the template
+
+Tue 15th May 2012
+-----------------
+Achieved:
+1. Cross-checked CHAI server code to ensure it was working great
+2. **
+
+Next:
+1. Get started on the Oil module
+2. Review Salt Module for possible reports and data processing btn sessions
+
+Wed 16th May 2012
+-----------------
+Achieved:
+1. Database for the oil and maize modules done and merged to the public server
+2. Oil module data posting is done
+
+Next:
+1. Styles up the maize tables
+2. Validation scripts for the oil module and all the client side code
+3. Models for the maize module
+
+Thur 18th May 2012
+-----------------
+Achieved:
+1. 
+2. 
+
+Next:
+1. 
+2. 
+######################## END OF  WEEK 8 #############################################
 
 

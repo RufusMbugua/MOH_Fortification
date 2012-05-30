@@ -15,7 +15,6 @@ $sessionEmail = $this -> session -> userdata('email');
 		<link rel="stylesheet" href="<?php echo base_url()?>css/orbit.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/reveal.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/post.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/tabs.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/form.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/form-layout.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/fonts.css"/>
@@ -28,27 +27,16 @@ $sessionEmail = $this -> session -> userdata('email');
 		<script src="<?php echo base_url()?>js/jquery.orbit.js" type="text/javascript"></script>
 		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url()?>js/jquery.validate.js" type="text/javascript" ></script>
-		<script src="<?php echo base_url()?>js/testing.js" type="text/javascript" ></script>
+		<script src="<?php echo base_url()?>js/validation.js" type="text/javascript" ></script>
 		<script src="<?php echo base_url()?>js/jquery.cloneform.js" type="text/javascript"></script>
 		<script src="<?php echo base_url()?>js/jquery.reveal.js" type="text/javascript" ></script>
+		<script src="<?php echo base_url()?>js/menuloader.js" type="text/javascript" ></script>
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
-		<script type="text/javascript">
-			$(function() {
-				// Fast and dirty
-				$('article.tabs section > h2').click(function() {
-					$('article.tabs section').removeClass('ON');
-					$(this).closest('section').addClass('ON');
-				});
-			});
-
-		</script>
-
 		<script type="text/javascript">
 			// Place all Javascript code here
 
 			$(document).ready(function() {
-
 				$("#showFancyModal").click(function() {
 					$("#profile-fancy").addClass("show");
 					return false;
@@ -58,240 +46,16 @@ $sessionEmail = $this -> session -> userdata('email');
 					$("#profile-fancy").removeClass("show");
 					return false;
 				});
-
-				$('#clonetrigger').click(function() {
-					var yourclass = ".clonable";
-					//The class you have used in your form
-					var clonecount = $(yourclass).length;
-					//how many clones do we already have?
-					var newid = Number(clonecount) + 1;
-					//Id of the new clone
-
-					$(yourclass + ":first").fieldclone({//Clone the original element
-						newid_ : newid, //Id of the new clone, (you can pass your own if you want)
-						target_ : $("#formbuttons"), //where do we insert the clone? (target element)
-						insert_ : "before", //where do we insert the clone? (after/before/append/prepend...)
-						limit_ : 0							//Maximum Number of Clones
-					});
-					
-					//alert(form_id);
-					$('.clonable label.error').remove();
-					$('.cloned').removeClass('error');
-					$('.autoDate').removeClass('hasDatepicker error');
-		            $('.autoDate').datepicker({dateFormat:"yy-mm-dd"});
-		          
-		         
-		            $('.mobiscroll').removeClass('scroller');
-                    $('.mobiscroll').scroller({preset:'time'});
-
-					var t = 'default';
-					var m = 'mixed';
-					$('.mobiscroll').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
-					
-					$(".cloned").on("keyup", function(){
-	                    //alert("active element: "+$("input:text:focus").attr("id"));
-	                    //do some calculations on key typed
-	                  var id=$("input:text:focus").attr("id");
-	                  var no=id.substr(id.indexOf('_')+1,id.length);
-	                 // alert("append: "+no);
-	                switch(form_id){
-	               case '#smallScale_A1':
-	               $("#controlKg_"+no+",#amountUsed_"+no).on("keyup",function(){
-				
-					$('#inStock_'+no).val($('#controlKg_'+no).val()- $('#amountUsed_'+no).val());
-					});
-					break;
-					case '#smallScale_A2':
-					 $("#premixKg_"+no+",#premixAmountUsed_"+no).on("keyup",function(){
-				
-					$('#premixInStock_'+no).val($('#premixKg_'+no).val()- $('#premixAmountUsed_'+no).val());
-					  });
-					  break;
-					  case '#internalFortified_A2':
-					 $("#iodineDrums_"+no+",#iodineDispatched_"+no).on("keyup",function(){
-		                $('#iodineStock_'+no).val($('#iodineDrums_'+no).val()- $('#iodineDispatched_'+no).val());
-						});
-					 break;
-					  case '#internalFortified_C1':
-					  $("#saltProduced_"+no+",#premixUsed_"+no+",#saltFortified_"+no).on("keyup",function(){
-				      sp=0;pu=0;sf=0;
-				      for(i=1;i<=no;++i){
-					  sp=sp+$('#saltProduced_'+i).val();
-					  pu=pu+$('#premixUsed_'+i).val();
-					  sf=sf+$('#saltFortified_'+i).val();
-					  
-					 // alert(sp+' '+pu+' '+sf);
-					  }
-					  
-					   $('#saltProduced2').val(sp);
-					  $('#premixUsed2').val(pu);
-					  $('#saltFortified2').val(sf);
-					 /*  $('#saltProduced2').val($('#saltProduced_'+no).val());
-					  $('#premixUsed2').val($('#premixUsed_'+no).val());
-					  $('#saltFortified2').val($('#saltFortified_'+no).val());*/
-					  
-					 $('#saltProduced3').val($('#saltProduced2').val());
-					  $('#premixUsed3').val($('#premixUsed2').val());
-					  $('#saltFortified3').val($('#saltFortified2').val());
-						}); 
-					break;
-			
-	               } /*end of the case*/
-	                });
-		 
-					return  false;
-				});
-				
-				
-				
-			});
+			});/*end of doc ready*/
 
 		</script>
 	
 		<!--initialize all date pickers-->
 		<script>
-			var visit_site = ''; var devices="";
-			var form_id = '#<?php echo $form_id ?>';
-
-	$(function() {
-	var dates= ['#date','#inputDate','.autoDate',
-	'#reportingDate','#fortifiedDate','#checkupDate','#dateC1','#visitDate',
-	'#inspection_date','#supervision_date','#inspector_date','#inspectionsDate',
-	'#signatureDate','#supervisorDate','#controlDate','#premixDate',
-	'#inspections_date','#inspectionDate','#roSignature','#ho_signature_date',
-	'#s_signature_date','#externalIodB1_date_rep_signed'];
-	
-
-	//initialize all datepickers
-	for ( var i=0, iLen=dates.length ; i<iLen ; i++){
-	$(dates[i]).datepicker({dateFormat:"yy-mm-dd"});
-	}
-
-	for(i=new Date().getFullYear();i>1990; i--)// year picker
-	{
-	$('#year').append($('<option/>').val(i).html(i));
-	$('#harvestYear').append($('<option/>').val(i).html(i));
-	}
-	
-	
-
-	});
-	
-	
-	
-
-	$().ready(function() {
-	var nthChild=''; //to get the vaue of the last cloned row
-	$("#submit_form_data").click(function() {
-	visit_site=''; //reset previous values if any
-	if(form_id=='#externalFortified_B3')
-	{
-	//do collect visited sites
-	$(form_id).find(':checkbox').each(function()
-	{
-	if($(this).is(':checked'))
-	{
-
-	visit_site=visit_site+$(this).val()+",";
-	}
-	});
-
-	$('#areas_visited').val(visit_site);
-	//alert("The checked ones: "+visit_site);
-	}
-
-	$('#<?php echo $form_id ?>').submit();
-
-	});
-
-	$("#reset_current_form").click(function() {
-
-	});
-
-	$("#close_opened_form").click(function() {
-	document.location='<?php echo base_url().'c_front/vehicles'?>
-	';
-	});
-	
-	/*get devices...in the long term, do it nicely :)
-	 */
-	$(function(){
-		devices=['drier','balance','pump','sprayingEquipment','blender'];
-		<?php if($this -> session -> userdata('devices'))
-		foreach($this -> session -> userdata('devices') as $key=>$value){?>
-			$('#'+devices['<?php print $key ?>']).val('<?php print $value['deviceCompNumber']?>');
-			<?php }?>
 		
-	});
+	    $().ready(function() {	
 	
-      
-	$(function(){
-	//time
-	//$('#startTime').scroller({preset:'time'});
-	$('.mobiscroll').scroller({preset:'time'});
-	//$('#productionTime').scroller({preset:'time'});
-	//$('#visitTime').scroller({preset:'time'});
-
-	var t = 'default';
-	var m = 'mixed';
-	$('.mobiscroll').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
-	//$('#endTime').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
-	//$('#productionTime').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
-	//$('#visitTime').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
-
-	});
-	
-	$("#saltProduced_1,#premixUsed_1,#saltFortified_1").keyup(function(){
-				
-	      $('#saltProduced2').val($('#saltProduced_1').val());
-		  $('#premixUsed2').val($('#premixUsed_1').val());
-		  $('#saltFortified2').val($('#saltFortified_1').val());
-		  
-		  $('#saltProduced3').val($('#saltProduced2').val());
-		  $('#premixUsed3').val($('#premixUsed2').val());
-		  $('#saltFortified3').val($('#saltFortified2').val());
-	});
-	
-	$("#controlKg_1,#amountUsed_1").keyup(function(){
-				
-	$('#inStock_1').val($('#controlKg_1').val()- $('#amountUsed_1').val());
-					});
-					
-     $("#premixKg_1,#premixAmountUsed_1").keyup(function(){
-				
-	$('#premixInStock_1').val($('#premixKg_1').val()- $('#premixAmountUsed_1').val());
-	  });
-	
-	 $("#iodineDispatched_1,#iodineDrums_1").keyup(function(){
-		
-
-	$('#iodineStock_1').val($('#iodineDrums_1').val()- $('#iodineDispatched_1').val());
-	});
-	
-					
-	$("#saltProduced").keyup(function(){
-				
-	$('#saltProduced2').val($('#saltProduced').val());
-	});
-
-	$("#premixUsed").keyup(function(){
-
-	$('#premixUsed2').val($('#premixUsed').val());
-	});
-
-	$("#saltFortified").keyup(function(){
-
-	$('#saltFortified2').val($('#saltFortified').val());
-	});
-
-	
-	//$("[type=checkbox]").change(function(){
-	//  alert('checked');
-	//	alert('checked: '+$('input:checked').length);
-	//	}); //end of $("[type=checkbox]").change
-
-
-	});
+	    });/*close ready doc*/
 		</script>
 		<script type="text/javascript">
 			$(function() {
@@ -304,8 +68,226 @@ $sessionEmail = $this -> session -> userdata('email');
 			});
 
 		</script>
+		<script>
+		$().ready(function(){
+			/**
+			 * variables
+			 */
+			var form_id='';
+			var link_id='';
+			var linkIdUrl='';
+			var linkSub='';
+			var linkDomain='';
+			var visit_site = ''; 
+			
+			
+			/*----------------------------------------------------------------------------------------------------------------*/
+				
+				/*get devices by manufacturer/vehicle type...in the long term, do it nicely :)*/
+				$(function(){
+					devices=['drier','balance','pump','sprayingEquipment','blender'];
+					<?php if($this -> session -> userdata('devices'))
+					foreach($this -> session -> userdata('devices') as $key=>$value){?>
+						$('#'+devices['<?php print $key ?>']).val('<?php print $value['deviceCompNumber']?>');
+						<?php }?>
+					
+				});
+				
+				/*----------------------------------------------------------------------------------------------------------------*/
+				
+			    //start of close_opened_form click event
+				$("#close_opened_form").click(function() {
+				$(".form-container").load('<?php echo base_url().'c_front/formviewer';?>',function(){
+				//delegate events
+				loadGlobalScript();
+				
+				 });
+				});/*end of close_opened_form click event
+				
+				/*----------------------------------------------------------------------------------------------------------------*/
+			
+		      /*start of loadGlobalJS*/
+				var onload_queue = [];
+				var dom_loaded = false;
+				
+				function loadGlobalJS(src, callback) {
+				  var script = document.createElement('script'); 
+				  script.type = "text/javascript";
+				  script.async = true;
+				  script.src = src;
+				  script.onload = script.onreadystatechange = function() {
+				    if (dom_loaded) 
+				      callback();
+				    else 
+				      onload_queue.push(callback);
+				    // clean up for IE and Opera
+				    script.onload = null;
+				    script.onreadystatechange = null;
+				  };
+				  var head = document.getElementsByTagName('head')[0];
+				  head.appendChild(script);
+				}/*end of loadGlobalJS*/
+				
+				function domLoaded() {
+				   dom_loaded = true;
+				   var len = onload_queue.length;
+				   for (var i = 0; i < len; i++) {
+				     onload_queue[i]();
+				   }
+				   onload_queue = null;
+				};/*end of domLoaded*/
+				
+				/*-----------------------------------------------------------------------------------------------------------*/
+				function isCheckBoxChecked(thisForm){/*start of function isCheckBoxChecked*/
+					//form_id='#'+$(".form-container").find('form').attr('id'); /*what form has been loaded now?*/
+					if(thisForm=='#internalFortified_A1' || thisForm=='#internalMaizeFlour_A1')
+				{
+					var widowed=''; var cbo='';
+					//set value of a non-checked checkbox
+				 $(thisForm).find(':checkbox').each(function(){
+					if($(this).is(':unchecked')){
+			          cbo=$(this).attr("id");
+			        $('#'+cbo+'_cb').val('no');
+			       }else if($(this).is(':checked')){
+			       	 cbo=$(this).attr("id");
+			       	$('#'+cbo+'_cb').val('yes');
+			       }
+				
+				});
+				}//end of if(form_id=='#internalFortified_A1')
+				
+				}/*end of function isCheckBoxChecked*/
+				
+				/*-----------------------------------------------------------------------------------------------------------*/
+				
+				function getAreasVisited(thisForm){/*start of function getAreasVisited*/
+				visit_site=''; //reset previous values if any
+				if(thisForm=='#externalFortified_B3')
+				{
+				//do collect visited sites
+				$(thisForm).find(':checkbox').each(function()
+				{
+				if($(this).is(':checked'))
+				{
+			
+				visit_site=visit_site+$(this).val()+",";
+				}
+				});
+			
+				$('#areas_visited').val(visit_site);
+				}
+				}/*end of function getAreasVisited*/
+		
+		       /*--------------------------------------------------------------------------------------------------------------------------*/	
+				
+				 domLoaded();
+				
+				/*----------------------------------------------------------------------------------------------------------------*/
+				
+				/*submit form event*/
+				/*start of submit_form_data click event*/
+				//function triggerFormSubmit(){
+				$("#submit_form_data").click(function() {
+					
+				/*set names of the areas visited*/
+				getAreasVisited(form_id);
+				
+				/*integrity of the boxes*/
+				isCheckBoxChecked(form_id);
+				
+				$(form_id).submit();
+				
+				
+			
+				});//}/*end of submit_form_data click event*/
+				
+				/*----------------------------------------------------------------------------------------------------------------*/
+				
+				/*reset form event*/
+				/*start of reset_current_form click event*/
+				$("#reset_current_form").click(function() {
+					$(form_id).resetForm();
+
+				});/*end of reset_current_form click event*/
+				
+				/*----------------------------------------------------------------------------------------------------------------*/
+				
+				function loadGlobalScript(){
+					var scripts=['<?php echo base_url().'js/global_functions.js';?>',
+					'<?php echo base_url().'js/validation.js';?>','<?php echo base_url().'js/jquery.form.js';?>']
+					for(i=0;i<scripts.length;i++){
+						loadGlobalJS(scripts[i],function(){});
+					}
+					form_id='#'+$(".form-container").find('form').attr('id');     
+				}
+				/*----------------------------------------------------------------------------------------------------------------*/
+				
+				//so which link was clicked?
+			  $('li').on('click',function(){
+				link_id='#'+$(this).find('a').attr('id');
+				linkSub=$(link_id).attr('class');
+				linkIdUrl=link_id.substr(link_id.indexOf('#')+1,(link_id.indexOf('_li')-1));
+				
+			
+				
+				//load url based on the class and id returned
+				switch(linkSub){
+					case "salt-url":
+					linkDomain='C_salt';
+					break;
+					case "oil-url":
+					linkDomain='C_oil';
+					break;
+					case "maize-url":
+					linkDomain='C_maize';
+					break;
+					case "wheat-url":
+					linkDomain='C_Wheat';
+					break;
+					case "sugar-url":
+					linkDomain='C_Sugar';
+					break;
+				}/*close the case*/
+				if(linkDomain)
+				$(".form-container").load('<?php echo base_url();?>'+linkDomain+'/'+linkIdUrl,function(){
+				//delegate events
+				loadGlobalScript();
+				
+				 });
+				 
+				 //Highlight your choice
+				
+				$('a').removeClass('chosen');
+				$(link_id).addClass('chosen');
+				
+				})/*end of which link was clicked*/
+				/*----------------------------------------------------------------------------------------------------------------*/
+		  
+		}); /*close document ready*/
+		</script>
 	</head>
 	<body>
+			<section class="banner">
+			<section class="logo">
+				<img src="<?php echo base_url(); ?>images/coat_of_arms-resized.png" />
+
+			</section>
+			<section class="credentials">
+				<section class="title">
+					Ministry Of Health 
+				</section>
+				<section class="subtitle">
+					Department of Family Health<p></p>
+				</section>
+				<section class="division">
+					Division of Nutrition<p></p><p></p>
+				</section>
+			</section>
+			<section class="date">
+				
+				 <?php echo date("l F d, Y"); ?>
+			</section>
+		</section>
 		<section id="profile-before">
 			<p>
 				<?php  echo $sessionEmail
@@ -331,80 +313,200 @@ $sessionEmail = $this -> session -> userdata('email');
 						</ul>
 					</nav>
 					<section id="content">
-						<!-- HTML5 TABS CODE -->
-						<article class="tabs">
-							<section class="ON">
-								<h2>Salt</h2>
-								<div>
-									<section class="menu-container">
-										<section class="menu">
-											<h2>Forms</h2>
-											<ul>
-												<li>
-													<?php echo anchor('c_front/internalFort_A1', 'Fortified Salt-Table A-1');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/internalFort_A2', 'Fortified Salt QC/QA -Table A-2');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/internalFort_B1', 'Fortified Salt QC/QA -Table B-1');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/internalFort_B2', 'Salt Fortification: Table B-2');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/internalFort_C1', 'Fortified Salt QC/QA -Table C-1');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/externalFort_B1', 'Fortified Salt - Audits and Inspection - Table B-1');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/externalFort_B2', 'Fortified Salt - Audits and Inspection - Table B-2');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/externalFort_B3', 'Fortified Salt - Audits and Inspection - Table B-3');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/externalIod_B1', 'Iodized Salt - Audits and Inspection - Table B-1');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/smallScale_A1', 'Fortified Salt - QA In Small Scale Operations - Table A-1');?>
-												</li>
-												<li>
-													<?php echo anchor('c_front/smallScale_A2', 'Fortified Salt - QA In Small Scale Operations - Table A-2');?>
-												</li>
-											</ul>
-										</section><!-- End of Menu: FORMS -->
-									</section><!-- End of Menu-Container -->
-									<section class="form-container">
-										<?php
-										echo $form;
-										?>
-									</section><!-- End of Form-Container Section-->
-									<section class="form-sidebar">
+						<section class="form-sidebar">
 										<h3>Actions</h3>
 										<a title="To Save entered info" id="submit_form_data" class="awesome blue medium">Submit</a>
 										<a title="To clear entire form" id="reset_current_form" class="awesome magenta medium">Reset</a>
 										<a title="To close the form." id="close_opened_form" class="awesome red medium">Close</a>
-									</section><!-- End of Form-SideBar
-									</div><!-- End of Salt-Div -->
-							</section><!-- End of Salt-Section -->
-							<section>
-								<h2>Oil</h2>
-								<div></div><!-- End of Oil-Div -->
-							</section><!-- End of Oil-Section -->
-							<section>
-								<h2>Sugar</h2>
-								<div></div><!-- End of Sugar-Div -->
-							</section><!-- End of Sugar-Section -->
-							<section>
-								<h2>Maize Flour</h2>
-								<div></div><!-- End of Maize-Div -->
-							</section><!-- End of Maize-Section -->
-							<section>
-								<h2>Wheat Flour</h2>
-								<div></div><!-- End of Wheat-Div -->
-							</section><!-- End of Wheat-Section -->
+						</section><!-- End of Form-SideBar -->
+							<section class="menu-container">
+										<section class="menu salt">
+											<h2>Salt</h2>
+											<div title="click to expand" class="max salt">+</div>
+												<div title="click to minimize" class="min salt" style="display:none">-</div>
+											<ul>
+																						
+												<li>
+													<a id = "internalFort_A1_li" class="salt-url">Fortified Salt-Table A-1</a>
+												</li>
+												<li>
+													<a id = "internalFort_A2_li" class="salt-url">Fortified Salt QC/QA -Table A-2</a>
+													
+												</li>
+												<li>
+													<a id="internalFort_B1_li" class="salt-url">Fortified Salt QC/QA -Table B-1</a>
+												</li>
+												<li>
+													<a id="internalFort_B2_li" class="salt-url">Salt Fortification: Table B-2</a>
+												</li>
+												<li>
+													<a id="internalFort_C1_li" class="salt-url">Fortified Salt QC/QA -Table C-1</a>
+												</li>
+												<li>
+													<a id="externalFort_B1_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<li>
+													<a id="externalFort_B2_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-2</a>
+												</li>
+												<li>
+													<a id="externalFort_B3_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-3</a>
+												</li>
+												<li>
+													<a id="externalIod_B1_li" class="salt-url">Iodized Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<li>
+													<a id="smallScale_A1_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-1</a>
+												</li>
+												<li>
+													<a id="smallScale_A2_li" class="salt-url chosen">Fortified Salt - QA In Small Scale Operations - Table A-2</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Salt Forms -->
+										<section class="menu oil">
+											<h2>Oil</h2>
+											<div title="click to expand" class="max oil">+</div>
+												<div title="click to minimize" class="min oil" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="fortifiedOil_A1_li" class="oil-url">Fortified Oil-Table A-1</a>
+												</li>
+													<li>
+														<a id="fortifiedOil_B1_li" class="oil-url">Fortified Oil-Table B-1</a>
+												</li>
+													<li>
+														<a id="fortifiedOil_B2_li" class="oil-url">Fortified Oil-Table B-2</a>
+												</li>
+													<li>
+														<a id="fortifiedOil_C1_li" class="oil-url">Fortified Oil-Table C-1</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Oil Forms -->
+											<section class="menu sugar">
+												
+											<h2>Sugar</h2>
+											<div title="click to expand" class="max sugar">+</div>
+												<div title="click to minimize" class="min sugar" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="internalSugar_A1_li" class="sugar-url">Internal Fortified Sugar-Table A-1</a>
+												</li>
+												<li>
+													<a id="internalSugar_A2_li" class="sugar-url">Internal Fortified Sugar-Table A-2</a>
+												</li>
+												<li>
+													<a id="internalSugar_A3_li" class="sugar-url">Internal Fortified Sugar-Table A-3</a>
+												</li>
+												<li>
+													<a id="internalSugar_B1_li" class="sugar-url">Internal Fortified Sugar-Table B-1</a>
+												</li>
+										       	<li>
+													<a id="internalSugar_C1_li" class="sugar-url">Internal Fortified Sugar-Table C-1</a>
+												</li>
+												<li>
+													<a id="internalSugar_C2_li" class="sugar-url">Internal Fortified Sugar-Table C-2</a>
+												</li>
+												<li>
+													<a id="internalSugar_C3_li" class="sugar-url">Internal Fortified Sugar-Table C-3</a>
+												</li>											
+												<li>
+													<a id="internalSugar_D1_li" class="sugar-url">Internal Fortified Sugar-Table D-1</a>
+												</li>
+												<li>
+													<a id="externalSugar_B1_li" class="sugar-url">External Fortified Sugar-Table B-1</a>
+												</li>
+												<li>
+													<a id="externalSugar_B2_li" class="sugar-url">External Fortified Sugar-Table B-2</a>
+												</li>
+												<li>
+													<a id="externalSugar_B3_li" class="sugar-url">External Fortified Sugar-Table B-3</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_A1_li" class="sugar-url">Quality Assurance-Table A-1</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_B1_li" class="sugar-url">Quality Assurance-Table B-1</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_B2_li" class="sugar-url">Quality Assurance-Table B-2</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_C1_li" class="sugar-url">Quality Assurance-Table C-1</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Sugar Forms -->
+										
+										<section class="menu maize">
+											<h2>Maize</h2>
+											<div title="click to expand" class="max maize">+</div>
+												<div title="click to minimize" class="min maize" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="internalMaizeFlour_A1_li" class="maize-url">Internal Fortified Maize-Table A-1</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_A2_li" class="maize-url">Internal Fortified Maize-Table A-2</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_B1_li" class="maize-url">Internal Fortified Maize-Table B-1</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_B2_li" class="maize-url">Internal Fortified Maize-Table B-2</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_C1_li" class="maize-url">Internal Fortified Maize-Table C-1</a>
+												</li>
+												<li>
+													<a id="externalMaizeFlour_B1_li" class="maize-url">External Fortified Maize-Table B-1</a>
+													<li>
+														<a id="externalMaizeFlour_B2_li" class="maize-url">External Fortified Maize-Table B-2</a>
+												</li>
+													<li>
+														<a id="externalMaizeFlour_B3_li" class="maize-url">External Fortified Maize-Table B-3</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Maize Forms -->
+										
+										<section class="menu wheat">
+											<h2>Wheat</h2>
+											<div title="click to expand" class="max wheat">+</div>
+												<div title="click to minimize" class="min wheat" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="internalWheatFlour_A1_li" class="wheat-url">Internal Fortified Wheat-Table A-1</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_A2_li" class="wheat-url">Internal Fortified Wheat-Table A-2</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_B1_li" class="wheat-url">Internal Fortified Wheat-Table B-1</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_B2_li" class="wheat-url">Internal Fortified Wheat-Table B-2</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_C1_li" class="wheat-url">Internal Fortified Wheat-Table C-1</a>
+												</li>
+												<li>
+													<a id="externalWheatFlour_B1_li" class="wheat-url">External Fortified Wheat-Table B-1</a>
+												</li>
+												<li>
+													<a id="externalWheatFlour_B2_li" class="wheat-url">External Fortified Wheat-Table B-2</a>
+												</li>
+												<li>
+													<a id="externalWheatFlour_B3_li" class="wheat-url">External Fortified Wheat-Table B-3</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Wheat Forms -->
+												
+									</section><!-- End of Menu-Container -->
+						<!-- HTML5 TABS CODE -->
+						<article class="tabs">						
+									<section class="form-container">
+										<?php
+										echo $form;
+										?>
+									</section><!-- End of Form-Container Section-->							
+							
 						</article>
 						<!-- /HTML5 TABS CODE -->
 					</section><!-- End of content -->
@@ -418,6 +520,13 @@ $sessionEmail = $this -> session -> userdata('email');
 			</div>
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
+		
+		<div id="response" class="reveal-modal">
+			<div>
+				<?php $response; ?>
+			</div>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
 	</body>
 </html>
-<?php ob_end_flush();?> 
+<?php ob_end_flush();?>

@@ -6,33 +6,31 @@ ob_start();
  * 2. Supervisor
  * 3. Inspector      =>  LOWEST
  */
- /*
-  $userRights = $this -> session -> userdata('useRights');	
+/*
+ $userRights = $this -> session -> userdata('useRights');
  function checkLevel(){
-
  $userLevel = '';
-switch ($this -> userRights) {
-	case 1 :
-		$this -> userLevel = 'Administrator';
-		break;
-	case 2 :
-		$this -> userLevel = 'SuperVisor';
-		break;
-	case 3 :
-		$this -> userLevel = 'Inspector';
-		break;
-	
-}	
-return $this -> userLevel;
-}
-  * */
-  
+ switch ($this -> userRights) {
+ case 1 :
+ $this -> userLevel = 'Administrator';
+ break;
+ case 2 :
+ $this -> userLevel = 'SuperVisor';
+ break;
+ case 3 :
+ $this -> userLevel = 'Inspector';
+ break;
+ }
+ return $this -> userLevel;
+ }
+ * */
 ?>
 
 <html>
 	<head>
 		<!-- Attach CSS files -->
 		<link rel="stylesheet" href="<?php echo base_url()?>css/backend-layout.css" />
+		<link rel="stylesheet" href="<?php echo base_url()?>css/cascade.css" />
 		<link rel="stylesheet" href="<?php echo base_url()?>css/awesomebuttons.css" />
 		<link rel="stylesheet" href="<?php echo base_url()?>css/buttons.css" />
 		<link rel="stylesheet" href="<?php echo base_url()?>css/orbit.css" />
@@ -64,6 +62,44 @@ return $this -> userLevel;
 		type="text/javascript"></script>
 		<script src="<?php echo base_url()?>js/modernizr.js"
 		type="text/javascript"></script>
+		<script type="text/javascript">
+			// Place all JavaScript code here
+			$(document).ready(function() {
+			$("section.logo").delay(2500).animate({
+			top:'50px'
+			});
+			$(".close").click(function() {
+			$('.menu-secondary').hide('drop fast');
+			});
+			
+			$(".statement").delay(3500).show(0);
+			$("#showFancyModal").click(function() {
+			$("#profile-fancy").addClass("show");
+			return false;
+			});
+			$("#closeFancy").click(function() {
+			$("#profile-fancy").removeClass("show");
+			return false;
+			});
+			
+			var choice
+			$("button").click(function(event) {
+			$('.menu-secondary').show('drop slow');
+			choice=event.target.id;
+			if(choice=='one') {
+			$('.menu-secondary-contents2').hide();
+			$('.menu-secondary-contents').delay(2000).show();
+			}
+			if(choice=='two') {
+			$('.menu-secondary-contents').hide();
+			$('.menu-secondary-contents2').delay(2000).show();
+			}
+			});
+			
+			
+			
+			});
+		</script>
 	</head>
 	<body>
 		<header>
@@ -81,7 +117,13 @@ return $this -> userLevel;
 				<!--
 				If you want to use a class just add the following to the anchor()
 				array('class' => 'awesome large') -->
-				<?php echo anchor('#', 'Home'); ?>
+				<?php echo anchor('#','Home'); ?>
+				<!-- Beginning of form -->
+				<form class="search">
+					<!-- Search Field -->
+					<input type="search" placeholder="Search" />
+				</form>
+				<!-- End of form -->
 			</nav>
 			<!-- Beginning of Right Sidebar
 			Contents:
@@ -92,18 +134,40 @@ return $this -> userLevel;
 			-->
 			<!-- Beginning of content -->
 			<section class="content">
-				<section class="menu-container-2">
-					<section class="menu">
-						<h2>View Data</h2>
+				<section class="menu-main">
+					<button class="awesome blue" id="one" name="test">
+						Vehicles
+					</button>
+					<button class="awesome blue" id="two" name="test">
+						Open2
+					</button>
+
+				</section>
+				<section class="menu-secondary" style="display: none">
+					<a class="close">&#215;</a>
+					<section class="menu-secondary-contents" style="display: none">
+						<button class="awesome" id="test2">
+							Salt
+						</button>
+						<button class="awesome" id="test2">
+							Oil
+						</button>
+						<button class="awesome" id="test2">
+							Sugar
+						</button>
+						<button class="awesome" id="test2">
+							Wheat
+						</button>
 					</section>
-					<section class="menu">
-						<h2>Analytics</h2>
+					<section class="menu-secondary-contents2" style="display: none">
+						<button class="awesome" id="test3">
+							Another Close
+						</button>
+						
 					</section>
 
 				</section>
-				<section class="center">
 
-				</section>
 			</section>
 
 			<section class="right-sidebar">
@@ -112,17 +176,15 @@ return $this -> userLevel;
 				class="user">
 					Signed in as: <?php echo anchor('#','More')
 					?>
-					<p>User Level: <?php //echo checkLevel();  ?></p>
+					<p>
+						User Level: <?php //echo checkLevel(); ?>
+					</p>
 				</section>
-				<!-- Beginning of form -->
-				<form class="search">
-					<!-- Search Field -->
-					<input type="search" placeholder="Search" />
-				</form>
-				<!-- End of form -->
+
 			</section><!-- End of Right Sidebar -->
 		</section>
 		<!-- End of Container -->
+		<footer></footer>
 	</body>
 
 </html>
