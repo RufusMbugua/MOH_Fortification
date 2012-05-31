@@ -654,7 +654,7 @@ class C_sugar extends CI_Controller {
 	public function internalSugar_B1() {
 		$internalSugar_B1 = '';
 		$internalSugar_B1 .= '
-	<form name="internalSugar_B1" id="internalSugar_B1" method="post" action="">
+	<form name="internalSugar_B1" id="internalSugar_B1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalFort_B1' . '" >
 	<h3>SUGAR PREMIX: TABLE B-1</h3>
 	<p align="center">
 		INGREDIENTS AND MATERIALS REQUIRED FOR VITAMIN A PREMIX PRODUCTION
@@ -706,13 +706,13 @@ class C_sugar extends CI_Controller {
 				<td width="15%">Sugar</td>
 				<td width="14%">75 MT</td>
 				<td width="14%">
-				<input type="text" name="sugarQuantity" id="sugarQuantity"/>
+				<input type="text" name="sugarQuantity0" id="sugarQuantity0"/>
 				</td>
 				<td width="14%">
 				<input type="text" name="sugarInventory" id="sugarInventory"/>
 				</td>
 				<td width="14%">
-				<input type="text" name="sugarQuantity" id="sugarQuantity"/>
+				<input type="text" name="sugarQuantity1" id="sugarQuantity1"/>
 				</td>
 				<td width="14%">
 				<input type="text" name="sugarCost" id="sugarCost"/>
@@ -766,7 +766,7 @@ class C_sugar extends CI_Controller {
 				<input type="text" name="vegetableQuantity" id="vegetableQuantity"/>
 				</td>
 				<td width="14%">
-				<input type="text" name="sugarInventory" id="vegetableInventory"/>
+				<input type="text" name="vegetableInventory" id="vegetableInventory"/>
 				</td>
 				<td width="14%">
 				<input type="text" name="vegetableQuantity" id="vegetableQuantity"/>
@@ -865,7 +865,7 @@ class C_sugar extends CI_Controller {
 				Date:
 			</section>
 			<section class="right">
-				<input type="text" name="tableB1Date" id="tableB1Date"/>
+				<input type="text" name="preparedDate" id="preparedDate"/>
 			</section>
 		</section>
 	</section>
@@ -876,6 +876,14 @@ class C_sugar extends CI_Controller {
 			</section>
 			<section class="right">
 				<input type="text" name="approvedBy" id="approvedBy"/>
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
+				Date:
+			</section>
+			<section class="right">
+				<input type="text" name="approvedDate" id="approvedDate"/>
 			</section>
 		</section>
 	</section>
@@ -2051,8 +2059,8 @@ public function externalSugar_B3(){
 	</section>
 	<section class="column">
 		<section class="row">
-			<label for="s_signature_date" >Date</label>
-			<input type="text" id="roSignature" name="roSignature" value=""  required/>
+			<label for="supervisorDate" >Date</label>
+			<input type="text" id="supervisorDate" name="supervisorDate" value=""  class="autoDate" required/>
 		</section>
 	</section>
 </form>
