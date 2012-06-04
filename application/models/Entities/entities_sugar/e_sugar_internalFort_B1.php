@@ -85,23 +85,22 @@ private $nitrogenCost;
 * */
 private $preparedBy;
 /**
-* @Column(name="preparedDate", type=string",length=45, nullable=true)
+* @Column(name="preparedDate", type="string",length=45, nullable=true)
 * */
 private $preparedDate;
 /**
-* @Column(name="approvedBy", type=string",length=45, nullable=true)
+* @Column(name="approvedBy", type="string",length=45, nullable=true)
 * */
 private $approvedBy;
 /**
-* @Column(name="approvedDate", type=string",length=45, nullable=true)
+* @Column(name="approvedDate", type="string",length=45, nullable=true)
 * */
 private $approvedDate;
 /**
-* @Column(name="manufacturerCompName", type=string",length=45, nullable=true)
+* @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
 * */
 private $manufacturerCompName;
 
-private $manufacturerCompName;
 public function getSugar_internalfortB1ID() {
 		return $this -> sugar_internalfortB1ID;
 }
@@ -190,7 +189,7 @@ public function getPolypropyleneInventory() {
 		return $this -> polypropyleneInventory;
 }
 
-public function setPolyprolpyleneInventory($polypropyleneInventory) { $this -> polypropyleneInventory = $polypropyleneInventory;
+public function setPolypropyleneInventory($polypropyleneInventory) { $this -> polypropyleneInventory = $polypropyleneInventory;
 }
 public function getPolypropyleneCost() {
 		return $this -> polypropyleneCost;
