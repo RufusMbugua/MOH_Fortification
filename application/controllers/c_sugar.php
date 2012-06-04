@@ -936,10 +936,132 @@ class C_sugar extends CI_Controller {
 		$internalSugar_C2 = '';
 		$internalSugar_C2 .= '
 	<form name="internalSugar_C2" id="internalSugar_C2" method="post" action="">
-	<h3>SUGAR PREMIX: TABLE C-2</h3>
-	<p align="center">DAILY INVENTORY OF INGREDIENTS AND MATERIALS FOR VITAMIN A PREMIX PRODUCTION</p>
-	<p>Start date:<input type="text" name="startDate" id="startDate"/></p>
-	<p>End Date:<input type="text" name="endDate" id="endDate"/></p>
+	<section class="row">
+		<section class="left-wide">
+			<section class="left-wide">
+				<label for="week">Week</label>
+				<input type="number" name="week"  id="week"  />
+			</section>
+			<section class="right-wide">
+				<label for="startDate">Start Date</label>
+				<input type="text" name="startDate"  id="startDate" class="autoDate" />
+			</section>
+
+		</section>
+
+		<section class="right-wide">
+			<section class="left-wide">
+				<label for="lastDate">Last Date</label>
+				<input type="text" name="lastDate" id="lastDate" class="autoDate" />
+			</section>
+			<section class="right-wide">
+				<label for="pageNumber">Page Number</label>
+				<input type="number" name="pageNumber" id="pageNumber" />
+			</section>
+		</section>
+	</section>
+
+	<section class="column-wide">
+		<section class="row-title">
+			<section></section>
+			<section class="left-wide">
+				<section class="left">
+					INGREDIENT/ MATERIAL
+				</section>
+				<section class="center">
+					INITIAL BALANCE (B)
+				</section>
+				<section class="right">
+					RECEIVED DURING WEEK (R)
+				</section>
+			</section>
+			<section class="right-wide">
+				<section class="left-wide" style="width:60%">
+					<section class="row">
+						CONSUMED EACH DAY OF THE WEEK
+					</section>
+					<section class="row">
+						<section class="col-x7">
+							1
+						</section>
+						<section class="col-x7">
+							2
+						</section>
+						<section class="col-x7">
+							3
+						</section>
+						<section class="col-x7">
+							4
+						</section>
+						<section class="col-x7">
+							5
+						</section>
+						<section class="col-x7">
+							6
+						</section>
+						<section class="col-x7">
+							TOTAL
+						</section>
+					</section>
+				</section>
+				<section class="right-wide" style="width:35%">
+					FINAL BALANCE (F)
+					<p>
+						(F)=(B)+(R)-(C)
+					</p>
+				</section>
+			</section>
+
+		</section>
+
+		<section class="row">
+			<section class="left-wide">
+				<section class="left">
+					Vitamin A Fortification Compund &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kg
+				</section>
+				<section class="center">
+					<input type="number" />
+				</section>
+				<section class="right">
+					<input type="number" />
+				</section>
+			</section>
+			<section class="right-wide">
+				<section class="left-wide" style="width:60%">
+					
+						<section class="col-x7">
+							<input type="number" />
+						</section>
+						<section class="col-x7">
+							<input type="number" />
+						</section>
+						<section class="col-x7">
+							<input type="number" />
+						</section>
+						<section class="col-x7">
+							<input type="number" />
+						</section>
+						<section class="col-x7">
+							<input type="number" />
+						</section>
+						<section class="col-x7">
+							<input type="number" />
+						</section>
+						<section class="col-x7">
+							<input type="text" style="width:50px"/>
+						</section>
+				
+				</section>
+				<section class="right-wide" style="width:35%"style="margin-right:40px">
+					<input type="text" />
+				</section>
+			</section>
+
+		</section>
+
+	</section>
+
+</form>
 		
 	';
 		$data['form'] = $internalSugar_C2;

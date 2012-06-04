@@ -87,6 +87,8 @@
 	width: 50%;
 	height: 100%;
 }
+.left-wide, .right-wide{
+}
 .left-wide {
 	width: 45%;
 }
@@ -94,6 +96,7 @@
 	width:5%;
 }
 .right-wide {
+	margin-left:10px;
 	width: 50%;	
 }
 .col-x7{
@@ -102,8 +105,10 @@
 .left, .right, .center {
 	display: inline-block;
 	height: auto;
+	
 
 }
+
 .column .center {
 	width: 10%;
 }
@@ -123,6 +128,10 @@ width:30%;
 	
 	display:block;
 }
-.input[type=radio]{
-	display:inline-block;
-	width:10%;}
+
+input[type=number]{
+	width:30px;
+}
+.col-xany{
+	
+}
