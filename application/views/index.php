@@ -41,11 +41,9 @@
 			<?php echo $form; ?>
 		</section>
 		<section class="login">
-<<<<<<< HEAD
 			<form class="form-login" method="post" accept-charset="utf-8">
-=======
+
 			<form class="form-login" method="post">
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				<input name="username" type="text" placeholder="Username / Email Address"/>
 				<p></p>
 				<input  name="secret" type="password" placeholder="Password"/>

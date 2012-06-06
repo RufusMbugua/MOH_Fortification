@@ -51,13 +51,10 @@ class M_Oil_FortifiedB2 extends MY_Model {
 			
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
-			
-<<<<<<< HEAD
+
 			//print $this->noOfInsertsBatch;
 			//exit;
-			
-=======
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 			
 			                       
 			/*Iodization centre name is picked from the 
@@ -75,91 +72,36 @@ class M_Oil_FortifiedB2 extends MY_Model {
 						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['blender']);
 						$this -> theForm -> setDeviceCondition($this->input->post("blenderCondition"));
 						$this -> theForm -> setObservations($this->input->post("blenderObservations"));
-<<<<<<< HEAD
-=======
-						
-						//wdys
-						/*print $this->elements[$i]['blender'].'<br />';
-						print $this->input->post("blenderCondition").'<br />';
-						print $this->input->post("blenderObservations").'<br />';
-						print 'end of row: '.$i.'-------------------------<br />';*/
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						break;
 				
 					case 2:
 						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['balance']);
 						$this -> theForm -> setDeviceCondition($this->input->post("balanceCondition"));
 						$this -> theForm -> setObservations($this->input->post("balanceObservations"));
-<<<<<<< HEAD
-=======
-						
-						//wdys
-						/*print $this->elements[$i]['balance'].'<br />';
-						print $this->input->post("balanceCondition").'<br />';
-						print $this->input->post("balanceObservations").'<br />';
-						print 'end of row: '.$i.'-------------------------<br />';*/
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						break;
 				
 					case 3:
 						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['pump']);
 						$this -> theForm -> setDeviceCondition($this->input->post("pumpCondition"));
 						$this -> theForm -> setObservations($this->input->post("pumpObservations"));
-<<<<<<< HEAD
 						break;
+						
 					case 4:
 						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['stirrers']);
 						$this -> theForm -> setDeviceCondition($this->input->post("stirrersCondition"));
 						$this -> theForm -> setObservations($this->input->post("stirrersObservations"));
-=======
-						
-						//wdys
-						/*print $this->elements[$i]['pump'].'<br />';
-						print $this->input->post("pumpCondition").'<br />';
-						print $this->input->post("pumpObservations").'<br />';
-						print 'end of row: '.$i.'-------------------------<br />';*/
-						break;
-					case 4:
-						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['stirrers']);
-						$this -> theForm -> setDeviceCondition($this->input->post("stirrerCondition"));
-						$this -> theForm -> setObservations($this->input->post("stirrerObservations"));
-						
-						//wdys
-						/*print $this->elements[$i]['drier'].'<br />';
-						print $this->input->post("drierCondition").'<br />';
-						print $this->input->post("drierObservations").'<br />';
-						print 'end of row: '.$i.'-------------------------<br />';*/
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						break;
 						
 					case 5:
 						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['feeding']);
 						$this -> theForm -> setDeviceCondition($this->input->post("feedingTubesCondition"));
 						$this -> theForm -> setObservations($this->input->post("feedingTubesObservations"));
-<<<<<<< HEAD
-=======
-						
-						//wdys
-					/*	print $this->elements[$i]['feeding'].'<br />';
-						print $this->input->post("feedingTubesCondition").'<br />';
-						print $this->input->post("feedingTubesObservations").'<br />';
-						print 'end of row: '.$i.'-------------------------<br />';*/
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						break;
 						
 					case 6:
 						$this -> theForm -> setDeviceCompNumber($this->elements[$i]['tank']);
 						$this -> theForm -> setDeviceCondition($this->input->post("blendingTankCondition"));
 						$this -> theForm -> setObservations($this->input->post("blendingTankObservations"));
-<<<<<<< HEAD
-=======
-						
-						//wdys
-					/*	print $this->elements[$i]['tank'].'<br />';
-						print $this->input->post("sprayerCondition").'<br />';
-						print $this->input->post("sprayerObservations").'<br />';
-						print 'end of row: '.$i.'-------------------------<br />';*/
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						break;
 				}
               

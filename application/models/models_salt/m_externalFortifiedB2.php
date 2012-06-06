@@ -40,7 +40,7 @@ class M_ExternalFortifiedB2  extends MY_Model {
 			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			     $this->attr = $key;//the attribute name
-<<<<<<< HEAD
+			     
 				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					// $this->elements[$this->id][$this->attr]=htmlentities($val);
@@ -48,12 +48,6 @@ class M_ExternalFortifiedB2  extends MY_Model {
 				   }else{
 				   	$this->elements[$this->attr]='';
 				   }
-=======
-				   if (!empty($val)) 
-					//We then store the value of this attribute for this element.
-					// $this->elements[$this->id][$this->attr]=htmlentities($val);
-					$this->elements[$this->attr]=htmlentities($val);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					
 			} //close foreach($_POST)
 			

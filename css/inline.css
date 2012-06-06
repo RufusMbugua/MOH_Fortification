@@ -1,13 +1,5 @@
 @charset "utf-8";
-/** CSS Document
- * -----------------------
- * INLINE CSS
- * -----------------------
- * 
- * Description -> Handles the error labels
- * 
- * 
- *  */
+/* CSS Document */
 
 label.error {
 	width: auto;

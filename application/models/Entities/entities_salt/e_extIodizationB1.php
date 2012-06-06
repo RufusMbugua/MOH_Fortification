@@ -20,20 +20,12 @@ class E_ExtIodizationB1 {
 	 * @Column(name="factoryName", type="string", length=45, nullable=true)
 	 * */
 	private $factoryName;
-<<<<<<< HEAD:application/models/Entities/entities_salt/e_extIodizationB1.php
-	
+
 	/**
 	 * @Column(name="dates", type="date", nullable=true)
 	 * */
 	private $dates;
-	
-=======
-	/**
-	 * @ManyToOne(targetEntity="manufacturerFortified", inversedBy="manufacturerFortName")
-	 * @Column(name="dates", type="date", nullable=true)
-	 * */
-	private $dates;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/Entities/entities_salt/e_extIodizationB1.php
+
 	/**
 	 * @Column(name="inspector", type="string", nullable=true)
 	 * */
@@ -91,7 +83,6 @@ class E_ExtIodizationB1 {
 	 * */
 	private $iodineContent1;
 	/**
-<<<<<<< HEAD:application/models/Entities/entities_salt/e_extIodizationB1.php
 	 * @Column(name="nonCompliances", type="string", length=255, nullable=true)
 	 * */
 	private $nonCompliances;
@@ -106,16 +97,7 @@ class E_ExtIodizationB1 {
 	 * @Column(name="suggestionsForImprovement", type="string", length=255, nullable=false)
 	 * */
 	private $suggestionsForImprovement;
-	
-=======
-	 * @Column(name="nonCompliances", type="string", length=45, nullable=true)
-	 * */
-	private $nonCompliances;
-	/**
-	 * @Column(name="suggestionsForImprovement", type="string", length=45, nullable=true)
-	 * */
-	private $suggestionForImprovement;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/Entities/entities_salt/e_extIodizationB1.php
+
 	/**
 	 * @Column(name="supervisorName", type="string", length=45, nullable=true)
 	 * */

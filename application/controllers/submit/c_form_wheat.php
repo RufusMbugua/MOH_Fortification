@@ -15,11 +15,7 @@ class C_Form_Wheat extends MY_Controller {
 		if ($this -> M_Wheat_InternalFort_A1 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_A1 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_A1 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Wheat_InternalFort_A1 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -37,11 +33,7 @@ class C_Form_Wheat extends MY_Controller {
 		if ($this -> M_Wheat_InternalFort_A2 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_A2 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_A2 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Wheat_InternalFort_A2 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -59,11 +51,7 @@ class C_Form_Wheat extends MY_Controller {
 		if ($this -> M_Wheat_InternalFort_B1 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_B1 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_B1 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Wheat_InternalFort_B1 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -81,11 +69,7 @@ class C_Form_Wheat extends MY_Controller {
 		if ($this -> M_Wheat_InternalFort_B2 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_B2 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_B2 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Wheat_InternalFort_B2 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -103,11 +87,7 @@ class C_Form_Wheat extends MY_Controller {
 		if ($this -> M_Wheat_InternalFort_C1 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_C1 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Wheat_InternalFort_C1 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Wheat_InternalFort_C1 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -125,11 +105,7 @@ public function form_externalFort_B1(){
 		if($this->M_Wheat_ExternalFort_B1->response=='ok'){
 			//notify user of success
 			$data['form_id']="";
-<<<<<<< HEAD
 			$data['form']='<p><b>'.$this->M_Wheat_ExternalFort_B1->rowsInserted.'</b> record(s) submitted successfully in 
-=======
-			$data['form']='<p><b>'.$this->M_Wheat_ExternalFort_B1->rowsInserted.'</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>'.$this->M_Wheat_ExternalFort_B1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -148,11 +124,7 @@ public function form_externalFort_B1(){
 		if($this->M_Wheat_ExternalFort_B2->response=='ok'){
 			//notify user of success
 			$data['form_id']="";
-<<<<<<< HEAD
 			$data['form']='<p><b>'.$this->M_Wheat_ExternalFort_B2->rowsInserted.'</b> record(s) submitted successfully in 
-=======
-			$data['form']='<p><b>'.$this->M_Wheat_ExternalFort_B2->rowsInserted.'</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>'.$this->M_Wheat_ExternalFort_B2->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -171,11 +143,7 @@ public function form_externalFort_B1(){
 		if($this->M_Wheat_ExternalFort_B3->response=='ok'){
 			//notify user of success
 			$data['form_id']="";
-<<<<<<< HEAD
 			$data['form']='<p><b>'.$this->M_Wheat_ExternalFort_B3->rowsInserted.'</b> record(s) submitted successfully in 
-=======
-			$data['form']='<p><b>'.$this->M_Wheat_ExternalFort_B3->rowsInserted.'</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>'.$this->M_Wheat_ExternalFort_B3->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);

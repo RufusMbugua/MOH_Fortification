@@ -39,19 +39,12 @@ class M_InternalFortifiedC1  extends MY_Model {
 				  $this->theIds[$this->attr]=$this->id;
 			//print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
-			
-<<<<<<< HEAD
 				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
 				   }else{
 				   	$this->elements[$this->id][$this->attr]='';
 				   }
-=======
-				   if (!empty($val)) 
-					//We then store the value of this attribute for this element.
-					 $this->elements[$this->id][$this->attr]=htmlentities($val);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					
 			} //close foreach($_POST)
 			//print ($iodizationCentre);

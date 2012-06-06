@@ -7,11 +7,9 @@ if (!defined('BASEPATH'))
 use application\models\Entities\entities_salt\E_IntFortifiedA1;
 
 class M_InternalFortifiedA1  extends MY_Model {
-<<<<<<< HEAD
+
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize, $compoundManufacturers, $premixType;
-=======
-	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 
 	function __construct() {
 		parent::__construct();
@@ -120,11 +118,8 @@ class M_InternalFortifiedA1  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
 				}catch(Exception $ex){
-<<<<<<< HEAD
 				    //die($ex->getMessage());
-=======
-				    die($ex->getMessage());
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -137,11 +132,8 @@ class M_InternalFortifiedA1  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-<<<<<<< HEAD
 					//die($ex->getMessage());
-=======
-					die($ex->getMessage());
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -155,9 +147,9 @@ class M_InternalFortifiedA1  extends MY_Model {
 		$this->executionTime=round($e-$s,'4');
         $this->rowsInserted=$this->noOfInsertsBatch;
 		return $this -> response = 'ok';
-<<<<<<< HEAD
+
 	} //end of function addRecord()
-	
+
 	function getCompoundManufacturerNames(){
 		 /*using DQL*/
 	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\E_ManufacturerCompound n');
@@ -176,8 +168,5 @@ class M_InternalFortifiedA1  extends MY_Model {
           $this->premixType = $query->getResult();
 		return $this->premixType;
 	}/*end of getPremixTypes*/
-=======
-	}
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 }//end of class InternalFortifiedA1

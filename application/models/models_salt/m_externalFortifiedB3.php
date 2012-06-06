@@ -21,11 +21,7 @@ class M_ExternalFortifiedB3  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-<<<<<<< HEAD
 		   //print(($key." ".$val)).'<br \>';
-=======
-		   // print(($key." ".$val)).'<br \>';
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			   
 			//check if posted value is among the cloned ones   
 			/* if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -44,7 +40,7 @@ class M_ExternalFortifiedB3  extends MY_Model {
 			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			     $this->attr = $key;//the attribute name
-<<<<<<< HEAD
+
 				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					// $this->elements[$this->id][$this->attr]=htmlentities($val);
@@ -52,12 +48,6 @@ class M_ExternalFortifiedB3  extends MY_Model {
 				   }else{
 				   	$this->elements[$this->attr]='';
 				   }
-=======
-				   if (!empty($val)) 
-					//We then store the value of this attribute for this element.
-					// $this->elements[$this->id][$this->attr]=htmlentities($val);
-					$this->elements[$this->attr]=htmlentities($val);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					
 			} //close foreach($_POST)
 			
@@ -97,11 +87,8 @@ class M_ExternalFortifiedB3  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
 				}catch(Exception $ex){
-<<<<<<< HEAD
 				    //die($ex->getMessage());
-=======
-				    die($ex->getMessage());
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -114,11 +101,7 @@ class M_ExternalFortifiedB3  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-<<<<<<< HEAD
 					//die($ex->getMessage());
-=======
-					die($ex->getMessage());
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					/*display user friendly message*/
 					
 				}//end of catch

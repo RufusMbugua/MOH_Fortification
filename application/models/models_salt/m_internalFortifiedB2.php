@@ -13,11 +13,8 @@ class M_InternalFortifiedB2 extends MY_Model {
 		parent::__construct();
 	}
 
-<<<<<<< HEAD:application/models/models_salt/m_internalFortifiedB2.php
 	function addRecord($factory) {
-=======
-	function addRecord($supplierName) {
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/models_salt/m_internalFortifiedB2.php
+
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -130,12 +127,9 @@ class M_InternalFortifiedB2 extends MY_Model {
 						print 'end of row: '.$i.'-------------------------<br />';*/
 						break;
 				}
-              
-<<<<<<< HEAD:application/models/models_salt/m_internalFortifiedB2.php
+
 				$this->theForm->setManufacturerCompName($factory);
-=======
-				$this->theForm->setManufacturerCompName($supplierName);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/models_salt/m_internalFortifiedB2.php
+
 				$this -> theForm -> setCheckedBy($this->input->post('checkupName'));
 				
 				$this -> em -> persist($this -> theForm);

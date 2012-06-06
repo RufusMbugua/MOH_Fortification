@@ -156,7 +156,6 @@ private $labelingMeetsSpecifications;
 * @Column(name="fortifiedMaizeFlour", type="string",length=45, nullable=true)
 * */
 private $fortifiedMaizeFlour;
-<<<<<<< HEAD
 
 /**
 * @Column(name="FIFOSystemPremix", type="string",length=45, nullable=true)
@@ -168,12 +167,6 @@ private $FIFOSystemPremix;
 * */
 private $FIFOSystemFlour;
 
-=======
-/**
-* @Column(name="FIFOSystem", type="string",length=45, nullable=true)
-* */
-private $FIFOSystem;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 /**
 * @Column(name="recommendations", type="string",length=45, nullable=true)
 * */
@@ -461,7 +454,6 @@ public function getFortifiedMaizeFlour() {
 
 public function setFortifiedMaizeFlour($fortifiedMaizeFlour) { $this -> fortifiedMaizeFlour = $fortifiedMaizeFlour;
 }
-<<<<<<< HEAD
 
 public function getFIFOSystemPremix() {
 		return $this -> FIFOSystemPremix;
@@ -477,14 +469,6 @@ public function getFIFOSystemFlour() {
 public function setFIFOSystemFlour($FIFOSystemFlour) { $this -> FIFOSystemFlour = $FIFOSystemFlour;
 }
 
-=======
-public function getFIFOSystem() {
-		return $this -> FIFOSystem;
-}
-
-public function setFIFOSystem($FIFOSystem) { $this -> FIFOSystem = $FIFOSystem;
-}
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 public function getRecommendations() {
 		return $this -> recommendations;
 }
