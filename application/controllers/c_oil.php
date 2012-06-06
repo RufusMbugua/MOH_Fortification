@@ -7,11 +7,7 @@ public function fortifiedOil_A1(){
    <h3 align="center">FORTIFIED OIL QC/QA-TABLE A-1</h3>
    <p align="center">VITAMIN A COMPOUND INVENTORY CONTROL LOG</p>
    <p align="center">&nbsp;</p>
-<<<<<<< HEAD
    <p>Date of reporting:<input type="text" id="dateReported" name="dateReported" class="autoDate"  readonly="true" placeholder="click for date"/></p>
-=======
-   <p>Date of reporting:<input type="text" id="dateReported" name="dateReported" class="autoDate"/></p>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
    <table border="0" width="100%">
                         <tr>
                            <td width="12.5%"></td>
@@ -34,7 +30,6 @@ public function fortifiedOil_A1(){
                            <!--<td width="12.5%">Receipt and QC Review(Name & signature)</td>-->
                          </tr>
                          <tr class="clonable">
-<<<<<<< HEAD
                            <td width="12.5%"><input type="text" id="dateA1_1" name="dateA1_1" class="cloned autoDate" readonly="true" placeholder="click for date"/></td>
                            <td width="12.5%"><input type="text" id="oilSupplierCOA_1" name="oilSupplierCOA_1" class="cloned"/></td>
                            <td width="12.5%"><input type="number" id="numberOfCans_1" name="numberOfCans_1" class="cloned fromZero"/></td>
@@ -47,20 +42,6 @@ public function fortifiedOil_A1(){
                          <tr id="formbuttons">
 								<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 			                    <input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
-=======
-                           <td width="12.5%"><input type="text" id="dateA1_1" name="dateA1_1" class="cloned autoDate"/></td>
-                           <td width="12.5%"><input type="text" id="oilSupplierCOA_1" name="oilSupplierCOA_1" class="cloned"/></td>
-                           <td width="12.5%"><input type="text" id="numberOfCans_1" name="numberOfCans_1" class="cloned fromZero"/></td>
-                           <td width="12.5%"><input type="text" id="lotID_1" name="lotID_1" class="cloned"/></td>
-                           <td width="12.5%"><input type="text" id="expirationDate_1" name="expirationDate_1" class="cloned autoDate"/></td>
-                           <td width="12.5%"><input type="text" id="dispatchedLotID_1" name="dispatchedLotID_1" class="cloned"/></td>
-                           <td width="12.5%"><input type="text" id="inStock_1" name="inStock_1" class="cloned fromZero"/></td>
-                           <!--<td width="12.5%"><input type="text" id="receiptName" name="receiptName"/></td>-->
-                         </tr>
-                         <tr id="formbuttons">
-								<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-								<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						</tr>
                          
                     </table>
@@ -104,7 +85,6 @@ public function fortifiedOil_B1(){
                            
                          </tr>
                          <tr class="clonable">
-<<<<<<< HEAD
                            <td width="12.5%"><input type="text" id="dateA2_1" name="dateB1_1" class="cloned autoDate" readonly="true" placeholder="click for date"/></td>
                            <td width="12.5%"><input type="text" id="batchNumber_1" name="batchNumber_1" class="cloned"/></td>
                            <td width="12.5%"><input type="number" id="batchSize_1" name="batchSize_1" class="cloned fromZero"/></td>
@@ -117,20 +97,6 @@ public function fortifiedOil_B1(){
                          <tr id="formbuttons">
 							<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 			                <input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
-=======
-                           <td width="12.5%"><input type="text" id="dateA2_1" name="dateB1_1" class="cloned autoDate"/></td>
-                           <td width="12.5%"><input type="text" id="batchNumber_1" name="batchNumber_1" class="cloned"/></td>
-                           <td width="12.5%"><input type="text" id="batchSize_1" name="batchSize_1" class="cloned fromZero"/></td>
-                           <td width="12.5%"><input type="text" id="vitaminAAmount_1" name="vitaminAAmount_1" class="cloned fromZero"/></td>
-                           <td width="12.5%"><input type="text" id="premixStart_1" name="premixStart_1" class="cloned mobiscroll"/></td>
-                           <td width="12.5%"><input type="text" id="premixEnd_1" name="premixEnd_1" class="cloned mobiscroll"/></td>
-                           <td width="12.5%"><input type="text" id="premixAddition_1" name="premixAddition_1" class="cloned"/></td>
-                           <!--<td width="12.5%"><input type="text" id="receiptName" name="receiptName"/></td>-->
-                         </tr>
-                         <tr id="formbuttons">
-							<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-							<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						</tr>
                          
                     </table>
@@ -155,11 +121,7 @@ public function fortifiedOil_B1(){
 	</p-->
 	<p>
 		Date:
-<<<<<<< HEAD
 		<input type="text" name="checkupDate" id="checkupDate" readonly="true" placeholder="click for date"/>
-=======
-		<input type="text" name="checkupDate" id="checkupDate"/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	</p>
 	<section class="column-wide">
 		<section class="row-title">
@@ -191,11 +153,7 @@ public function fortifiedOil_B1(){
 		<section class="row">
 			<section class = "left">
 				<label>2. Balance</label>
-<<<<<<< HEAD
 				<input type="hidden" id="balance" name="balance_2" value=""/>
-=======
-				<input type="hidden" id="balance" name="balance_1" value=""/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="center">
 				<select name="balanceCondition" id="balanceCondition" >
@@ -210,11 +168,7 @@ public function fortifiedOil_B1(){
 		<section class="row">
 			<section class = "left">
 				<label>3. Pump</label>
-<<<<<<< HEAD
 				<input type="hidden" id="pump" name="pump_3" value=""/>
-=======
-				<input type="hidden" id="pump" name="pump_1" value=""/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="center">
 				<select name="pumpCondition" id="pumpCondition" >
@@ -229,11 +183,7 @@ public function fortifiedOil_B1(){
 		<section class="row">
 			<section class = "left">
 				<label>4. Stirrers</label>
-<<<<<<< HEAD
 				<input type="hidden" id="stirrers" name="stirrers_4" value=""/>
-=======
-				<input type="hidden" id="stirrers" name="stirrers_1" value=""/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="center">
 				<select name="stirrersCondition" id="stirrersCondition">
@@ -248,11 +198,7 @@ public function fortifiedOil_B1(){
 		<section class="row">
 			<section class = "left">
 				<label>5. Feeding tubes</label>
-<<<<<<< HEAD
 				<input type="hidden" id="feeding" name="feeding_5" value=""/>
-=======
-				<input type="hidden" id="feeding" name="feeding_1" value=""/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="center">
 				<select name="feedingTubesCondition" id="feedingTubesCondition" >
@@ -267,11 +213,7 @@ public function fortifiedOil_B1(){
 		<section class="row">
 			<section class = "left">
 				<label>6. Blending tank</label>
-<<<<<<< HEAD
 				<input type="hidden" id="tank" name="tank_6" value=""/>
-=======
-				<input type="hidden" id="tank" name="tank_1" value=""/>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="center">
 				<select name="blendingTankCondition" id="blendingTankCondition" >
@@ -317,7 +259,6 @@ public function fortifiedOil_B1(){
                              <td width="15%">OIL FORTIFIED/ PREMIX USED</td>
                              <td width="18%">NOTES</td>
                              <td width="18%">COMMENTS</td>
-<<<<<<< HEAD
                              <td width="15%">DATE<input type="text" name="dateC1" id="dateC1" readonly="true" placeholder="click for date"/></td>
                               
                          </tr>
@@ -326,16 +267,6 @@ public function fortifiedOil_B1(){
                              <td width="15%"><input type="number" name="oilProduced_1" id="oilProduced_1" class="cloned fromZero"/></td>
                              <td width="15%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
                              <td width="15%"><input type="number" name="oilFortified_1" id="oilFortified_1" class="cloned fromZero" readonly="true" placeholder="computed"/></td>
-=======
-                             <td width="15%">DATE<input type="text" name="dateC1" id="dateC1"/></td>
-                              
-                         </tr>
-                         <tr class="clonable">
-                             <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" readonly="readonly" value="" /></td>
-                             <td width="15%"><input type="text" name="oilProduced_1" id="oilProduced_1" class="cloned fromZero"/></td>
-                             <td width="15%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned fromZero"/></td>
-                             <td width="15%"><input type="text" name="oilFortified_1" id="oilFortified_1" class="cloned fromZero"/></td>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%"><input type="text" name="notes_1" id="notes_1" class="cloned"/></td>
                              <td width="18%"><input type="text" name="comments_1" id="comments_1" class="cloned"/></td>
                             
@@ -350,8 +281,6 @@ public function fortifiedOil_B1(){
                              <td width="15%">Results from Quantitative Testing<sup>4</sup>:<input type="text" name="logDate" id="logDate" /></td>
                           </tr>
                           <tr id="formbuttons">
-
-<<<<<<< HEAD
 			                <input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 							<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
@@ -363,36 +292,15 @@ public function fortifiedOil_B1(){
                              <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2" readonly="true" placeholder="auto-calculated"/></td>
                              <td width="15%"><input type="text" name="oilFortified2" id="oilFortified2" readonly="true" placeholder="auto-calculated"/></td>
                              <!--td width="18%"><input type="text" name="notes2" id="notes2"/></td-->
-=======
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
-
-		</tr>
-                          
-                         <tr>
-                             <td width="15%">Daily Total</td>
-                             <td width="15%"><input type="text" name="oilProduced2" id="oilProduced2"/></td>
-                             <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2"/></td>
-                             <td width="15%"><input type="text" name="oilFortified2" id="oilFortified2"/></td>
-                             <td width="18%"><input type="text" name="notes2" id="notes2"/></td>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
                              <!--<td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>-->
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
-<<<<<<< HEAD
                              <td width="15%"><input type="text" name="oilProduced3" id="oilProduced3"  readonly="true" placeholder="auto-calculated"/></td>
                              <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3"  readonly="true" placeholder="auto-calculated"/></td>
                              <td width="15%"><input type="text" name="oilFortified3" id="oilFortified3"  readonly="true" placeholder="auto-calculated"/></td>
                              <!--td width="18%"><input type="text" name="notes3" id="notes3"/></td-->
-=======
-                             <td width="15%"><input type="text" name="oilProduced3" id="oilProduced3"/></td>
-                             <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3"/></td>
-                             <td width="15%"><input type="text" name="oilFortified3" id="oilFortified3"/></td>
-                             <td width="18%"><input type="text" name="notes3" id="notes3"/></td>
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%"></td>
                              <td width="15%"></td>
                          </tr>

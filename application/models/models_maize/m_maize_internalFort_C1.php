@@ -13,11 +13,8 @@ class M_Maize_InternalFort_C1  extends MY_Model {
 		parent::__construct();
 	}
 
-<<<<<<< HEAD
+
 	function addRecord($factory) {
-=======
-	function addRecord($iodizationCentre) {
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -25,11 +22,7 @@ class M_Maize_InternalFort_C1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-<<<<<<< HEAD
 		   //print(($key." ".$val)).'<br \>';
-=======
-		  // print(($key." ".$val)).'<br \>';
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			   
 			//check if posted value is among the cloned ones   
 			 if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -54,11 +47,7 @@ class M_Maize_InternalFort_C1  extends MY_Model {
 					
 			} //close foreach($_POST)
 			//print ($iodizationCentre);
-<<<<<<< HEAD
 			//exit;
-=======
-			//sexit;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
@@ -81,11 +70,7 @@ class M_Maize_InternalFort_C1  extends MY_Model {
 				$this -> theForm -> setNotes($this->elements[$i]["notes"]);
 				$this -> theForm -> setCompositeSample($this->elements[$i]["compositeSample"]);
 				$this -> theForm -> setTransactedBy($this->input->post("responsible"));
-<<<<<<< HEAD
 				$this -> theForm -> setFactoryName($factory);
-=======
-				$this -> theForm -> setFactoryName($iodizationCentre);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				$this -> em -> persist($this -> theForm);
 
 

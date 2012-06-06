@@ -51,18 +51,12 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 			
 			//get the compound manufacturer name by id
 			
-			/*for test purposes, we pass 1, since there's no value provided from the application side*/
-<<<<<<< HEAD
 			try{
 			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
 			                       ->findOneBy( array('manufacturerId'=>$this->input->post('compManufacturer')));
 			}catch(exception $ex){
 				//ignore
 			}
-=======
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>1));
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
@@ -76,15 +70,9 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 
 				$this -> theForm -> setExpiryDate($this->elements[$i]["expiryDate"]);
 				$this -> theForm -> setSignature($this->elements[$i]["signature"]);
-<<<<<<< HEAD
 				$this->theForm->setDispatchedQuantity($this->elements[$i]['dispatchedQuantity']);
 				$this -> theForm -> setReportingDate(new DateTime()); /*timestamp option*/
 				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
-				
-=======
-				$this -> theForm -> setReportingDate(new DateTime()); /*timestamp option*/
-				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				$this -> theForm -> setManufacturerCompName($manufacturer->getManufacturerCompName());
 				$this -> em -> persist($this -> theForm);
 

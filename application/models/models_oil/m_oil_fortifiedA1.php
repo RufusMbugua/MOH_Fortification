@@ -13,11 +13,8 @@ class M_Oil_FortifiedA1  extends MY_Model {
 		parent::__construct();
 	}
 
-<<<<<<< HEAD
 	function addRecord($factory) {
-=======
-	function addRecord() {
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -55,16 +52,7 @@ class M_Oil_FortifiedA1  extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//get the compound manufacturer name by id
-			
-			/*for test purposes, we pass 1, since there's no value provided from the application side*/
-<<<<<<< HEAD
-			/*$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>1));*/
-=======
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>1));
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+			//factory name is passed as a param
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
@@ -79,11 +67,8 @@ class M_Oil_FortifiedA1  extends MY_Model {
 				$this -> theForm -> setDispatchedLotId($this->elements[$i]["dispatchedLotID"]);
 				$this -> theForm -> setTransactedBy($this->input->post("transactedBy"));
 				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
-<<<<<<< HEAD
 				$this -> theForm -> setFactoryName($factory);
-=======
-				$this -> theForm -> setFactoryName('Kensalt');
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 				$this -> em -> persist($this -> theForm);
 
 

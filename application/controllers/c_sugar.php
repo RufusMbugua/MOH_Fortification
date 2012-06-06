@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
 class C_Sugar extends CI_Controller {
-=======
-class C_sugar extends CI_Controller {
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 	public function internalSugar_A1() {
 		$internalSugar_A1 = '';
 		$internalSugar_A1 .= '<form name="internalSugar_A1" id="internalSugar_A1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalFort_A1' . '" >
