@@ -40,9 +40,18 @@ class M_SmallScaleA2  extends MY_Model {
 			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
+<<<<<<< HEAD
+				   if (!empty($val)) {
+					//We then store the value of this attribute for this element.
+					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->id][$this->attr]='';
+				   }
+=======
 				   if (!empty($val)) 
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					
 			} //close foreach($_POST)
 			
@@ -61,7 +70,21 @@ class M_SmallScaleA2  extends MY_Model {
 			 	
 				$this -> theForm -> setDates($this->elements[$i]["controlDate"]); /*timestamp option*/
 				//$this -> theForm -> setManufacturerCompName($iodizationCentre);
+<<<<<<< HEAD
+				
+				//get compound manufacturer name by id
+				try{
+				$compoundManufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
+				                       ->findOneBy( array('manufacturerId'=>$this->elements[$i]["supplierName"]));
+				}catch(exception $ex){
+					//ignore
+					//die($ex->getMessage());
+				}
+				
+				$this -> theForm -> setManufacturerCompName($compoundManufacturer->getManufacturerCompName());
+=======
 				$this -> theForm -> setManufacturerCompName($iodizationCentre);
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				//$this -> theForm -> setDates($this->elements[$i]['visitDate']);;/*entry option*/
 				$this -> theForm -> setWeightKg($this->elements[$i]["weightKg"]);
 				$this -> theForm -> setLotNumber($this->elements[$i]["lotNumber"]);

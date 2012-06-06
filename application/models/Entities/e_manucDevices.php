@@ -9,10 +9,10 @@ namespace models\Entities;
 
    /**
 	* @Id
-    * @ManyToOne(targetEntity="IodizationCenters",inversedBy="iodizationCentreName")
+    * @ManyToOne(targetEntity="factories",inversedBy="factoryName")
 	* @Column(name="manufacturerCompName", type="string", length=45, nullable=false)
 	* */
-	protected $manufacturerCompName;
+	protected $manufacturerFortName;
 	
    /**
     * @OneToOne(targetEntity="Devices",mappedBy="deviceSerialNumber")
@@ -25,11 +25,11 @@ namespace models\Entities;
 	* */
 	private $remarks;
 	
-	public function getManufacturerCompName() {
-			return $this -> manufacturerCompName;
+	public function getManufacturerFortName() {
+			return $this -> manufacturerFortName;
 	}
 	
-	public function setManufacturerCompName($manufacturerCompName) { $this -> manufacturerCompName = $manufacturerCompName;
+	public function setManufacturerFortName($manufacturerFortName) { $this -> manufacturerFortName = $manufacturerFortName;
 	}
 	public function getDeviceCompNumber() {
 			return $this -> deviceCompNumber;
