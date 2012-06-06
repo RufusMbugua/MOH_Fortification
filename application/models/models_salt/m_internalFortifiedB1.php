@@ -42,9 +42,12 @@ class M_InternalFortifiedB1 extends MY_Model {
 			//print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->id][$this->attr]='';
+				   }
 					
 			} //close foreach($_POST)
 			//exit;
@@ -112,6 +115,20 @@ class M_InternalFortifiedB1 extends MY_Model {
 		$this->executionTime=round($e-$s,'4');
         $this->rowsInserted=$this->noOfInsertsBatch;
 		return $this -> response = 'ok';
-	}
+	}/*end of function addRecord()*/
+	
+	function getFactories(){
+		 /*using DQL*/
+	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\E_ManufacturerCompound n');
+          $this->compoundManufacturers = $query->getResult();
+						/*foreach ($this->compoundManufacturers as $key=>$value) {
+									print $value['manufacturerId'].'<br />';
+									print $value['manufacturerCompName'].'<br />';
+									//<-->var_dump($this->equipment);
+								  }*/
+		return $this->compoundManufacturers;
+	}/*end of getCompoundManufacturerNames*/
+
+
 
 }//end of class InternalFortifiedB1

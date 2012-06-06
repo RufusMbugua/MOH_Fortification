@@ -18,6 +18,9 @@ class C_Auth extends MY_Controller {
 			$this -> session -> set_userdata($newdata);
 			
 			$this->doRetrieveIodizationCentreDevices();
+			$this->doRetrieveCompoundManufacturerNames();
+			$this->doRetrievePremixTypes();
+			$this->doRetrieveIodizationCentreNames();
 			//specify user access rights
 			/* Check Authority / User Level
 			 * Where:
@@ -63,8 +66,45 @@ class C_Auth extends MY_Controller {
 		}
 		
 	}
-	
-	
+   
+   public function doRetrieveCompoundManufacturerNames(){
+   	    $this->load->model('models_salt/M_InternalFortifiedA1');
+		
+		try{
+		$this->M_InternalFortifiedA1->getCompoundManufacturerNames();
+		$compFName_array=array('compoundManufacturers'=>$this->M_InternalFortifiedA1->compoundManufacturers);
+		//die(var_dump($compFName_array));
+		$this -> session -> set_userdata($compFName_array);
+		}catch(exception $ex){
+			//ignore
+		}
+   }
+   
+   public function doRetrievePremixTypes(){
+   	    $this->load->model('models_salt/M_InternalFortifiedA1');
+		
+		try{
+		$this->M_InternalFortifiedA1->getPremixTypes();
+		$premixType_array=array('premixType'=>$this->M_InternalFortifiedA1->premixType);
+		$this -> session -> set_userdata($premixType_array);
+		}catch(exception $ex){
+			//ignore
+		}
+   }
+   
+   public function doRetrieveIodizationCentreNames(){
+   	    $this->load->model('models_salt/M_ExternalIodizedB1');
+		
+		try{
+		$this->M_ExternalIodizedB1->getIodizationCentres();
+		$centreName_array=array('iodizationCentre'=>$this->M_ExternalIodizedB1->centres);
+		//die(var_dump($centreName_array));
+		$this -> session -> set_userdata($centreName_array);
+		}catch(exception $ex){
+			//ignore
+			//die ($ex->getMessage());
+		}
+   }
 	
 	public function logout(){
 		$data['form'] = '<p>You need to login.<p>';
@@ -72,5 +112,4 @@ class C_Auth extends MY_Controller {
 		$this->session->sess_destroy();
 		redirect(base_url(), 'refresh');
 	}
-
 }?>

@@ -33,9 +33,6 @@ class M_SystemUser extends MY_Model {
 			return $this->isUser='true';
 	    }
 		
-		//test a device by user
-		
-		
 		}//close the this->input->post
 		$e=microtime(true);
 		$this->executionTime=round($e-$s,'4');

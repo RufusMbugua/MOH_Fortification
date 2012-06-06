@@ -364,6 +364,151 @@ Next:
 Wed 16th May 2012
 -----------------
 Achieved:
+<<<<<<< HEAD
+1. Data processes for the oil module was done
+2. Changed form load to Ajax form load **slight-prob--other jquery functions stopped responding to the 
+3. The ministry's template was up and kicking
+
+Next:
+1. Validation rules for the oil module, maize module
+2. Schema addition of the maize,sugar and wheat modules
+3. Work on the newly created problem
+
+Thur 17th May 2012
+------------------
+Achieved:
+1. Rectified the ajax failed events
+2. Styling of the maize forms
+
+Next: 
+1. Validation rules for the maize module
+2. Sync changes back to the CHAI server
+
+Fri 18th May 2012
+-----------------
+Achieved:
+1. The db schema received some modification with the aid of our supervisor
+2. Merged changes between ourselves
+
+Next:
+1. Issued with targets: To implement the data processes on the maize module
+2. Sync the ajax changes and the template to the CHAI server  
+######################## END OF  WEEK 8 #############################################
+
+######################## START OF WEEK 9 ############################################
+Mon 21st May 2012
+-----------------
+Achieved:
+1. Maize module data process almost done
+2. Identified new issues with the data logic--need for a schema refinement
+
+Next:
+1. Complete validation for the maize module
+2. Db for wheat
+
+Tue 22nd May 2012
+-----------------
+Achieved:
+1. Schema for sugar created
+2. Models for maize/wheat
+3. Styling the maize/wheat module
+
+Next:
+
+Wed 23rd May 2012
+-----------------
+Achieved:
+1. Complete schema for all the 5 modules done
+2. 80% of the data processes done for all the modules but sugar
+**challenge:working space
+
+Next:
+
+Thur 24th May 2012
+-----------------
+Achieved:
+1. Styling of the 4 modules is done
+2. Doctrine ORM Entities to the sugar module done 
+
+Next:
+1. Sync changes to the CHAI server
+2. Complete validation and client side functions to the 4 modules
+
+Fri 25th May 2012
+-----------------
+Achieved:
+1. Integrated work and the final db schema
+Next:
+1. Review work so far 
+######################## END OF WEEK 9 ############################################
+
+######################## START OF WEEK 10 ############################################
+Mon 28th May 2012
+-----------------
+Achieved:
+1. 10% of the main proj was assessed as complete
+2. 
+
+Next:
+1. Repair issues in the oil,maize and wheat module. Finish implementation of the sugar module
+
+Tue 29th May 2012
+-----------------
+Achieved:
+1. Repairing new issues after db was re-engineered
+2. Uploaded changes to the server
+
+Next:
+1. Continue polishing up the sugar module
+
+Wed 30th May 2012
+-----------------
+Achieved:
+1. 70% of sugar module done
+
+Next:
+1. Report module
+2. Review work with supervisor
+3. Cross-check changes so far made
+
+Thur 31st May 2012
+------------------
+Achieved:
+1. Discussed on the report's module *--need for a meeting with the users/client of the system, i.e MoPHS*
+
+Next:
+1. Review work so far done
+2. Receive subsequent RFCs and implement them
+
+Fri 1st May June 2012
+---------------------
+Public Holiday. 49th Madaraka Day. Hamna wax.
+Issues: Supervisor is fichain 'whiteball'...ameshinda akitu-duck the whole week.hihihi
+
+######################## END OF WEEK 10 ############################################
+
+######################## START OF WEEK 11 ############################################
+Mon 4th June 2012
+-----------------
+Achieved:
+1. *BS Mode*Planned on our own self upkeep projs*
+1. Reconfiguring github after old settings were lost when we shifted to the i5s
+
+Next:
+1. Refining sugar module
+2. Validating sugar module
+3. Cross-checking maize,wheat and sugar modules
+
+Tue 5th June 2012
+-----------------
+Achieved:
+1. 
+
+Next:
+1.
+
+######################## END OF WEEK 11 ##############################################
+=======
 1. Database for the oil and maize modules done and merged to the public server
 2. Oil module data posting is done
 
@@ -382,5 +527,6 @@ Next:
 1. 
 2. 
 ######################## END OF  WEEK 8 #############################################
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 

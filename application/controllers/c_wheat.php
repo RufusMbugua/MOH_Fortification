@@ -15,7 +15,11 @@ class C_wheat extends CI_Controller {
 					Date:
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="dateB1" id="dateB1" class="autoDate" readonly="true" placeholder="click for date"/>
+=======
 					<input type="text" name="dateB1" id="dateB1"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -46,7 +50,11 @@ class C_wheat extends CI_Controller {
 					Time:
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="time" id="time" class="mobiscroll" readonly="true" placeholder="click for time"/>
+=======
 					<input type="text" name="time" id="time"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -87,9 +95,14 @@ class C_wheat extends CI_Controller {
 		</tr>
 		<tr id="formbuttons">
 
+<<<<<<< HEAD
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 		</tr>
 	</table>
@@ -412,7 +425,11 @@ class C_wheat extends CI_Controller {
 						<input type="radio" name="premixInventoryUpToDate" checked="checked" id="premix_inventory_uptodate_y" value="yes" />
 					</section>
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="premixInventoryUpToDate" id="premix_inventory_uptodate_n" value="no" />
+=======
 						<input type="radio" name="premixInventoryUpTodDte" id="premix_inventory_uptodate_n" value="no" />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 					<section class="col">
 						<input type="radio" name="premixInventoryUpToDate" id="premix_inventory_uptodate_na" value="n/a" />
@@ -431,7 +448,11 @@ class C_wheat extends CI_Controller {
 						<input type="radio" name="certificateOfAnalysis" id="certificate_of_analysis_n" value="no" />
 					</section>
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="certificateOfAnalysis" id="certificate_of_analysis_na" value="n/a" />
+=======
 						<input type="radio" name="certificateOfAanalysis" id="certificate_of_analysis_na" value="n/a" />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 				</section>
 			</section>
@@ -457,6 +478,15 @@ class C_wheat extends CI_Controller {
 				</section>
 				<section class="right">
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="fifoSystemPremix" id="fifo_systemP_y" value="yes" />
+					</section>
+					<section class="col">
+						<input type="radio" name="fifoSystemPremix" id="fifo_systemP_na" value="no" />
+					</section>
+					<section class="col">
+						<input type="radio" name="fifoSystemPremix" id="fifo_systemP_na" value="n/a" />
+=======
 						<input type="radio" name="fifoSystem" id="fifo_system_y" value="yes" />
 					</section>
 					<section class="col">
@@ -464,6 +494,7 @@ class C_wheat extends CI_Controller {
 					</section>
 					<section class="col">
 						<input type="radio" name="fifoSystem" id="fifo_system_na" value="n/a" />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 				</section>
 			</section>
@@ -791,6 +822,17 @@ class C_wheat extends CI_Controller {
 					</section>
 					<section class="right">
 						<section class="col">
+<<<<<<< HEAD
+							<input type="radio" name="fifoSystemFlour" id="fifoSystemF_y" checked="checked" value="yes" />
+						</section>
+
+						<section class="col">
+							<input type="radio" name="fifoSystemFlour" id="fifoSystemF_n" value="no" />
+						</section>
+
+						<section class="col">
+							<input type="radio" name="fifoSystemFlour" id="fifoSystemF_na" value="n/a" />
+=======
 							<input type="radio" name="fifoSystem" id="fifoSystem_y" checked="checked" value="yes" />
 						</section>
 
@@ -800,6 +842,7 @@ class C_wheat extends CI_Controller {
 
 						<section class="col">
 							<input type="radio" name="fifoSystem" id="fifoSystem_na" value="n/a" />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						</section>
 					</section>
 				</section>
@@ -845,12 +888,26 @@ class C_wheat extends CI_Controller {
 				<section class="right-wide">
 					Suggestions for improvement
 					<textarea id="suggestionsForImprovement" name="suggestionsForImprovement"></textarea>																																																											
+<<<<<<< HEAD
+			       
+				</section>
+			</section>
+			<section class="row right-wide">
+			    Type of Iron in Premix(Iodine/iodate):
+                   <select name="iodineType" id="iodine_type">
+                        <option value="" selected="selected">Select One</option>
+						<option value="Iodine">Iodine</option>
+						<option value="Iodate">Iodate</option>
+					</select>
+		   </section>
+=======
 			           Type of Iron in Premix(Iodine/iodate):
  <input type="text" id="iodine_type" name="iodineType" value="" placeholder="" />
 				</section>
 
 			</section>
 		</section>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	</section>
 	<table>
 	<tr>
@@ -873,6 +930,32 @@ class C_wheat extends CI_Controller {
 		</tr>
 		<tr class="clonable">
 			<td width="144">
+<<<<<<< HEAD
+			<input type="text"  name="IDComposite" id="iodineDate1" class="cloned"/>
+			</td>
+			<td width="144">
+			<input type="number"  name="IDCompositemgKg" class="cloned fromZero" />
+			</td>
+			<td width="144">
+			<input type="text"  name="refIodine" id="iodineDrums" class="cloned"/>
+			</td>
+			<td width="144">
+			<input type="number"  name="refIodineMgKg" id="iodineLot" class="cloned fromZero"/>
+			</td>
+			<td width="144">
+			<input type="text"  name="IDOther" id="iodineExpiration" class="cloned" />
+			</td>
+			<td width="144">
+			<input type="number" name="IDOtherMgKg" id="iodineDispatched" class="cloned fromZero"/>
+			</td>
+			<td width="144">
+			<input type="text" name="IDOtherMgKg2" id="iodineStock" class="cloned"/>
+			</td>
+		</tr>
+		<tr id="formbuttons">
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="text"  name="IDComposite" id="iodineDate1"/>
 			</td>
 			<td width="144">
@@ -897,6 +980,7 @@ class C_wheat extends CI_Controller {
 		<tr id="formbuttons" class="clonable">
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</tr>
 	</table>
 
@@ -907,7 +991,11 @@ class C_wheat extends CI_Controller {
 		</section-->
 		<!--section class="right-wide">
 		Date
+<<<<<<< HEAD
+		<input id="inspection_date" name="inspectionDate" type="text" placeholder="click for date"  readonly="true">
+=======
 		<input id="inspection_date" name="inspectionDate" type="text" placeholder="datepicker"  required>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section-->
 	</section>
 	<section class="column-wide">
@@ -918,7 +1006,11 @@ class C_wheat extends CI_Controller {
 			</section>
 			<section class="right">
 				Date
+<<<<<<< HEAD
+				<input id="supervision_date" name="supervisionDate" type="text" placeholder="click for date"  readonly="true">
+=======
 				<input id="supervision_date" name="supervisionDate" type="text" placeholder="datepicker"  required>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 	</section>
@@ -936,7 +1028,11 @@ class C_wheat extends CI_Controller {
 	public function externalWheatFlour_B3() {
 		$externalWheatFlour_B3 = '';
 		$externalWheatFlour_B3 .= '
+<<<<<<< HEAD
+    <form name="externalWheatFlour_B3" id="externalWheatFlour_B3" method="post" action="' . base_url() .'submit/c_form_wheat/form_externalFort_B3' . '" >
+=======
 <form name="externalWheatFlour_B3" id="externalWheatFlour_B3" method="post" action="' . base_url() .'submit/c_form_wheat/form_externalFort_B3' . '" >
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	<h3>FORTIFIED WHEAT FLOUR- AUDITS AND INSPECTION TABLE B-3</h3>
 	<p align="center">
 		TECHNICAL AUDIT AND INSPECTION PRELIMINARY REPORT
@@ -956,7 +1052,11 @@ class C_wheat extends CI_Controller {
 					<label for="inspection_date">Date of Inspection:</label>
 				</section>
 				<section class = "right">
+<<<<<<< HEAD
+					<input id="inspections_date" name="inspectionDate" type="text" readonly="true" placeholder="click for date" />
+=======
 					<input id="inspections_date" name="inspectionDate" type="text" placeholder="datepicker" required />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 			<section class="row">
@@ -1015,11 +1115,19 @@ class C_wheat extends CI_Controller {
 			<section class="row">
 				<section class="col-x4">
 					<label for="maizeWarehouse">Wheat Warehouse</label>
+<<<<<<< HEAD
+					<input type="checkbox" name="cbo_warehouse" id="cbo_cbo_warehouse" value="wheatWarehouse">
+				</section>
+				<section class="col-x4">
+					<label for="rm_maize_warehouse">Raw Material Warehouse</label>
+					<input type="checkbox" name="cbo_rm_wheat_warehouse" id="cbo_rm_maize_warehouse" value="rmWheatWarehouse">
+=======
 					<input type="checkbox" name="cbo_warehouse" id="cbo_cbo_warehouse" value="maizeWarehouse">
 				</section>
 				<section class="col-x4">
 					<label for="rm_maize_warehouse">Raw Material Warehouse</label>
 					<input type="checkbox" name="cbo_rm_maize_warehouse" id="cbo_rm_maize_warehouse" value="rmMaizeWarehouse">
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 				<section class="col-x4">
 					<label for="other">Other:</label>
@@ -1054,7 +1162,11 @@ class C_wheat extends CI_Controller {
 			<input type="text" id="publicHealthOfficer" name="publicHealthOfficer" value=""  required/>
 		</section>
 		<label for="ho_signature_date" >Date:</label>
+<<<<<<< HEAD
+		<input type="text" id="inspectorDate" name="inspectorDate" value="" class="autoDate" readonly="true" placeholder="click for date"/>
+=======
 		<input type="text" id="inspectorDate" name="inspectorDate" value="" class="autoDate" required/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	</section>
 	<section class="column">
 		<section class="row">
@@ -1063,7 +1175,11 @@ class C_wheat extends CI_Controller {
 		</section>
 		<section class="row">
 			<label for="ro_signature_date" >Date:</label>
+<<<<<<< HEAD
+			<input type="text" id="receivedDate" name="receivedDate" value="" class="autoDate"  readonly="true" placeholder="click for date"/>
+=======
 			<input type="text" id="receivedDate" name="receivedDate" value="" class="autoDate"  required/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 	<section class="column">
@@ -1075,7 +1191,11 @@ class C_wheat extends CI_Controller {
 	<section class="column">
 		<section class="row">
 			<label for="s_signature_date" >Date</label>
+<<<<<<< HEAD
+			<input type="text" id="roSignature" name="roSignature" value=""  readonly="true" placeholder="click for date"/>
+=======
 			<input type="text" id="roSignature" name="roSignature" value=""  required/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 </form>
@@ -1126,8 +1246,13 @@ class C_wheat extends CI_Controller {
 				</section>
 				<section class="right">
 					<select name="inspectedBy" id="inspectedBy">
+<<<<<<< HEAD
+						<option value="Port Official">Port Official</option>
+						<option value="Quality Manager">Quality Manager</option>
+=======
 						<option value="1">Please select</option>
 						<option value="0">Insert names</option>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</select>
 				</section>
 			</section>
@@ -1317,6 +1442,20 @@ class C_wheat extends CI_Controller {
 	     <td width="12.5%">BALANCE(C)=(A)-(B)</td>
 	</tr>
 	<tr class="clonable">
+<<<<<<< HEAD
+	     <td width="12.5%"><input type="text" name="theDate_1" id="theDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/></td>
+	     <td width="12.5%"><input type="text" name="theTime_1" id="theTime_1" class="mobiscroll cloned" readonly="true" placeholder="click for time"/></td>
+	     <td width="12.5%"><input type="number" name="quantity_1" id="quantity_1" class="cloned fromZero"/></td>
+	     <td width="12.5%"><input type="text" name="lotID_1" id="lotID_1" class="cloned"/></td>
+	     <td width="12.5%"><input type="text" name="expiryDate_1" id="expiryDate_1" class="futureDate cloned" readonly="true" placeholder="click for date"/></td>
+	     <td width="12.5%"><input type="number" name="dispatchedQuantity_1" id="dispatchedQuantity_1" class="cloned fromZero"/></td>
+	     <td width="12.5%"><input type="text" name="dispatchedLotID_1" id="dispatchedLotID_1" class="cloned"/></td>
+	     <td width="12.5%"><input type="text" name="balance_1" id="balance_1" class="cloned fromZero" readonly="true" placeholder="computed"/></td>
+	</tr>
+	<tr id="formbuttons">
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 	     <td width="12.5%"><input type="text" name="theDate_1" id="theDate_1" class="autoDate cloned"/></td>
 	     <td width="12.5%"><input type="text" name="theTime_1" id="theTime_1" class="mobiScroll cloned"/></td>
 	     <td width="12.5%"><input type="text" name="quantity_1" id="quantity_1" class="cloned"/></td>
@@ -1329,6 +1468,7 @@ class C_wheat extends CI_Controller {
 	<tr id="formbuttons">
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</tr>
 		
 	</table>
@@ -1336,7 +1476,11 @@ class C_wheat extends CI_Controller {
 	<section class="column-wide">
 	<section class="left-wide">
 		Date of reporting:<p></p>
+<<<<<<< HEAD
+		<input type="text" name="dateOfReporting" id="dateOfReporting" class="autoDate" readonly="true" placeholder="click for date"/>
+=======
 		<input type="text" name="dateOfReporting" id="dateOfReporting" class="autoDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	<section class="right-wide">
 		Signature:<p></p>
@@ -1386,6 +1530,18 @@ class C_wheat extends CI_Controller {
 	     <td>ADJUSTED</td>
 	     <td>OBSERVATIONS</td>
     </tr>
+<<<<<<< HEAD
+    <tr class="clonable">
+	     <td><input type="text" name="feederDate_1" id="feederDate_1" class="cloned autoDate" readonly="true" placeholder="click for date"/></td>
+	     <td><input type="text" name="feederTime_1" id="feederTime_1" class="cloned mobiscroll" readonly="true" placeholder="click for time"/></td>
+	     <td><input type="number" name="productionRate_1" id="productionRate_1" class="cloned fromZero"/></td>
+	     <td><input type="number" name="theoreticFeeder_1" id="theoreticFeeder_1" class="cloned" readonly="true" placeholder="computed"/></td>
+	     <td><input type="number" name="feederFlow1_1" id="feederFlow1_1" class="cloned"/></td>
+	     <td><input type="number" name="feederFlow2_1" id="feederFlow2_1" class="cloned"/></td>
+	     <td><input type="number" name="feederFlow3_1" id="feederFlow3_1" class="cloned"/></td>
+	     <td><input type="number" name="feederFlowAverage_1" id="feederFlowAverage_1" class="cloned" placeholder="computed" readonly="true"/></td>
+	     <td><input type="number" name="CV_1" id="CV_1" class="cloned"/></td>
+=======
     <tr>
 	     <td><input type="text" name="feederDate_1" id="feederDate_1" class="cloned autoDate"/></td>
 	     <td><input type="text" name="feederTime_1" id="feederTime_1" class="cloned mobiScroll"/></td>
@@ -1396,6 +1552,7 @@ class C_wheat extends CI_Controller {
 	     <td><input type="text" name="feederFlow3_1" id="feederFlow_3" class="cloned"/></td>
 	     <td><input type="text" name="feederFlowAverage_1" id="feederFlowAverage_1" class="cloned"/></td>
 	     <td><input type="text" name="CV_1" id="CV_1" class="cloned"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	     <td><select name="adjusted_1" id="adjusted_1" class="cloned">
 	            <option>Yes</option>
 	            <option>No</option></select></td>
@@ -1404,10 +1561,15 @@ class C_wheat extends CI_Controller {
 	
 	<tr id="formbuttons">
 
+<<<<<<< HEAD
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
 
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</tr>
 	</table>
 	</section>
@@ -1446,18 +1608,31 @@ class C_wheat extends CI_Controller {
 	     <td width="16.6%">OBSERVATIONS</td>
 	</tr>
 	<tr class="clonable">
+<<<<<<< HEAD
+	     <td width="16.6%"><input type="text" name="shiftTime_1" id="shiftTime_1" class="cloned mobiscroll" readonly="true" placeholder="click for time"/></td>
+	     <td width="16.6%"><input type="number" name="flourMT_1" id="flourMT_1" class="cloned fromZero"/></td>
+	     <td width="16.6%"><input type="text" name="flourLotID_1" id="flourLotID_1" class="cloned"/></td>
+	     <td width="16.6%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
+	     <td width="16.6%"><input type="text" name="flourPremixRatio_1" id="flourPremixRatio_1" class="cloned" readonly="true" placeholder="computed"/></td>
+=======
 	     <td width="16.6%"><input type="text" name="shiftTime_1" id="shiftTime_1" class="cloned"/></td>
 	     <td width="16.6%"><input type="text" name="flourMT_1" id="flourMT_1" class="cloned"/></td>
 	     <td width="16.6%"><input type="text" name="flourLotID_1" id="flourLotID_1" class="cloned"/></td>
 	     <td width="16.6%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned"/></td>
 	     <td width="16.6%"><input type="text" name="flourPremixRatio_1" id="flourPremixRatio_1" class="cloned"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	     <td width="16.6%"><input type="text" name="flourProducedObservations_1" id="flourProducedObservations_1" class="cloned"/></td>
 	</tr>
 	<tr id="formbuttons">
 
+<<<<<<< HEAD
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 		</tr>
 	</table>
@@ -1491,10 +1666,17 @@ class C_wheat extends CI_Controller {
                               
                          </tr>
                          <tr class="clonable">
+<<<<<<< HEAD
+                             <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" readonly="readonly" value="" placeholder="click for time"/></td>
+                             <td width="15%"><input type="number" name="wheatFlourProduced_1" id="wheatFlourProduced_1" class="cloned fromZero"/></td>
+                             <td width="15%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
+                             <td width="15%"><input type="text" name="wheatFlour_1" id="wheatFlour_1" class="cloned" readonly="true" placeholder="computed"/></td>
+=======
                              <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" readonly="readonly" value="" /></td>
                              <td width="15%"><input type="text" name="wheatFlourProduced_1" id="wheatFlourProduced_1" class="cloned"/></td>
                              <td width="15%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned"/></td>
                              <td width="15%"><input type="text" name="wheatFlour_1" id="wheatFlour_1" class="cloned"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%"><input type="text" name="notes_1" id="notes_1" class="cloned"/></td>
                              <td width="18%"><input type="text" name="comments_1" id="comments_1" class="cloned"/></td>
                             
@@ -1510,6 +1692,18 @@ class C_wheat extends CI_Controller {
                           </tr>
                           <tr id="formbuttons">
 
+<<<<<<< HEAD
+							<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+							<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+
+		                 </tr>
+                          
+                         <tr>
+                             <td width="15%">Daily Total</td>
+                             <td width="15%"><input type="text" name="wheatFlourProduced2" id="wheatFlourProduced2" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="wheatFlour2" id="wheatFlour2" readonly="true" placeholder="computed"/></td>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
@@ -1521,15 +1715,22 @@ class C_wheat extends CI_Controller {
                              <td width="15%"><input type="text" name="wheatFlourProduced2" id="wheatFlourProduced2"/></td>
                              <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2"/></td>
                              <td width="15%"><input type="text" name="wheatFlour2" id="wheatFlour2"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%"><input type="text" name="notes2" id="notes2"/></td>
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
                              <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
+<<<<<<< HEAD
+                             <td width="15%"><input type="text" name="wheatFlourProduced3" id="wheatFlourProduced3" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="wheatFlour3" id="wheatFlour3" readonly="true" placeholder="computed"/></td>
+=======
                              <td width="15%"><input type="text" name="wheatFlourProduced3" id="wheatFlourProduced3"/></td>
                              <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3"/></td>
                              <td width="15%"><input type="text" name="wheatFlour3" id="wheatFlour3"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%"><input type="text" name="notes3" id="notes3"/></td>
                              <td width="18%"></td>
                              <td width="15%"></td>

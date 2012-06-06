@@ -2,16 +2,12 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 /**
- *model to E_ExternalFortifiedB2 entity
+ *model to E_InternalFortifiedA1 entity
  */
-use application\models\Entities\entities_salt\E_IntFortifiedA1;
+use application\models\Entities\entities_maize\E_Maize_IntFortifiedA1;
 
-class M_InternalFortifiedA1  extends MY_Model {
-<<<<<<< HEAD
-	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize, $compoundManufacturers, $premixType;
-=======
+class M_Maize_InternalFortifiedA1  extends MY_Model {
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 	function __construct() {
 		parent::__construct();
@@ -25,7 +21,7 @@ class M_InternalFortifiedA1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-		  // print(($key." ".$val)).'<br \>';
+		   print(($key." ".$val)).'<br \>';
 			   
 			//check if posted value is among the cloned ones   
 			/* if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -44,19 +40,17 @@ class M_InternalFortifiedA1  extends MY_Model {
 			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			     $this->attr = $key;//the attribute name
-				   if (!empty($val)) {
-				   	$this->elements[$this->attr]=htmlentities($val);
-				   }
-				   else{
-				   		$this->elements[$this->attr]="";
-				   }
+				   if (!empty($val)){
 					//We then store the value of this attribute for this element.
 					// $this->elements[$this->id][$this->attr]=htmlentities($val);
-					
+					$this->elements[$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->attr]="";
+				   }
 					
 			} //close foreach($_POST)
 			
-			//exit;
+			exit;
 			
 			//get the highest value of the array that will control the number of inserts to be done
 			//$this->noOfInsertsBatch=max($this->theIds);
@@ -83,7 +77,7 @@ class M_InternalFortifiedA1  extends MY_Model {
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
-			 $this -> theForm = new \models\Entities\entities_salt\E_IntFortifiedA1(); //create an object of the model
+			 $this -> theForm = new \models\Entities\E_IntFortifiedA1(); //create an object of the model
 		      
 			 	
 				$this -> theForm -> setDates(new DateTime()); /*timestamp option*/
@@ -120,11 +114,7 @@ class M_InternalFortifiedA1  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
 				}catch(Exception $ex){
-<<<<<<< HEAD
-				    //die($ex->getMessage());
-=======
 				    die($ex->getMessage());
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -137,11 +127,7 @@ class M_InternalFortifiedA1  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-<<<<<<< HEAD
-					//die($ex->getMessage());
-=======
 					die($ex->getMessage());
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -155,29 +141,6 @@ class M_InternalFortifiedA1  extends MY_Model {
 		$this->executionTime=round($e-$s,'4');
         $this->rowsInserted=$this->noOfInsertsBatch;
 		return $this -> response = 'ok';
-<<<<<<< HEAD
-	} //end of function addRecord()
-	
-	function getCompoundManufacturerNames(){
-		 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\E_ManufacturerCompound n');
-          $this->compoundManufacturers = $query->getResult();
-						/*foreach ($this->compoundManufacturers as $key=>$value) {
-									print $value['manufacturerId'].'<br />';
-									print $value['manufacturerCompName'].'<br />';
-									//<-->var_dump($this->equipment);
-								  }*/
-		return $this->compoundManufacturers;
-	}/*end of getCompoundManufacturerNames*/
-	
-	function getPremixTypes(){
-		 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT p.productId,p.productName FROM models\Entities\E_PremixType p');
-          $this->premixType = $query->getResult();
-		return $this->premixType;
-	}/*end of getPremixTypes*/
-=======
 	}
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 }//end of class InternalFortifiedA1
