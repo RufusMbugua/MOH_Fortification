@@ -7,11 +7,9 @@ if (!defined('BASEPATH'))
 use application\models\Entities\entities_salt\E_ExtIodizationB1;
 
 class M_ExternalIodizedB1  extends MY_Model {
-<<<<<<< HEAD
+
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize, $centres;
-=======
-	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 
 	function __construct() {
 		parent::__construct();
@@ -25,7 +23,6 @@ class M_ExternalIodizedB1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-<<<<<<< HEAD
 		    //print(($key." ".$val)).'<br \>';
 			   
 				   
@@ -37,31 +34,7 @@ class M_ExternalIodizedB1  extends MY_Model {
 				   }else{
 				   	$this->elements[$this->attr]='';
 				   }
-=======
-		   // print(($key." ".$val)).'<br \>';
-			   
-			//check if posted value is among the cloned ones   
-			/* if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
-			 	$key=$key."_1";
-			 }*/
-			  		//we separate the attribute name from the number
-					
-					/* $this->frags = explode("_", $key);
-				   
-				    $this->id = $this->frags[1];  // the id
-				    
-				  
-				   $this->attr = $this->frags[0];//the attribute name
-				   
-				  $this->theIds[$this->attr]=$this->id;*/
-			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
-				   
-			     $this->attr = $key;//the attribute name
-				   if (!empty($val)) 
-					//We then store the value of this attribute for this element.
-					// $this->elements[$this->id][$this->attr]=htmlentities($val);
-					$this->elements[$this->attr]=htmlentities($val);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 					
 			} //close foreach($_POST)
 			
@@ -71,7 +44,6 @@ class M_ExternalIodizedB1  extends MY_Model {
 			//$this->noOfInsertsBatch=max($this->theIds);
 			$this->noOfInsertsBatch=1;
 			
-<<<<<<< HEAD
 			//get factory name by id
 			try{
 			$centre=$this->em->getRepository('models\Entities\E_Factories')
@@ -80,9 +52,7 @@ class M_ExternalIodizedB1  extends MY_Model {
 				//ignore
 				//die($ex->getMessage());
 			}
-=======
-			//iodization centre name obtained from the session variable => 'affiliation'
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 			
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
@@ -91,11 +61,9 @@ class M_ExternalIodizedB1  extends MY_Model {
 		      
 			 
 				$this -> theForm -> setDates(new DateTime()); /*timestamp option*/
-<<<<<<< HEAD
+
 				$this -> theForm -> setFactoryName($centre->getFactoryName());/*pick from user since it's done by an external auditor hence session affiliation is void*/
-=======
-				$this -> theForm -> setFactoryName($iodizationCentre);
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 				$this -> theForm -> setInspector($this->elements['inspector']);
 				$this -> theForm -> setInventoryUpToDate($this->elements['inventory']);
 				$this -> theForm -> setSufficientIodine3Months($this->elements['sufficient']);
@@ -114,10 +82,9 @@ class M_ExternalIodizedB1  extends MY_Model {
 				$this -> theForm -> setNonCompliances($this->elements['nonCompliances']);
 				$this -> theForm -> setSuggestionsForImprovement($this->elements['improvementSuggestions']);
 				$this -> theForm ->setSupervisorName($this->elements['supervisorName']);
-<<<<<<< HEAD
+
 				$this -> theForm ->setReceivedBy($this->elements['factoryRepresentative']);
-=======
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 				$this -> em -> persist($this -> theForm);
 
 
@@ -158,7 +125,6 @@ class M_ExternalIodizedB1  extends MY_Model {
 		return $this -> response = 'ok';
 	}
 
-<<<<<<< HEAD
    function getIodizationCentres(){
 		 /*using DQL*/
 	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f');
@@ -166,6 +132,4 @@ class M_ExternalIodizedB1  extends MY_Model {
 		return $this->centres;
 	}/*end of getIodizationCentres*/
 
-=======
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 }//end of class ExtternalFortifiedB2

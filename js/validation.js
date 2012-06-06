@@ -78,6 +78,7 @@ $().ready(function() {
 			inspectedBy:"please enter the name of the inspector",
 			receivedBy:"Please provide a name of the person who received the order",
 			date:"Please enter the date of inspection",
+			inputDate:"Please enter the date of receipt",
 			quantity:{
 				required:"Provide the quantity as observed"
 			},
@@ -217,7 +218,7 @@ $().ready(function() {
 		
 		$("#internalFortified_A2").validate({/*salt module*/
 		rules: {
-			
+			compManufacturer:{required:true},
 			iodineSupplier1: "required",
 			iodineDrums:{
 				required:true,
@@ -288,6 +289,7 @@ $().ready(function() {
 			
 			},
 		messages: {
+			compManufacturer:{required:"Provide the name of the compound manufacturer"},
 			iodineSupplier1: "*Required",
 			iodineDrums:"*Required",
 			iodineLot:"*Required",
@@ -431,7 +433,8 @@ $().ready(function() {
 		}
 	});
 	
-	$("#externalfortifiedB1").validate({
+	/*------------------------------------------------------------------------------------------------------------------------------------*/
+	$("#externalfortifiedB1").validate({/*salt module*/
 
 	// validate  form on keyup and submit
 		rules: {
@@ -501,38 +504,20 @@ $().ready(function() {
 		}
 	});
 	
-	$("#externalIodizationB1").validate({
+
+	/*------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#externalIodizationB1").validate({/*salt module*/
 		rules: {
-			inspectionRegistry: "required",
-			inspectionDate: "required",
-			inspecTor:"required",
-			iodizationCenter:"required",
-			inspectionAddress:"required",
-			inspectorTelephone:"required",
-			inspectorEmail:"required",
-			sampleNumber:"required",
-			iodineContent:"required",
 			processedSamples:{required:true,positiveNumber:true},
 			iodineContents:{required:true,positiveNumber:true},
 			averageSample:{required:true,positiveNumber:true},
 			averageSamples:{required:true,positiveNumber:true},
-			nonCompliances:"required",
-			improvementSuggestions:"required",
-			insPector:"required",
-			inspectorSignature:"required",
-			signatureRepresentative:"required",
-			
-			
 			inspectionRegistry: {
 				required: true
-				
 			},
 			inspectionsDate: {
 				required: true
-			},
-			inspecTor: {
-				required: true
-				
 			},
 			iodizationCenter: {
 				required: true
@@ -540,38 +525,30 @@ $().ready(function() {
 			},
 			inspectionAddress: {
 				required: true
-				
 			},
 			
-		
 			inspectorTelephone: {
 				required: true
-				
 			},
 			inspectorFax: {
-				required: false
-				
+				required: true
 			},
 			inspectorEmail: {
-				required: true
-				
+				required: true,email:true
 			},
 			sampleNumber: {
 				required: true
-				
 			},
 			iodineContent: {
 				required: true
-				
 			},
 			nonCompliances: {
 				required: true
-				
 			},
 			improvementSuggestions:{
 				required:true
 			},
-			insPector:{
+			inspector:{
 				required:true
 			},
 			factoryRepresentative:{
@@ -590,48 +567,68 @@ $().ready(function() {
 				required:false
 			},
 			supervisorName:{
-				required:false
+				required:true
 			},
 			signatureSupervisor:{
 				required:false
 			},
 			supervisorDate:{
 				required:false
-			}
-			
+			},
+			inventory:{required:true},
+			sufficient:{required:true},
+			storage:{required:true},
+			potassium:{required:true},
+			precord:{required:true},
+			fifo:{required:true},
+			premix:{required:true},
+			records:{required:true},
+			packaging:{required:true},
+			iodineContent0:{required:true,positiveNumber:true},
+			reprocessedSamples:{required:true},
+			iodineContent1:{required:true,positiveNumber:true},
+			factoryRepresentative:{required:true}
 			},
 		messages: {
-			inspectionRegistry: "*Required",
-			inspectionsDate: "*Required",
-			inspecTor:"*Required",
-			iodizationCenter:"*Required",
-			inspectionAddress:"*Required",
-			inspectorTelephone:"*Required",
-			inspectorFax:"*Required",
-			inspectorEmail:"*Required",
-			sampleNumber:"*Required",
-			iodinContent:"*Required",
+			inspectionRegistry: {required:"*Required"},
+			inspectionsDate:{required:"*Required"},
+			inspector:{required:"*Required"},
+			iodizationCenter:{required:"*Required"},
+			inspectionAddress:{required:"*Required"},
+			inspectorTelephone:{required:"*Required"},
+			inspectorFax:{required:"Fax address available?"},
+			inspectorEmail:{required:"*Required"},
+			sampleNumber:{required:"*Required"},
+			iodineContent:{required:"*Required"},
 			processedSamples:{required:"*Required"},
 			iodineContents:{required:"*Required"},
 			averageSample:{required:"*Required"},
 			averageSamples:{required:"*Required"},
-			nonCompliances:"*Required",
-			improvementSuggestions:"*Required",
-			insPector:"*Required",
-			factoryRepresentative:"*Required",
-			externalIodB1_date_rep_signed:"*Required",
-			inspectorSignature:"*Required",
-			signatureRepresentative:"*Required",
-			signatureDate:"*Required",
-			supervisorName:"*Required",
-			signatureSupervisor:"*Required",
-			supervisorDate:"*Required",
-			
-			
-			
-			
+			nonCompliances:{required:"*Required"},
+			improvementSuggestions:{required:"*Required"},
+			inspectorEmail:{required:"*Required",email:"Not a valid email. Valid: joe@moh.go.ke"},
+			factoryRepresentative:{required:"*Required"},
+			externalIodB1_date_rep_signed:{required:"*Required"},
+			inspectorSignature:{required:"*Required"},
+			signatureRepresentative:{required:"*Required"},
+			signatureDate:{required:"*Required"},
+			supervisorName:{required:"*Required"},
+			signatureSupervisor:{required:"*Required"},
+			supervisorDate:{required:"*Required"},
+			inventory:{required:"Inventory is up to date?"},
+			sufficient:{required:"Sufficient peremix for 3 months?"},
+			storage:{required:"Storage is adequate?"},
+			potassium:{required:"Potassium iodate amount is as required"},
+			precord:{required:"Records of premix available?"},
+			fifo:{required:"FIFO system used in dispatching?"},
+			premix:{required:"Salt/premix is proportionate"},
+			records:{required:"Records of iodized salt updated"},
+			packaging:{required:"Salt packaging is adequate"},
+			iodineContent0:{required:"*Required"},
+			reprocessedSamples:{required:"*Required"},
+			iodineContent1:{required:"*Required"}
 		}
-	});
+	}); /*end of externalIodizationB1*/
 	
 	$("#internalFortified_B1").validate({
 
@@ -893,138 +890,50 @@ $().ready(function() {
 			checkupName:"*Required"
 		}
 	}); /*end of internalFortified_B2*/
-	
-	
-	$("#externalFortified_B3").validate({
+
+
+	/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	$("#externalFortified_B3").validate({/*salt module*/
 
 	// validate  form on keyup and submit
 		rules: {
-			inspection_registry: "required",
-			inspections_date: "required",
-			factory_name:"required",
-			factory_rep:"required",
+			inspectionRegistry: "required",
+			inspectionDate: "required",
+			factoryRepresentative:"required",
 			address:"required",
 			telephone:"required",
-			cbo_production: {
-				required: false //,checkOne:true
-				
-			},
-			cbo_packaging:{
-				required:false //,checkOne:true
-			},
-			cbo_fortification_site:{
-				required:false //,checkOne:true
-			},
-			cbo_labaratory:{
-				required:false //,checkOne:true
-			},
-			cbo_warehouse:{
-				required:false //,checkOne:true
-			},
-			cbo_rm_salt_warehouse:{
-				required:false //,checkOne:true
-			},
-			cbo_other:{
-				required:false //,checkOne:true
-			},
-			compliances_list:"required",
+			nonCompliances:"required",
 			suggestions:"required",
-			health_officer:"required",
-			ho_signature:"required",
-			ho_signature_date:"required",
-			supervisor_name:"required",
-			
-			inspection_registry: {
-				required: true
-				
-			},
-			inspections_date: {
-				required: true
-			},
-			factory_name: {
-				required: true
-				
-			},
-			factory_reps: {
-				required: true
-				
-			},
-			address: {
-				required: true
-				
-			},
-			
-		
-			telephone: {
-				required: true
-				
-			},
-			compliances_list:{
-				required:true
-			},
-			suggestions:{
-				required:true
-			},
-			health_officer:{
-				required:true
-			},
-			factory_reps:{
-				required:false
-			},
-			ho_signature:{
-				required:true
-			},
-			ro_signature:{
-				required:false
-			},
-			ho_signature_date:{
-				required:true
-			},
-			roSignature:{
-				required:false
-			},
-			supervisor_name:{
-				required:false
-			},
-			s_signature_date:{
-				required:false
-			}
+			suggestionsForImprovement:"required",
+			publicHealthOfficer:"required",
+			inspectorDate:"required",
+			receivedBy:"required",
+			receivedDate:"required",
+			supervisorName:"required",
+			roSignature:"required"
 			},
 		messages: {
-			inspection_registry: "*Required",
-			inspections_date: "*Required",
-			factory_name:"*Required",
-			factory_rep:"*Required",
+			inspectionRegistry: "*Required",
+			inspectionDate: "*Required",
+			factoryRepresentative:"*Required",
 			address:"*Required",
 			telephone:"*Required",
-			cbo_production:{required:"*Required"},
-			cbo_packaging:{required:"*Required"},
-			cbo_fortification_site:{required:"*Required"},
-			cbo_labaratory:{required:"*Required"},
-			cbo_warehouse:{required:"*Required"},
-			cbo_rm_salt_warehouse:{required:"*Required"},
-			cbo_other:{required:"*Required"},
-			compliances:"*Required",
-			suggestions:"*Required",
-			health_officer:"*Required",
-			factory_reps:"*Required",
-			ho_signature:"*Required",
-			ro_signature:"*Required",
-			ho_signature_date:"*Required",
+			nonCompliances:"*Required",
+			suggestionsForImprovement:"*Required",
+			publicHealthOfficer:"*Required",
 			roSignature:"*Required",
-			supervisor_name:"*Required",
-			s_signature_date:"*Required"
-				
-		
+			supervisorName:"*Required",
+			receivedBy:"*Required",
+			inspectorDate:"*Required",
+			receivedDate:"*Required"
 		}
-	});
+	});/*end of externalFortified_B3*/
 	
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
 	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
    /*start of oil module*/
    $("#fortifiedOil_A1").validate({/*oil module*/
-
-	
 		rules: {
 			
 			dateReported: {
@@ -1186,7 +1095,8 @@ $().ready(function() {
   /*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
   
   /*start of maize module*/
- 
+ /*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
  	// validate iodine inspection form on keyup and submit
 	$("#internalMaizeFlour_A1").validate({/*maize module*/
 		rules: {
@@ -1203,9 +1113,9 @@ $().ready(function() {
 				alphaNumerals:false},
 				
 			lotObservation:"required",
-			productObservation:"required",
+			productionObservation:"required",
 			expirationObservation:"required",
-			contentObservation:"required",
+			micronutrientObservation:"required",
 			certificateObservation:"required",
 			reviewedBy:"required",
 			inspectedBy:"required",
@@ -1226,14 +1136,15 @@ $().ready(function() {
 			inspectedBy:"please enter the name of the inspector",
 			reviewedBy:"Please provide a name of the person who reviewed the compounds",
 			date:"Please enter the date of inspection",
+			inputDate:"Please enter the date of receipt",
 			quantity:{
 				required:"Provide the quantity as observed"
 			},
 			integrityObservation:{required:"Comment on the quantity as observed"},
 			lotObservation:"Comment on the lot number as observed",
-			productObservation:"Comment on the production date as observed",
+			productionObservation:"Comment on the production date as observed",
 			expirationObservation:"Comment on the expiration date as observed",
-			contentObservation:"Comment on the content claimed on label as observed",
+			micronutrientObservation:"Comment on the micro-nuntrients levels as observed",
 			certificateObservation:"Comment on the Certificate of Analysis as observed",
 			iodine_compounds_batch_status:"Do you reject or accept the order?",
 			
@@ -1254,7 +1165,328 @@ $().ready(function() {
 		
 		/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 		
-		$(" #internalMaizeFlour_A2").validate({/*salt module*/
+		$("#internalMaizeFlour_A2").validate({/*maize module*/
+		rules: {
+			compManufacturer:{required:true},
+			dateOfReporting:{required:true},
+            signature:{required:true}
+            /*the rest are enforced in the cloned class*/
+			},
+		messages: {
+			compManufacturer:{required:"Provide the name of the compound manufacturer"},
+			dateOfReporting:{required:"*Required"},
+            signature:{required:"*Required"}
+			
+		}
+	}); /*end of #internalMaizeFlour_A2*/
+	
+	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#internalMaizeFlour_B1").validate({/*maize module*/
+		rules: {
+			feederLocation:{required:true},
+            personResponsible:{required:true}
+            /*the rest are enforced in the cloned class*/
+			},
+		messages: {
+			feederLocation:{required:"*Required"},
+           personResponsible:{required:"*Required"}
+			
+		}
+	}); /*end of #internalMaizeFlour_B1*/
+	
+	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#internalMaizeFlour_B2").validate({/*maize module*/
+		rules: {
+			productionLine:{required:true},
+            dateB2:{required:true},
+            personResponsible:{required:true}
+            /*the rest are enforced in the cloned class*/
+			},
+		messages: {
+			fproductionLine:{required:"*Required"},
+            dateB2:{required:"*Required"},
+            personResponsible:{required:"*Required"}
+			
+		}
+	}); /*end of #internalMaizeFlour_B2*/
+	
+	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#internalMaizeFlour_C1").validate({/*maize module*/
+
+	// validate form on keyup and submit
+		rules: {
+			dateC1:{required:true},
+			logDate:{required:true},
+			maizeProduced2:{required:true,zeroAndAbove:true},
+			premixUsed2:{required:true,zeroAndAbove:true},
+			maizeFortified2:{required:true,zeroAndAbove:true},
+			notes2:{required:true},
+			responsible:{required:true},
+			sigNature:{required:true},
+			maizeProduced3:{required:true,zeroAndAbove:true},
+			premixUsed3:{required:true,zeroAndAbove:true},
+			maizeFortified3:{required:true,zeroAndAbove:true},
+			notes3:{required:true},
+			},
+		messages: {
+			dateC1:{required:"*Required"},
+			logDate:{required:"*Required"},
+			maizeProduced2:{required:"*Required"},
+			premixUsed2:{required:"*Required"},
+			maizeFortified2:{required:"*Required"},
+			notes2:{required:"*Required"},
+			responsible:{required:"*Required"},
+			sigNature:{required:"*Required"},
+			maizeProduced3:{required:"*Required"},
+			premixUsed3:{required:"*Required"},
+			maizeFortified3:{required:"*Required"},
+			notes3:{required:"*Required"}
+			
+		}
+	}); /*end of #internalMaizeFlour_C1*/
+	/*------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#externalMaizeFlour_B1").validate({/*maize module*/
+
+	// validate  form on keyup and submit
+		rules: {
+			dateB1:{required:true},
+			maizeMill:{required:true},
+			publicHealthOfficer:{required:true}, 
+			time:{required:true}, 
+			address:{required:true},
+			/*the rest are captured in the cloned class*/
+			},
+		messages: {
+		  	dateB1:{required:"*Required"},
+			maizeMill:{required:"*Required"},
+			publicHealthOfficer:{required:"*Required"}, 
+			time:{required:"*Required"}, 
+			address:{required:"*Required"},
+
+		}
+	}); /*end of externalMaizeFlour_B1*/
+	
+	/*------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	// validate external audit  form of fortified maize flour on keyup and submit
+	$("#externalMaizeFlour_B2").validate({/*maize module*/
+	
+		rules: {
+			inspectionRegistry :"required",
+			inspectionDate:"required",
+			inspectionOfficerName:"required",
+			address:"required",
+			telephone:"required",
+			fax:"required",
+			email: {
+				required: true,
+				email: true
+			},
+			iodineType:"required",
+			productionArea:"required",
+			packagingArea:"required",
+			warehouse:"required",
+			staffFacilities:"required",
+			hygiene:"required",
+			protectiveClothing:"required",
+			trainedInTask:"required",
+			receiptAndStorage:"required",
+			premixDilution:"required",
+			feederVerification:"required",
+			samplingMaize:"required",
+			maizeSpotTest:"required",
+			premixInventoryUpToDate:"required",
+			certificateOfAnalysis:"required",
+			premixStoredWell:"required",
+			fifoSystemPremix:"required",
+			fifoSystemFlour:"required",
+			premixHandling:"required",
+			premixDilutionApplicable:"required",
+			homogeneityAssessed:"required",
+			storageHandlingArea:"required",
+			feederRecordsAvailable:"required",
+			premixLevelAdequate:{required:true},
+			flourRecordsUpToDate:"required",
+			ratioAction:"required",
+			shiftSamplesTaken:"required",
+			ironContent:"required",
+			spotTest:"required",
+			externalLabIron:"required",
+			externalLabVitaminA:"required",
+			dailyCompPrepared:"required",
+			lastSamplesStored:"required",
+			goodLabeling:"required",
+			fortifiedMaizeStored:"required",
+			supervisorName:"required", 
+            supervisionDate:"required"
+		},
+		messages: {
+			inspectionRegistry:"Provide an inspection registry #",
+			inspectionDate:"Please provide the date of inspection",
+			inspectionOfficer:"Name of inspection officer is required",
+			address:"Provide the address of the factory/mill",
+			telephone:"Provide the telephone # of the factory/mill",
+			email:{
+				required:"Please provide an email address",
+				email:"Not a valid email address. E.g john.doe@moh.go.ke"},
+			fax:"Faxing number available?",
+			iodineType:"Specifiy the iodine type in the flour",
+			inspectionDate:"Provide the date of inspection",
+			supervisorName:"Please provide the name of the supervising officer",
+			supervisionDate:"Date of supervision",
+			productionArea:"Is the production area clean and sanitable?",
+			packagingArea:"Is the packaging area clean and sanitable?",
+			warehouse:"Is the warehouse area clean and sanitable?",
+			staffFacilities:"Are the staff facilities and toilettes clean and sanitable?",
+			hygiene:"Is the hygiene at the required level?",
+			protectiveClothing:"Do personnel wear protective clothing?",
+			trainedInTask:"Are the personnel trained in their tasks?",
+			receiptAndStorage:"Are there receipt and storage written procedures or instructions?",
+			premixDilution:"Are there premix dilution written procedures or instructions?",
+			feederVerification:"Written procedures or instructions exist for this?",
+			samplingMaize:"Written procedures or instructions exist for this?",
+			maizeSpotTest:"Written procedures or instructions exist for this?",
+			premixInventoryUptodate:"Is the inventory up to date?",
+			certificateOfAnalysis:"Is there a certificate of analysis?",
+			premixStoredWell:"Has the iodine been stored well?",
+			fifoSystemFlour:"Is FIFO, 'first-in first-out', system applied to dispatches?",
+			fifoSystemPremix:"Is FIFO, 'first-in first-out', system applied to dispatches?",
+			premixHandling:"Is the hadling of the iodine upto standard?",
+			premixDilutionApplicable:"Is there a premix dilution?",
+			homogeneityAssessed:"Is homogenity assessed?",
+			storageHandlingArea:"How adequate is the storage handling area?",
+			storageHandling:"Storage handling adequate?",
+			feederRecordsAvailable:"Available?",
+			premixLevelAdequate:{required:"Adequate premix level?"},
+			flourRecordsUpToDate:"Are the fortified flour records up to date?",
+			ratioAction:"Is there any action taken on the ratio of fortified flour/premix?",
+			ironContent:"Is the iron content above factory minimum?",
+			spotTest:"Records of flour samples analyzed using this?",
+			externalLabIron:"Records of flour samples analyzed using this?",
+			externalLabVitaminA:"Use of external test?",
+			dailyCompPrepared:"Is there preparation of a daily composite sample?",
+			lastSamplesStored:"Have the last 30 samples been stored?",
+			goodLabeling:"Does labeling meet the requirements",
+			fortifiedMaizeStored:"Is the fortified maize storeed adequately?"
+		}
+		});/*end of externalMaizeFlour_B2*/
+	
+	/*-------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#externalMaizeFlour_B3").validate({/*maize module*/
+	// validate  form on keyup and submit
+		rules: {
+			inspectionRegistry: "required",
+			inspectionDate: "required",
+			factoryRepresentative:"required",
+			address:"required",
+			telephone:"required",
+			nonCompliances:"required",
+			suggestionsForImprovement:"required",
+			publicHealthOfficer:"required",
+			inspectorDate:"required",
+			receivedBy:"required",
+			receivedDate:"required",
+			supervisorName:"required", 
+            roSignature:"required"
+			},
+		messages: {
+			inspectionRegistry: "required",
+			inspectionDate: "required",
+			factoryRepresentative:"required",
+			address:"required",
+			telephone:"required",
+			nonCompliances:"required",
+			suggestionsForImprovement:"required",
+			publicHealthOfficer:"required",
+			inspectorDate:"required",
+			receivedBy:"required",
+			receivedDate:"required",
+			supervisorName:"required", 
+            roSignature:"required"
+		}
+	});/*end of externalMaizeFlour_B3*/
+	
+	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+   
+   /*end of maize module*/
+   /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+   /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/  
+  
+  /*start of wheat module*/
+ /*------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+   // validate iodine inspection form on keyup and submit
+	$("#internalWheatFlour_A1").validate({/*wheat module*/
+		rules: {
+			manufacturer:"required",
+			productType:"required",
+			date:"required",
+			
+			quantity:{
+				required:true,
+				positiveNumber:true},
+				
+			integrityObservation:{
+				required:true,
+				alphaNumerals:false},
+				
+			lotObservation:"required",
+			productObservation:"required",
+			expirationObservation:"required",
+			contentObservation:"required",
+			certificateObservation:"required",
+			receivedBy:"required",
+			inspectedBy:"required",
+			inputDate:"required",
+			purchaseOrder: {
+				required: true,
+				minlength: 1
+			},
+			actionsTaken: {
+				required: true
+			},
+			accepted:"required"
+		},
+		messages: {
+			productType: "Please enter the productType",
+			manufacturer:"please enter the manufacturer name",
+			inspectedBy:"please enter the name of the inspector",
+			receivedBy:"Please provide a name of the person who reviewed the compounds",
+			date:"Please enter the date of inspection",
+			inputDate:"Please enter the date of receipt",
+			quantity:{
+				required:"Provide the quantity as observed"
+			},
+			integrityObservation:{required:"Comment on the quantity as observed"},
+			lotObservation:"Comment on the lot number as observed",
+			productObservation:"Comment on the production date as observed",
+			expirationObservation:"Comment on the expiration date as observed",
+			contentObservation:"Comment on the content claimed on label as observed",
+			certificateObservation:"Comment on the Certificate of Analysis as observed",
+			
+			productType: {
+				required: "Please enter a product type"
+			},
+			purchaseOrder: {
+				required: "Please provide the purchase order #",
+				minlength: "The purchase order # must be > 1 character"
+			},
+			actionsTaken: {
+				required: "Please comment on reasons for rejection/action taken"
+			},
+			accepted:"Rejected or Accepted?",
+			
+		}
+		});/*end of #internalWheatFlour_A1*/
+		
+		/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+		
+		$("#internalWheatFlour_A2").validate({/*wheat module*/
 		rules: {
 			dateOfReporting:{required:true},
             signature:{required:true}
@@ -1265,12 +1497,238 @@ $().ready(function() {
             signature:{required:"*Required"}
 			
 		}
-	}); /*end of #internalMaizeFlour_A2*/
+	}); /*end of #internalWheatFlour_A2*/
 	
 	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-   
-   /*end of maize module*/
-   /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-   /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#internalWheatFlour_B1").validate({/*wheat module*/
+		rules: {
+			feederLocation:{required:true},
+            personResponsible:{required:true}
+            /*the rest are enforced in the cloned class*/
+			},
+		messages: {
+			feederLocation:{required:"*Required"},
+           personResponsible:{required:"*Required"}
+			
+		}
+	}); /*end of #internalWheatFlour_B1*/
+	
+	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#internalWheatFlour_B2").validate({/*wheat module*/
+		rules: {
+            personResponsible:{required:true}
+            /*the rest are enforced in the cloned class*/
+			},
+		messages: {
+           personResponsible:{required:"*Required"}
+			
+		}
+	}); /*end of #internalWheatFlour_B2*/
+	
+	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#internalWheatFlour_C1").validate({/*wheat module*/
+
+	// validate form on keyup and submit
+		rules: {
+			dateC1:{required:true},
+			logDate:{required:true},
+			wheatFlourProduced2:{required:true,zeroAndAbove:true},
+			premixUsed2:{required:true,zeroAndAbove:true},
+			wheatFlour2:{required:true,zeroAndAbove:true},
+			notes2:{required:true},
+			responsible:{required:true},
+			sigNature:{required:true},
+			wheatFlourProduced3:{required:true,zeroAndAbove:true},
+			premixUsed3:{required:true,zeroAndAbove:true},
+			wheatFlour3:{required:true,zeroAndAbove:true},
+			notes3:{required:true},
+			},
+		messages: {
+			dateC1:{required:"*Required"},
+			logDate:{required:"*Required"},
+			wheatFlourProduced2:{required:"*Required"},
+			premixUsed2:{required:"*Required"},
+			wheatFlour2:{required:"*Required"},
+			notes2:{required:"*Required"},
+			responsible:{required:"*Required"},
+			sigNature:{required:"*Required"},
+			wheatFlourProduced3:{required:"*Required"},
+			premixUsed3:{required:"*Required"},
+			wheatFlour3:{required:"*Required"},
+			notes3:{required:"*Required"}
+			
+		}
+	}); /*end of #internalWheatFlour_C1*/
+	/*------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#externalWheatFlour_B1").validate({/*maize module*/
+
+	// validate  form on keyup and submit
+		rules: {
+			dateB1:{required:true},
+			wheatMill:{required:true},
+			publicHealthOfficer:{required:true}, 
+			time:{required:true}, 
+			address:{required:true},
+			/*the rest are captured in the cloned class*/
+			},
+		messages: {
+		  	dateB1:{required:"*Required"},
+			wheatMill:{required:"*Required"},
+			publicHealthOfficer:{required:"*Required"}, 
+			time:{required:"*Required"}, 
+			address:{required:"*Required"},
+
+		}
+	}); /*end of externalWheatFlour_B1*/
+	
+	/*------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	// validate external audit  form of fortified wheat flour on keyup and submit
+	$("#externalWheatFlour_B2").validate({/*wheat module*/
+	
+		rules: {
+			inspectionRegistry :"required",
+			inspectionDate:"required",
+			inspectionOfficerName:"required",
+			address:"required",
+			telephone:"required",
+			fax:"required",
+			email: {
+				required: true,
+				email: true
+			},
+			iodineType:"required",
+			productionArea:"required",
+			packagingArea:"required",
+			warehouse:"required",
+			staffFacilities:"required",
+			hygiene:"required",
+			protectiveClothing:"required",
+			trainedInTask:"required",
+			receiptAndStorage:"required",
+			premixDilution:"required",
+			feederVerification:"required",
+			samplingWheat:"required",
+			wheatSpotTest:"required",
+			premixInventoryUpToDate:"required",
+			certificateOfAnalysis:"required",
+			premixStoredWell:"required",
+			fifoSystemPremix:"required",
+			fifoSystemFlour:"required",
+			premixHandling:"required",
+			premixDilutionApplicable:"required",
+			homogeneityAssessed:"required",
+			storageHandlingArea:"required",
+			feederRecordsAvailable:"required",
+			premixLevelAdequate:{required:true},
+			flourRecordsUpToDate:"required",
+			ratioAction:"required",
+			shiftSamplesTaken:"required",
+			ironContent:"required",
+			spotTest:"required",
+			externalLabIron:"required",
+			externalLabVitaminA:"required",
+			dailyCompPrepared:"required",
+			lastSamplesStored:"required",
+			goodLabeling:"required",
+			fortifiedWheatStored:"required",
+			supervisorName:"required", 
+            supervisionDate:"required"
+		},
+		messages: {
+			inspectionRegistry:"Provide an inspection registry #",
+			inspectionDate:"Please provide the date of inspection",
+			inspectionOfficer:"Name of inspection officer is required",
+			address:"Provide the address of the factory/mill",
+			telephone:"Provide the telephone # of the factory/mill",
+			email:{
+				required:"Please provide an email address",
+				email:"Not a valid email address. E.g john.doe@moh.go.ke"},
+			fax:"Faxing number available?",
+			iodineType:"Specifiy the iodine type in the flour",
+			inspectionDate:"Provide the date of inspection",
+			supervisorName:"Please provide the name of the supervising officer",
+			supervisionDate:"Date of supervision",
+			productionArea:"Is the production area clean and sanitable?",
+			packagingArea:"Is the packaging area clean and sanitable?",
+			warehouse:"Is the warehouse area clean and sanitable?",
+			staffFacilities:"Are the staff facilities and toilettes clean and sanitable?",
+			hygiene:"Is the hygiene at the required level?",
+			protectiveClothing:"Do personnel wear protective clothing?",
+			trainedInTask:"Are the personnel trained in their tasks?",
+			receiptAndStorage:"Are there receipt and storage written procedures or instructions?",
+			premixDilution:"Are there premix dilution written procedures or instructions?",
+			feederVerification:"Written procedures or instructions exist for this?",
+			samplingMaize:"Written procedures or instructions exist for this?",
+			wheatSpotTest:"Written procedures or instructions exist for this?",
+			premixInventoryUptodate:"Is the inventory up to date?",
+			certificateOfAnalysis:"Is there a certificate of analysis?",
+			premixStoredWell:"Has the iodine been stored well?",
+			fifoSystemFlour:"Is FIFO, 'first-in first-out', system applied to dispatches?",
+			fifoSystemPremix:"Is FIFO, 'first-in first-out', system applied to dispatches?",
+			premixHandling:"Is the hadling of the iodine upto standard?",
+			premixDilutionApplicable:"Is there a premix dilution?",
+			homogeneityAssessed:"Is homogenity assessed?",
+			storageHandlingArea:"How adequate is the storage handling area?",
+			storageHandling:"Storage handling adequate?",
+			feederRecordsAvailable:"Available?",
+			premixLevelAdequate:{required:"Adequate premix level?"},
+			flourRecordsUpToDate:"Are the fortified flour records up to date?",
+			ratioAction:"Is there any action taken on the ratio of fortified flour/premix?",
+			ironContent:"Is the iron content above factory minimum?",
+			spotTest:"Records of flour samples analyzed using this?",
+			externalLabIron:"Records of flour samples analyzed using this?",
+			externalLabVitaminA:"Use of external test?",
+			dailyCompPrepared:"Is there preparation of a daily composite sample?",
+			lastSamplesStored:"Have the last 30 samples been stored?",
+			goodLabeling:"Does labeling meet the requirements",
+			fortifiedWheatStored:"Is the fortified wheat stored adequately?"
+		}
+		});/*end of externalWheatFlour_B2*/
+	
+	/*-------------------------------------------------------------------------------------------------------------------------------------*/
+	
+	$("#externalWheatFlour_B3").validate({/*wheat module*/
+	// validate  form on keyup and submit
+		rules: {
+			inspectionRegistry: "required",
+			inspectionDate: "required",
+			factoryRepresentative:"required",
+			address:"required",
+			telephone:"required",
+			nonCompliances:"required",
+			suggestionsForImprovement:"required",
+			publicHealthOfficer:"required",
+			inspectorDate:"required",
+			receivedBy:"required",
+			receivedDate:"required",
+			supervisorName:"required", 
+            roSignature:"required"
+			},
+		messages: {
+			inspectionRegistry: "required",
+			inspectionDate: "required",
+			factoryRepresentative:"required",
+			address:"required",
+			telephone:"required",
+			nonCompliances:"required",
+			suggestionsForImprovement:"required",
+			publicHealthOfficer:"required",
+			inspectorDate:"required",
+			receivedBy:"required",
+			receivedDate:"required",
+			supervisorName:"required", 
+            roSignature:"required"
+		}
+	});/*end of externalMaizeFlour_B3*/
+	
+	/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+		/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+		/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+        /*end of wheat module*/
    
 });

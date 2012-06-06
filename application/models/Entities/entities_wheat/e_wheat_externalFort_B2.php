@@ -88,7 +88,7 @@ private $COAReceived;
 * @Column(name="premixStored", type="string",length=45, nullable=true)
 * */
 private $premixStored;
-<<<<<<< HEAD
+
 
 /**
 * @Column(name="FIFOSystemPremix", type="string",length=45, nullable=true)
@@ -100,12 +100,6 @@ private $FIFOSystemPremix;
 * */
 private $FIFOSystemFlour;
 
-=======
-/**
-* @Column(name="FIFOSystem", type="string",length=45, nullable=true)
-* */
-private $FIFOSystem;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 /**
 * @Column(name="premixHandledWell", type="string",length=45, nullable=true)
 * */
@@ -359,7 +353,7 @@ public function getPremixStored() {
 
 public function setPremixStored($premixStored) { $this -> premixStored = $premixStored;
 }
-<<<<<<< HEAD
+
 public function getFIFOSystemPremix() {
 		return $this -> FIFOSystemPremix;
 }
@@ -374,14 +368,6 @@ public function getFIFOSystemFlour() {
 public function setFIFOSystemFlour($FIFOSystemFlour) { $this -> FIFOSystemFlour = $FIFOSystemFlour;
 }
 
-=======
-public function getFIFOSystem() {
-		return $this -> FIFOSystem;
-}
-
-public function setFIFOSystem($FIFOSystem) { $this -> FIFOSystem = $FIFOSystem;
-}
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 public function getPremixHandledWell() {
 		return $this -> premixHandledWell;
 }

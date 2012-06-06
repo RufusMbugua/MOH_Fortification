@@ -21,11 +21,8 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-<<<<<<< HEAD
 		  //print(($key." ".$val)).'<br \>';
-=======
-		  // print(($key." ".$val)).'<br \>';
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 			   
 			//check if posted value is among the cloned ones   
 			 if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -51,11 +48,7 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 			} //close foreach($_POST)
 			
 			//exit;
-<<<<<<< HEAD
-		
-=======
-			
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
