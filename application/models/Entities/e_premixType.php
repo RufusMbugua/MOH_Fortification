@@ -15,7 +15,11 @@ namespace models\Entities;
 	private $productId;
 	
    /**
+<<<<<<< HEAD
+	* @Column(name="productName", type="string",length=55, nullable=true)
+=======
 	* @Column(name="productName", type="string",length=10, nullable=true)
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	* */
 	private $productName;
 	 

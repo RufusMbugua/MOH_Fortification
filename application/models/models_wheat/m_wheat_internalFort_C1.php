@@ -21,7 +21,11 @@ class M_Wheat_InternalFort_C1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
+<<<<<<< HEAD:application/models/models_wheat/m_wheat_internalFort_C1.php
+		   //print(($key." ".$val)).'<br \>';
+=======
 		  // print(($key." ".$val)).'<br \>';
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/models_wheat/m_wheat_internalFort_C1.php
 			   
 			//check if posted value is among the cloned ones   
 			 if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -40,13 +44,20 @@ class M_Wheat_InternalFort_C1  extends MY_Model {
 			//print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->id][$this->attr]='';
+				   }
 					
 			} //close foreach($_POST)
 			//print ($iodizationCentre);
+<<<<<<< HEAD:application/models/models_wheat/m_wheat_internalFort_C1.php
+			//exit;
+=======
 			//sexit;
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/models_wheat/m_wheat_internalFort_C1.php
 			
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);

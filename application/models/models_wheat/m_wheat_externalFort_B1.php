@@ -21,7 +21,7 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-		  // print(($key." ".$val)).'<br \>';
+		   //print(($key." ".$val)).'<br \>';
 			   
 			//check if posted value is among the cloned ones   
 			 if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -40,9 +40,12 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+				   }else{
+				   	 $this->elements[$this->id][$this->attr]='';
+				   }
 					
 			} //close foreach($_POST)
 			

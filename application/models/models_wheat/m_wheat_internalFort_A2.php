@@ -40,12 +40,26 @@ class M_Wheat_InternalFort_A2  extends MY_Model {
 			//print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
+<<<<<<< HEAD
+				   if (!empty($val)) {
+					//We then store the value of this attribute for this element.
+					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->id][$this->attr]='';
+				   }
+					
+			} //close foreach($_POST)
+			
+			//exit;
+			
+=======
 				   if (!empty($val)) 
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
 					
 			} //close foreach($_POST)
 			
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			

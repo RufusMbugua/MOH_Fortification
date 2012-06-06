@@ -79,19 +79,38 @@ $sessionEmail = $this -> session -> userdata('email');
 			var linkSub='';
 			var linkDomain='';
 			var visit_site = ''; 
+<<<<<<< HEAD
+			var devices='';
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			
 			
 			/*----------------------------------------------------------------------------------------------------------------*/
 				
+<<<<<<< HEAD
+				/*get devices by manufacturer/vehicle type...in the long term, do it nicely with some dynamic html:)*/
+				function getDevices(){
+					$(function(){
+					if(form_id=='#internalFortified_B2'){
+					devices=['drier','balance','pump','sprayingEquipment','blender'];
+					}else if(form_id=='#fortifiedOil_B2'){
+						devices=['balance','pump','feeding','blender','stirrers','tank'];
+					}
+=======
 				/*get devices by manufacturer/vehicle type...in the long term, do it nicely :)*/
 				$(function(){
 					devices=['drier','balance','pump','sprayingEquipment','blender'];
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					<?php if($this -> session -> userdata('devices'))
 					foreach($this -> session -> userdata('devices') as $key=>$value){?>
 						$('#'+devices['<?php print $key ?>']).val('<?php print $value['deviceCompNumber']?>');
 						<?php }?>
 					
 				});
+<<<<<<< HEAD
+				}/*end of getDevices*/
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				
 				/*----------------------------------------------------------------------------------------------------------------*/
 				
@@ -140,7 +159,11 @@ $sessionEmail = $this -> session -> userdata('email');
 				/*-----------------------------------------------------------------------------------------------------------*/
 				function isCheckBoxChecked(thisForm){/*start of function isCheckBoxChecked*/
 					//form_id='#'+$(".form-container").find('form').attr('id'); /*what form has been loaded now?*/
+<<<<<<< HEAD
+					if(thisForm=='#internalFortified_A1' || thisForm=='#internalMaizeFlour_A1' || thisForm=='#internalWheatFlour_A1')
+=======
 					if(thisForm=='#internalFortified_A1' || thisForm=='#internalMaizeFlour_A1')
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				{
 					var widowed=''; var cbo='';
 					//set value of a non-checked checkbox
@@ -162,7 +185,11 @@ $sessionEmail = $this -> session -> userdata('email');
 				
 				function getAreasVisited(thisForm){/*start of function getAreasVisited*/
 				visit_site=''; //reset previous values if any
+<<<<<<< HEAD
+				if(thisForm=='#externalFortified_B3' || thisForm=='#externalMaizeFlour_B3' || thisForm=='#externalWheatFlour_B3')
+=======
 				if(thisForm=='#externalFortified_B3')
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				{
 				//do collect visited sites
 				$(thisForm).find(':checkbox').each(function()
@@ -173,7 +200,11 @@ $sessionEmail = $this -> session -> userdata('email');
 				visit_site=visit_site+$(this).val()+",";
 				}
 				});
+<<<<<<< HEAD
+			    //alert('Visited: '+visit_site);
+=======
 			
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				$('#areas_visited').val(visit_site);
 				}
 				}/*end of function getAreasVisited*/
@@ -195,9 +226,16 @@ $sessionEmail = $this -> session -> userdata('email');
 				/*integrity of the boxes*/
 				isCheckBoxChecked(form_id);
 				
+<<<<<<< HEAD
+				//get devices if needed
+				getDevices();
+				
+				$(form_id).submit();
+=======
 				$(form_id).submit();
 				
 				
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			
 				});//}/*end of submit_form_data click event*/
 				
@@ -218,7 +256,11 @@ $sessionEmail = $this -> session -> userdata('email');
 					for(i=0;i<scripts.length;i++){
 						loadGlobalJS(scripts[i],function(){});
 					}
+<<<<<<< HEAD
+					form_id='#'+$(".form-container").find('form').attr('id'); 
+=======
 					form_id='#'+$(".form-container").find('form').attr('id');     
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				}
 				/*----------------------------------------------------------------------------------------------------------------*/
 				
@@ -227,6 +269,18 @@ $sessionEmail = $this -> session -> userdata('email');
 				link_id='#'+$(this).find('a').attr('id');
 				linkSub=$(link_id).attr('class');
 				linkIdUrl=link_id.substr(link_id.indexOf('#')+1,(link_id.indexOf('_li')-1));
+<<<<<<< HEAD
+				//load url based on the class and id returned
+				switch(linkSub){
+					case "salt-url":
+					linkDomain='C_Salt';
+					break;
+					case "oil-url":
+					linkDomain='C_Oil';
+					break;
+					case "maize-url":
+					linkDomain='C_Maize';
+=======
 				
 			
 				
@@ -240,6 +294,7 @@ $sessionEmail = $this -> session -> userdata('email');
 					break;
 					case "maize-url":
 					linkDomain='C_maize';
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					break;
 					case "wheat-url":
 					linkDomain='C_Wheat';
@@ -254,11 +309,14 @@ $sessionEmail = $this -> session -> userdata('email');
 				loadGlobalScript();
 				
 				 });
+<<<<<<< HEAD
+=======
 				 
 				 //Highlight your choice
 				
 				$('a').removeClass('chosen');
 				$(link_id).addClass('chosen');
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				
 				})/*end of which link was clicked*/
 				/*----------------------------------------------------------------------------------------------------------------*/
@@ -290,7 +348,7 @@ $sessionEmail = $this -> session -> userdata('email');
 		</section>
 		<section id="profile-before">
 			<p>
-				<?php  echo $sessionEmail
+				<?php  echo $sessionEmail;
 				?>
 			</p>
 			<ul>
@@ -324,9 +382,184 @@ $sessionEmail = $this -> session -> userdata('email');
 											<h2>Salt</h2>
 											<div title="click to expand" class="max salt">+</div>
 												<div title="click to minimize" class="min salt" style="display:none">-</div>
+<<<<<<< HEAD
 											<ul>
 																						
 												<li>
+													<a id = "internalFort_A1_li" class="salt-url">Fortified Salt-Table A-1</a>
+												</li>
+												<li>
+													<a id = "internalFort_A2_li" class="salt-url">Fortified Salt QC/QA -Table A-2</a>
+													
+												</li>
+												<li>
+													<a id="internalFort_B1_li" class="salt-url">Fortified Salt QC/QA -Table B-1</a>
+												</li>
+												<li>
+													<a id="internalFort_B2_li" class="salt-url">Salt Fortification: Table B-2</a>
+												</li>
+												<li>
+													<a id="internalFort_C1_li" class="salt-url">Fortified Salt QC/QA -Table C-1</a>
+												</li>
+												<li>
+													<a id="externalFort_B1_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<li>
+													<a id="externalFort_B2_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-2</a>
+												</li>
+												<li>
+													<a id="externalFort_B3_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-3</a>
+												</li>
+												<li>
+													<a id="externalIod_B1_li" class="salt-url">Iodized Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<li>
+													<a id="smallScale_A1_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-1</a>
+												</li>
+												<li>
+													<a id="smallScale_A2_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-2</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Salt Forms -->
+										<section class="menu oil">
+											<h2>Oil</h2>
+											<div title="click to expand" class="max oil">+</div>
+												<div title="click to minimize" class="min oil" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="fortifiedOil_A1_li" class="oil-url">Fortified Oil-Table A-1</a>
+												</li>
+													<li>
+														<a id="fortifiedOil_B1_li" class="oil-url">Fortified Oil-Table B-1</a>
+												</li>
+													<li>
+														<a id="fortifiedOil_B2_li" class="oil-url">Fortified Oil-Table B-2</a>
+												</li>
+													<li>
+														<a id="fortifiedOil_C1_li" class="oil-url">Fortified Oil-Table C-1</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Oil Forms -->
+											<section class="menu sugar">
+												
+											<h2>Sugar</h2>
+											<div title="click to expand" class="max sugar">+</div>
+												<div title="click to minimize" class="min sugar" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="internalSugar_A1_li" class="sugar-url">Internal Fortified Sugar-Table A-1</a>
+												</li>
+												<li>
+													<a id="internalSugar_A2_li" class="sugar-url">Internal Fortified Sugar-Table A-2</a>
+												</li>
+												<li>
+													<a id="internalSugar_A3_li" class="sugar-url">Internal Fortified Sugar-Table A-3</a>
+												</li>
+												<li>
+													<a id="internalSugar_B1_li" class="sugar-url">Internal Fortified Sugar-Table B-1</a>
+												</li>
+										       	<li>
+													<a id="internalSugar_C1_li" class="sugar-url">Internal Fortified Sugar-Table C-1</a>
+												</li>
+												<li>
+													<a id="internalSugar_C2_li" class="sugar-url">Internal Fortified Sugar-Table C-2</a>
+												</li>
+												<li>
+													<a id="internalSugar_C3_li" class="sugar-url">Internal Fortified Sugar-Table C-3</a>
+												</li>											
+												<li>
+													<a id="internalSugar_D1_li" class="sugar-url">Internal Fortified Sugar-Table D-1</a>
+												</li>
+												<li>
+													<a id="externalSugar_B1_li" class="sugar-url">External Fortified Sugar-Table B-1</a>
+												</li>
+												<li>
+													<a id="externalSugar_B2_li" class="sugar-url">External Fortified Sugar-Table B-2</a>
+												</li>
+												<li>
+													<a id="externalSugar_B3_li" class="sugar-url">External Fortified Sugar-Table B-3</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_A1_li" class="sugar-url">Quality Assurance-Table A-1</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_B1_li" class="sugar-url">Quality Assurance-Table B-1</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_B2_li" class="sugar-url">Quality Assurance-Table B-2</a>
+												</li>
+												<li>
+													<a id="qualityAssurance_C1_li" class="sugar-url">Quality Assurance-Table C-1</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Sugar Forms -->
+										
+										<section class="menu maize">
+											<h2>Maize</h2>
+											<div title="click to expand" class="max maize">+</div>
+												<div title="click to minimize" class="min maize" style="display:none">-</div>
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
+											<ul>
+																						
+												<li>
+<<<<<<< HEAD
+													<a id="internalMaizeFlour_A1_li" class="maize-url">Internal Fortified Maize-Table A-1</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_A2_li" class="maize-url">Internal Fortified Maize-Table A-2</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_B1_li" class="maize-url">Internal Fortified Maize-Table B-1</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_B2_li" class="maize-url">Internal Fortified Maize-Table B-2</a>
+												</li>
+												<li>
+													<a id="internalMaizeFlour_C1_li" class="maize-url">Internal Fortified Maize-Table C-1</a>
+												</li>
+												<li>
+													<a id="externalMaizeFlour_B1_li" class="maize-url">External Fortified Maize-Table B-1</a>
+													<li>
+														<a id="externalMaizeFlour_B2_li" class="maize-url">External Fortified Maize-Table B-2</a>
+												</li>
+													<li>
+														<a id="externalMaizeFlour_B3_li" class="maize-url">External Fortified Maize-Table B-3</a>
+												</li>
+											</ul>
+										</section><!-- End of Menu: Maize Forms -->
+										
+										<section class="menu wheat">
+											<h2>Wheat</h2>
+											<div title="click to expand" class="max wheat">+</div>
+												<div title="click to minimize" class="min wheat" style="display:none">-</div>
+											<ul>
+												<li>
+													<a id="internalWheatFlour_A1_li" class="wheat-url">Internal Fortified Wheat-Table A-1</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_A2_li" class="wheat-url">Internal Fortified Wheat-Table A-2</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_B1_li" class="wheat-url">Internal Fortified Wheat-Table B-1</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_B2_li" class="wheat-url">Internal Fortified Wheat-Table B-2</a>
+												</li>
+												<li>
+													<a id="internalWheatFlour_C1_li" class="wheat-url">Internal Fortified Wheat-Table C-1</a>
+												</li>
+												<li>
+													<a id="externalWheatFlour_B1_li" class="wheat-url">External Fortified Wheat-Table B-1</a>
+												</li>
+												<li>
+													<a id="externalWheatFlour_B2_li" class="wheat-url">External Fortified Wheat-Table B-2</a>
+												</li>
+												<li>
+													<a id="externalWheatFlour_B3_li" class="wheat-url">External Fortified Wheat-Table B-3</a>
+												</li>
+											</ul>
+=======
 													<a id = "internalFort_A1_li" class="salt-url">Fortified Salt-Table A-1</a>
 												</li>
 												<li>
@@ -496,6 +729,7 @@ $sessionEmail = $this -> session -> userdata('email');
 													<a id="externalWheatFlour_B3_li" class="wheat-url">External Fortified Wheat-Table B-3</a>
 												</li>
 											</ul>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 										</section><!-- End of Menu: Wheat Forms -->
 												
 									</section><!-- End of Menu-Container -->

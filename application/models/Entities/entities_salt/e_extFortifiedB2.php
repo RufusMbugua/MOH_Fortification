@@ -159,11 +159,6 @@ class E_ExtFortifiedB2 {
 	private $iodineResultLess40MgPerKg;
 	
 	/**
-	 * @Column(name="saltSamplesAnalyzed", type="string",length=10, nullable=true)
-	 * */
-	private $saltSamplesAnalyzed;
-	
-	/**
 	 * @Column(name="internalTest", type="string",length=45, nullable=true)
 	 * */
 	private $internalTest;
@@ -482,13 +477,6 @@ class E_ExtFortifiedB2 {
 	}
 
 	public function setIodineResultLess40MgPerKg($iodineResultLess40MgPerKg) { $this -> iodineResultLess40MgPerKg = $iodineResultLess40MgPerKg;
-	}
-
-	public function getSaltSamplesAnalyzed() {
-		return $this -> saltSamplesAnalyzed;
-	}
-
-	public function setSaltSamplesAnalyzed($saltSamplesAnalyzed) { $this -> saltSamplesAnalyzed = $saltSamplesAnalyzed;
 	}
 
 	public function getInternalTest() {

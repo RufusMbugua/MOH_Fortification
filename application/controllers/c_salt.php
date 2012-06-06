@@ -1,10 +1,25 @@
 <?php
+<<<<<<< HEAD
+   class C_salt extends MY_Controller{
+   
+	
+	public function __construct(){
+		parent::__construct();
+	}
+	
+	
+=======
    class C_salt extends CI_Controller{
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
    	
 	public function internalFort_A1() {
 		$internalFortified_A1 = '';
 		$internalFortified_A1 .= '
+<<<<<<< HEAD
+   <form name="internalFortified_A1" id="internalFortified_A1" method="POST" action="' . base_url() .'submit/c_form_salt/form_internalFort_A1' . '" >
+=======
 <form name="internalFortified_A1" id="internalFortified_A1" method="POST" action="' . base_url() .'submit/c_form_salt/form_internalFort_A1' . '" >
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	<!-- form for internal salt fortification. 1-a -->
 	<h3 align="center"> FORTIFIED SALT-TABLE A-1</h3>
 	<p align="center">
@@ -18,8 +33,13 @@
 				</section>
 				<section class="right">
 					<select name="productType" id="productType">
+<<<<<<< HEAD
+					<option value="" selected="selected">Select One</option>
+						'.$this->selectPremixType.'
+=======
 						<option value="1">Iodine</option>
 						<option value="0">Iodate</option>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</select>
 				</section>
 			</section>
@@ -29,8 +49,13 @@
 				</section>
 				<section class="right">
 					<select name="manufacturer" id="manufacturer">
+<<<<<<< HEAD
+					<option value="" selected="selected">Select One</option>
+					'.$this->selectCompManufacturers.'
+=======
 						<option value="1">Oxfirm</option>
 						<option value="2">TeraChloro Inc.</option>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</select>
 				</section>
 			</section>
@@ -40,6 +65,10 @@
 				</section>
 				<section class="right">
 					<select name="inspectedBy" id="inspectedBy">
+<<<<<<< HEAD
+					    <option value="" selected="selected">Select One</option>
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						<option value="Port Official">Port Official</option>
 						<option value="Quality Manager">Quality Manager</option>
 					</select>
@@ -60,7 +89,11 @@
 					<label>Date:</label>
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="date" name="date" id="date" readonly="true" placeholder="click for date"/>
+=======
 					<input type="date" name="date" id="date"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 		</section>
@@ -81,7 +114,11 @@
 		<label>Quantity</label>
 	   </section>
 	   <section class="center">
+<<<<<<< HEAD
+		<input type="number" name="quantity" id="quantity"/>
+=======
 		<input type="text" name="quantity" id="quantity"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	    </section>
     	<section class="right">
 		<textarea name="integrityObservation" id="integrityObservation" rows="3"></textarea>
@@ -184,7 +221,11 @@
 			</section>
 			<section class ="right-wide">
 				<label>Date:</label>
+<<<<<<< HEAD
+				<input type="date" name="inputDate" id="inputDate" readonly="true" placeholder="click for date"/>
+=======
 				<input type="date" name="inputDate" id="inputDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 	</section>
@@ -208,6 +249,13 @@
 	<p align="center">
 		&nbsp;
 	</p>
+<<<<<<< HEAD
+	<p>Compound Manufacturer:<select name="compManufacturer" id="compManufacturer">
+						<option value="" selected="selected">Select One</option>
+						'.$this->selectCompManufacturers.'
+					</select></p>
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	<table border="0" width="98%">
 		<!--<legend>Iodine Compound Inventory Control Log</legend>-->
 		<tr>
@@ -232,18 +280,35 @@
 		</tr>
 		<tr class="clonable">
 			<td width="144">
+<<<<<<< HEAD
+			<input type="date"  name="iodineDate_1" id="iodineDate_1"" class="autoDate cloned" readonly="true" placeholder="click for date"/>
+=======
 			<input type="date"  name="iodineDate_1" id="iodineDate_1"" class="autoDate cloned"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</td>
 			<td width="144">
 			<input type="text"  name="iodineSupplier_1" id="iodineSupplier_1" class="cloned"/>
 			</td>
 			<td width="144">
+<<<<<<< HEAD
+			<input type="number"  name="iodineDrums_1" id="iodineDrums_1" class="cloned fromZero"/>
+=======
 			<input type="text"  name="iodineDrums_1" id="iodineDrums_1" class="cloned fromZero"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</td>
 			<td width="144">
 			<input type="text"  name="iodineLot_1" id="iodineLot_1" class="cloned"/>
 			</td>
 			<td width="144">
+<<<<<<< HEAD
+			<input type="text"  name="iodineExpiration_1" id="iodineExpiration_1" class="futureDate cloned" readonly="true" placeholder="click for date"/>
+			</td>
+			<td width="144">
+			<input type="number" name="iodineDispatched_1" id="iodineDispatched_1" class="cloned fromZero" />
+			</td>
+			<td width="144">
+			<input type="text" name="iodineStock_1" id="iodineStock_1" class="cloned fromZero" placeholder="auto-calculated" readonly="true" />
+=======
 			<input type="text"  name="iodineExpiration_1" id="iodineExpiration_1" class="autoDate cloned"/>
 			</td>
 			<td width="144">
@@ -251,14 +316,20 @@
 			</td>
 			<td width="144">
 			<input type="text" name="iodineStock_1" id="iodineStock_1" class="cloned fromZero" />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</td>
 			<td width="141">
 			<input type="text" name="iodineReceipt_1" id="iodineReceipt_1" class="cloned"/>
 			</td>
 		</tr>
 		<tr id="formbuttons">
+<<<<<<< HEAD
+			<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</tr>
 	</table>
 	<br/>
@@ -288,7 +359,11 @@
 			</td>
 			<td width="25%">Date of reporting:</td>
 			<td width="25%">
+<<<<<<< HEAD
+			<input type="text" name="reportingDate" id="reportingDate" readonly="true" placeholder="click for date"/>
+=======
 			<input type="text" name="reportingDate" id="reportingDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</td>
 		</tr>
 		<tr>
@@ -317,6 +392,10 @@
 						<h3 align="center"> FORTIFIED SALT QC/QA- TABLE B-1</h3>
 						<p align="center"><strong>PRODUCTION LOG FOR IODINE PREMIX</strong></p>
 						<p>Salt factory:<select name="saltFactory" id="saltFactory">
+<<<<<<< HEAD
+						<option value="" selected="selected">Select One</option>
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						<option value="1">Kensalt</option>
 						<option value="2">Magadi Salt</option>
 						</select></p>
@@ -345,6 +424,15 @@
 						   <td width="12.5%">QC review(Name and Signature)</td>
 						</tr>
 						<tr class="clonable">
+<<<<<<< HEAD
+						   <td width="12.5%"><input type="text" name="fortifiedDate_1" id="fortifiedDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/></td>
+						   <td width="12.5%"><input type="number" name="fortifiedWeight_1" id="fortifiedWeight_1" class="cloned" /></td>
+						   <td width="12.5%"><input type="number" name="compoundWeight_1" id="compoundWeight_1" class="cloned"/></td>
+						   <td width="12.5%"><input type="number" name="finalWeight_1" id="finalWeight_1" class="cloned"/></td>
+						   <td width="12.5%"><input type="text" name="startTime_1" id="startTime_1" class="mobiscroll cloned" readonly="readonly" value="" readonly="true" placeholder="click for time"/></td>
+						   <td width="12.5%"><input type="text" name="endTime_1" id="endTime_1" class="mobiscroll cloned" readonly="readonly" value="" readonly="true" placeholder="click for time"/></td>
+						   <td width="12.5%"><input type="number" name="iodineWeight_1" id="iodineWeight_1" class="cloned" /></td>
+=======
 						   <td width="12.5%"><input type="text" name="fortifiedDate_1" id="fortifiedDate_1" class="autoDate cloned" /></td>
 						   <td width="12.5%"><input type="text" name="fortifiedWeight_1" id="fortifiedWeight_1" class="cloned" /></td>
 						   <td width="12.5%"><input type="text" name="compoundWeight_1" id="compoundWeight_1" class="cloned"/></td>
@@ -352,15 +440,23 @@
 						   <td width="12.5%"><input type="text" name="startTime_1" id="startTime_1" class="mobiscroll cloned" readonly="readonly" value="" /></td>
 						   <td width="12.5%"><input type="text" name="endTime_1" id="endTime_1" class="mobiscroll cloned" readonly="readonly" value="" /></td>
 						   <td width="12.5%"><input type="text" name="iodineWeight_1" id="iodineWeight_1" class="cloned" /></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						   <td width="12.5%"><input type="text" name="qcReview_1" id="qcReview_1" class="cloned"/></td>
 						</tr>
 						<tr id="formbuttons">
 
+<<<<<<< HEAD
+			                <input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+							<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+
+		                </tr>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
 
 		</tr>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						
 						<tr>
 						   <td width="12.5%"></td>
@@ -391,7 +487,11 @@
 	<h4>WEEKLY CHECK UP OF EQUIPMENT USED IN SALT FORTIFICATION WITH IODINE</h4>
 	<p>
 		Date:
+<<<<<<< HEAD
+		<input type="text" name="checkupDate" id="checkupDate" readonly="true" placeholder="click for date"/>
+=======
 		<input type="text" name="checkupDate" id="checkupDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	</p>
 	<section class="column-wide">
 		<section class="row-title">
@@ -508,6 +608,16 @@
                              <td width="15%">SALT FORTIFIED/ PREMIX USED</td>
                              <td width="18%">NOTES</td>
                              <td width="18%">COMMENTS</td>
+<<<<<<< HEAD
+                             <td width="15%">DATE<input type="text" name="dateC1" id="dateC1" readonly="true" placeholder="click for date"/></td>
+                              
+                         </tr>
+                         <tr class="clonable">
+                             <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" value="" readonly="true" placeholder="click for time"/></td>
+                             <td width="15%"><input type="number" name="saltProduced_1" id="saltProduced_1" class="cloned fromZero"/></td>
+                             <td width="15%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
+                             <td width="15%"><input type="number" name="saltFortified_1" id="saltFortified_1" class="cloned fromZero" readonly="true" placeholder="computed"/></td>
+=======
                              <td width="15%">DATE<input type="text" name="dateC1" id="dateC1"/></td>
                               
                          </tr>
@@ -516,6 +626,7 @@
                              <td width="15%"><input type="text" name="saltProduced_1" id="saltProduced_1" class="cloned fromZero"/></td>
                              <td width="15%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned fromZero"/></td>
                              <td width="15%"><input type="text" name="saltFortified_1" id="saltFortified_1" class="cloned fromZero"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <td width="18%"><input type="text" name="notes_1" id="notes_1" class="cloned"/></td>
                              <td width="18%"><input type="text" name="comments_1" id="comments_1" class="cloned"/></td>
                             
@@ -531,6 +642,18 @@
                           </tr>
                           <tr id="formbuttons">
 
+<<<<<<< HEAD
+			                <input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			                <input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+
+		                 </tr>
+                          
+                         <tr>
+                             <td width="15%">Daily Total</td>
+                              <td width="15%"><input type="text" name="saltProduced2" id="saltProduced2" placeholder="auto-calculated" readonly="true"/></td>
+                             <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2" placeholder="auto-calculated" readonly="true"/></td>
+                             <td width="15%"><input type="text" name="saltFortified2" id="saltFortified2" placeholder="auto-calculated" readonly="true"/></td>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
@@ -542,15 +665,22 @@
                              <td width="15%"><input type="text" name="saltProduced2" id="saltProduced2"/></td>
                              <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2"/></td>
                              <td width="15%"><input type="text" name="saltFortified2" id="saltFortified2"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <!--td width="18%"><input type="text" name="notes2" id="notes2"/></td-->
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
                              <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
+<<<<<<< HEAD
+                           <td width="15%"><input type="text" name="saltProduced3" id="saltProduced3" placeholder="auto-calculated" readonly="true"/></td>
+                             <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3" placeholder="auto-calculated" readonly="true"/></td>
+                             <td width="15%"><input type="text" name="saltFortified3" id="saltFortified3" placeholder="auto-calculated" readonly="true"/></td>
+=======
                              <td width="15%"><input type="text" name="saltProduced3" id="saltProduced3"/></td>
                              <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3"/></td>
                              <td width="15%"><input type="text" name="saltFortified3" id="saltFortified3"/></td>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
                              <!--td width="18%"><input type="text" name="notes3" id="notes3"/></td-->
                              <td width="18%"></td>
                              <td width="15%"></td>
@@ -587,7 +717,11 @@
 					Date:
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="visitDate" id="visitDate" readonly="true" placeholder="click for date"/>
+=======
 					<input type="text" name="visitDate" id="visitDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -596,7 +730,11 @@
 					Time:
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="visitTime" id="visitTime" class="mobiscroll"  value="" readonly="true" placeholder="click for time"/>
+=======
 					<input type="text" name="visitTime" id="visitTime" class="mobiscroll" readonly="readonly" value="" />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 				</section>
 			</section>
@@ -607,6 +745,10 @@
 				</section>
 				<section class="right">
 					<select name="oilFactory" id="oilFactory">
+<<<<<<< HEAD
+					<option value="" selected="selected">Select One</option>
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						<option value="1">Magadi Salt</option>
 						<option value="2">Kensalt</option>
 						<option value="3">Melvins</option>
@@ -632,6 +774,10 @@
 				</section>
 				<section class="right">
 					<select name="phealthOfficer" id="phealthOfficer">
+<<<<<<< HEAD
+					    <option value="" selected="selected">Select One</option>
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						<option value="Adams Opiyo">Adams Opiyo</option>
 						<option value="Rufus Mbugua">Rufus Mbugua</option>
 						<option value="Nicodemus Maingi">Nicodemus Maingi</option>
@@ -671,10 +817,15 @@
 		</tr>
 		<tr id="formbuttons">
 
+<<<<<<< HEAD
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
 
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</tr>
 	</table>
 </form>
@@ -710,7 +861,11 @@
 					<label for="inspection_date">Date of Inspection:</label>
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input id="inspectionDate" name="inspectionDate" type="text" readonly="true" placeholder="click for date">
+=======
 					<input id="inspectionDate" name="inspectionDate" type="text" placeholder="datepicker"  required>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 			<section class="row">
@@ -761,7 +916,11 @@
 					<label for="email">Email:</label>
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input id="email" name="email" type="email" placeholder="valid email" >
+=======
 					<input id="email" name="email" type="text" placeholder=""  required>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 		</section>
@@ -1378,12 +1537,25 @@
 				</section>
 				<section class="right-wide">
 					Suggestions for improvement
+<<<<<<< HEAD
+					<textarea id="suggestionsForImprovement" name="suggestionsForImprovement"></textarea>	
+				</section>
+			</section>
+			<section class="row right-wide">																																																										
+			           Type of Iodine in Premix(Iodine/iodate):
+                     <select name="iodineType" id="iodine_type">
+                        <option value="" selected="selected">Select One</option>
+						<option value="Iodine">Iodine</option>
+						<option value="Iodate">Iodate</option>
+					</select>
+=======
 					<textarea id="suggestionsForImprovement" name="suggestionsForImprovement"></textarea>																																																											
 			           Type of Iodine in Premix(Iodine/iodate):
  <input type="text" id="iodine_type" name="iodineType" value="" placeholder="" />
 				</section>
 
 			</section>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 	<table>
@@ -1398,6 +1570,32 @@
 		</tr>
 		<tr class="clonable">
 			<td width="144">
+<<<<<<< HEAD
+			<input type="text"  name="IDComposite" id="iodineDate1" class="cloned"/>
+			</td>
+			<td width="144">
+			<input type="number"  name="IDCompositemgKg" class="cloned fromZero"/>
+			</td>
+			<td width="144">
+			<input type="text"  name="refIodine" id="iodineDrums" class="cloned"/>
+			</td>
+			<td width="144">
+			<input type="number"  name="refIodineMgKg" id="iodineLot" class="cloned fromZero"/>
+			</td>
+			<td width="144">
+			<input type="text"  name="IDOther" id="iodineExpiration" class="cloned"/>
+			</td>
+			<td width="144">
+			<input type="number" name="IDOtherMgKg" id="iodineDispatched" class="cloned fromZero"/>
+			</td>
+			<td width="144">
+			<input type="text" name="IDOtherMgKg2" id="iodineStock" class="cloned"/>
+			</td>
+		</tr>
+		<tr id="formbuttons">
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+=======
 			<input type="text"  name="IDComposite" id="iodineDate1"/>
 			</td>
 			<td width="144">
@@ -1422,6 +1620,7 @@
 		<tr id="formbuttons" class="clonable">
 			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</tr>
 	</table>
 
@@ -1432,7 +1631,11 @@
 		</section-->
 		<!--section class="right-wide">
 		Date
+<<<<<<< HEAD
+		<input id="inspection_date" name="inspectionDate" type="text" readonly="true" placeholder="click for date">
+=======
 		<input id="inspection_date" name="inspectionDate" type="text" placeholder="datepicker"  required>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section-->
 	</section>
 	<section class="column-wide">
@@ -1443,7 +1646,11 @@
 			</section>
 			<section class="right">
 				Date
+<<<<<<< HEAD
+				<input id="supervision_date" name="supervisionDate" type="text" readonly="true" placeholder="click for date">
+=======
 				<input id="supervision_date" name="supervisionDate" type="text" placeholder="datepicker"  required>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 	</section>
@@ -1487,7 +1694,11 @@
 					<label for="inspection_date">Date of Inspection:</label>
 				</section>
 				<section class = "right">
+<<<<<<< HEAD
+					<input id="inspections_date" name="inspectionDate" type="text" readonly="true" placeholder="click for date" />
+=======
 					<input id="inspections_date" name="inspectionDate" type="text" placeholder="datepicker" required />
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 			<section class="row">
@@ -1585,7 +1796,11 @@
 			<input type="text" id="publicHealthOfficer" name="publicHealthOfficer" value=""  required/>
 		</section>
 		<label for="ho_signature_date" >Date:</label>
+<<<<<<< HEAD
+		<input type="text" id="inspectorDate" name="inspectorDate" value="" class="autoDate" readonly="true" placeholder="click for date"/>
+=======
 		<input type="text" id="inspectorDate" name="inspectorDate" value="" class="autoDate" required/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 	</section>
 	<section class="column">
 		<section class="row">
@@ -1594,7 +1809,11 @@
 		</section>
 		<section class="row">
 			<label for="ro_signature_date" >Date:</label>
+<<<<<<< HEAD
+			<input type="text" id="receivedDate" name="receivedDate" value="" class="autoDate"  readonly="true" placeholder="click for date"/>
+=======
 			<input type="text" id="receivedDate" name="receivedDate" value="" class="autoDate"  required/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 	<section class="column">
@@ -1606,7 +1825,11 @@
 	<section class="column">
 		<section class="row">
 			<label for="s_signature_date" >Date</label>
+<<<<<<< HEAD
+			<input type="text" id="roSignature" name="roSignature" value=""  readonly="true" placeholder="click for date"/>
+=======
 			<input type="text" id="roSignature" name="roSignature" value=""  required/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 </form>';
@@ -1619,6 +1842,10 @@
 	}
 
 	public function externalIod_B1() {
+<<<<<<< HEAD
+		//$this->getIodizationCentreNames(); <--moved to MY_Controller
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		$externalIodization_B1 = '';
 		$externalIodization_B1 .= '
 <form name="externalIodizationB1" id="externalIodizationB1" method="post" action="' . base_url() .'submit/c_form_salt/form_externalIod_B1' . '">
@@ -1632,7 +1859,11 @@
 					Date
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="inspectionsDate" id="inspectionsDate" value="" readonly="true" placeholder="click for date"/>
+=======
 					<input type="text" name="inspectionsDate" id="inspectionsDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -1641,7 +1872,14 @@
 					Iodization Center
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<select name="iodizationCenter" id="iodizationCenter">
+					<option value="" selected="selected">Select One</option>
+					'.$this->selectIodizationCentre.'
+					</select>
+=======
 					<input type="text" name="iodizationCenter" id="iodizationCenter"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 			<section class="row">
@@ -1649,7 +1887,11 @@
 					Address
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="inspectionAddress" id="inspectionAddress" value=""/>
+=======
 					<input type="text" name="inspectionAddress" id="inspectionAddress"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 		</section>
@@ -1660,7 +1902,11 @@
 					Telephone
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="inspectorTelephone" id="inspectorTelephone" value=""/>
+=======
 					<input type="text" name="inspectorTelephone" id="inspectorTelephone"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 			<section class="row">
@@ -1668,7 +1914,11 @@
 					Fax
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="text" name="inspectorFax" id="inspectorFax" value=""/>
+=======
 					<input type="text" name="inspectorFax" id="inspectorFax"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 				</section>
 			</section>
@@ -1677,7 +1927,11 @@
 					Email
 				</section>
 				<section class="right">
+<<<<<<< HEAD
+					<input type="email" name="inspectorEmail" id="inspectorEmail" value="" placeholder="valid email"/>
+=======
 					<input type="text" na,e="inspectorEmail" id="inspectorEmail"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -1710,7 +1964,11 @@
 			</section>
 			<section class="right">
 				<section class="col">
+<<<<<<< HEAD
+					<input type="radio" name="inventory" id="inventoryYes" value="yes" checked="checked"/>
+=======
 					<input type="radio" name="inventory" id="inventoryYes" value="yes"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 
 				<section class="col">
@@ -1730,6 +1988,16 @@
 				</section>
 				<section class="right">
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="sufficient" id="sufficientYes" value="yes" checked="checked"/>
+					</section>
+					<section class="col">
+						<input type="radio" name="sufficient" id="sufficientNo" value="no"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="sufficient" id="sufficientNa" value="n/a"/>
+=======
 						<input type="radio" name="sufficient" id="sufficientYes"/>
 					</section>
 					<section class="col">
@@ -1738,6 +2006,7 @@
 
 					<section class="col">
 						<input type="radio" name="sufficient" id="sufficientNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 
 				</section>
@@ -1748,6 +2017,17 @@
 				</section>
 				<section class="right">
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="storage" id="storageYes" value="yes" checked="checked"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="storage" id="storageNo" value="no"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="storage" id="storageNa" value="n/a"/>
+=======
 						<input type="radio" name="storage" id="storageYes"/>
 					</section>
 
@@ -1757,6 +2037,7 @@
 
 					<section class="col">
 						<input type="radio" name="storage" id="storageNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 				</section>
 			</section>
@@ -1769,6 +2050,17 @@
 				</section>
 				<section class="right">
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="potassium" id="potassiumYes" value="yes"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="potassium" id="potassiumNo" value="no"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="potassium" id="potassiumNa" value="n/a"/>
+=======
 						<input type="radio" name="potassium" id="potassiumYes"/>
 					</section>
 
@@ -1778,6 +2070,7 @@
 
 					<section class="col">
 						<input type="radio" name="potassium" id="potassiumNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 				</section>
 			</section>
@@ -1787,6 +2080,17 @@
 				</section>
 				<section class="right">
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="precord" id="precordsYes" value="yes" checked="checked"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="precord" id="precordsNo" value="no"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="precord" id="precordsNa" value="n/a"/>
+=======
 						<input type="radio" name="precord" id="precordsYes"/>
 					</section>
 
@@ -1796,6 +2100,7 @@
 
 					<section class="col">
 						<input type="radio" name="precord" id="precordsNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 
 				</section>
@@ -1806,6 +2111,17 @@
 				</section>
 				<section class="right">
 					<section class="col">
+<<<<<<< HEAD
+						<input type="radio" name="fifo" id="fifoYes" value="yes"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="fifo" id="fifoNo" value="no"/>
+					</section>
+
+					<section class="col">
+						<input type="radio" name="fifo" id="fifoNa" value="n/a"/>
+=======
 						<input type="radio" name="fifo" id="fifoYes"/>
 					</section>
 
@@ -1815,6 +2131,7 @@
 
 					<section class="col">
 						<input type="radio" name="fifo" id="fifoNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</section>
 				</section>
 			</section>
@@ -1846,6 +2163,15 @@
 			</section>
 			<section class="right">
 				<section class="col">
+<<<<<<< HEAD
+					<input type="radio" name="premix" id="premixYes" value="yes" checked="checked"/>
+				</section>
+				<section class="col">
+					<input type="radio" name="premix" id="premixNo" value="no"/>
+				</section>
+				<section class="col">
+					<input type="radio" name="premix" id="premixNa" value="n/a"/>
+=======
 					<input type="radio" name="premix" id="premixYes"/>
 				</section>
 				<section class="col">
@@ -1853,6 +2179,7 @@
 				</section>
 				<section class="col">
 					<input type="radio" name="premix" id="premixNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -1863,6 +2190,15 @@
 			</section>
 			<section class="right">
 				<section class="col">
+<<<<<<< HEAD
+					<input type="radio" name="records" id="recordsYes" value="yes" checked="checked"/>
+				</section>
+				<section class="col">
+					<input type="radio" name="records" id="recordsNo" value="no"/>
+				</section>
+				<section class="col">
+					<input type="radio" name="records" id="recordsNa" value="n/a"/>
+=======
 					<input type="radio" name="records" id="recordsYes"/>
 				</section>
 				<section class="col">
@@ -1870,6 +2206,7 @@
 				</section>
 				<section class="col">
 					<input type="radio" name="records" id="recordsNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 
@@ -1884,6 +2221,15 @@
 			</section>
 			<section class="right">
 				<section class="col">
+<<<<<<< HEAD
+					<input type="radio" name="packaging" id="packagingYes" value="yes" checked="checked"/>
+				</section>
+				<section class="col">
+					<input type="radio" name="packaging" id="packagingNo" value="no"/>
+				</section>
+				<section class="col">
+					<input type="radio" name="packaging" id="packagingNa" value="n/a"/>
+=======
 					<input type="radio" name="packaging" id="packagingYes"/>
 				</section>
 				<section class="col">
@@ -1891,6 +2237,7 @@
 				</section>
 				<section class="col">
 					<input type="radio" name="packaging" id="packagingNa"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				</section>
 			</section>
 		</section>
@@ -1908,7 +2255,11 @@
 		</section>
 		<section class="col-x4">
 		    Iodine Content
+<<<<<<< HEAD
+			<input type="number" name="iodineContent0" id="iodineContent0"/>
+=======
 			<input type="text" name="iodineContent0" id="iodineContent0"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 		<section class="col-x4">
 		    Sample# - of processed samples
@@ -1916,7 +2267,11 @@
 		</section>
 		<section class="col-x4">
 		    Iodine Content
+<<<<<<< HEAD
+			<input type="number" name="iodineContent1" id="iodineContent1"/>
+=======
 			<input type="text" name="iodineContent1" id="iodineContent1"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 
@@ -1931,10 +2286,17 @@
 
 	<section class = "row">
 		<section clas="left">
+<<<<<<< HEAD
+			<input type="number" name="averageSample1" id="averageSample1" readonly="true" />
+		</section>
+		<section class="right">
+			<input type="number" name="averageSample2" id="averageSample2" readonly="true" />
+=======
 			<input type="text" name="averageSample1" id="averageSample1"/>
 		</section>
 		<section class="right">
 			<input type="text" name="averageSample2" id="averageSample2"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		</section>
 	</section>
 
@@ -1945,11 +2307,19 @@
 		<section class="row">
 			<section class="left-wide">
 				Non-compliances:
+<<<<<<< HEAD
+				<textarea name="nonCompliances" id="nonCompliances" value=""></textarea>
+			</section>
+			<section class="right-wide">
+				Suggestions for Improvement:
+				<textarea name="improvementSuggestions" id="improvementSuggestions" value=""></textarea>
+=======
 				<textarea name="nonCompliances"></textarea>
 			</section>
 			<section class="right-wide">
 				Suggestions for Improvement:
 				<textarea name="improvementSuggestions" ></textarea>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 		</section>
@@ -1968,42 +2338,70 @@
 			<section class="col">
 				Date<p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="externalIodB1_date_rep_signed" id="externalIodB1_date_rep_signed" value="" readonly="true" placeholder="click for date"/>
+=======
 				<input type="text" name="externalIodB1_date_rep_signed" id="externalIodB1_date_rep_signed"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 		<section class="row">
 			<section class="col">
 				Signature:(Inspector)<p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="inspectorSignature" id="inspectorSignature" value=""/>
+=======
 				<input type="text" name="inspectorSignature" id="inspectorSignature"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="col">
 				Signature(Factory representative):<p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="signaturefRepresentative" id="signaturefRepresentative" value=""/>
+=======
 				<input type="text" name="signaturefRepresentative" id="signaturefRepresentative"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="col">
 				Date <p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="signatureDate" id="signatureDate" readonly="true" placeholder="click for date" value=""/>
+=======
 				<input type="text" name="signatureDate" id="signatureDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 		<section class="row">
 			<section class="col">
 				Supervisor(Name):<p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="supervisorName" id="supervisorName" value=""/>
+=======
 				<input type="text" name="supervisorName" id="supervisorName"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 			</section>
 			<section class="col">
 				Signature(supervisor):<p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="signatureSupervisor" id="signatureSupervisor" value=""/>
+=======
 				<input type="text" name="signatureSupervisor" id="signatureSupervisor"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 			<section class="col">
 				Date<p></p>
 
+<<<<<<< HEAD
+				<input type="text" name="supervisorDate" id="supervisorDate" value="" readonly="true" placeholder="click for date"/>
+=======
 				<input type="text" name="supervisorDate" id="supervisorDate"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			</section>
 		</section>
 	</section>
@@ -2017,6 +2415,10 @@
 	}
 
 	public function smallScale_A1() {
+<<<<<<< HEAD
+		//$this->getCompManufacturerNamesAndIds();<--moved to MY_Controller
+=======
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 		$smallScale_A1 = '';
 		$smallScale_A1 .= '<form name="smallScale_A1" id="smallScale_A1" method="post" action="' . base_url() .'submit/c_form_salt/form_smallScale_A1' . '">
 					<h3> IODIZED SALT- QA IN SMALL SCALE OPERATIONS- TABLE A-1</h3>
@@ -2039,6 +2441,23 @@
 						 <td width="140"><strong>Amount of Premix Produced(kg)</strong></td>
 					</tr>
 					<tr class="clonable">
+<<<<<<< HEAD
+						 <td width="144"><input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/></td>
+						 <td width="144"><select name="supplierName_1" id="supplierName_1" class="cloned"><option value="" selected="selected">Select One</option>'.$this->selectCompManufacturers.'</select></td>
+						 <td width="144"><input type="number" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/></td>
+						 <td width="144"><input type="text" name="lotNumber_1" id="controlLot_1" class="cloned"/></td>
+						 <td width="144"><input type="number" name="contentOfIodine_1" id="iodineContent_1" class="cloned" /></td>
+						 <td width="144"><input type="number" name="amountUsed_1" id="amountUsed_1" class="cloned fromZero" /></td>
+						 <td width="144"><input type="number" name="inStock_1" id="inStock_1" class="cloned" /></td>
+						 <td width="140"><input type="number" name="premixAmount_1" id="premixAmount_1" class="cloned" /></td>
+					</tr>
+					<tr id="formbuttons">
+
+					<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+					<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+
+		            </tr>
+=======
 						 <td width="144"><input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned"/></td>
 						 <td width="144"><input type="text" name="supplierName_1" id="supplierName_1" class="cloned"/></td>
 						 <td width="144"><input type="text" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/></td>
@@ -2055,6 +2474,7 @@
 			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
 
 		</tr>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 					</table>
 					</form>';
 		$data['form'] = $smallScale_A1;
@@ -2065,9 +2485,16 @@
 	}
 
 	public function smallScale_A2() {
+<<<<<<< HEAD
+		//$this->getCompManufacturerNamesAndIds();<--moved to MY_Controller
+		$smallScale_A2 = '';
+		$smallScale_A2 .= '
+        <form name="smallScale_A2" id="smallScale_A2" method="post" action="' . base_url() .'submit/c_form_salt/form_smallScale_A2' . '"><!--form for internal monitoring of salt fortification- A2-->
+=======
 		$smallScale_A2 = '';
 		$smallScale_A2 .= '
  <form name="" id="smallScale_A2" method="post" action="' . base_url() .'submit/c_form_salt/form_smallScale_A2' . '"><!--form for internal monitoring of salt fortification- A2-->
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 						<h3 align="center"> IODIZED SALT QA IN SMALL SCALE OPERATIONS-TABLE A2</h3>
 						<p align="center"><strong>INVENTORY CONTROL LOG OF POTASSIUM IODATE PREMIX IN STOCK AND SALT PRODUCTION.</strong></p>
 						<p align="center">&nbsp;</p>
@@ -2094,6 +2521,22 @@
                            <td width="12.5%">AMOUNT OF SALT PRODUCED(KG)</td>
                          </tr>
                         <tr class="clonable">
+<<<<<<< HEAD
+						 <td width="144"><input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/></td>
+						 <td width="144"><select name="supplierName_1" id="supplierName_1" class="cloned"><option value="" selected="selected">Select One</option>'.$this->selectCompManufacturers.'</select></td>
+						 <td width="144"><input type="number" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/></td>
+						 <td width="144"><input type="text" name="lotNumber_1" id="controlLot_1" class="cloned"/></td>
+						 <td width="144"><input type="number" name="contentOfIodine_1" id="iodineContent_1" class="cloned" /></td>
+						 <td width="144"><input type="number" name="amountUsed_1" id="amountUsed_1" class="cloned fromZero" /></td>
+						 <td width="144"><input type="number" name="inStock_1" id="inStock_1" class="cloned" /></td>
+						 <td width="140"><input type="number" name="premixAmount_1" id="premixAmount_1" class="cloned" /></td>
+					</tr>
+                         <tr id="formbuttons">
+
+							<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			                <input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+
+=======
 						 <td width="144"><input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned"/></td>
 						 <td width="144"><input type="text" name="supplierName_1" id="supplierName_1" class="cloned"/></td>
 						 <td width="144"><input type="text" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/></td>
@@ -2108,6 +2551,7 @@
 							<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
 				
 							<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 						</tr>
                         </table></form> ';
@@ -2118,4 +2562,8 @@
 
 	}
 	
+<<<<<<< HEAD
+	}
+=======
    }
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2

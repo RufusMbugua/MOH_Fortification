@@ -1,9 +1,9 @@
 <?php
-class C_maize extends CI_Controller{
+class C_maize extends MY_Controller{
 	public function externalMaizeFlour_B1(){
 		$externalMaizeFlour_B1='';
 		$externalMaizeFlour_B1.='
-<form name="externalMaizeFlour_B1" ID="externalMaizeFlour_B1" action="' . base_url() .'submit/c_form_maize/form_externalFort_B1' . '" method="post">
+<form name="externalMaizeFlour_B1" id="externalMaizeFlour_B1" action="' . base_url() .'submit/c_form_maize/form_externalFort_B1' . '" method="post">
 	<h3>FORTIFIED MAIZE FLOUR AUDITS AND INSPECTION TABLE B-1</h3>
 	<p align="center">
 		BRIEFING SESSIONS- TECHNICAL AUDIT AND INSPECTIONS VISITS
@@ -16,7 +16,7 @@ class C_maize extends CI_Controller{
 					Date:
 				</section>
 				<section class="right">
-					<input type="text" name="dateB1" id="dateB1"/>
+					<input type="text" name="dateB1" id="dateB1" class="autoDate" readonly="true" placeholder="click for date"/>
 				</section>
 			</section>
 			<section class="row">
@@ -47,7 +47,7 @@ class C_maize extends CI_Controller{
 					Time:
 				</section>
 				<section class="right">
-					<input type="text" name="time" id="time"/>
+					<input type="text" name="time" id="time" class="mobiscroll" readonly="true" placeholder="click for time"/>
 				</section>
 			</section>
 
@@ -89,8 +89,8 @@ class C_maize extends CI_Controller{
 			</tr>
 			<tr id="formbuttons">
 
-			<input title="adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input title="removes the last row" type="button" class="awesome myblue medium" id="clonesubmit" value="Remove Row"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 			</tr>
 		</table>
@@ -430,7 +430,7 @@ public function externalMaizeFlour_B2(){
 						<input type="radio" name="certificateOfAnalysis" id="certificate_of_analysis_n" value="no" />
 					</section>
 					<section class="col">
-						<input type="radio" name="certificateOfAanalysis" id="certificate_of_analysis_na" value="n/a" />
+						<input type="radio" name="certificateOfAnalysis" id="certificate_of_analysis_na" value="n/a" />
 					</section>
 				</section>
 			</section>
@@ -456,13 +456,13 @@ public function externalMaizeFlour_B2(){
 				</section>
 				<section class="right">
 					<section class="col">
-						<input type="radio" name="fifoSystem" id="fifo_system_y" value="yes" />
+						<input type="radio" name="fifoSystemPremix" id="fifo_systemP_y" value="yes" />
 					</section>
 					<section class="col">
-						<input type="radio" name="fifoSystem" id="fifo_system_na" value="no" />
+						<input type="radio" name="fifoSystemPremix" id="fifo_systemP_na" value="no" />
 					</section>
 					<section class="col">
-						<input type="radio" name="fifoSystem" id="fifo_system_na" value="n/a" />
+						<input type="radio" name="fifoSystemPremix" id="fifo_systemP_na" value="n/a" />
 					</section>
 				</section>
 			</section>
@@ -790,15 +790,15 @@ public function externalMaizeFlour_B2(){
 				</section>
 				<section class="right">
 					<section class="col">
-						<input type="radio" name="fifoSystem" id="fifoSystem_y" checked="checked" value="yes" />
+						<input type="radio" name="fifoSystemFlour" id="fifoSystemF_y" checked="checked" value="yes" />
 					</section>
 
 					<section class="col">
-						<input type="radio" name="fifoSystem" id="fifoSystem_n" value="no" />
+						<input type="radio" name="fifoSystemFlour" id="fifoSystemF_n" value="no" />
 					</section>
 
 					<section class="col">
-						<input type="radio" name="fifoSystem" id="fifoSystem_na" value="n/a" />
+						<input type="radio" name="fifoSystemFlour" id="fifoSystemF_na" value="n/a" />
 					</section>
 				</section>
 			</section>
@@ -843,13 +843,17 @@ public function externalMaizeFlour_B2(){
 				</section>
 				<section class="right-wide">
 					Suggestions for improvement
-					<textarea id="suggestionsForImprovement" name="suggestionsForImprovement"></textarea>																																																																
-			           Type of Iodine in Premix(Iodine/iodate):
- <input type="text" id="iodine_type" name="iodineType" value="" placeholder="" />
-				</section>
-
+					<textarea id="suggestionsForImprovement" name="suggestionsForImprovement"></textarea>
+					</section>
 			</section>
-		</section>
+			<section class="row right-wide">																																																																
+			           Type of Iodine in Premix(Iodine/iodate):
+                    <select name="iodineType" id="iodine_type">
+                        <option value="" selected="selected">Select One</option>
+						<option value="Iodine">Iodine</option>
+						<option value="Iodate">Iodate</option>
+					</select>
+		  </section>
 	</section>
 	<table>
 		<tr>
@@ -872,30 +876,30 @@ public function externalMaizeFlour_B2(){
 		</tr>
 		<tr class="clonable">
 			<td width="144">
-			<input type="text"  name="IDComposite" id="iodineDate1"/>
+			<input type="text"  name="IDComposite" id="iodineDate1" class="cloned"/>
 			</td>
 			<td width="144">
-			<input type="text"  name="IDCompositemgKg" />
+			<input type="number"  name="IDCompositemgKg" class="cloned fromZero"/>
 			</td>
 			<td width="144">
-			<input type="text"  name="refIodine" id="iodineDrums"/>
+			<input type="text"  name="refIodine" id="iodineDrums" class="cloned"/>
 			</td>
 			<td width="144">
-			<input type="text"  name="refIodineMgKg" id="iodineLot"/>
+			<input type="number"  name="refIodineMgKg" id="iodineLot" class="cloned fromZero"/>
 			</td>
 			<td width="144">
-			<input type="text"  name="IDOther" id="iodineExpiration"/>
+			<input type="text"  name="IDOther" id="iodineExpiration" class="cloned"/>
 			</td>
 			<td width="144">
-			<input type="text" name="IDOtherMgKg" id="iodineDispatched"/>
+			<input type="number" name="IDOtherMgKg" id="iodineDispatched" class="cloned fromZero"/>
 			</td>
 			<td width="144">
-			<input type="text" name="IDOtherMgKg2" id="iodineStock"/>
+			<input type="text" name="IDOtherMgKg2" id="iodineStock" class="cloned"/>
 			</td>
 		</tr>
 		<tr id="formbuttons" class="clonable">
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 		</tr>
 	</table>
 
@@ -906,7 +910,7 @@ public function externalMaizeFlour_B2(){
 		</section-->
 		<!--section class="right-wide">
 		Date
-		<input id="inspection_date" name="inspectionDate" type="text" placeholder="datepicker"  required>
+		<input id="inspection_date" name="inspectionDate" type="text" placeholder="click for date" readonly="true">
 		</section-->
 	</section>
 	<section class="column-wide">
@@ -917,7 +921,7 @@ public function externalMaizeFlour_B2(){
 			</section>
 			<section class="right">
 				Date
-				<input id="supervision_date" name="supervisionDate" type="text" placeholder="datepicker"  required>
+				<input id="supervision_date" name="supervisionDate" type="text" readonly="true" placeholder="click for date"/>
 			</section>
 		</section>
 	</section>
@@ -950,7 +954,7 @@ public function externalMaizeFlour_B3(){
 					<label for="inspection_date">Date of Inspection:</label>
 				</section>
 				<section class = "right">
-					<input id="inspections_date" name="inspectionDate" type="text" placeholder="datepicker" required />
+					<input id="inspections_date" name="inspectionDate" type="text" readonly="true" placeholder="click for date" />
 				</section>
 			</section>
 			<section class="row">
@@ -969,7 +973,7 @@ public function externalMaizeFlour_B3(){
 					<label for="address">Address:</label>
 				</section>
 				<section class = "right">
-					<input id="address" name="address" type="text" placeholder=""  required />
+					<input id="address" name="address" type="text" placeholder=""  />
 				</section>
 			</section>
 			<section class="row">
@@ -977,7 +981,7 @@ public function externalMaizeFlour_B3(){
 					<label for="telephone">Telephone:</label>
 				</section>
 				<section class = "right">
-					<input id="telephone" name="telephone" type="text" placeholder=""  required />
+					<input id="telephone" name="telephone" type="text" placeholder=""  />
 				</section>
 			</section>
 		</section>
@@ -1048,7 +1052,7 @@ public function externalMaizeFlour_B3(){
 			<input type="text" id="publicHealthOfficer" name="publicHealthOfficer" value=""  required/>
 		</section>
 		<label for="ho_signature_date" >Date:</label>
-		<input type="text" id="inspectorDate" name="inspectorDate" value="" class="autoDate" required/>
+		<input type="text" id="inspectorDate" name="inspectorDate" value="" class="autoDate" readonly="true" placeholder="click for date"/>
 	</section>
 	<section class="column">
 		<section class="row">
@@ -1069,7 +1073,7 @@ public function externalMaizeFlour_B3(){
 	<section class="column">
 		<section class="row">
 			<label for="s_signature_date" >Date</label>
-			<input type="text" id="roSignature" name="roSignature" value=""  required/>
+			<input type="text" id="roSignature" name="roSignature" value=""  readonly="true" placeholder="click for date"/>
 		</section>
 	</section>
 </form>
@@ -1095,7 +1099,8 @@ public function internalMaizeFlour_A1(){
 				</section>
 				<section class="right">
 					<select name="productType" id="productType">
-						<option value="1">Vitamins and mineral premix</option>
+						<option value="" selected="selected">Select One</option>
+						'.$this->selectPremixType.'
 					</select>
 				</section>
 			</section>
@@ -1105,8 +1110,8 @@ public function internalMaizeFlour_A1(){
 				</section>
 				<section class="right">
 					<select name="manufacturer" id="manufacturer">
-						<option value="1">Manufacturer 1</option>
-						<option value="0">Manufacturer 2</option>
+						<option value="" selected="selected">Select One</option>
+					'.$this->selectCompManufacturers.'
 					</select>
 				</section>
 			</section>
@@ -1116,8 +1121,9 @@ public function internalMaizeFlour_A1(){
 				</section>
 				<section class="right">
 					<select name="inspectedBy" id="inspectedBy">
-						<option value="1">Please select</option>
-						<option value="0">Insert names</option>
+					    <option value="" selected="selected">Select One</option>
+						<option value="Port Official">Port Official</option>
+						<option value="Quality Manager">Quality Manager</option>
 					</select>
 				</section>
 			</section>
@@ -1136,7 +1142,7 @@ public function internalMaizeFlour_A1(){
 					<label>Date:</label>
 				</section>
 				<section class="right">
-					<input type="date" name="date" id="date"/>
+					<input type="date" name="date" id="date" readonly="true" placeholder="click for date"/>
 				</section>
 			</section>
 		</section>
@@ -1158,7 +1164,7 @@ public function internalMaizeFlour_A1(){
 				<label>Quantity</label>
 			</section>
 			<section class="center">
-				<input type="text" name="quantity" id="quantity"/>
+				<input type="number" name="quantity" id="quantity"/>
 			</section>
 			<section class="right">
 				<textarea name="integrityObservation" id="integrityObservation" rows="3"></textarea>
@@ -1187,7 +1193,7 @@ public function internalMaizeFlour_A1(){
 				<input type="hidden" id="productionDate_cb" name="productionDate" value=""/>
 			</section>
 			<section class="right">
-				<textarea name="productObservation" id="productObservation" rows="3"></textarea>
+				<textarea name="productionObservation" id="productionObservation" rows="3"></textarea>
 			</section>
 		</section>
 		<section class="row">
@@ -1208,11 +1214,11 @@ public function internalMaizeFlour_A1(){
 				<label for="contentClaimed">Micronutrient levels in label</label>
 			</section>
 			<section class="center">
-				<input type="checkbox" name="contentClaimed" id="contentClaimed" value="yes"/>
-				<input type="hidden" id="contentClaimed_cb" name="contentClaimed" value=""/>
+				<input type="checkbox" name="micronutrientLevels" id="micronutrientLevels" value="yes"/>
+				<input type="hidden" id="micronutrientLevels_cb" name="micronutrientLevels" value=""/>
 			</section>
 			<section class="right">
-				<textarea name="contentObservation" id="contentObservation" rows="3"></textarea>
+				<textarea name="micronutrientObservation" id="micronutrientObservation" rows="3"></textarea>
 			</section>
 		</section>
 		<section class="row">
@@ -1263,7 +1269,7 @@ public function internalMaizeFlour_A1(){
 			</section>
 			<section class ="right-wide">
 				<label>Date:</label>
-				<input type="date" name="inputDate" id="inputDate"/>
+				<input type="date" name="inputDate" id="inputDate" readonly="true" placeholder="click for date"/>
 			</section>
 		</section>
 	</section>
@@ -1282,6 +1288,10 @@ public function internalMaizeFlour_A2(){
 	<p align="center">
 		VITAMINS AND IRON PREMIX INVENTORY CONTROL LOG
 	</p>
+	<p>Compound Manufacturer:<select name="saltFactory" id="saltFactory">
+						<option value="" selected="selected">Select One</option>
+						'.$this->selectCompManufacturers.'
+					</select></p>
 	<section class="block">
 	<table width="100%">
 		<tr>
@@ -1306,22 +1316,22 @@ public function internalMaizeFlour_A2(){
 		</tr>
 		<tr class="clonable">
 			<td width="12.5%">
-			<input type="text" name="theDate_1" id="theDate_1" class="cloned autoDate"/>
+			<input type="text" name="theDate_1" id="theDate_1" class="cloned autoDate" readonly="true" placeholder="click for date"/>
 			</td>
 			<td width="12.5%">
-			<input type="text" name="theTime_1" id="theTime_1" class="cloned mobiscroll"/>
+			<input type="text" name="theTime_1" id="theTime_1" class="cloned mobiscroll" readonly="true" placeholder="click for time" />
 			</td>
 			<td width="12.5%">
-			<input type="text" name="quantity_1" id="quantity_1" class="cloned fromZero"/>
+			<input type="number" name="quantity_1" id="quantity_1" class="cloned fromZero"/>
 			</td>
 			<td width="12.5%">
 			<input type="text" name="lotID_1" id="lotID_1" class="cloned"/>
 			</td>
 			<td width="12.5%">
-			<input type="text" name="expiryDate_1" id="expiryDate_1" class="cloned autoDate"/>
+			<input type="text" name="expiryDate_1" id="expiryDate_1" class="cloned futureDate" readonly="true" placeholder="click for date"/>
 			</td>
 			<td width="12.5%">
-			<input type="text" name="dispatchedQuantity_1" id="dispatchedQuantity_1" class="cloned fromZero"/>
+			<input type="number" name="dispatchedQuantity_1" id="dispatchedQuantity_1" class="cloned fromZero"/>
 			</td>
 			<td width="12.5%">
 			<input type="text" name="dispatchedLotID_1" id="dispatchedLotID_1" class="cloned"/>
@@ -1331,8 +1341,8 @@ public function internalMaizeFlour_A2(){
 			</td>
 		</tr>
 		<tr id="formbuttons">
-			<input title="adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input title="removes the last row" type="button" class="awesome myblue medium" id="clonesubmit" value="Remove Row"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 		</tr>
 
 	</table>
@@ -1340,7 +1350,7 @@ public function internalMaizeFlour_A2(){
 	<section class="column-wide">
 	<section class="left-wide">
 		Date of reporting:<p></p>
-		<input type="text" name="dateOfReporting" id="dateOfReporting"/>
+		<input type="text" name="dateOfReporting" id="dateOfReporting" class="autoDate" readonly="true" placeholder="click for date"/>
 		</section>
 	<section class="right-wide">
 		Signature:<p></p>
@@ -1394,16 +1404,16 @@ public function internalMaizeFlour_B1(){
 	     <td>ADJUSTED</td>
 	     <td>OBSERVATIONS</td>
     </tr>
-    <tr>
-	     <td><input type="text" name="feederDate_1" id="feederDate_1" class="cloned"/></td>
-	     <td><input type="text" name="feederTime_1" id="feederTime_1" class="cloned"/></td>
-	     <td><input type="text" name="productionRate_1" id="productionRate_1" class="cloned"/></td>
-	     <td><input type="text" name="theoreticFeeder_1" id="theoreticFeeder_1" class="cloned"/></td>
-	     <td><input type="text" name="feederFlow1_1" id="feederFlow_1" class="cloned"/></td>
-	     <td><input type="text" name="feederFlow2_1" id="feederFlow_2" class="cloned"/></td>
-	     <td><input type="text" name="feederFlow_3" id="feederFlow_3" class="cloned"/></td>
-	     <td><input type="text" name="feederFlowAverage_1" id="feederFlowAverage_1" class="cloned"/></td>
-	     <td><input type="text" name="CV" id="CV" class="cloned"</td>
+    <tr class="clonable">
+	     <td><input type="text" name="feederDate_1" id="feederDate_1" class="cloned autoDate" readonly="true" placeholder="click for date"/></td>
+	     <td><input type="text" name="feederTime_1" id="feederTime_1" class="cloned mobiscroll" readonly="true" placeholder="click for time"/></td>
+	     <td><input type="number" name="productionRate_1" id="productionRate_1" class="cloned fromZero"/></td>
+	     <td><input type="number" name="theoreticFeeder_1" id="theoreticFeeder_1" class="cloned fromZero" readonly="true" placeholder="computed"/></td>
+	     <td><input type="number" name="feederFlow1_1" id="feederFlow1_1" class="cloned"/></td>
+	     <td><input type="number" name="feederFlow2_1" id="feederFlow2_1" class="cloned"/></td>
+	     <td><input type="number" name="feederFlow3_1" id="feederFlow3_1" class="cloned"/></td>
+	     <td><input type="number" name="feederFlowAverage_1" id="feederFlowAverage_1" class="cloned" placeholder="computed" readonly="true"/></td>
+	     <td><input type="number" name="CV_1" id="CV_1" class="cloned"</td>
 	     <td><select name="adjusted_1" id="adjusted_1" class="cloned">
 	            <option>Yes</option>
 	            <option>No</option></select></td>
@@ -1411,8 +1421,8 @@ public function internalMaizeFlour_B1(){
     </tr>
 	
 	<tr id="formbuttons">
-			<input title="adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input title="removes the last row" type="button" class="awesome myblue medium" id="clonesubmit" value="Remove Row"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 	</tr>
 	</table>
@@ -1432,7 +1442,7 @@ public function internalMaizeFlour_B2(){
 	<h3>MAIZE FLOUR FORTIFICATION TABLE B-2</h3>
 	<p align="center">PRODUCTION LOG OF FORTIFIED MAIZE FLOUR</p>
 	<p>Production line:<input type="text" name="productionLine" id="productionLine" /></p>
-	<p>Date:<input type="text" name="dateB2" id="dateB2"/></p>
+	<p>Date:<input type="text" name="dateB2" id="dateB2" class="autoDate" readonly="true" placeholder="click for date"/></p>
 	<table border="0" width="100%">
 	<tr>
 	     <td width="16.6%"></td>
@@ -1451,17 +1461,17 @@ public function internalMaizeFlour_B2(){
 	     <td width="16.6%">OBSERVATIONS</td>
 	</tr>
 	<tr class="clonable">
-	     <td width="16.6%"><input type="text" name="shiftTime_1" id="shiftTime_1" class="cloned"/></td>
-	     <td width="16.6%"><input type="text" name="flourMT_1" id="flourMT_1" class="cloned"/></td>
+	     <td width="16.6%"><input type="text" name="shiftTime_1" id="shiftTime_1" class="cloned mobiscroll" readonly="true" placeholder="click for time"/></td>
+	     <td width="16.6%"><input type="number" name="flourMT_1" id="flourMT_1" class="cloned fromZero"/></td>
 	     <td width="16.6%"><input type="text" name="flourLotID_1" id="flourLotID_1" class="cloned"/></td>
-	     <td width="16.6%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned"/></td>
-	     <td width="16.6%"><input type="text" name="flourPremixRatio_1" id="flourPremixRatio_1" class="cloned"/></td>
+	     <td width="16.6%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
+	     <td width="16.6%"><input type="text" name="flourPremixRatio_1" id="flourPremixRatio_1" class="cloned fromZero" readonly="true" placeholder="computed"/></td>
 	     <td width="16.6%"><input type="text" name="flourProducedObservations_1" id="flourProducedObservations_1" class="cloned"/></td>
 	</tr>
 	<tr id="formbuttons">
 
-			<input title="adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input title="removes the last row" type="button" class="awesome myblue medium" id="clonesubmit" value="Remove Row"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 		</tr>
 	</table>
@@ -1488,14 +1498,14 @@ public function internalMaizeFlour_C1(){
                              <td width="15%">RATIO MAIZE FLOUR/ PREMIX</td>
                              <td width="18%">NOTES</td>
                              <td width="18%">COMPOSITE SAMPLE IDENTIFICATION:</td>
-                             <td width="15%">DATE<input type="text" name="dateC1" id="dateC1"/></td>
+                             <td width="15%">DATE<input type="text" name="dateC1" id="dateC1" class="autoDate"  readonly="true" placeholder="click for date"/></td>
                               
                          </tr>
                          <tr class="clonable">
-                             <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" readonly="readonly" value="" /></td>
-                             <td width="15%"><input type="text" name="saltProduced_1" id="saltProduced_1" class="cloned"/></td>
-                             <td width="15%"><input type="text" name="premixUsed_1" id="premixUsed_1" class="cloned"/></td>
-                             <td width="15%"><input type="text" name="saltFortified_1" id="saltFortified_1" class="cloned"/></td>
+                             <td width="15%"><input type="text" name="productionTime_1" id="productionTime_1" class="mobiscroll cloned" value=""  readonly="true" placeholder="click for time"/></td>
+                             <td width="15%"><input type="number" name="maizeProduced_1" id="maizeProduced_1" class="cloned fromZero"/></td>
+                             <td width="15%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
+                             <td width="15%"><input type="text" name="ratioMaizeFlour_1" id="ratioMaizeFlour_1" class="cloned" readonly="true" placeholder="computed"/></td>
                              <td width="18%"><input type="text" name="notes_1" id="notes_1" class="cloned"/></td>
                              <td width="18%"><input type="text" name="comments_1" id="comments_1" class="cloned"/></td>
                             
@@ -1511,25 +1521,25 @@ public function internalMaizeFlour_C1(){
                           </tr>
                           <tr id="formbuttons">
 
-			<input title="adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input title="removes the last row" type="button" class="awesome myblue medium" id="clonesubmit" value="Remove Row"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 		</tr>
                           
                          <tr>
                              <td width="15%">Daily Total</td>
-                             <td width="15%"><input type="text" name="saltProduced2" id="saltProduced2"/></td>
-                             <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2"/></td>
-                             <td width="15%"><input type="text" name="saltFortified2" id="saltFortified2"/></td>
+                             <td width="15%"><input type="text" name="maizeProduced2" id="maizeProduced2" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="maizeFortified2" id="maizeFortified2" readonly="true" placeholder="computed"/></td>
                              <td width="18%"><input type="text" name="notes2" id="notes2"/></td>
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
                              <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
-                             <td width="15%"><input type="text" name="saltProduced3" id="saltProduced3"/></td>
-                             <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3"/></td>
-                             <td width="15%"><input type="text" name="saltFortified3" id="saltFortified3"/></td>
+                             <td width="15%"><input type="text" name="maizeProduced3" id="maizeProduced3" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3" readonly="true" placeholder="computed"/></td>
+                             <td width="15%"><input type="text" name="maizeFortified3" id="maizeFortified3" readonly="true" placeholder="computed"/></td>
                              <td width="18%"><input type="text" name="notes3" id="notes3"/></td>
                              <td width="18%"></td>
                              <td width="15%"></td>

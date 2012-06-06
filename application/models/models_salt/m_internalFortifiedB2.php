@@ -13,7 +13,11 @@ class M_InternalFortifiedB2 extends MY_Model {
 		parent::__construct();
 	}
 
+<<<<<<< HEAD:application/models/models_salt/m_internalFortifiedB2.php
+	function addRecord($factory) {
+=======
 	function addRecord($supplierName) {
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/models_salt/m_internalFortifiedB2.php
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -21,7 +25,7 @@ class M_InternalFortifiedB2 extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-		 //  print(($key." ".$val)).'<br \>';
+		    //print(($key." ".$val)).'<br \>';
 			
 			 
 				
@@ -41,10 +45,12 @@ class M_InternalFortifiedB2 extends MY_Model {
 			//print($this->id."  ".$this->attr).'<br />';
 				   
 			
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
-					
+				   }else{
+				   	$this->elements[$this->id][$this->attr]='';
+				   }
 			} //close foreach($_POST)
 			
 			//exit;
@@ -125,7 +131,11 @@ class M_InternalFortifiedB2 extends MY_Model {
 						break;
 				}
               
+<<<<<<< HEAD:application/models/models_salt/m_internalFortifiedB2.php
+				$this->theForm->setManufacturerCompName($factory);
+=======
 				$this->theForm->setManufacturerCompName($supplierName);
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2:application/models/models_salt/m_internalFortifiedB2.php
 				$this -> theForm -> setCheckedBy($this->input->post('checkupName'));
 				
 				$this -> em -> persist($this -> theForm);
@@ -134,29 +144,29 @@ class M_InternalFortifiedB2 extends MY_Model {
         	//now do a batched insert, default at 5
 			  $this->batchSize=5;
 		if($i % $this->batchSize==0){
-		try{
+		//try{
 					
 				$this-> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
-				}catch(Exception $ex){
-					die($ex->getMessage());
+			//	}catch(Exception $ex){
+				//	die($ex->getMessage());
 					/*display user friendly message*/
 					
-				}//end of catch
+			//	}//end of catch
 				
 			//} else if($i<$this->batchSize && $i==$this->noOfInsertsBatch){
 		}else if($i<$this->batchSize || $i>$this->batchSize || $i==$this->noOfInsertsBatch && 
 			$this->noOfInsertsBatch-$i<$this->batchSize){
 				 //total records less than a batch, insert all of them
-				 try{
+			//	 try{
 					
 			    $this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
-				}catch(Exception $ex){
-					die($ex->getMessage());
+			//	}catch(Exception $ex){
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
-				}//end of catch
+			//	}//end of catch
 				 
 				
 			}//end of batch condition */
@@ -177,7 +187,7 @@ class M_InternalFortifiedB2 extends MY_Model {
 			                       
 			                       
 	      /*using DQL*/
-	      $query = $this->em->createQuery('SELECT d.deviceCompNumber FROM models\Entities\E_ManucDevices d WHERE d.manufacturerCompName = :name');
+	      $query = $this->em->createQuery('SELECT d.deviceCompNumber FROM models\Entities\E_ManucDevices d WHERE d.manufacturerFortName = :name');
           $query->setParameter('name', $iodizationCentreName);
           $this->equipment = $query->getResult();
 						/*foreach ($this->equipment as $key=>$value) {

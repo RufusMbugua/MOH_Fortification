@@ -21,7 +21,11 @@ class M_Maize_InternalFort_A1  extends MY_Model {
 			$this->elements = array();
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
+<<<<<<< HEAD
+		    //print(($key." ".$val)).'<br \>';
+=======
 		  // print(($key." ".$val)).'<br \>';
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			   
 			//check if posted value is among the cloned ones   
 			/* if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
@@ -102,8 +106,13 @@ class M_Maize_InternalFort_A1  extends MY_Model {
 				$this -> theForm ->setOtherObservation($this->elements['otherObservation']);
 				$this -> theForm ->setAccepted($this->elements['accepted']);
 				$this -> theForm ->setReasonsForRejection($this->elements['actionsTaken']);
+<<<<<<< HEAD
+				$this -> theForm ->setReceivedBy($this->elements['reviewedBy']);
+				$this -> theForm ->setReceivedDate($this->elements['inputDate']);
+=======
 				$this -> theForm ->setReceivedBy($this->elements['receivedBy']);
 				//$this -> theForm ->setReceiptDate($this->elements['inputDate']);
+>>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 				
 				$this -> em -> persist($this -> theForm);
 
