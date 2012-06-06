@@ -1,14 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-/**
- * -----------------	
- * FORM CSS File
- * -----------------
- * 
- * Description -> Handles general form layout and interactivity
- * 
- * 
- */
 
 /* Import: Font CSS
  Contents:
@@ -58,7 +49,7 @@ pre::-webkit-scrollbar-thumb:horizontal {
 	right: 2%;
 	position: absolute;
 	float: right;
-	top: 15%;
+	top: 240px;
 	background-color: #FFFFFF;
 	width: 13%;
 	padding-top: 10px;
@@ -82,7 +73,7 @@ input.radio {
 	height: auto;
 	position: absolute;
 	left: 2%;
-	top: 15%;
+	top: 240px;
 }
 .menu-container-2 {
 	width: 20%;
@@ -116,7 +107,7 @@ input.radio {
 	transition-property: height;
 	transition-duration: 0.25s;
 	transition-timing-function: linear;
-	cursor: hand;
+	cursor:pointer;
 }
 
 .min, .max {
@@ -169,10 +160,11 @@ input.radio {
 	font-size: 14px;
 	text-align: left;
 	padding-top: 10px;
-	cursor: pointer;
+	cursor: hand;
 	color: #000;
 	display: block;
 	width: 100%;
+	cursor:pointer;
 }
 .form-sidebar a {
 	margin-left: 18px;
@@ -182,12 +174,8 @@ input.radio {
 }
 .menu a:hover {
 	color: #039;
-	cursor: hand;
+	cursor:hand;
 }
-.chosen a{
-	color: #3333FF;
-}
-
 .menu ul, .menu ul li {
 	list-style: none;
 	margin: 0;
@@ -207,6 +195,51 @@ input.radio {
 }
 #right-radio-buttons {
 	float: right;
+}
+
+.banner {
+	width: 100%;
+	
+	padding-bottom: 10px;
+	-webkit-box-shadow: inset 0px -2px 3px 0.2px #333;
+	-moz-box-shadow: inset 0px -2px 3px 0.2px #333;
+	box-shadow: inset 0px -2px 3px 0.2px #333;
+}
+/**
+ * Logo
+ */
+.logo, .credentials {
+	display: inline-block;
+}
+
+.credentials {
+	position: absolute;
+	left: 130px;
+	font-family: Verdana;
+	width: 250px;
+}
+.date {
+	float: right;
+	padding: 20px 30px 5px 10px;
+	border-bottom: 1px solid #003399;
+}
+/**
+ * Title
+ */
+.title, .subtitle, .division {
+	display: block;
+}
+
+.title {
+	font-size: 17px;
+	font-weight: bold;
+}
+.subtitle {
+	font-size: 13px;
+	font-weight: bold;
+}
+.division {
+	font-size: 12px;
 }
 .message {
 
@@ -258,7 +291,7 @@ input.radio {
 	border: 1px solid #999;
 	outline: none;
 	font-family: Quicksand;
-	font-size: 24px;
+	font-size: 100%;
 }
 /*
  Input fields within Login Form
@@ -305,7 +338,7 @@ form input, form textarea {
 #profile-before {
 	right: 2%;
 	width: 13%;
-	height: 30px;
+	height: 20px;
 	overflow: hidden;
 	position: absolute;
 	float: right;
@@ -321,9 +354,8 @@ form input, form textarea {
 	box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
-	top: -50px;
-	padding-top: 40px;
-	padding-bottom: 20px;
+	top: 107px;
+	padding-bottom: 15px;
 	-webkit-transition-property: height;
 	-webkit-transition-duration: 0.75s;
 	-webkit-transition-timing-function: linear;
@@ -343,6 +375,7 @@ form input, form textarea {
 }
 #profile-before p {
 	text-align: center;
+	padding-bottom: 5px;
 }
 #profile-fancy {
 	display: block;

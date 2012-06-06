@@ -17,11 +17,7 @@ private $maize_internalforta1ID;
 * */
 private $productType;
 /**
-<<<<<<< HEAD
 * @Column(name="manufacturerCompName", type="string",length=55, nullable=true)
-=======
-* @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 * */
 private $manufacturerCompName;
 /**
@@ -36,15 +32,7 @@ private $dates;
 * @Column(name="quantity", type="string",length=45, nullable=true)
 * */
 private $quantity;
-<<<<<<< HEAD
 
-
-=======
-/**
-* @Column(name="integrityOfBoxes", type="string",length=10, nullable=true)
-* */
-private $integrityOfBoxes;
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 /**
 * @Column(name="integrityObservation", type="string",length=45, nullable=true)
 * */
@@ -86,11 +74,7 @@ private $micronutrientObservation;
 * */
 private $certificateOfAnalysis;
 /**
-<<<<<<< HEAD
 * @Column(name="certificateOfAnalysisObservation", type="string",length=45, nullable=true)
-=======
-* @Column(name="certificateObservation", type="string",length=45, nullable=true)
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 * */
 private $certificateObservation;
 /**
@@ -155,16 +139,6 @@ public function getQuantity() {
 
 public function setQuantity($quantity) { $this -> quantity = $quantity;
 }
-<<<<<<< HEAD
-
-=======
-public function getIntegrityOfBoxes() {
-		return $this -> integrityOfBoxes;
-}
-
-public function setIntegrityOfBoxes ($integrityOfBoxes) { $this -> integrityOfBoxes = $integrityOfBoxes;
-}
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 public function getIntegrityObservation() {
 		return $this -> integrityObservation;
 }

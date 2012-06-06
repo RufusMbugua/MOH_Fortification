@@ -10,20 +10,12 @@ class C_Form_Oil extends MY_Controller {
 
 	public function form_Fort_A1() {
 		$this -> load -> model('models_oil/M_Oil_FortifiedA1');
-<<<<<<< HEAD
 		$this -> M_Oil_FortifiedA1 -> addRecord($this -> session -> userdata('affiliation'));
-=======
-		$this -> M_Oil_FortifiedA1 -> addRecord();
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 		if ($this -> M_Oil_FortifiedA1 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedA1 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedA1 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Oil_FortifiedA1 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -36,20 +28,12 @@ class C_Form_Oil extends MY_Controller {
 
 	public function form_Fort_B1() {
 		$this -> load -> model('models_oil/M_Oil_FortifiedB1');
-<<<<<<< HEAD
 		$this -> M_Oil_FortifiedB1 -> addRecord($this -> session -> userdata('affiliation'));
-=======
-		$this -> M_Oil_FortifiedB1 -> addRecord();
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 
 		if ($this -> M_Oil_FortifiedB1 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedB1 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedB1 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Oil_FortifiedB1 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -67,11 +51,7 @@ class C_Form_Oil extends MY_Controller {
 		if ($this -> M_Oil_FortifiedB2 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedB2 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedB2 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Oil_FortifiedB2 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
@@ -89,11 +69,7 @@ class C_Form_Oil extends MY_Controller {
 		if ($this -> M_Oil_FortifiedC1 -> response = 'ok') {
 			//notify user of success
 			$data['form_id'] = "";
-<<<<<<< HEAD
 			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedC1 -> rowsInserted . '</b> record(s) submitted successfully in 
-=======
-			$data['form'] = '<p><b>' . $this -> M_Oil_FortifiedC1 -> rowsInserted . '</b> records were inserted successfully in 
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
 			approximately <b>' . $this -> M_Oil_FortifiedC1 -> executionTime . '</b> seconds.</p>';
 			//redirect(base_url() . 'front/vehicles/index', 'location');
 			$this -> load -> view('pages/vehicles/index', $data);
