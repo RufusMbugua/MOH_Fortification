@@ -440,7 +440,7 @@ $().ready(function() {
 		rules: {
 			visitDate: "required",
 			visitTime: "required",
-			oilFactory:"required",
+			saltFactory:"required",
 			visitAddress:"required",
 			phealthOfficer:"required",
 			auditorName:"required",
@@ -455,10 +455,6 @@ $().ready(function() {
 			},
 			visitTime: {
 				required: true
-			},
-			oilFactory: {
-				required: true
-				
 			},
 			visitAddress: {
 				required: true
@@ -492,7 +488,7 @@ $().ready(function() {
 		messages: {
 			visitDate: "*Required",
 			visitTime: "*Required",
-			oilFactory:"*Required",
+			saltFactory:"*Required",
 			visitAddress:"*Required",
 			phealthOfficer:"*Required",
 			auditorName:"*Required",

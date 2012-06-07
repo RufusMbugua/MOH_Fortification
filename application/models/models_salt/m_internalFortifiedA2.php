@@ -54,10 +54,7 @@ class M_InternalFortifiedA2  extends MY_Model {
 			$this->noOfInsertsBatch=max($this->theIds);
 			
 			//get the compound manufacturer name by id
-			
-			/*for test purposes, we pass 1, since there's no value provided from the application side*/
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>$this->input->post('compManufacturer')));
+			$this->getCompoundManufacturerName($this->input->post('compManufacturer'));/*method defined in MY_Model*/
 
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
@@ -74,7 +71,7 @@ class M_InternalFortifiedA2  extends MY_Model {
 				$this -> theForm -> setTransactedBy($this->elements[$i]["reportersName"]);
 				$this -> theForm -> setDateOfReporting(new DateTime()); /*timestamp option*/
 				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
-				$this -> theForm -> setManufacturerCompName($manufacturer->getManufacturerCompName());
+				$this -> theForm -> setManufacturerCompName($this->compoundManufacturer->getManufacturerCompName());
 				$this -> em -> persist($this -> theForm);
 
 

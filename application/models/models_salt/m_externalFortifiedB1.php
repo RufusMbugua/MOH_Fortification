@@ -13,7 +13,7 @@ class M_ExternalFortifiedB1  extends MY_Model {
 		parent::__construct();
 	}
 
-	function addRecord($iodizationCentre) {
+	function addRecord() {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -54,7 +54,8 @@ class M_ExternalFortifiedB1  extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//iodization centre name obtained from the session variable => 'affiliation'
+			//Get Factory name by id
+			$this->getFactoryName($this->input->post('saltFactory')); /*method defined in MY_Model*/
 			
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
@@ -70,7 +71,7 @@ class M_ExternalFortifiedB1  extends MY_Model {
 				$this -> theForm -> setSignature($this->elements[$i]["auditorSignature"]);
 				$this -> theForm -> setOpening($this->elements[$i]["auditorOpening"]);
 				$this -> theForm -> setClosing($this->elements[$i]["auditorClosing"]);
-				$this -> theForm -> setFactoryName($iodizationCentre);
+				$this -> theForm -> setFactoryName($this->centre->getFactoryName());
 				$this -> em -> persist($this -> theForm);
 
 
@@ -110,5 +111,6 @@ class M_ExternalFortifiedB1  extends MY_Model {
         $this->rowsInserted=$this->noOfInsertsBatch;
 		return $this -> response = 'ok';
 	}
+
 
 }//end of class ExtternalFortifiedB1

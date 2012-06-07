@@ -4,7 +4,7 @@
 class  MY_Controller  extends  CI_Controller  {
 
 public $em, $response, $theForm, $rowsInserted, $executionTime,$data,
-      $selectCompManufacturers,$selectPremixType, $selectIodizationCentre;
+      $selectCompManufacturers,$selectPremixType, $selectIodizationCentre,$selectFactoryByManufacturer;
 
 function __construct()  {
 		parent::__construct();
@@ -54,6 +54,14 @@ function __construct()  {
 			$this->selectIodizationCentre.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
 			}
 		return $this->selectIodizationCentre;
+	}
+	
+	public function getIodizationCentreNames(){ /*obtained from the session data*/
+	       if($this -> session -> userdata('affiliation'))
+			foreach($this -> session -> userdata('iodizationCentre') as $key=>$value){
+			$this->selectFactoryByManufacturer.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+			}
+		return $this->selectFactoryByManufacturer;
 	}
 
 }  

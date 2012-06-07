@@ -13,7 +13,7 @@ class M_InternalFortifiedB1 extends MY_Model {
 		parent::__construct();
 	}
 
-	function addRecord() {
+	function addRecord($factory) {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -54,19 +54,16 @@ class M_InternalFortifiedB1 extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//get manufacturer name by id
-			try{
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerFortified')
-			                       ->findOneBy( array('manufacturerFortId'=>$this->input->post('saltFactory')));
-		    }catch(exception $ex){
-				//ignore
-				//die($ex->getMessage());
-			}
+			//get factory name by id
+			/*$this->getFactoryName($this->input->post('saltFactory')); /*method defined in MY_Model*/
+			
+			
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
 			 $this -> theForm = new \models\Entities\entities_salt\E_IntFortifiedB1(); //create an object of the model
 		       // $this->theForm->setTransactionNumber('NULL');
-			 	$this -> theForm -> setFactoryName($manufacturer->getManufacturerFortName());
+			 	//$this -> theForm -> setFactoryName($this->centre->getFactoryName());
+			 	$this -> theForm -> setFactoryName($factory);/*param factory*/
 				$this -> theForm -> setDates($this->elements[$i]['fortifiedDate']);
 				$this -> theForm -> setFillerWeight($this->elements[$i]["fortifiedWeight"]);
 				$this -> theForm -> setIodineWeight($this->elements[$i]["compoundWeight"]);
@@ -81,8 +78,8 @@ class M_InternalFortifiedB1 extends MY_Model {
 
         	//now do a batched insert, default at 5
 			  $this->batchSize=5;
-		if($i % $this->batchSize==0){
-		try{
+		    if($i % $this->batchSize==0){
+		     try{
 					
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
