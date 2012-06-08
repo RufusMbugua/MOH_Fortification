@@ -89,7 +89,7 @@ $(document).ready(function() {
 				case '#fortifiedOil_B1':/*oil module*/
 				//computeTimeDifference("11:30 AM","01:17 AM");
 	            
-				$('.cloned').on('change',function(){
+				$('.cloned').on('change focusout',function(){
 				timeDiff=computeTimeDifference($("#premixStart_1").val(),$("#premixEnd_1").val());
 				
 				
@@ -302,7 +302,7 @@ $(document).ready(function() {
 					case '#fortifiedOil_B1':/*oil module*/
 					//computeTimeDifference("11:30 AM","01:17 AM");
 		            
-					$('.cloned').on('change',function(){
+					$('.cloned').on('change foucusout',function(){
 					timeDiff=computeTimeDifference($("#premixStart_"+no).val(),$("#premixEnd_"+no).val());
 					 $("#premixAddition_"+no).val(timeDiff);
 					});

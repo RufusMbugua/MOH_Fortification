@@ -4,7 +4,7 @@
 class  MY_Controller  extends  CI_Controller  {
 
 public $em, $response, $theForm, $rowsInserted, $executionTime,$data,
-      $selectCompManufacturers,$selectPremixType, $selectIodizationCentre;
+      $selectCompManufacturers,$selectPremixType, $selectIodizationCentre,$selectFactoryByManufacturer,$manufacturer;
 
 function __construct()  {
 		parent::__construct();
@@ -55,5 +55,6 @@ function __construct()  {
 			}
 		return $this->selectIodizationCentre;
 	}
+
 
 }  

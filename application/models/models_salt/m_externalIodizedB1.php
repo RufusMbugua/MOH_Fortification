@@ -45,13 +45,7 @@ class M_ExternalIodizedB1  extends MY_Model {
 			$this->noOfInsertsBatch=1;
 			
 			//get factory name by id
-			try{
-			$centre=$this->em->getRepository('models\Entities\E_Factories')
-			                       ->findOneBy( array('factoryNumber'=>$this->input->post('iodizationCenter')));
-			}catch(exception $ex){
-				//ignore
-				//die($ex->getMessage());
-			}
+			$this->getFactoryName($this->input->post('iodizationCenter')); /*method defined in MY_Model*/
 
 			
 		
@@ -62,7 +56,7 @@ class M_ExternalIodizedB1  extends MY_Model {
 			 
 				$this -> theForm -> setDates(new DateTime()); /*timestamp option*/
 
-				$this -> theForm -> setFactoryName($centre->getFactoryName());/*pick from user since it's done by an external auditor hence session affiliation is void*/
+				$this -> theForm -> setFactoryName($this->centre->getFactoryName());/*pick from user since it's done by an external auditor hence session affiliation is void*/
 
 				$this -> theForm -> setInspector($this->elements['inspector']);
 				$this -> theForm -> setInventoryUpToDate($this->elements['inventory']);
@@ -131,5 +125,14 @@ class M_ExternalIodizedB1  extends MY_Model {
           $this->centres = $query->getResult();
 		return $this->centres;
 	}/*end of getIodizationCentres*/
+	
+	function getIodizationCentresByFactory($factory){
+		 /*using DQL*/
+	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f WHERE f.manufacturerFortName= :name');
+		  $query->setParameter('name', $factory);
+          $this->centres = $query->getResult();
+		return $this->centres;
+	}/*end of getIodizationCentresByManufacturer*/
+	
 
 }//end of class ExtternalFortifiedB2
