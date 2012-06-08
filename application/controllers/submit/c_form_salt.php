@@ -24,7 +24,6 @@ class C_Form_Salt extends MY_Controller{
 			//notify user of error/failure
 		}
 		
-		
 	}//close form_internalFort_A1()
 	
 	public function form_internalFort_A2(){

@@ -126,11 +126,13 @@ class M_ExternalIodizedB1  extends MY_Model {
 		return $this->centres;
 	}/*end of getIodizationCentres*/
 	
-	function getFactoriesByUser($affiliation){
+	function getIodizationCentresByFactory($factory){
 		 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f.');
+	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f WHERE f.manufacturerFortName= :name');
+		  $query->setParameter('name', $factory);
           $this->centres = $query->getResult();
 		return $this->centres;
-	}/*end of getIodizationCentres*/
+	}/*end of getIodizationCentresByManufacturer*/
+	
 
 }//end of class ExtternalFortifiedB2

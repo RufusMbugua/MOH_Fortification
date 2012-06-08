@@ -60,15 +60,6 @@ function __construct() {
 			}
 	}
 	
-	public function getManufacturerNameByUserAffiliation($affiliation){
-	     try{
-			$this->manufacturer=$this->em->getRepository('models\Entities\E_Factories')
-			                       ->findOneBy( array('factoryName'=>$affiliation));
-			}catch(exception $ex){
-				//ignore
-				//die($ex->getMessage());
-			}
-		
-	}/*close getManufacturerNameByUserAffiliation($affiliation)*/
+	
 
 }

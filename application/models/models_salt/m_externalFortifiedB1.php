@@ -7,7 +7,7 @@ if (!defined('BASEPATH'))
 use application\models\Entities\entities_salt\E_ExtFortifiedB1;
 
 class M_ExternalFortifiedB1  extends MY_Model {
-	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
+	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize,$manufacturer;
 
 	function __construct() {
 		parent::__construct();
@@ -112,5 +112,16 @@ class M_ExternalFortifiedB1  extends MY_Model {
 		return $this -> response = 'ok';
 	}
 
+   public function getManufacturerNameByUserAffiliation($affiliation){
+	     try{
+			$this->manufacturer=$this->em->getRepository('models\Entities\E_Factories')
+			                       ->findOneBy( array('factoryName'=>$affiliation));
+			}catch(exception $ex){
+				//ignore
+				//die($ex->getMessage());
+			}
+			return $this->manufacturer=$this->manufacturer->getManufacturerName();
+		
+	}/*close getManufacturerNameByUserAffiliation($affiliation)*/
 
 }//end of class ExtternalFortifiedB1

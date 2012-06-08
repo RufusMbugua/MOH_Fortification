@@ -581,6 +581,20 @@
 		$this -> load -> view('form', $data);
 
 	}
+	
+	private function getFactories(){
+		if($this->session->userdata('affiliation'))
+	    $this->load->model('models_salt/M_ExternalFortifiedB1');
+		$this->$manufacturer=$this->M_ExternalFortifiedB1->getManufacturerNameByUserAffiliation($this->session->userdata('affiliation'));
+		
+		$this->load->model('models_salt/M_ExternalIodizedB1');
+		$this->M_ExternalIodizedB1->getIodizationCentresByFactory($this->manufacturer);
+		
+		foreach($this->M_ExternalIodizedB1->centres as $key=>$value){
+			$this->selectIodizationCentre.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+			}
+		return $this->selectIodizationCentre;
+	}
 
 	public function externalFort_B1() {
 		$externalFortified_B1 = '';
