@@ -22,7 +22,7 @@
 			</section>
 			<section class="credentials">
 				<section class="title">
-					Ministry Of Health 
+					Ministry Of Public Health and Sanitation
 				</section>
 				<section class="subtitle">
 					Department of Family Health<p></p>
