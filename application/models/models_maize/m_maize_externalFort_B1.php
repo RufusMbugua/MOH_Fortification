@@ -13,7 +13,7 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 		parent::__construct();
 	}
 
-	function addRecord($iodizationCentre) {
+	function addRecord() {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -52,7 +52,7 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//iodization centre name obtained from the session variable => 'affiliation'
+			//factory names are set since this is an external audit and hence the session variable:affiliation can't be used
 			
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
@@ -68,7 +68,7 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 				$this -> theForm -> setSignature($this->elements[$i]["signature"]);
 				$this -> theForm -> setOpening($this->elements[$i]["opening"]);
 				$this -> theForm -> setClosing($this->elements[$i]["closing"]);
-				$this -> theForm -> setFactoryName($iodizationCentre);
+				$this -> theForm -> setFactoryName($this->input->post("maizeMill"));
 				$this -> em -> persist($this -> theForm);
 
 

@@ -61,16 +61,10 @@ class M_SmallScaleA1  extends MY_Model {
 				$this -> theForm -> setDates($this->elements[$i]["controlDate"]); /*timestamp option*/
 				//$this -> theForm -> setManufacturerCompName($iodizationCentre);
 				
-				//get compound manufacturer name by id
-				try{
-				$compoundManufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-				                       ->findOneBy( array('manufacturerId'=>$this->elements[$i]["supplierName"]));
-				}catch(exception $ex){
-					//ignore
-					//die($ex->getMessage());
-				}
+				//get the compound manufacturer name by id
+			    $this->getCompoundManufacturerName($this->elements[$i]["supplierName"]);/*method defined in MY_Model*/
 			
-				$this -> theForm -> setManufacturerCompName($compoundManufacturer->getManufacturerCompName());
+				$this -> theForm -> setManufacturerCompName($this->compoundManufacturer->getManufacturerCompName());
 				
 				//$this -> theForm -> setDates($this->elements[$i]['visitDate']);;/*entry option*/
 				$this -> theForm -> setWeightKg($this->elements[$i]["weightKg"]);

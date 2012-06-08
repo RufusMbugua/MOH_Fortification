@@ -24,7 +24,6 @@ class C_Form_Salt extends MY_Controller{
 			//notify user of error/failure
 		}
 		
-		
 	}//close form_internalFort_A1()
 	
 	public function form_internalFort_A2(){
@@ -49,7 +48,7 @@ class C_Form_Salt extends MY_Controller{
 	
 	public function form_internalFort_B1(){
 		$this->load->model('models_salt/M_InternalFortifiedB1');
-		$this->M_InternalFortifiedB1->addRecord();
+		$this->M_InternalFortifiedB1->addRecord($this->session->userdata('affiliation'));
 		
 		if($this->M_InternalFortifiedB1->response='ok'){
 			//notify user of success
@@ -109,7 +108,7 @@ class C_Form_Salt extends MY_Controller{
 	
 	public function form_externalFort_B1(){
 		$this->load->model('models_salt/M_ExternalFortifiedB1');
-		$this->M_ExternalFortifiedB1->addRecord($this->session->userdata('affiliation'));
+		$this->M_ExternalFortifiedB1->addRecord();
 		
 		if($this->M_ExternalFortifiedB1->response=='ok'){
 			//notify user of success

@@ -3,99 +3,98 @@ class C_maize extends MY_Controller{
 	public function externalMaizeFlour_B1(){
 		$externalMaizeFlour_B1='';
 		$externalMaizeFlour_B1.='
-<form name="externalMaizeFlour_B1" id="externalMaizeFlour_B1" action="' . base_url() .'submit/c_form_maize/form_externalFort_B1' . '" method="post">
-	<h3>FORTIFIED MAIZE FLOUR AUDITS AND INSPECTION TABLE B-1</h3>
-	<p align="center">
-		BRIEFING SESSIONS- TECHNICAL AUDIT AND INSPECTIONS VISITS
-	</p>
-	<p>
-	<section class="block">
-		<section class="column">
-			<section class="row">
-				<section class="left">
-					Date:
+		<form name="externalMaizeFlour_B1" id="externalMaizeFlour_B1" action="' . base_url() .'submit/c_form_maize/form_externalFort_B1' . '" method="post">
+			<h3>FORTIFIED MAIZE FLOUR AUDITS AND INSPECTION TABLE B-1</h3>
+			<p align="center">
+				BRIEFING SESSIONS- TECHNICAL AUDIT AND INSPECTIONS VISITS
+			</p>
+			<p>
+			<section class="block">
+				<section class="column">
+					<section class="row">
+						<section class="left">
+							Date:
+						</section>
+						<section class="right">
+							<input type="text" name="dateB1" id="dateB1" class="autoDate" readonly="true" placeholder="click for date"/>
+						</section>
+					</section>
+					<section class="row">
+						<section class="left">
+							Maize mill:
+						</section>
+						<section class="right">
+							<select name="maizeMill" id="maizeMill">
+								<option>Factory 1</option>
+								<option>Factory 2</option>
+							</select>
+						</section>
+					</section>
+		
+					<section class="row">
+						<section class="left">
+							Health Officer:
+						</section>
+						<section class="right">
+							<input type="text" name="publicHealthOfficer" id="publicHealthOfficer"/>
+						</section>
+					</section>
+		
 				</section>
-				<section class="right">
-					<input type="text" name="dateB1" id="dateB1" class="autoDate" readonly="true" placeholder="click for date"/>
+				<section class="column">
+					<section class="row">
+						<section class="left">
+							Time:
+						</section>
+						<section class="right">
+							<input type="text" name="time" id="time" class="mobiscroll" readonly="true" placeholder="click for time"/>
+						</section>
+					</section>
+		
+					<section class="row">
+						<section class="left">
+							Address:
+						</section>
+						<section class="right">
+							<input type="text" name="address" id="address"/>
+						</section>
+					</section>
 				</section>
 			</section>
-			<section class="row">
-				<section class="left">
-					Maize mill:
-				</section>
-				<section class="right">
-					<select name="maizeMill" id="maizeMill">
-						<option>Factory 1</option>
-						<option>Factory 2</option>
-					</select>
-				</section>
-			</section>
-
-			<section class="row">
-				<section class="left">
-					Health Officer:
-				</section>
-				<section class="right">
-					<input type="text" name="publicHealthOfficer" id="publicHealthOfficer"/>
-				</section>
-			</section>
-
-		</section>
-		<section class="column">
-			<section class="row">
-				<section class="left">
-					Time:
-				</section>
-				<section class="right">
-					<input type="text" name="time" id="time" class="mobiscroll" readonly="true" placeholder="click for time"/>
-				</section>
-			</section>
-
-			<section class="row">
-				<section class="left">
-					Address:
-				</section>
-				<section class="right">
-					<input type="text" name="address" id="address"/>
-				</section>
-			</section>
-		</section>
-	</section>
-
-		<table border="0" width="100%">
-			<tr>
-				<td width="20%">NAME</td>
-				<td width="20%">POSITION</td>
-				<td width="20%">SIGNATURE</td>
-				<td width="20%">Opening</td>
-				<td width="20%">Closing</td>
-			</tr>
-			<tr class="clonable">
-				<td width="20%">
-				<input type="text" name="nameB1_1" id="nameB1_1" class="cloned"/>
-				</td>
-				<td width="20%">
-				<input type="text" name="position_1" id="position_1" class="cloned"/>
-				</td>
-				<td width="20%">
-				<input type="text" name="signature_1" id="signature_1" class="cloned"/>
-				</td>
-				<td width="20%">
-				<input type="text" name="opening_1" id="opening_1" class="cloned"/>
-				</td>
-				<td width="20%">
-				<input type="text" name="closing_1" id="closing_1" class="cloned"/>
-				</td>
-			</tr>
-			<tr id="formbuttons">
-
-			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
-
-			</tr>
-		</table>
-</form>
-		';
+		
+				<table border="0" width="100%">
+					<tr>
+						<td width="20%">NAME</td>
+						<td width="20%">POSITION</td>
+						<td width="20%">SIGNATURE</td>
+						<td width="20%">Opening</td>
+						<td width="20%">Closing</td>
+					</tr>
+					<tr class="clonable">
+						<td width="20%">
+						<input type="text" name="nameB1_1" id="nameB1_1" class="cloned"/>
+						</td>
+						<td width="20%">
+						<input type="text" name="position_1" id="position_1" class="cloned"/>
+						</td>
+						<td width="20%">
+						<input type="text" name="signature_1" id="signature_1" class="cloned"/>
+						</td>
+						<td width="20%">
+						<input type="text" name="opening_1" id="opening_1" class="cloned"/>
+						</td>
+						<td width="20%">
+						<input type="text" name="closing_1" id="closing_1" class="cloned"/>
+						</td>
+					</tr>
+					<tr id="formbuttons">
+		
+					<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+					<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+		
+					</tr>
+				</table>
+		</form>';
 		$data['form'] = $externalMaizeFlour_B1;
 		$data['form_id'] = 'externalMaizeFlour_B1';
 
@@ -1507,7 +1506,7 @@ public function internalMaizeFlour_C1(){
                              <td width="15%"><input type="number" name="premixUsed_1" id="premixUsed_1" class="cloned positive"/></td>
                              <td width="15%"><input type="text" name="ratioMaizeFlour_1" id="ratioMaizeFlour_1" class="cloned" readonly="true" placeholder="computed"/></td>
                              <td width="18%"><input type="text" name="notes_1" id="notes_1" class="cloned"/></td>
-                             <td width="18%"><input type="text" name="comments_1" id="comments_1" class="cloned"/></td>
+                             <td width="18%"><input type="text" name="compositeSample_1" id="compositeSample_1" class="cloned"/></td>
                             
                           </tr>
                           <tr>

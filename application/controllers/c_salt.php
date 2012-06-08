@@ -329,11 +329,11 @@
 		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() .'submit/c_form_salt/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
 						<h3 align="center"> FORTIFIED SALT QC/QA- TABLE B-1</h3>
 						<p align="center"><strong>PRODUCTION LOG FOR IODINE PREMIX</strong></p>
-						<p>Salt factory:<select name="saltFactory" id="saltFactory">
+						<!--p>Salt factory:<select name="saltFactory" id="saltFactory">
 						<option value="" selected="selected">Select One</option>
 						<option value="1">Kensalt</option>
 						<option value="2">Magadi Salt</option>
-						</select></p>
+						</select></p-->
 						<!--<p>Year:  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 						  <select name="year_1" id="year_1">
 						  </select></p>-->
@@ -581,6 +581,20 @@
 		$this -> load -> view('form', $data);
 
 	}
+	
+	private function getFactories(){
+		if($this->session->userdata('affiliation'))
+	    $this->load->model('models_salt/M_ExternalFortifiedB1');
+		$this->$manufacturer=$this->M_ExternalFortifiedB1->getManufacturerNameByUserAffiliation($this->session->userdata('affiliation'));
+		
+		$this->load->model('models_salt/M_ExternalIodizedB1');
+		$this->M_ExternalIodizedB1->getIodizationCentresByFactory($this->manufacturer);
+		
+		foreach($this->M_ExternalIodizedB1->centres as $key=>$value){
+			$this->selectIodizationCentre.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+			}
+		return $this->selectIodizationCentre;
+	}
 
 	public function externalFort_B1() {
 		$externalFortified_B1 = '';
@@ -618,11 +632,9 @@
 					Salt Factory:
 				</section>
 				<section class="right">
-					<select name="oilFactory" id="oilFactory">
-					<option value="" selected="selected">Select One</option>
-						<option value="1">Magadi Salt</option>
-						<option value="2">Kensalt</option>
-						<option value="3">Melvins</option>
+					<select name="saltFactory" id="saltFactory">
+						<option value="" selected="selected">Select One</option>
+					'.$this->selectIodizationCentre.'
 					</select>
 
 				</section>
