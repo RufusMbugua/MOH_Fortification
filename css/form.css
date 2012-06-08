@@ -216,7 +216,7 @@ input.radio {
 	position: absolute;
 	left: 130px;
 	font-family: Verdana;
-	width: 250px;
+	width: 450px;
 }
 .date {
 	float: right;
@@ -240,6 +240,7 @@ input.radio {
 }
 .division {
 	font-size: 12px;
+	font-weight: bold;
 }
 .message {
 
