@@ -59,22 +59,10 @@ class M_Wheat_InternalFort_A1  extends MY_Model {
 			$this->noOfInsertsBatch=1;
 			
 			//get compound manufacturer name by id
-			try{
-			$compoundManufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>$this->input->post('manufacturer')));
-			}catch(exception $ex){
-				//ignore
-				//die($ex->getMessage());
-			}
+			$this->getCompoundManufacturerName($this->input->post('manufacturer'));/*method defined in MY_Model*/
 			
 			//get premix type name by id
-			try{
-			$premix=$this->em->getRepository('models\Entities\E_PremixType')
-			                       ->findOneBy( array('productId'=>$this->input->post('productType')));
-			}catch(exception $ex){
-				//ignore
-				//die($ex->getMessage());
-			}
+			$this->getPremixName($this->input->post('productType'));/*method defined in MY_Model*/
 			
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
@@ -83,9 +71,9 @@ class M_Wheat_InternalFort_A1  extends MY_Model {
 		      
 			 	
 				$this -> theForm -> setDates(new DateTime()); /*timestamp option*/
-				$this -> theForm -> setManufacturerCompName($compoundManufacturer->getManufacturerCompName());
+				$this -> theForm -> setManufacturerCompName($this->compoundManufacturer->getManufacturerCompName());
 				$this -> theForm -> setInspectedBy($this->elements['inspectedBy']);
-				$this -> theForm ->setProductType($premix->getProductName()); 
+				$this -> theForm ->setProductType($this->premix->getProductName()); 
 				$this -> theForm ->setPurchaseOrderNumber($this->elements['purchaseOrder']);
 				$this -> theForm ->setQuantity($this->elements['quantity']);
 				$this -> theForm ->setIntegrityObservation($this->elements['integrityObservation']);
@@ -111,28 +99,28 @@ class M_Wheat_InternalFort_A1  extends MY_Model {
         	//now do a batched insert, default at 5
 			  $this->batchSize=5;
 		if($i % $this->batchSize==0){
-		try{
+	//	try{
 					
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
-				}catch(Exception $ex){
-				    die($ex->getMessage());
+			//	}catch(Exception $ex){
+				   // die($ex->getMessage());
 					/*display user friendly message*/
 					
-				}//end of catch
+			//	}//end of catch
 				
 			} else if($i<$this->batchSize || $i>$this->batchSize || $i==$this->noOfInsertsBatch && 
 			$this->noOfInsertsBatch-$i<$this->batchSize){
 				 //total records less than a batch, insert all of them
-				try{
+			//	try{
 					
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
-				}catch(Exception $ex){
-					die($ex->getMessage());
+			//	}catch(Exception $ex){
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
-				}//end of catch
+			//	}//end of catch
 				 
 				
 			}//end of batch condition

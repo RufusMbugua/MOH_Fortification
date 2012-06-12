@@ -31,7 +31,7 @@ class E_Wheat_InternalFort_A1 {
 	private $inspectedBy;
 
 	/**
-	 * @Column(name="purchaseOrderNumber", type="integer", length=11, nullable=true)
+	 * @Column(name="purchaseOrderNumber", type="string", length=11, nullable=true)
 	 * */
 	private $purchaseOrderNumber;
 	
@@ -97,9 +97,9 @@ class E_Wheat_InternalFort_A1 {
 	private $certificateOfAnalysis;
 
 	/**
-	 * @Column(name="certificateOfAnalysisObservation", type="string", length=45, nullable=true)
-	 * */
-	private $certificateOfAnalysisObservation;
+	 * @Column(name="coaObservation", type="string", length=45, nullable=true)
+	 */
+	private $coaObservation;
 
 	/**
 	 * @Column(name="other", type="string", length=45, nullable=true)
@@ -252,10 +252,10 @@ class E_Wheat_InternalFort_A1 {
 	}
 
 	public function getCertificateOfAnalysisObservation() {
-		return $this -> certificateOfAnalysisObservation;
+		return $this -> coaObservation;
 	}
 
-	public function setCertificateOfAnalysisObservation($certificateOfAnalysisObservation) { $this -> certificateOfAnalysisObservation = $certificateOfAnalysisObservation;
+	public function setCertificateOfAnalysisObservation($coaObservation) { $this -> coaObservation = $coaObservation;
 	}
 
 	public function getOther() {

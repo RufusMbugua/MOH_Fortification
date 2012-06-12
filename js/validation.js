@@ -906,7 +906,7 @@ $().ready(function() {
 			receivedBy:"required",
 			receivedDate:"required",
 			supervisorName:"required",
-			roSignature:"required"
+			supervisorSignatureDate:"required"
 			},
 		messages: {
 			inspectionRegistry: "*Required",
@@ -917,7 +917,7 @@ $().ready(function() {
 			nonCompliances:"*Required",
 			suggestionsForImprovement:"*Required",
 			publicHealthOfficer:"*Required",
-			roSignature:"*Required",
+			supervisorSignatureDate:"*Required",
 			supervisorName:"*Required",
 			receivedBy:"*Required",
 			inspectorDate:"*Required",
@@ -1388,7 +1388,7 @@ $().ready(function() {
 			receivedBy:"required",
 			receivedDate:"required",
 			supervisorName:"required", 
-            roSignature:"required"
+            supervisorSignatureDate:"required"
 			},
 		messages: {
 			inspectionRegistry: "required",
@@ -1403,7 +1403,7 @@ $().ready(function() {
 			receivedBy:"required",
 			receivedDate:"required",
 			supervisorName:"required", 
-            roSignature:"required"
+            supervisorSignatureDate:"required"
 		}
 	});/*end of externalMaizeFlour_B3*/
 	
@@ -1484,11 +1484,13 @@ $().ready(function() {
 		
 		$("#internalWheatFlour_A2").validate({/*wheat module*/
 		rules: {
+			compManufacturer:{required:true},
 			dateOfReporting:{required:true},
             signature:{required:true}
             /*the rest are enforced in the cloned class*/
 			},
 		messages: {
+			compManufacturer:{required:"Provide the name of the compound manufacturer"},
 			dateOfReporting:{required:"*Required"},
             signature:{required:"*Required"}
 			
@@ -1703,7 +1705,7 @@ $().ready(function() {
 			receivedBy:"required",
 			receivedDate:"required",
 			supervisorName:"required", 
-            roSignature:"required"
+            supervisorSignatureDate:"required"
 			},
 		messages: {
 			inspectionRegistry: "required",
@@ -1718,7 +1720,7 @@ $().ready(function() {
 			receivedBy:"required",
 			receivedDate:"required",
 			supervisorName:"required", 
-            roSignature:"required"
+            supervisorSignatureDate:"required"
 		}
 	});/*end of externalMaizeFlour_B3*/
 	

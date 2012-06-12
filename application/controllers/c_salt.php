@@ -1632,7 +1632,7 @@
 	<section class="column">
 		<section class="row">
 			<label for="s_signature_date" >Date</label>
-			<input type="text" id="roSignature" name="roSignature" value=""  readonly="true" placeholder="click for date"/>
+			<input type="text" id="supervisorSignatureDate" name=supervisorSignatureDate" value="" class="autoDate"  readonly="true" placeholder="click for date"/>
 		</section>
 	</section>
 </form>';

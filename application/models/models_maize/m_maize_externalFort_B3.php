@@ -40,10 +40,13 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			     $this->attr = $key;//the attribute name
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					// $this->elements[$this->id][$this->attr]=htmlentities($val);
 					$this->elements[$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->attr]='';
+				   }
 					
 			} //close foreach($_POST)
 			
@@ -72,6 +75,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 			  $this -> theForm -> setInspectorDate($this->elements['inspectorDate']);
 			  $this -> theForm -> setReceivedDate($this->elements['receivedDate']);				
 			  $this -> theForm ->setSupervisorName($this->elements['supervisorName']);
+			  $this -> theForm ->setSupervisorDate($this->elements['supervisorSignatureDate']);
 			  $this -> em -> persist($this -> theForm);
 
 
@@ -83,7 +87,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
 				}catch(Exception $ex){
-				    die($ex->getMessage());
+				    //die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -96,7 +100,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch

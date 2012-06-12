@@ -1,5 +1,5 @@
 <?php
-class C_wheat extends CI_Controller {
+class C_Wheat extends MY_Controller {
 	public function externalWheatFlour_B1() {
 		$externalWheatFlour_B1 = '';
 		$externalWheatFlour_B1 .= '
@@ -1079,7 +1079,7 @@ class C_wheat extends CI_Controller {
 	<section class="column">
 		<section class="row">
 			<label for="s_signature_date" >Date</label>
-			<input type="text" id="roSignature" name="roSignature" value=""  readonly="true" placeholder="click for date"/>
+			<input type="text" id="supervisorSignatureDate" name="supervisorSignatureDate" value=""  class="autoDate" readonly="true" placeholder="click for date"/>
 		</section>
 	</section>
 </form>
@@ -1108,8 +1108,8 @@ class C_wheat extends CI_Controller {
 				</section>
 				<section class="right">
 					<select name="productType" id="productType">
-						<option value="1">Iodine</option>
-						<option value="0">Iodate</option>
+						<option value="" selected="selected">Select One</option>
+						'.$this->selectPremixType.'
 					</select>
 				</section>
 			</section>
@@ -1119,8 +1119,8 @@ class C_wheat extends CI_Controller {
 				</section>
 				<section class="right">
 					<select name="manufacturer" id="manufacturer">
-						<option value="1">Kensalt</option>
-						<option value="0">Magadi</option>
+						<option value="" selected="selected">Select One</option>
+						'.$this->selectCompManufacturers.'
 					</select>
 				</section>
 			</section>
@@ -1297,7 +1297,10 @@ class C_wheat extends CI_Controller {
 	<form name="internalWheatFlour_A2" id="internalWheatFlour_A2" method="post" action="' . base_url() .'submit/c_form_wheat/form_internalFort_A2' . '">
 	<h3>FORTIFIED WHEAT FLOUR TABLE A-2</h3>
 	<p align="center">VITAMINS AND IRON PREMIX INVENTORY CONTROL LOG</p>
-	
+	<p>Compound Manufacturer:<select name="compManufacturer" id="compManufacturer">
+						<option value="" selected="selected">Select One</option>
+						'.$this->selectCompManufacturers.'
+					</select></p>
 	<section class="block">
 	<table width="100%">
 	<tr>
