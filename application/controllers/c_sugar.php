@@ -3,7 +3,7 @@ class C_Sugar extends CI_Controller {
 
 	public function internalSugar_A1() {
 		$internalSugar_A1 = '';
-		$internalSugar_A1 .= '<form name="internalSugar_A1" id="internalSugar_A1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalFort_A1' . '" >
+		$internalSugar_A1 .= '<form name="internalSugar_A1" id="internalSugar_A1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalFort_A1' . '" >
    <h3 align="center">SUGAR PREMIX: TABLE A-1</h3>
    <p align="center">DAILY CLEANING OF BLENDER USED IN VITAMIN A PREMIX PRODUCTION</p>
    <p align="center">&nbsp;</p>
@@ -655,7 +655,7 @@ class C_Sugar extends CI_Controller {
 	public function internalSugar_B1() {
 		$internalSugar_B1 = '';
 		$internalSugar_B1 .= '
-	<form name="internalSugar_B1" id="internalSugar_B1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalFort_B1' . '" >
+	<form name="internalSugar_B1" id="internalSugar_B1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalFort_B1' . '" >
 	<h3>SUGAR PREMIX: TABLE B-1</h3>
 	<p align="center">
 		INGREDIENTS AND MATERIALS REQUIRED FOR VITAMIN A PREMIX PRODUCTION
@@ -900,7 +900,7 @@ class C_Sugar extends CI_Controller {
 
 	public function internalSugar_C1() {
 		$internalSugar_C1 = '';
-		$internalSugar_C1 .= '<form name="internalSugar_C1" id="internalSugar_C1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalFort_C1' . '" >
+		$internalSugar_C1 .= '<form name="internalSugar_C1" id="internalSugar_C1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalFort_C1' . '" >
 	<h3>SUGAR PREMIX:TABLE C-1</h3>
 	<p align="center">RECEPTION RECORD OF VITAMIN A FORTIFICANT COMPOUND</p>
 	<p>Ingredient:<input type="text" name="ingredients" id="ingredients"/></p>
@@ -944,12 +944,145 @@ class C_Sugar extends CI_Controller {
 	public function internalSugar_C2() {
 		$internalSugar_C2 = '';
 		$internalSugar_C2 .= '
-	<form name="internalSugar_C2" id="internalSugar_C2" method="post" action="">
+	<form name="internalSugar_C2" id="internalSugar_C2" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalFort_C2' . '" >
 	<h3>SUGAR PREMIX: TABLE C-2</h3>
 	<p align="center">DAILY INVENTORY OF INGREDIENTS AND MATERIALS FOR VITAMIN A PREMIX PRODUCTION</p>
-	<p>Start date:<input type="text" name="startDate" id="startDate"/></p>
-	<p>End Date:<input type="text" name="endDate" id="endDate"/></p>
-		
+	<table>
+	<tr>
+		<td width="10%"></td>
+		<td width="10%"></td>
+		<td width="10%"></td>
+		<td width="60%">CONS</td>
+		<td width="10%">UMED</td>
+		<td width="10%">EACH</td>
+		<td width="10%">DAY</td>
+		<td width="10%">OF</td>
+		<td width="10%">THE</td>
+		<td width="10%">WEEK</td>
+		<td width="10%"></td>
+	</tr>
+	<tr>
+		<td width="10%">INGREDIENT/MATERIAL</td>
+		<td width="10%">INITIAL BALANCE(B)</td>
+		<td width="10%">RECEIVED DURING WEEK(R)</td>
+		<td width="10%">1</td>
+		<td width="10%">2</td>
+		<td width="10%">3</td>
+		<td width="10%">4</td>
+		<td width="10%">5</td>
+		<td width="10%">6</td>
+		<td width="10%">TOTAL(C)</td>
+		<td width="10%">FINAL BALANCE(F) (F)=(B)+(R)-(C)</td>
+	</tr>
+	<tr>
+		<td width="10%">Vitamin A fortification Compound (kg)</td>
+		<td width="10%"><input type="text" name="vitaminCompound" id="vitaminCompound"/></td>
+		<td width="10%"><input type="text" name="vitaminReceivedWeek" id="vitaminReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="vitaminDay1" id="day1"/></td>
+		<td width="10%"><input type="text" name="vitaminDay2" id="day2"/></td>
+		<td width="10%"><input type="text" name="vitaminDay3" id="day3"/></td>
+		<td width="10%"><input type="text" name="vitaminDay4" id="day4"/></td>
+		<td width="10%"><input type="text" name="vitaminDay5" id="day5"/></td>
+		<td width="10%"><input type="text" name="vitaminDay6" id="day6"/></td>
+		<td width="10%"><input type="text" name="vitaminTotals" id="totals"/></td>
+		<td width="10%"><input type="text" name="vitaminFinalBalance" id="finalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Sugar (kg)</td>
+		<td width="10%"><input type="text" name="sugarCompund" id="sugarCompound"/></td>
+		<td width="10%"><input type="text" name="sugarReceivedWeek" id="sugarReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="sugarDay1" id="sugarDay1"/></td>
+		<td width="10%"><input type="text" name="sugarDay2" id="sugarDay2"/></td>
+		<td width="10%"><input type="text" name="sugarDay3" id="sugarDay3"/></td>
+		<td width="10%"><input type="text" name="sugarDay4" id="sugarDay4"/></td>
+		<td width="10%"><input type="text" name="sugarDay5" id="sugarDay5"/></td>
+		<td width="10%"><input type="text" name="sugarDay6" id="sugarDay6"/></td>
+		<td width="10%"><input type="text" name="sugarTotals" id="sugarTotals"/></td>
+		<td width="10%"><input type="text" name="sugarFinalBalance" id="sugarFinalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Vegetable oil (L)</td>
+		<td width="10%"><input type="text" name="vegetableOil" id="vegetableOil"/></td>
+		<td width="10%"><input type="text" name="vegetableOilReceivedWeek" id="vegetableOilReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="vegetableDay1" id="vegetableDay1"/></td>
+		<td width="10%"><input type="text" name="vegetableDay2" id="vegetableDay2"/></td>
+		<td width="10%"><input type="text" name="vegetableDay3" id="vegetableDay3"/></td>
+		<td width="10%"><input type="text" name="vegetableDay4" id="vegetableDay4"/></td>
+		<td width="10%"><input type="text" name="vegetableDay5" id="vegetableDay5"/></td>
+		<td width="10%"><input type="text" name="vegetableDay6" id="vegetableDay6"/></td>
+		<td width="10%"><input type="text" name="vegetableTotals" id="vegetableTotals"/></td>
+		<td width="10%"><input type="text" name="vegetableFinalBalance" id="vegetableFinalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Ronoxan (kg)</td>
+		<td width="10%"><input type="text" name="ronoxan" id="ronoxan"/></td>
+		<td width="10%"><input type="text" name="ronoxanReceivedWeek" id="ronoxanReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="ronoxanDay1" id="ronoxanDay1"/></td>
+		<td width="10%"><input type="text" name="ronoxanDay2" id="ronoxanDay2"/></td>
+		<td width="10%"><input type="text" name="ronoxanDay3" id="ronoxanDay3"/></td>
+		<td width="10%"><input type="text" name="ronoxanDay4" id="ronoxanDay4"/></td>
+		<td width="10%"><input type="text" name="ronoxanDay5" id="ronoxanDay5"/></td>
+		<td width="10%"><input type="text" name="ronoxanDay6" id="ronoxanDay6"/></td>
+		<td width="10%"><input type="text" name="ronoxanTotals" id="ronoxanTotals"/></td>
+		<td width="10%"><input type="text" name="ronoxanFinalBalance" id="ronoxanFinalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Nitrogen (Cylinder)</td>
+		<td width="10%"><input type="text" name="nitrogen" id="nitrogen"/></td>
+		<td width="10%"><input type="text" name="nitrogenReceivedWeek" id="nitrogenReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="nitrogenDay1" id="nitrogenDay1"/></td>
+		<td width="10%"><input type="text" name="nitrogenDay2" id="nitrogenDay2"/></td>
+		<td width="10%"><input type="text" name="nitrogenDay3" id="nitrogenDay3"/></td>
+		<td width="10%"><input type="text" name="nitrogenDay4" id="nitrogenDay4"/></td>
+		<td width="10%"><input type="text" name="nitrogenDay5" id="nitrogenDay5"/></td>
+		<td width="10%"><input type="text" name="nitrogenDay6" id="nitrogenDay6"/></td>
+		<td width="10%"><input type="text" name="nitrogenTotals" id="nitrogenTotals"/></td>
+		<td width="10%"><input type="text" name="nitrogenFinalBalance" id="nitrogenFinalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Polythylene bags (Units)</td>
+		<td width="10%"><input type="text" name="polythylene" id="polythylene"/></td>
+		<td width="10%"><input type="text" name="polythyleneReceivedWeek" id="polythyleneReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="polythyleneDay1" id="polythyleneDay1"/></td>
+		<td width="10%"><input type="text" name="polythyleneDay2" id="polythyleneDay2"/></td>
+		<td width="10%"><input type="text" name="polythyleneDay3" id="polythyleneDay3"/></td>
+		<td width="10%"><input type="text" name="polythyleneDay4" id="polythyleneDay4"/></td>
+		<td width="10%"><input type="text" name="polythyleneDay5" id="polythyleneDay5"/></td>
+		<td width="10%"><input type="text" name="polythyleneDay6" id="polythyleneDay6"/></td>
+		<td width="10%"><input type="text" name="polythyleneTotals" id="polythyleneTotals"/></td>
+		<td width="10%"><input type="text" name="polythyleneFinalBalance" id="polythyleneFinalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Polypropylene bags (Units)</td>
+		<td width="10%"><input type="text" name="polypropylene" id="polypropylene"/></td>
+		<td width="10%"><input type="text" name="polypropyleneReceivedWeek" id="polypropyleneReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="polypropyleneDay1" id="polypropyleneDay1"/></td>
+		<td width="10%"><input type="text" name="polypropyleneDay2" id="polypropyleneDay2"/></td>
+		<td width="10%"><input type="text" name="polypropyleneDay3" id="polypropyleneDay3"/></td>
+		<td width="10%"><input type="text" name="polypropyleneDay4" id="polypropyleneDay4"/></td>
+		<td width="10%"><input type="text" name="polypropyleneDay5" id="polypropyleneDay5"/></td>
+		<td width="10%"><input type="text" name="polypropyleneDay6" id="polypropyleneDay6"/></td>
+		<td width="10%"><input type="text" name="polypropyleneTotals" id="polypropyleneTotals"/></td>
+		<td width="10%"><input type="text" name="polypropyleneFinalBalance" id="polypropyleneFinalBalance"/></td>
+	</tr>
+	<tr>
+		<td width="10%">Sewing threaad (Units)</td>
+		<td width="10%"><input type="text" name="sewingThread" id="sewingThread"/></td>
+		<td width="10%"><input type="text" name="sewingThreadReceivedWeek" id="sewingThreadReceivedWeek"/></td>
+		<td width="10%"><input type="text" name="sewingThreadDay1" id="sewingThreadDay1"/></td>
+		<td width="10%"><input type="text" name="sewingThreadDay2" id="sewingThreadDay2"/></td>
+		<td width="10%"><input type="text" name="sewingThreadDay3" id="sewingThreadDay3"/></td>
+		<td width="10%"><input type="text" name="sewingThreadDay4" id="sewingThreadDay4"/></td>
+		<td width="10%"><input type="text" name="sewingThreadDay5" id="sewingThreadDay5"/></td>
+		<td width="10%"><input type="text" name="sewingThreadDay6" id="sewingThreadDay6"/></td>
+		<td width="10%"><input type="text" name="sewingThreadTotals" id="sewingThreadTotals"/></td>
+		<td width="10%"><input type="text" name="sewingThreadFinalBalance" id="sewingThreadFinalBalance"/></td>
+	</tr>
+	</table>
+	<p>Observations:<textarea name="observations" id="observations"row="3"></textarea></p>
+	<p>Date:<input type="text" name="responsibleDate" id="responsibleDate"/></p>
+	<p>Responsible:<input type="text" name="responsible" id="responsible"/></p>
+		</form>
 	';
 		$data['form'] = $internalSugar_C2;
 		$data['form_id'] = 'internalSugar_C2';
@@ -960,8 +1093,114 @@ class C_Sugar extends CI_Controller {
 	public function internalSugar_C3() {
 		$internalSugar_C3 = '';
 		$internalSugar_C3 .= '
-	<form name="internalSugar_C3" id="internalSugar_C3" method="post" action="">
-	</form>
+<form name="internalSugar_C3" id="internalSugar_C3" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalFort_C3' . '" >
+	<h3>SUGAR PREMIX:TABLE C-3</h3>
+	<p align="center">
+		VITAMIN A PREMIX INVENTORY
+	</p>
+	<section class="block">
+		<table width="100%">
+			<tr>
+				<td width="12.5%">PRO</td>
+				<td width="12.5%">DUC</td>
+				<td width="12.5%">TION</td>
+				<td width="12.5%"></td>
+				<td width="12.5%">DIST</td>
+				<td width="12.5%">RIB</td>
+				<td width="12.5%">UTION</td>
+				<td width="12.5%"></td>
+			</tr>
+			<tr>
+				<td width="12.5%">DATE</td>
+				<td width="12.5%">LOG ID(BAG No)</td>
+				<td width="12.5%">#25-kg BAGS produced</td>
+				<td width="12.5%">DELIVERY No.</td>
+				<td width="12.5%">DESTINATION(SUGAR FACTORY NAME)</td>
+				<td width="12.5%">LOT ID(BAG No.s)</td>
+				<td width="12.5%">#25-kg BAGS DISPATCHED</td>
+				<td width="12.5%">OBSERVATIONS</td>
+			</tr>
+			<tr id="formbuttons">
+				<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+				<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			</tr>
+
+			<tr class="clonable">
+				<td width="12.5%">
+				<input type="text" name="dates_1" id="dates_1" class="cloned"/>
+				</td>
+				<td width="12.5%">
+				<input type="text" name="lotID_1" id="lotID_1" class="cloned"/>
+				</td>
+				<td width="12.5%">
+				<input type="text" name="bagsProduced_1" id="bagsProduced_1" class="cloned"/>
+				</td>
+				<td width="12.5%">
+				<input type="text" name="deliveryNumber_1" id="deliveryNumber_1" class="cloned"/>
+				</td>
+				<td width="12.5%">
+				<select name="factoryName_1" id="factoryName_1" class="cloned">
+					<option>Sugar Factory 1</option>
+					<option>Sugar factory 2</option>
+					<option>Sugar factory 3</option>
+				</select></td>
+				<td width="12.5%">
+				<input type="text" name="dispatchedLotID_1" ID="dispatchedLotID_1" class="cloned" />
+				</td>
+				<td width="12.5%">
+				<input type="text" name="dispatchedBags_1" id="dispatchedBags_1" class="cloned"/>
+				</td>
+				<td width="12.5%">
+				<input type="text" name="observations_1" id="observations_1" class="cloned"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="12.5%">TOTAL</td>
+				<td width="12.5%">25-kg bags</td>
+				<td width="12.5%">
+				<input type="text" name="totals0" id="totals0"/>
+				</td>
+				<td width="12.5%"></td>
+				<td width="12.5%">TOTALS</td>
+				<td width="12.5%">RIB</td>
+				<td width="12.5%">
+				<input type="text" name="totals1" id="totals1"/>
+				</td>
+				<td width="12.5%"></td>
+			</tr>
+		</table>
+	</section>
+	<section class="column">
+		<section class="row">
+			<section class="left">
+				Balance for next week:
+			</section>
+			<section class="right">
+				<input type="text" name="balance" id="balance"/>
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
+				Date:
+			</section>
+			<section class="right">
+				<input type="text" name="dateResponsible" id="dateResponsible"/>
+			</section>
+		</section>
+	</section>
+	<section class="column">
+		<section class="row">
+			<section class="left">
+				Responsible:
+			</section>
+			<section class="right">
+				<input type="text" name="nameResponsible" id="nameResponsible">
+			</section>
+		</section>
+	</section>
+
+</form>
+
 	';
 		$data['form'] = $internalSugar_C3;
 		$data['form_id'] = 'internalSugar_C3';
@@ -972,7 +1211,7 @@ class C_Sugar extends CI_Controller {
 	public function internalSugar_D1() {
 		$internalSugar_D1 = '';
 		$internalSugar_D1 .= '
-	<form name="internalSugar_D1" id="internalSugar_D1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalFort_D1' . '" >
+	<form name="internalSugar_D1" id="internalSugar_D1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalFort_D1' . '" >
 	<h3>Sugar premix: table D-1</h3>
 	<p align="center">VITAMIN A PREMIX QUALITY CONTROL: RETINOL RESULTS</p>
 	<table border="0" width="100%">
@@ -1011,7 +1250,7 @@ class C_Sugar extends CI_Controller {
 	public function externalSugar_B1() {
 		$externalSugar_B1 = '';
 		$externalSugar_B1 .= '
-<form name="externalSugar_B1" id="externalSugar_B1" method="post" action="' . base_url() .'submit/c_form_sugar/form_externalFort_B1' . '" >
+<form name="externalSugar_B1" id="externalSugar_B1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_externalFort_B1' . '" >
 	<h3>FORTIFIED SUGAR- AUDITS AND INSPECTION- TABLE B-1</h3>
 	<p align="center">
 		TECHNICAL AUDIT AND INSPECTION VISIT SESSIONS
@@ -1118,10 +1357,10 @@ class C_Sugar extends CI_Controller {
 
 	}
 
-	public function externalSugar_B2(){
-	$externalSugar_B2='';
-	$externalSugar_B2.='
-	<form name="externalSugar_B2" id="externalSugar_B2" method="post" action="' . base_url() .'submit/c_form_sugar/form_externalFort_B2' . '" >
+	public function externalSugar_B2() {
+		$externalSugar_B2 = '';
+		$externalSugar_B2 .= '
+	<form name="externalSugar_B2" id="externalSugar_B2" method="post" action="' . base_url() . 'submit/c_form_sugar/form_externalFort_B2' . '" >
 	<h3>FORTIFIED SUGAR- AUDITS AND INSPECTION TABLE B-2</h3>
 	<p align="center">
 		CHECKLIST OF TECHNICAL AUDIT AND INSPECTION VISIT TO SUGAR FACTORIES
@@ -1917,14 +2156,13 @@ class C_Sugar extends CI_Controller {
 		$data['form_id'] = 'externalSugar_B2';
 
 		$this -> load -> view('form', $data);
-	
 
-}
+	}
 
-public function externalSugar_B3(){
-	$externalSugar_B3='';
-	$externalSugar_B3.='
-	<form name="externalSugar_B3" id="externalSugar_B3" method="post" action="' . base_url() .'submit/c_form_sugar/form_externalFort_B3' . '" >
+	public function externalSugar_B3() {
+		$externalSugar_B3 = '';
+		$externalSugar_B3 .= '
+	<form name="externalSugar_B3" id="externalSugar_B3" method="post" action="' . base_url() . 'submit/c_form_sugar/form_externalFort_B3' . '" >
 	<h3>FORTIFIED SUGAR- AUDITS AND INSPECTION TABLE B-3</h3>
 	<p align="center">TECHNICAL AUDIT AND INSPECTION PRELIMINARY REPORT</p>
 	<section class="block">
@@ -2070,12 +2308,13 @@ public function externalSugar_B3(){
 		$data['form_id'] = 'externalSugar_B3';
 
 		$this -> load -> view('form', $data);
-	
-}
+
+	}
+
 	public function qualityAssurance_A1() {
 		$qualityAssurance_A1 = '';
 		$qualityAssurance_A1 .= '
-<form name="qualityAssurance" id="qualityAssurance" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalQC_A1' . '" >
+<form name="qualityAssurance" id="qualityAssurance" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalQC_A1' . '" >
 	<h3>FORTIFIED SUGAR QC/QA- TABLE A-1</h3>
 	<p align="center">
 		VITAMIN A PREMIX INVENTORY CONTROL LOG
@@ -2186,7 +2425,7 @@ public function externalSugar_B3(){
 	public function qualityAssurance_B1() {
 		$qualityAssurance_B1 = '';
 		$qualityAssurance_B1 .= '
-<form name="qualityAssurance_B1" id="qualityAssurance_B1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalQC_B1' . '" >
+<form name="qualityAssurance_B1" id="qualityAssurance_B1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalQC_B1' . '" >
 	<h3>FORTIFIED SUGAR QC/QA -TABLE B-1</h3>
 	<p align="center">
 		FEEDER FLOW CONTROL FOR PRODUCTION OF SUGAR FORTIFIED WITH VITAMIN A
@@ -2318,7 +2557,7 @@ public function externalSugar_B3(){
 	public function qualityAssurance_B2() {
 		$qualityAssurance_B2 = '';
 		$qualityAssurance_B2 .= '
-	<form name="qualityAssurance_B2" id="qualityAssurance_B2" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalQC_B2' . '" >
+	<form name="qualityAssurance_B2" id="qualityAssurance_B2" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalQC_B2' . '" >
 	<h3>FORTIFIED SUGAR QC/QA TABLE B-2</h3>
 	<p align="center">PRODUCTION LOG FOR SUGAR FORTIFIED WITH VITAMIN A</p>
 
@@ -2415,7 +2654,7 @@ public function externalSugar_B3(){
 	public function qualityAssurance_C1() {
 		$qualityAssurance_C1 = '';
 		$qualityAssurance_C1 .= '
-	<form name="qualityAssurance_C1" id="qualityAssurance_C1" method="post" action="' . base_url() .'submit/c_form_sugar/form_internalQC_C1' . '" >
+	<form name="qualityAssurance_C1" id="qualityAssurance_C1" method="post" action="' . base_url() . 'submit/c_form_sugar/form_internalQC_C1' . '" >
 	<h3>FORTIFIED SUGAR QC/QA- TABLE C-1</h3>
 	<p align="center">PRODUCTION AND QUALITY CONTROL LOG FOR FORTIFIED SUGAR<sup>1</sup>WITH VITAMIN A</p>
 	<table width="100%">

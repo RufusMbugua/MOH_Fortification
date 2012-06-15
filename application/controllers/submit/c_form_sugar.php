@@ -59,6 +59,41 @@ class C_Form_Sugar extends MY_Controller {
 		}
 
 	}//close form_internalFort_C1()
+	
+	public function form_internalFort_C2() {
+		$this -> load -> model('models_sugar/M_Sugar_InternalFort_C2');
+		$this -> M_Sugar_InternalFort_C2 -> addRecord($this -> session -> userdata('affiliation'));
+
+		if ($this -> M_Sugar_InternalFort_C2 -> response = 'ok') {
+			//notify user of success
+			$data['form_id'] = "";
+			$data['form'] = '<p><b>' . $this -> M_Sugar_InternalFort_C2 -> rowsInserted . '</b> records were inserted successfully in 
+			approximately <b>' . $this -> M_Sugar_InternalFort_C2 -> executionTime . '</b> seconds.</p>';
+			//redirect(base_url() . 'front/vehicles/index', 'location');
+			$this -> load -> view('pages/vehicles/index', $data);
+
+		} else {
+			//notify user of error/failure
+		}
+	}//close form_internalFort_C1()
+	
+	public function form_internalFort_C3() {
+		$this -> load -> model('models_sugar/M_Sugar_InternalFort_C3');
+		$this -> M_Sugar_InternalFort_C3 -> addRecord($this -> session -> userdata('affiliation'));
+
+		if ($this -> M_Sugar_InternalFort_C3 -> response = 'ok') {
+			//notify user of success
+			$data['form_id'] = "";
+			$data['form'] = '<p><b>' . $this -> M_Sugar_InternalFort_C3 -> rowsInserted . '</b> records were inserted successfully in 
+			approximately <b>' . $this -> M_Sugar_InternalFort_C3 -> executionTime . '</b> seconds.</p>';
+			//redirect(base_url() . 'front/vehicles/index', 'location');
+			$this -> load -> view('pages/vehicles/index', $data);
+
+		} else {
+			//notify user of error/failure
+		}
+	}//close form_internalFort_C1()
+	
 
 	public function form_internalFort_D1() {
 		$this -> load -> model('models_sugar/M_Sugar_InternalFort_D1');
@@ -204,6 +239,8 @@ class C_Form_Sugar extends MY_Controller {
 		}
 
 	}//close form_internalFort_C1()
+	
+	
 
 }
 	

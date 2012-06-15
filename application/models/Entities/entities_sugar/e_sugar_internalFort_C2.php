@@ -5,7 +5,7 @@ namespace models\Entities\entities_sugar;
  * @Entity
  * @Table(name="sugar_internalfortc2")
  */
- class E_Sugar_internalFort_B2{
+ class E_Sugar_internalFort_C2{
  	
  	/**
 * @Id
