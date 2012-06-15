@@ -556,7 +556,7 @@
                              <td width="15%"><input type="text" name="saltFortified2" id="saltFortified2" placeholder="auto-calculated" readonly="true"/></td>
                              <!--td width="18%"><input type="text" name="notes2" id="notes2"/></td-->
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
-                             <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
+                             <!--td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td-->
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
@@ -1632,7 +1632,7 @@
 	<section class="column">
 		<section class="row">
 			<label for="s_signature_date" >Date</label>
-			<input type="text" id="roSignature" name="roSignature" value=""  readonly="true" placeholder="click for date"/>
+			<input type="text" id="supervisorSignatureDate" name=supervisorSignatureDate" value="" class="autoDate"  readonly="true" placeholder="click for date"/>
 		</section>
 	</section>
 </form>';

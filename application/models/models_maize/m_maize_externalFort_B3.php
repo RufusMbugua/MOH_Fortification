@@ -22,28 +22,16 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 			$this->theIds=array();
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
 		   //print(($key." ".$val)).'<br \>';
-			   
-			//check if posted value is among the cloned ones   
-			/* if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
-			 	$key=$key."_1";
-			 }*/
-			  		//we separate the attribute name from the number
-					
-					/* $this->frags = explode("_", $key);
-				   
-				    $this->id = $this->frags[1];  // the id
-				    
-				  
-				   $this->attr = $this->frags[0];//the attribute name
-				   
-				  $this->theIds[$this->attr]=$this->id;*/
-			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
+		
 				   
 			     $this->attr = $key;//the attribute name
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					// $this->elements[$this->id][$this->attr]=htmlentities($val);
 					$this->elements[$this->attr]=htmlentities($val);
+				   }else{
+				   	$this->elements[$this->attr]='';
+				   }
 					
 			} //close foreach($_POST)
 			
@@ -72,6 +60,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 			  $this -> theForm -> setInspectorDate($this->elements['inspectorDate']);
 			  $this -> theForm -> setReceivedDate($this->elements['receivedDate']);				
 			  $this -> theForm ->setSupervisorName($this->elements['supervisorName']);
+			  $this -> theForm ->setSupervisorDate($this->elements['supervisorSignatureDate']);
 			  $this -> em -> persist($this -> theForm);
 
 
@@ -83,7 +72,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
 				}catch(Exception $ex){
-				    die($ex->getMessage());
+				    //die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -96,7 +85,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch

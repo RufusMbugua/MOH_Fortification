@@ -83,7 +83,7 @@ class M_Maize_InternalFort_B1  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -97,7 +97,7 @@ class M_Maize_InternalFort_B1  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch

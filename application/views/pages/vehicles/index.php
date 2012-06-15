@@ -22,15 +22,16 @@ $sessionEmail = $this -> session -> userdata('email');
 		<link rel="stylesheet" href="<?php echo base_url()?>css/inline.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/>
 		<!-- Attach JavaScript files -->
-		<script src="<?php echo base_url()?>js/jquery-1.7.2.min.js" type="text/javascript"></script>
-		<script src="<?php echo base_url()?>js/mobiscroll-1.6.min.js" type="text/javascript" ></script>
-		<script src="<?php echo base_url()?>js/jquery.orbit.js" type="text/javascript"></script>
-		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
-		<script src="<?php echo base_url()?>js/jquery.validate.js" type="text/javascript" ></script>
-		<script src="<?php echo base_url()?>js/validation.js" type="text/javascript" ></script>
-		<script src="<?php echo base_url()?>js/jquery.cloneform.js" type="text/javascript"></script>
-		<script src="<?php echo base_url()?>js/jquery.reveal.js" type="text/javascript" ></script>
-		<script src="<?php echo base_url()?>js/menuloader.js" type="text/javascript" ></script>
+		<!--script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
+		<script src="<?php echo base_url()?>js/jquery.cloneform.js"></script>
+		<script src="<?php echo base_url()?>js/jquery.validate.js"></script>
+		<script src="<?php echo base_url()?>js/mobiscroll-1.6.min.js"></script>
+		<script src="<?php echo base_url()?>js/jquery.orbit.js"></script>
+		<script src="<?php echo base_url()?>js/validation.js"></script>
+		<script src="<?php echo base_url()?>js/jquery.reveal.js"></script>
+		<script src="<?php echo base_url()?>js/menuloader.js"></script>
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
 		<script type="text/javascript">

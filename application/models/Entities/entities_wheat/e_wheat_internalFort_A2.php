@@ -12,50 +12,57 @@ class E_Wheat_InternalFort_A2 {
 	 * @GeneratedValue(strategy="AUTO")
 	 * */
 	private $wheat_internalFortA2ID;
+	
 	/**
 	 * @Column(name="dates", type="string", length=45, nullable=true)
 	 * */
 	private $dates;
+	
 	/**
 	 * @Column(name="shiftTime", type="string", length=45, nullable=true)
 	 * */
 	private $shiftTime;
+	
 	/**
 	 * @Column(name="quantity", type="decimal",  nullable=true)
 	 * */
 	private $quantity;
+	
 	/**
 	 * @Column(name="lotID0", type="string", length=45, nullable=true)
 	 * */
 	private $lotID0;
+	
 	/**
 	 * @Column(name="expiryDate", type="string", length=45, nullable=true)
 	 * */
 	private $expiryDate;
+	
 	/**
 	 * @Column(name="dispatchedQuantity", type="decimal",  nullable=true)
 	 * */
 	private $dispatchedQuantity;
+	
 	/**
 	 * @Column(name="lotID1", type="string", length=45, nullable=true)
 	 * */
 	private $lotID1;
-	/**
-	 * @Column(name="observations", type="string", length=45, nullable=true)
-	 * */
-	private $observations;
+	
 	/**
 	 * @Column(name="reportingDate", type="date", length=45, nullable=true)
 	 * */
 	private $reportingDate;
+	
 	/**
 	 * @Column(name="transactedBy", type="string", length=45, nullable=true)
 	 * */
 	private $transactedBy;
+	
 	/**
 	 * @Column(name="manufacturerCompName", type="string", length=45, nullable=true)
 	 * */
 	private $manufacturerCompName;
+	
 	
 	public function getWheat_internalFortA2ID() {
 		return $this -> wheat_internalFortA2ID;
@@ -105,12 +112,7 @@ class E_Wheat_InternalFort_A2 {
 
 	public function setLotID1($lotID1) { $this -> lotID1 = $lotID1;
 	}
-	public function getObservations() {
-		return $this -> observations;
-	}
-
-	public function setObservations($observations) { $this -> observations = $observations;
-	}
+	
 	public function getReportingDate() {
 		return $this -> reportingDate;
 	}

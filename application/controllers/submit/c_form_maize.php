@@ -108,7 +108,7 @@ class C_Form_Maize extends MY_Controller{
 	
 	public function form_externalFort_B1(){
 		$this->load->model('models_maize/M_Maize_ExternalFort_B1');
-		$this->M_Maize_ExternalFort_B1->addRecord($this->session->userdata('affiliation'));
+		$this->M_Maize_ExternalFort_B1->addRecord();
 		
 		if($this->M_Maize_ExternalFort_B1->response=='ok'){
 			//notify user of success

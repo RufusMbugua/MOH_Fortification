@@ -103,9 +103,7 @@ class M_Maize_ExternalFort_B2  extends MY_Model {
 				$this -> theForm ->setLast30Samples($this->elements['lastSamplesStored']);
 				$this -> theForm ->setLabelingMeetsSpecifications($this->elements['goodLabeling']);
 				$this -> theForm ->setFortifiedMaizeFlour($this->elements['fortifiedMaizeStored']);
-				
 				$this -> theForm ->setRecommendations($this->elements['auditRecommendations']);
-				
 				$this -> theForm ->setCorrectiveActions($this->elements['correctiveActionTaken']);
 				$this -> theForm ->setAssessmentOfCorrectiveAction($this->elements['assessmentCorrectiveAction']);
 				$this -> theForm ->setComments($this->elements['auditComments']);
@@ -114,12 +112,12 @@ class M_Maize_ExternalFort_B2  extends MY_Model {
 				
 				$this -> theForm ->setPremixType($this->elements['iodineType']);
 				$this -> theForm ->setCompositeID($this->elements['IDComposite']);
-				$this -> theForm ->setIronMgPerKg0($this->elements['IDCompositemgKg']);
-				$this -> theForm ->setIronMgPerKg1($this->elements['refIodineMgKg']);
-				$this -> theForm ->setVitaminMgPerKg0($this->elements['refIodineMgKg']);
+				$this -> theForm ->setFactoryEstimatesIronMgPerKg($this->elements['FactoryEstimatesIronMgPerKg']);
+				$this -> theForm ->setLabResultsIronMgPerKg($this->elements['LabResultsIronMgPerKg']);
+				$this -> theForm ->setInspectionVitaminMgPerKg0($this->elements['InspectionVitaminMgPerKg0']);
 				$this -> theForm ->setIDOther($this->elements['IDOther']);
-				$this -> theForm ->setVitaminAMgPerKg1($this->elements['IDOtherMgKg']);
-				//$this -> theForm ->setIodineMgPerKg3($this->elements['IDOtherMgKg2']);
+				$this->theForm->setIronMgPerKg2($this->elements['IronMgPerKg2']);
+				$this -> theForm ->setInspectionVitaminMgPerKg1($this->elements['InspectionVitaminMgPerKg1']);
 				$this -> theForm ->setSupervisorName($this->elements['supervisorName']);
 				$this -> theForm ->setSupervisorDate(new DateTime());
 				$this -> em -> persist($this -> theForm);
@@ -133,7 +131,7 @@ class M_Maize_ExternalFort_B2  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detaches all objects from doctrine
 				}catch(Exception $ex){
-				    die($ex->getMessage());
+				    //die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -146,7 +144,7 @@ class M_Maize_ExternalFort_B2  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch

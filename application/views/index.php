@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/tabs.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/form.css"/>
 		<!-- Attach JavaScript files -->
-		<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 		<script src="js/jquery.orbit.js" type="text/javascript"></script>
 	</head>
 	<body>

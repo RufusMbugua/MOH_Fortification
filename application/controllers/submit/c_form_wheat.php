@@ -46,7 +46,7 @@ class C_Form_Wheat extends MY_Controller {
 
 	public function form_internalFort_B1() {
 		$this -> load -> model('models_wheat/M_Wheat_InternalFort_B1');
-		$this -> M_Wheat_InternalFort_B1 -> addRecord();
+		$this -> M_Wheat_InternalFort_B1 -> addRecord($this->session->userdata('affiliation'));
 
 		if ($this -> M_Wheat_InternalFort_B1 -> response = 'ok') {
 			//notify user of success
@@ -64,7 +64,7 @@ class C_Form_Wheat extends MY_Controller {
 
 	public function form_internalFort_B2() {
 		$this -> load -> model('models_wheat/M_Wheat_InternalFort_B2');
-		$this -> M_Wheat_InternalFort_B2 -> addRecord();
+		$this -> M_Wheat_InternalFort_B2 -> addRecord($this->session->userdata('affiliation'));
 
 		if ($this -> M_Wheat_InternalFort_B2 -> response = 'ok') {
 			//notify user of success
@@ -100,7 +100,9 @@ class C_Form_Wheat extends MY_Controller {
 
 public function form_externalFort_B1(){
 		$this->load->model('models_wheat/M_Wheat_ExternalFort_B1');
-		$this->M_Wheat_ExternalFort_B1->addRecord($this->session->userdata('affiliation'));
+		$this->M_Wheat_ExternalFort_B1->addRecord();
+		
+		
 		
 		if($this->M_Wheat_ExternalFort_B1->response=='ok'){
 			//notify user of success

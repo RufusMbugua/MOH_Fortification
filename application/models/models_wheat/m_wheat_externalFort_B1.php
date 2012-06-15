@@ -13,7 +13,7 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 		parent::__construct();
 	}
 
-	function addRecord($iodizationCentre) {
+	function addRecord() {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -54,7 +54,8 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//iodization centre name obtained from the session variable => 'affiliation'
+			//Get Factory name by id
+			$this->getFactoryName($this->input->post('wheatMill')); /*method defined in MY_Model*/
 			
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
@@ -70,7 +71,7 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 				$this -> theForm -> setSignature($this->elements[$i]["signature"]);
 				$this -> theForm -> setOpening($this->elements[$i]["opening"]);
 				$this -> theForm -> setClosing($this->elements[$i]["closing"]);
-				$this -> theForm -> setFactoryName($iodizationCentre);
+				$this -> theForm -> setFactoryName($this->centre->getFactoryName());
 				$this -> em -> persist($this -> theForm);
 
 
@@ -109,6 +110,23 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 		$this->executionTime=round($e-$s,'4');
         $this->rowsInserted=$this->noOfInsertsBatch;
 		return $this -> response = 'ok';
+	}
+
+  /*utilitized in external_B1's*/
+	public function getFactoriesByVehicle($vehicle){
+		try{
+			 /*using DQL*/
+	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f WHERE f.manufacturerFortName
+	                                      IN (SELECT m.manufactuerFortName FROM models\Entities\E_ManufacturerFortified m WHERE m.vehicleName= :name)');
+		  $query->setParameter('name', $vehicle);
+          $this->factories = $query->getResult();
+		
+			}catch(exception $ex){
+				//ignore
+				die($ex->getMessage());
+			}
+			
+			return $this->factories;
 	}
 
 }//end of class ExtternalFortifiedB1
