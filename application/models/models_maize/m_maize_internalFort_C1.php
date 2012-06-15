@@ -41,10 +41,12 @@ class M_Maize_InternalFort_C1  extends MY_Model {
 			//print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			
-				   if (!empty($val)) 
+				   if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
-					
+				   }else{
+				   	$this->elements[$this->id][$this->attr]='';
+				   }
 			} //close foreach($_POST)
 			//print ($iodizationCentre);
 			//exit;

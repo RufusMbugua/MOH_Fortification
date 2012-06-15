@@ -3,7 +3,7 @@
 
 class  MY_Model  extends  CI_Model{
 
-public $em, $response, $theForm,$centre,$compoundManufacturer,$premix,$manufacturer;
+public $em, $response, $theForm,$centre,$compoundManufacturer,$premix,$manufacturer,$factories;
 
 function __construct() {
 		parent::__construct();
@@ -60,6 +60,20 @@ function __construct() {
 			}
 	}
 	
-	
-
+	/*utilitized in external_B1's*/
+	/*public function getFactoriesByVehicle($vehicle){
+		try{
+			//using DQL
+	      $query = $this->em->createQuery('(SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f WHERE f.manufacturerFortName
+	                                      IN (SELECT m.manufactuerFortName FROM models\Entities\E_ManufacturerFortified m WHERE m.vehicleName= :name)');
+		  //$query->setParameter('name', $vehicle);
+          $this->factories = $query->getResult();
+		
+			}catch(exception $ex){
+				//ignore
+				die($ex->getMessage());
+			}
+			
+			return $this->factories;
+	}*/
 }

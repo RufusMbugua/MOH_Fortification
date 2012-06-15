@@ -53,11 +53,8 @@ class M_Wheat_InternalFort_A2  extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//get the compound manufacturer name by id
-			
-			/*for test purposes, we pass 1, since there's no value provided from the application side*/
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>1));
+			//get compound manufacturer name by id
+			$this->getCompoundManufacturerName($this->input->post('compManufacturer'));/*method defined in MY_Model*/
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
@@ -75,7 +72,7 @@ class M_Wheat_InternalFort_A2  extends MY_Model {
 				$this -> theForm -> setTransactedBy($this->elements[$i]["signature"]);
 				$this -> theForm -> setReportingDate(new DateTime()); /*timestamp option*/
 				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
-				$this -> theForm -> setManufacturerCompName($manufacturer->getManufacturerCompName());
+				$this -> theForm -> setManufacturerCompName($this->compoundManufacturer->getManufacturerCompName());
 				$this -> em -> persist($this -> theForm);
 
 

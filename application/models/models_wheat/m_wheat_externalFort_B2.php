@@ -115,16 +115,16 @@ class M_Wheat_ExternalFort_B2  extends MY_Model {
 				$this -> theForm ->setSuggestions($this->elements['suggestionsForImprovement']);
 				
 				$this -> theForm ->setTypeOfIron($this->elements['iodineType']);
-				$this -> theForm ->setIDComposite($this->elements['IDComposite']);
-				$this -> theForm ->setIronMgPerKg0($this->elements['IDCompositemgKg']);
-				$this -> theForm ->setIronMgPerKg1($this->elements['refIodineMgKg']);
-				$this -> theForm ->setVitaminMgPerKg0($this->elements['refIodineMgKg']);
-				$this -> theForm ->setIDOtherSamples($this->elements['IDOther']);
-				$this -> theForm ->setVitaminAMgPerKg1($this->elements['IDOtherMgKg']);
-				//$this -> theForm ->setIodineMgPerKg3($this->elements['IDOtherMgKg2']);
+				$this -> theForm ->setCompositeID($this->elements['IDComposite']);
+				$this -> theForm ->setFactoryEstimatesIronMgPerKg($this->elements['FactoryEstimatesIronMgPerKg']);
+				$this -> theForm ->setLabResultsIronMgPerKg($this->elements['LabResultsIronMgPerKg']);
+				$this -> theForm ->setInspectionVitaminMgPerKg0($this->elements['InspectionVitaminMgPerKg0']);
+				$this -> theForm ->setIDOther($this->elements['IDOther']);
+				$this -> theForm ->setIronMgPerKg2($this->elements['IronMgPerKg2']);
+				$this -> theForm ->setInspectionVitaminMgPerKg1($this->elements['InspectionVitaminMgPerKg1']);
 				$this -> theForm ->setSupervisorName($this->elements['supervisorName']);
 				$this -> theForm ->setSupervisorDate(new DateTime());
-				$this -> em -> persist($this -> theForm);
+				$this -> em      -> persist($this -> theForm);
 
 
         	//now do a batched insert, default at 5

@@ -23,21 +23,6 @@ class M_Wheat_ExternalFort_B3  extends MY_Model {
 			foreach ($this -> input -> post() as $key => $val) {//For every posted values
 		   // print(($key." ".$val)).'<br \>';
 			   
-			//check if posted value is among the cloned ones   
-			/* if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
-			 	$key=$key."_1";
-			 }*/
-			  		//we separate the attribute name from the number
-					
-					/* $this->frags = explode("_", $key);
-				   
-				    $this->id = $this->frags[1];  // the id
-				    
-				  
-				   $this->attr = $this->frags[0];//the attribute name
-				   
-				  $this->theIds[$this->attr]=$this->id;*/
-			    //print($this->attr."  ".$this->id."  ".$val).'<br />';
 				   
 			     $this->attr = $key;//the attribute name
 
@@ -76,6 +61,7 @@ class M_Wheat_ExternalFort_B3  extends MY_Model {
 			  $this -> theForm -> setInspectorDate($this->elements['inspectorDate']);
 			  $this -> theForm -> setReceivedDate($this->elements['receivedDate']);				
 			  $this -> theForm ->setSupervisorName($this->elements['supervisorName']);
+			  $this -> theForm ->setSupervisorDate($this->elements['supervisorSignatureDate']);
 			  $this -> em -> persist($this -> theForm);
 
 

@@ -54,6 +54,9 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 			
 			//factory names are set since this is an external audit and hence the session variable:affiliation can't be used
 			
+			//Get Factory name by id
+			$this->getFactoryName($this->input->post('maizeMill')); /*method defined in MY_Model*/
+			
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
@@ -68,7 +71,7 @@ class M_Maize_ExternalFort_B1  extends MY_Model {
 				$this -> theForm -> setSignature($this->elements[$i]["signature"]);
 				$this -> theForm -> setOpening($this->elements[$i]["opening"]);
 				$this -> theForm -> setClosing($this->elements[$i]["closing"]);
-				$this -> theForm -> setFactoryName($this->input->post("maizeMill"));
+				$this -> theForm -> setFactoryName($this->centre->getFactoryName());
 				$this -> em -> persist($this -> theForm);
 
 

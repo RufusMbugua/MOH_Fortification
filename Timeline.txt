@@ -364,7 +364,6 @@ Next:
 Wed 16th May 2012
 -----------------
 Achieved:
-<<<<<<< HEAD
 1. Data processes for the oil module was done
 2. Changed form load to Ajax form load **slight-prob--other jquery functions stopped responding to the 
 3. The ministry's template was up and kicking
@@ -502,31 +501,50 @@ Next:
 Tue 5th June 2012
 -----------------
 Achieved:
+1. Left w/ cross-checking sugar & wheat modules
+2. Tweaked code to have common methods accessed from a single class by other sub-modules
+
+Next:
+1.Reconfiguring github
+2.Meeting with the supervisor
+
+Wed 6th June 2012
+-----------------
+Achieved:
+1. Github was successfully configured... *challenge:push can't be done behind a firewalled proxy* 
+2. Got word from supervisor, we understood the impeding situation..reasons as to why he was MIA
+
+Next:
+1. Await supervisor's feedback...any other new work put on hold
+
+Thur 7th June 2012
+-----------------
+Achieved:
+1. Received feedback from supervisor about the system *his review was positive, *
+
+Next:
+1. Update the CHAI server w/ our changes
+
+Fri 8th June 2012
+-----------------
+Achieved:
+1. Uploaded changes to the CHAI server
+2. Issued with a public domain
+3. Assigned a mentor to see us through the system development cycle
+
+Next:
+1. Map the CHAI server to the public domain: nutrition_mophs.or.ke
+2. Meeting w/ the fellows from mophs
+######################## END OF WEEK 11 ##############################################
+
+######################## START OF WEEK 12 ############################################
+Mon 11th June 2012
+-----------------
+Achieved:
 1. 
 
 Next:
 1.
 
-######################## END OF WEEK 11 ##############################################
-=======
-1. Database for the oil and maize modules done and merged to the public server
-2. Oil module data posting is done
-
-Next:
-1. Styles up the maize tables
-2. Validation scripts for the oil module and all the client side code
-3. Models for the maize module
-
-Thur 18th May 2012
------------------
-Achieved:
-1. 
-2. 
-
-Next:
-1. 
-2. 
-######################## END OF  WEEK 8 #############################################
->>>>>>> dc3ecc0e378e5f3460b4eb82531e72d895a3eee2
-
+######################## END OF WEEK 12 ############################################
 

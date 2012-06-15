@@ -142,7 +142,7 @@ $(document).ready(function() {
 				  /*-----------------------------------------------------------------------------------------------------------------------------*/
 				  /*maize,wheat module--feeder ratio and flow average calculations*/
 				 if(form_id=='#internalMaizeFlour_B1' || form_id=='#internalWheatFlour_B1'){
-				 	 $("#productionRate_1").keyup(function(){
+				 	 $("#productionRate_1").change(function(){
 				  $('#theoreticFeeder_1').val(($('#productionRate_1').val()*(100/6)).toFixed(2));
 				  });
 				  
@@ -238,12 +238,16 @@ $(document).ready(function() {
 
 					/*---------------------------------------------------------------------------------------------*/
 					case '#internalMaizeFlour_A2':/*maize module--dispatches computation*/
-					      computeDispatches();
+					     $("#quantity_"+no+",#dispatchedQuantity_"+no).on("keyup",function(){
+					      computeDispatches(no);
+					     });
 					break;
 					/*---------------------------------------------------------------------------------------------*/
 					/*---------------------------------------------------------------------------------------------*/
 					case '#internalWheatFlour_A2':/*wheat module--dispatches computation*/
-					      computeDispatches();
+					      $("#quantity_"+no+",#dispatchedQuantity_"+no).on("keyup",function(){
+					      computeDispatches(no);
+					      });
 					break;
 				  /*---------------------------------end of dispatches computation-----------------------------------------------------------------------*/
 				 
@@ -264,13 +268,13 @@ $(document).ready(function() {
 					/*-------------------------------------------------------------------*/
 						
 					break;
-					case 'internalMaizeFlour_C1' :/*maize module--daily totals computation*/
+					case '#internalMaizeFlour_C1' :/*maize module--daily totals computation*/
 					   $(".cloned").on("focusout",function(){
 				           computeMaizeDailies();
 						}); 
 					break;
 					/*-------------------------------------------------------------------*/
-					case 'internalWheatFlour_C1' :/*wheat module--daily totals computation*/
+					case '#internalWheatFlour_C1' :/*wheat module--daily totals computation*/
 					   $(".cloned").on("focusout",function(){
 				           computeWheatDailies();
 						}); 
@@ -452,7 +456,7 @@ $(document).ready(function() {
 				
 				/*theoreticFeederFlow*/
 				function computeFeederFlow(no){
-				  $("#productionRate_"+no).live('focusout',function(){
+				  $("#productionRate_"+no).on('focusout',function(){
 				     $('#theoreticFeeder_'+no).val(($('#productionRate_'+no).val()*(100/6)).toFixed(2));
 				    });
 				   
@@ -474,10 +478,8 @@ $(document).ready(function() {
 				/*-----------------------------------------------------------------------------------------------------------------*/
 				
 				/*dispatchComputation*/
-				function computeDispatches(no){
-					$("#quantity_"+no+",#dispatchedQuantity_"+no).on("keyup",function(){
-		                $('#balance_'+no).val($('#quantity_'+no).val()- $('#dispatchedQuantity_'+no).val());
-						});
+				function computeDispatches(n){
+		                $('#balance_'+n).val($('#quantity_'+n).val()- $('#dispatchedQuantity_'+n).val());
 				}
 				/*-----------------------------------------------------------------------------------------------------------------*/
 				

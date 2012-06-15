@@ -49,14 +49,9 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
-			//get the compound manufacturer name by id
+			//get compound manufacturer name by id
+			$this->getCompoundManufacturerName($this->input->post('compManufacturer'));/*method defined in MY_Model*/
 			
-			try{
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>$this->input->post('compManufacturer')));
-			}catch(exception $ex){
-				//ignore
-			}
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
@@ -73,7 +68,7 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 				$this->theForm->setDispatchedQuantity($this->elements[$i]['dispatchedQuantity']);
 				$this -> theForm -> setReportingDate(new DateTime()); /*timestamp option*/
 				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
-				$this -> theForm -> setManufacturerCompName($manufacturer->getManufacturerCompName());
+				$this -> theForm -> setManufacturerCompName($this->compoundManufacturer->getManufacturerCompName());
 				$this -> em -> persist($this -> theForm);
 
 
@@ -85,7 +80,7 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
@@ -99,7 +94,7 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
-					die($ex->getMessage());
+					//die($ex->getMessage());
 					/*display user friendly message*/
 					
 				}//end of catch
