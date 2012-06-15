@@ -4,7 +4,8 @@
 class  MY_Controller  extends  CI_Controller  {
 
 public $em, $response, $theForm, $rowsInserted, $executionTime,$data,
-      $selectCompManufacturers,$selectPremixType, $selectIodizationCentre,$selectFactoryByManufacturer,$manufacturer;
+      $selectCompManufacturers,$selectPremixType, $selectIodizationCentre,$selectFactoryByManufacturer,$manufacturer,
+      $factoriesSalt,$factoriesSugar,$factoriesMaize,$factoriesWheat,$factoriesOil;
 
 function __construct()  {
 		parent::__construct();
@@ -23,6 +24,7 @@ function __construct()  {
 		$this->getCompManufacturerNamesAndIds();
 		$this->getPremixTypesAndIds();
 		$this->getIodizationCentreNames();
+		$this->getFactoriesByVehicle();
 	}
 
 	function  getRepositoryByFormName($form){
@@ -54,6 +56,28 @@ function __construct()  {
 			$this->selectIodizationCentre.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
 			}
 		return $this->selectIodizationCentre;
+	}
+	
+	public function getFactoriesByVehicle(){
+		$this->load->model('models_wheat/M_Wheat_ExternalFort_B1');
+		//$this->factories=array('factoriesByVehicle'=>$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('wheat'));
+		$this->factories=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('wheat');
+		//$this->factoriesWheat=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('wheat'); /*later, use ajax to determine which vehicle*/
+		//$this->factoriesMaize=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('maize');
+		//$this->factoriesSugar=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('sugar');
+		//$this->factoriesSalt=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('salt');
+		//$this->factoriesOil=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('oil');
+		
+		//var_dump($this->factories);
+		//exit;
+		foreach($this->factories as $key=>$value){
+		//$this->factoriesSalt.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+		//$this->factoriesMaize.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+		//$this->factoriesOil.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+		$this->factories.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+		//$this->factoriesMaize.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
+		}
+		return true;
 	}
 
 

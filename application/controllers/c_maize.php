@@ -1063,7 +1063,7 @@ public function externalMaizeFlour_B3(){
 		</section>
 		<section class="row">
 			<label for="ro_signature_date" >Date:</label>
-			<input type="text" id="receivedDate" name="receivedDate" value="" class="autoDate"  required/>
+			<input type="text" id="receivedDate" name="receivedDate" value="" class="autoDate" placeholder="click for date"  required/>
 		</section>
 	</section>
 	<section class="column">
@@ -1535,7 +1535,7 @@ public function internalMaizeFlour_C1(){
                              <td width="15%"><input type="text" name="maizeFortified2" id="maizeFortified2" readonly="true" placeholder="computed"/></td>
                              <td width="18%"><input type="text" name="notes2" id="notes2"/></td>
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
-                             <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
+                             <!--td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td-->
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>

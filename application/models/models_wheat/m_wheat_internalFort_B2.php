@@ -13,7 +13,7 @@ class M_Wheat_InternalFort_B2  extends MY_Model {
 		parent::__construct();
 	}
 
-	function addRecord() {
+	function addRecord($factory) {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
@@ -53,12 +53,6 @@ class M_Wheat_InternalFort_B2  extends MY_Model {
 			
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
-			
-			//get the compound manufacturer name by id
-			
-			/*for test purposes, we pass 1, since there's no value provided from the application side*/
-			$manufacturer=$this->em->getRepository('models\Entities\E_ManufacturerCompound')
-			                       ->findOneBy( array('manufacturerId'=>1));
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
@@ -75,7 +69,7 @@ class M_Wheat_InternalFort_B2  extends MY_Model {
 				$this -> theForm -> setResponsible($this->input->post('personResponsible'));
 				$this -> theForm -> setDates(new DateTime());
 				//$this -> theForm -> setDateOfReporting($this->elements[$i]["reportingDate"]);/*entry option*/
-				$this -> theForm -> setFactoryName($manufacturer->getManufacturerCompName());
+				$this -> theForm -> setFactoryName($factory);
 				$this -> em -> persist($this -> theForm);
 
 

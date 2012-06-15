@@ -1562,7 +1562,7 @@ $().ready(function() {
 	}); /*end of #internalWheatFlour_C1*/
 	/*------------------------------------------------------------------------------------------------------------------------------------*/
 	
-	$("#externalWheatFlour_B1").validate({/*maize module*/
+	$("#externalWheatFlour_B1").validate({/*wheat module*/
 
 	// validate  form on keyup and submit
 		rules: {

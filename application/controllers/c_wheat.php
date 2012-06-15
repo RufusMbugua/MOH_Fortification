@@ -25,8 +25,8 @@ class C_Wheat extends MY_Controller {
 				</section>
 				<section class="right">
 					<select name="wheatMill" id="wheatMill">
-						<option>Factory 1</option>
-						<option>Factory 2</option>
+						<option value="" selected="selected">Select One</option>
+								'.$this->factories.'
 					</select>
 				</section>
 			</section>
@@ -96,6 +96,7 @@ class C_Wheat extends MY_Controller {
 		';
 		$data['form'] = $externalWheatFlour_B1;
 		$data['form_id'] = 'externalWheatFlour_B1';
+		
 
 		$this -> load -> view('form', $data);
 
@@ -877,25 +878,25 @@ class C_Wheat extends MY_Controller {
 		</tr>
 		<tr class="clonable">
 			<td width="144">
-			<input type="text"  name="IDComposite" id="iodineDate1" class="cloned"/>
-			</td>
-			<td width="144">
-			<input type="number"  name="IDCompositemgKg" class="cloned fromZero" />
-			</td>
-			<td width="144">
-			<input type="text"  name="refIodine" id="iodineDrums" class="cloned"/>
-			</td>
-			<td width="144">
-			<input type="number"  name="refIodineMgKg" id="iodineLot" class="cloned fromZero"/>
-			</td>
-			<td width="144">
-			<input type="text"  name="IDOther" id="iodineExpiration" class="cloned" />
-			</td>
-			<td width="144">
-			<input type="number" name="IDOtherMgKg" id="iodineDispatched" class="cloned fromZero"/>
-			</td>
-			<td width="144">
-			<input type="text" name="IDOtherMgKg2" id="iodineStock" class="cloned"/>
+			<input type="text"  name="IDComposite" id="IDComposite" class="cloned autodate"/>
+				</td>
+				<td width="144">
+				<input type="number"  name="FactoryEstimatesIronMgPerKg" id="FactoryEstimatesIronMgPerKg" class="cloned fromZero"/>
+				</td>
+				<td width="144">
+				<input type="number"  name="LabResultsIronMgPerKg" id="LabResultsIronMgPerKg" class="cloned"/>
+				</td>
+				<td width="144">
+				<input type="number"  name="InspectionVitaminMgPerKg0" id="InspectionVitaminMgPerKg0" class="cloned fromZero"/>
+				</td>
+				<td width="144">
+				<input type="text"  name="IDOther" id="IDOther" class="cloned"/>
+				</td>
+				<td width="144">
+				<input type="number" name="IronMgPerKg2" id="IronMgPerKg2" class="cloned fromZero"/>
+				</td>
+				<td width="144">
+				<input type="number" name="InspectionVitaminMgPerKg1" id="InspectionVitaminMgPerKg1" class="cloned fromZero"/>
 			</td>
 		</tr>
 		<tr id="formbuttons">
@@ -1524,16 +1525,16 @@ class C_Wheat extends MY_Controller {
                              <td width="15%"><input type="text" name="wheatFlourProduced2" id="wheatFlourProduced2" readonly="true" placeholder="computed"/></td>
                              <td width="15%"><input type="text" name="premixUsed2" id="premixUsed2" readonly="true" placeholder="computed"/></td>
                              <td width="15%"><input type="text" name="wheatFlour2" id="wheatFlour2" readonly="true" placeholder="computed"/></td>
-                             <td width="18%"><input type="text" name="notes2" id="notes2"/></td>
+                             <!--td width="18%"><input type="text" name="notes2" id="notes2"/></td-->
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
-                             <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
+                             <!--td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td-->
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
                              <td width="15%"><input type="text" name="wheatFlourProduced3" id="wheatFlourProduced3" readonly="true" placeholder="computed"/></td>
                              <td width="15%"><input type="text" name="premixUsed3" id="premixUsed3" readonly="true" placeholder="computed"/></td>
                              <td width="15%"><input type="text" name="wheatFlour3" id="wheatFlour3" readonly="true" placeholder="computed"/></td>
-                             <td width="18%"><input type="text" name="notes3" id="notes3"/></td>
+                             <!--td width="18%"><input type="text" name="notes3" id="notes3"/></td-->
                              <td width="18%"></td>
                              <td width="15%"></td>
                          </tr>

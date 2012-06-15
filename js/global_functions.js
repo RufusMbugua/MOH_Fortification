@@ -142,7 +142,7 @@ $(document).ready(function() {
 				  /*-----------------------------------------------------------------------------------------------------------------------------*/
 				  /*maize,wheat module--feeder ratio and flow average calculations*/
 				 if(form_id=='#internalMaizeFlour_B1' || form_id=='#internalWheatFlour_B1'){
-				 	 $("#productionRate_1").keyup(function(){
+				 	 $("#productionRate_1").change(function(){
 				  $('#theoreticFeeder_1').val(($('#productionRate_1').val()*(100/6)).toFixed(2));
 				  });
 				  
@@ -341,7 +341,7 @@ $(document).ready(function() {
 				}
 				}
 				
-				for(i=new Date().getFullYear();i>i-10; i--)// year picker
+				for(i=new Date().getFullYear();i>1990; i--)// year picker
 				{
 				$('#year').append($('<option/>').val(i).html(i));
 				$('#harvestYear').append($('<option/>').val(i).html(i));

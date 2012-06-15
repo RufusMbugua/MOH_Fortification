@@ -520,6 +520,7 @@ namespace models\Entities\entities_maize;
 		
 		public function setPremixType($premixType) { $this -> premixType = $premixType;
 		}
+		
 		public function getCompositeID() {
 				return $this -> compositeID;
 		}

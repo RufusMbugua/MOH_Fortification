@@ -556,7 +556,7 @@
                              <td width="15%"><input type="text" name="saltFortified2" id="saltFortified2" placeholder="auto-calculated" readonly="true"/></td>
                              <!--td width="18%"><input type="text" name="notes2" id="notes2"/></td-->
                              <td width="18%">Responsible:<input type="text" name="responsible" id="responsible"/></td>
-                             <td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td>
+                             <!--td width="15%">Signature:<input type="text" name="sigNature" id="sigNature"/></td-->
                          </tr>
                          <tr>
                              <td width="15%">Total to date</td>
