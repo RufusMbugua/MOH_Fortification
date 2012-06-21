@@ -25,8 +25,8 @@ class C_Sugar extends CI_Controller {
               <td width="255"><input type="text" name="responsible_1" id="responsible_1" class="cloned"/></td>
            </tr>
            <tr id="formbuttons">
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 		</tr>
            </table>
            </section>
@@ -927,8 +927,8 @@ class C_Sugar extends CI_Controller {
 	    <td width="12.5%"><input type="text" name="observations_1" id="observations_1" class="cloned"/></td>
 	</tr>
 	<tr id="formbuttons">
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 		</tr>
 	
 	</table>
@@ -1121,8 +1121,8 @@ class C_Sugar extends CI_Controller {
 				<td width="12.5%">OBSERVATIONS</td>
 			</tr>
 			<tr id="formbuttons">
-				<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-				<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+				<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 			</tr>
 
 			<tr class="clonable">
@@ -1234,8 +1234,8 @@ class C_Sugar extends CI_Controller {
 	     <td width="14.2%"><input type="text" name="vitaminAObservations_1" id="vitaminAObservations_1" class="cloned"</td>
 	</tr>
 	<tr id="formbuttons">
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 		</tr>
 	
 	</table>
@@ -1342,9 +1342,8 @@ class C_Sugar extends CI_Controller {
 		</tr>
 		<tr id="formbuttons">
 
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 		</tr>
 
@@ -2121,8 +2120,8 @@ class C_Sugar extends CI_Controller {
 			</td>
 		</tr>
 		<tr id="formbuttons" class="clonable">
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 		</tr>
 	</table>
 
@@ -2406,9 +2405,8 @@ class C_Sugar extends CI_Controller {
 		</tr>
 		<tr id="formbuttons">
 
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 		</tr>
 
@@ -2538,9 +2536,8 @@ class C_Sugar extends CI_Controller {
 		</tr>
 		<tr id="formbuttons">
 
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 		</tr>
 
@@ -2636,9 +2633,8 @@ class C_Sugar extends CI_Controller {
 	</tr>
 	<tr id="formbuttons">
 
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
+			<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
 
 		</tr>
 	</table>
@@ -2691,11 +2687,9 @@ class C_Sugar extends CI_Controller {
                           </tr>
                           <tr id="formbuttons">
 
-			<input type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-
-			<input type="button" class="awesome myblue medium" id="clonesubmit" value="Submit"/>
-
-		</tr>
+							<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+			                <input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+		                 </tr>
                           
                          <tr>
                              <td width="12.5%">Daily Total</td>
