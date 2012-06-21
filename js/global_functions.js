@@ -320,6 +320,17 @@ $(document).ready(function() {
 				});/*end of clone trigger*/
 				
 				/*----------------------------------------------------------------------------------------------------------------*/
+				/*start of clone_remove*/
+				$('#cloneremove').click(function() {
+					//alert($(".clonable").find("tr:last").attr('name'));
+					if($(".clonable").length>1)
+					$(".clonable:last").after().remove();
+					
+				 
+				 return false;
+				 });
+				 /*end of clone_remove*/
+				/*-----------------------------------------------------------------------------------------------------------------*/
 				
 				/*start of datetime functions*/
 				$(function() {
