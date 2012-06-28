@@ -3,16 +3,24 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 08, 2012 at 10:59 AM
+-- Generation Time: Jun 15, 2012 at 02:00 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
 -- Database: `fortification`
 --
-USE fortification;
+CREATE DATABASE `fortification` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `fortification`;
+
 -- --------------------------------------------------------
 
 --
@@ -242,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `factories` (
   PRIMARY KEY (`factoryNumber`,`manufacturerFortName`),
   UNIQUE KEY `Manufacturer_FCentre_Name_UNIQUE` (`factoryName`),
   KEY `fk_Manufacturer_FCenters_Manufacturer_Fortifier1` (`manufacturerFortName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `factories`
@@ -254,7 +262,8 @@ INSERT INTO `factories` (`factoryNumber`, `factoryName`, `location`, `address`, 
 (3, 'Ken Iodization I', 'Pwani', '678', '4567898', 'Kensalt'),
 (4, 'Nzoia Plant', 'Nzoia', '9877 ', '56789', 'Mumias Sugar'),
 (5, 'Bidco Main', 'Thika', '9876 GH', '654', 'Bidco Oil Ltd'),
-(6, 'Unga Mill I', 'Kitale', 'PO BOX 4568-998', '4567', 'Unga Limited');
+(6, 'Unga Mill I', 'Kitale', 'PO BOX 4568-998', '4567', 'Unga Limited'),
+(7, 'Wheat Mill I', 'Nakuru', 'PO BOX 34-54', '78654', 'Ngano Millers Limited');
 
 -- --------------------------------------------------------
 
@@ -416,8 +425,6 @@ CREATE TABLE IF NOT EXISTS `internalfortifiedc1` (
 --
 
 INSERT INTO `internalfortifiedc1` (`transactionNumber`, `dates`, `shiftTime`, `saltProducedMT`, `premixUsed`, `saltFortVsPremixUsed`, `notes`, `comments`, `transactedBy`, `factoryName`) VALUES
-(5, '2012-05-20', '08:16 PM', 34, 1, 4, '2', '4', '2', 'Kensalt'),
-(6, '2012-05-20', '08:16 PM', 34, 1, 4, '2', '4', '2', 'Kensalt'),
 (7, '2012-05-30', '12:12 PM', 9, 90000, 0.1, 'pk', 'ok', 'lupe', 'Bidco Main'),
 (8, '2012-05-30', '12:14 PM', 8, 80000, 0.1, 'ok', 'ok', 'lupe', 'Bidco Main');
 
@@ -439,12 +446,15 @@ CREATE TABLE IF NOT EXISTS `maize_externalfortb1` (
   `closing` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`maize_externalfortB1ID`),
   KEY `maize_externalfortB1_manufacturerfortified` (`factoryName`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `maize_externalfortb1`
 --
 
+INSERT INTO `maize_externalfortb1` (`maize_externalfortB1ID`, `dates`, `factoryName`, `publicHealthOfficer`, `name`, `position`, `signature`, `opening`, `closing`) VALUES
+(4, '2012-06-08', 'Unga Mill I', 'Mutono', 'Lean', 'QM', 'LM', 'Yes', 'No'),
+(5, '2012-06-08', 'Unga Mill I', 'Mutono', 'Mark', 'TH', 'JK', 'No', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -461,7 +471,7 @@ CREATE TABLE IF NOT EXISTS `maize_externalfortb2` (
   `productionArea` varchar(45) DEFAULT NULL,
   `packagingArea` varchar(45) DEFAULT NULL,
   `warehouse` varchar(45) DEFAULT NULL,
-  `staffFacilities` varchar(45) DEFAULT NULL,
+  `staffFacilities` varchar(45) NOT NULL,
   `hygiene` varchar(45) DEFAULT NULL,
   `protectiveClothing` varchar(45) DEFAULT NULL,
   `trainnedInTasks` varchar(45) DEFAULT NULL,
@@ -500,27 +510,24 @@ CREATE TABLE IF NOT EXISTS `maize_externalfortb2` (
   `suggestionsForImprovement` varchar(45) DEFAULT NULL,
   `premixType` varchar(45) DEFAULT NULL,
   `compositeID` varchar(45) DEFAULT NULL,
-  `ironMgPerKg0` varchar(45) DEFAULT NULL,
-  `ironMgPerKg1` varchar(45) DEFAULT NULL,
-  `vitaminAMgPerKg0` varchar(45) DEFAULT NULL,
+  `factoryEstimatesIronMgPerKg` decimal(10,0) DEFAULT NULL,
+  `labResultsIronMgPerKg` decimal(10,0) DEFAULT NULL,
+  `inspectionVitaminMgPerKg0` decimal(10,0) DEFAULT NULL,
   `IDOther` varchar(45) DEFAULT NULL,
-  `ironMgPerKg2` varchar(45) DEFAULT NULL,
-  `vitaminAMgPerKg1` varchar(45) DEFAULT NULL,
+  `ironMgPerKg2` decimal(10,0) DEFAULT NULL,
+  `vitaminAMgPerKg1` decimal(10,0) DEFAULT NULL,
   `supervisorName` varchar(45) DEFAULT NULL,
   `supervisorDate` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`maize_externalfortb2ID`),
   KEY `maize_externalfortb2_iodizationcenters` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `maize_externalfortb2`
 --
 
-INSERT INTO `maize_externalfortb2` (`maize_externalfortb2ID`, `inspectionRegistry`, `dates`, `publicHealthOfficer`, `factoryName`, `productionArea`, `packagingArea`, `warehouse`, `staffFacilities`, `hygiene`, `protectiveClothing`, `trainnedInTasks`, `receiptAndStorage`, `premixDilution`, `feederVerification`, `samplingOfMaize`, `ironSpotTest`, `premixInventory`, `COAReceived`, `premixStored`, `premixHandledWell`, `premixDilutionApplicable`, `homogeneityAssessed`, `adequateStorage`, `recordsOfFeeder`, `premixLevel`, `recordsOfFlour`, `flourSamplesTaken`, `ratioMaizeProduced`, `ironContent`, `spotTest`, `quantitativeMethodIron`, `quantitativeMethodVitamin`, `dailyCompositeSamples`, `last30Samples`, `labelingMeetsSpecifications`, `fortifiedMaizeFlour`, `FIFOSystemFlour`, `FIFOSystemPremix`, `recommendations`, `correctiveActions`, `assessmentOfCorrectiveAction`, `comments`, `nonCompliances`, `suggestionsForImprovement`, `premixType`, `compositeID`, `ironMgPerKg0`, `ironMgPerKg1`, `vitaminAMgPerKg0`, `IDOther`, `ironMgPerKg2`, `vitaminAMgPerKg1`, `supervisorName`, `supervisorDate`) VALUES
-(1, 'cc', '2012-05-22', 'cncn', 'Kensalt', 'yes', 'yes', 'yes', NULL, 'no', 'n/a', 'yes', 'yes', 'no', 'no', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'no', 'n/a', 'no', 'n/a', 'n/a', 'yes', 'yes', 'yes', 'yes', 'no', NULL, 'cv', 'zsa', 'Adequate', 'fw', 'dv', 'Vvs', NULL, '121', '12', '12', NULL, '12', NULL, '21', NULL, '2012-05-22'),
-(2, 'rwr', '2012-05-22', 'rwr', 'Kensalt', 'yes', 'yes', 'yes', NULL, 'no', 'no', 'no', 'yes', 'n/a', 'no', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'n/a', 'n/a', 'no', 'n/a', 'n/a', 'yes', 'yes', 'yes', 'yes', 'no', NULL, 'vb', 'vbv', 'Adequate', 'zczs', 'xcx', 'cxc', 'Iodine', '12', '1', '1', NULL, '12', NULL, '21', 'cmcm', '2012-05-22'),
-(3, 'rwr', '2012-05-22', 'rwr', 'Kensalt', 'yes', 'yes', 'yes', NULL, 'no', 'no', 'no', 'yes', 'n/a', 'no', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'n/a', 'n/a', 'no', 'n/a', 'n/a', 'yes', 'yes', 'yes', 'yes', 'no', NULL, 'vb', 'vbv', 'Adequate', 'zczs', 'xcx', 'cxc', 'Iodine', '12', '1', '1', NULL, '12', NULL, '21', 'cmcm', '2012-05-22'),
-(4, 'A124T', '2012-05-26', 'Liam', 'Ken Iodization I', 'yes', 'yes', 'yes', NULL, 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'n/a', 'yes', 'n/a', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'w', 'w', 'Adequate', 'w', 'w', 'w', 'Iodine', 'A102', '3', '3.5', NULL, 'A1040', NULL, '33', 'Lupe', '2012-05-26');
+INSERT INTO `maize_externalfortb2` (`maize_externalfortb2ID`, `inspectionRegistry`, `dates`, `publicHealthOfficer`, `factoryName`, `productionArea`, `packagingArea`, `warehouse`, `staffFacilities`, `hygiene`, `protectiveClothing`, `trainnedInTasks`, `receiptAndStorage`, `premixDilution`, `feederVerification`, `samplingOfMaize`, `ironSpotTest`, `premixInventory`, `COAReceived`, `premixStored`, `premixHandledWell`, `premixDilutionApplicable`, `homogeneityAssessed`, `adequateStorage`, `recordsOfFeeder`, `premixLevel`, `recordsOfFlour`, `flourSamplesTaken`, `ratioMaizeProduced`, `ironContent`, `spotTest`, `quantitativeMethodIron`, `quantitativeMethodVitamin`, `dailyCompositeSamples`, `last30Samples`, `labelingMeetsSpecifications`, `fortifiedMaizeFlour`, `FIFOSystemFlour`, `FIFOSystemPremix`, `recommendations`, `correctiveActions`, `assessmentOfCorrectiveAction`, `comments`, `nonCompliances`, `suggestionsForImprovement`, `premixType`, `compositeID`, `factoryEstimatesIronMgPerKg`, `labResultsIronMgPerKg`, `inspectionVitaminMgPerKg0`, `IDOther`, `ironMgPerKg2`, `vitaminAMgPerKg1`, `supervisorName`, `supervisorDate`) VALUES
+(3, 'TR56', '2012-06-09', 'Hellen', 'Unga Mill I', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'n/a', 'yes', 'n/a', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'Warehouse needs an upgrade', 'FIFO system adhered to', 'Adequate', 'Corrective action taken adequately', 'None', 'Records for fortification to be updated regul', 'Iodine', 'WE34', '11', '2', '6', 'WE67', '3', '6', 'Allain', '2012-06-09');
 
 -- --------------------------------------------------------
 
@@ -545,17 +552,14 @@ CREATE TABLE IF NOT EXISTS `maize_externalfortb3` (
   `supervisorDate` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`maize_externalfortb3ID`),
   KEY `maize_externalfortb3_iodizationcenters` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `maize_externalfortb3`
 --
 
 INSERT INTO `maize_externalfortb3` (`maize_externalfortb3ID`, `inspectionRegistry`, `dateOfInspection`, `factoryName`, `factoryRepresentative`, `areasVisited`, `nonCompliances`, `suggestionsForImprovement`, `publicHealthOfficer`, `receivedBy`, `inspectorDate`, `receivedDate`, `supervisorName`, `supervisorDate`) VALUES
-(1, 'bvb', '2012-05-08', 'Kensalt', 'wr', NULL, 'xcx', 'cxcx', 'bb', 'cmcvv', '2012-05-22', '2012-05-27', 'vmv', NULL),
-(2, 'bvb', '2012-05-08', 'Kensalt', 'wr', NULL, 'xcx', 'cxcx', 'bb', 'cmcvv', '2012-05-22', '2012-05-27', 'vmv', NULL),
-(3, 'bvb', '2012-05-08', 'Kensalt', 'wr', NULL, 'xcx', 'cxcx', 'bb', 'cmcvv', '2012-05-22', '2012-05-27', 'vmv', NULL),
-(4, 'bvb', '2012-05-15', 'Kensalt', 't', NULL, 'fsf', 'svbheb', 'bb', 'm', '2012-05-04', '2012-05-02', 'bngn', NULL);
+(9, 'PL897', '2012-06-08', 'Unga Mill I', 'Tom', 'production,packaging,maizeWarehouse,', 'None', 'n/a', 'Mutono', 'Lililian', '2012-06-09', '2012-06-09', 'Anna', '2012-06-09');
 
 -- --------------------------------------------------------
 
@@ -792,19 +796,22 @@ CREATE TABLE IF NOT EXISTS `manufacturerfortified` (
   `address` varchar(45) DEFAULT NULL,
   `location` varchar(45) DEFAULT NULL,
   `phoneNumber` varchar(45) DEFAULT NULL,
+  `vehicleName` varchar(100) NOT NULL,
   PRIMARY KEY (`manufacturerFortId`),
-  UNIQUE KEY `Manufactuer_FName_UNIQUE` (`manufactuerFortName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  UNIQUE KEY `Manufactuer_FName_UNIQUE` (`manufactuerFortName`),
+  KEY `vehicleName` (`vehicleName`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `manufacturerfortified`
 --
 
-INSERT INTO `manufacturerfortified` (`manufacturerFortId`, `manufactuerFortName`, `address`, `location`, `phoneNumber`) VALUES
-(1, 'Kensalt', 'vbvb', 'Magadi', '5454'),
-(2, 'Mumias Sugar', 'PO BOX 4567', 'Mumias', '3445'),
-(3, 'Bidco Oil Ltd', '887 JK', 'Thika', '987654'),
-(4, 'Unga Limited', 'PO BOX 4567-998', 'Kitale', '2345567');
+INSERT INTO `manufacturerfortified` (`manufacturerFortId`, `manufactuerFortName`, `address`, `location`, `phoneNumber`, `vehicleName`) VALUES
+(1, 'Kensalt', 'vbvb', 'Magadi', '5454', 'Salt'),
+(2, 'Mumias Sugar', 'PO BOX 4567', 'Mumias', '3445', 'Sugar'),
+(3, 'Bidco Oil Ltd', '887 JK', 'Thika', '987654', 'Oil'),
+(4, 'Unga Limited', 'PO BOX 4567-998', 'Kitale', '2345567', 'Maize'),
+(5, 'Ngano Millers Limited', 'PO BOX 980-778', 'Nakuru', '23478', 'Wheat');
 
 -- --------------------------------------------------------
 
@@ -1463,7 +1470,7 @@ CREATE TABLE IF NOT EXISTS `sugar_internalfortc2` (
   `manufacturerCompName` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`sugar_internalfortB2ID`),
   KEY `sugar_internalfortC2_manufacturercompound` (`manufacturerCompName`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `sugar_internalfortc2`
@@ -1669,7 +1676,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `affiliation` varchar(45) DEFAULT 'n/a',
   PRIMARY KEY (`usersID`),
   KEY `Affiliation` (`affiliation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `users`
@@ -1679,13 +1686,35 @@ INSERT INTO `users` (`usersID`, `userName`, `userPassword`, `userRights`, `affil
 (1, 'Me', '1234', 3, 'Kensalt'),
 (2, 'admin', 'admin', 1, NULL),
 (3, 'admin@kebs.go.ke', 'admin', 1, 'KEBS'),
-(4, 'mutono@tar.org', '1234', 2, 'Ken Iodization I'),
-(5, 'rufus@tar.org', '1234', 3, 'Ken Iodization I'),
-(6, 'officer@kensalt.org', '1234', 4, 'Ken Iodization I'),
 (7, 'nutrition', '123456', 4, 'Ken Iodization I'),
 (8, 'mumias', '123456', 3, 'Nzoia Sugar'),
 (9, 'bidco', '123456', 3, 'Bidco Main'),
-(10, 'maize', '123456', 3, 'Unga Mill I');
+(10, 'maize', '123456', 3, 'Unga Mill I'),
+(11, 'wheat', '123456', 3, 'Wheat Mill I');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_type`
+--
+
+CREATE TABLE IF NOT EXISTS `vehicle_type` (
+  `vehicleId` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicleName` varchar(100) NOT NULL,
+  PRIMARY KEY (`vehicleId`),
+  KEY `vehicleName` (`vehicleName`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `vehicle_type`
+--
+
+INSERT INTO `vehicle_type` (`vehicleId`, `vehicleName`) VALUES
+(2, 'Maize'),
+(4, 'Oil'),
+(1, 'Salt'),
+(5, 'Sugar'),
+(3, 'Wheat');
 
 -- --------------------------------------------------------
 
@@ -1705,17 +1734,14 @@ CREATE TABLE IF NOT EXISTS `wheat_externalfortb1` (
   `closing` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_externalFortB1ID`),
   KEY `wheat_externalFortB1_manufacturerFortified` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `wheat_externalfortb1`
 --
 
 INSERT INTO `wheat_externalfortb1` (`wheat_externalFortB1ID`, `dates`, `factoryName`, `publicHealthOfficer`, `name`, `position`, `signature`, `opening`, `closing`) VALUES
-(1, 'Object', 'Kensalt', 'bb', 'vb', 'vb', 'b', '1', '2'),
-(2, '2012-05-22', 'Kensalt', 'bb', 'vb', 'vb', 'b', '1', '2'),
-(3, '2012-05-22', 'Kensalt', 'bb', 'vb', 'vb', 'b', 'v', '2'),
-(4, '2012-05-22', 'Kensalt', 'bb', 'vb', 'vb', 'b', 'v', '2');
+(6, '2012-06-15', 'Wheat Mill I', 'Mutono', 'Lean', 'QM', 'LM', 'Yes', 'No');
 
 -- --------------------------------------------------------
 
@@ -1762,7 +1788,6 @@ CREATE TABLE IF NOT EXISTS `wheat_externalfortb2` (
   `dailyCompositeSamples` varchar(45) DEFAULT NULL,
   `labellingMeetsSpecifications` varchar(45) DEFAULT NULL,
   `fortifiedWheatFlour` varchar(45) DEFAULT NULL,
-  `FIFOSystemApplied` varchar(45) DEFAULT NULL,
   `recommendations` varchar(45) DEFAULT NULL,
   `correctiveActionsTaken` varchar(45) DEFAULT NULL,
   `assessment` varchar(45) DEFAULT NULL,
@@ -1770,28 +1795,25 @@ CREATE TABLE IF NOT EXISTS `wheat_externalfortb2` (
   `nonCompliances` varchar(45) DEFAULT NULL,
   `suggestions` varchar(45) DEFAULT NULL,
   `typeOfIron` varchar(45) DEFAULT NULL,
-  `IDComposite` varchar(45) DEFAULT NULL,
-  `factoryEstimation` double DEFAULT NULL,
-  `ironMgPerKg0` double DEFAULT NULL,
-  `vitaminMgPerKg0` double DEFAULT NULL,
+  `compositeID` varchar(45) DEFAULT NULL,
+  `factoryEstimatesIronMgPerKg` double DEFAULT NULL,
+  `labResultsIronMgPerKg` double DEFAULT NULL,
+  `inspectionVitaminMgPerKg0` double DEFAULT NULL,
   `IDOtherSamples` varchar(45) DEFAULT NULL,
-  `ironMgPerKg1` double DEFAULT NULL,
+  `ironMgPerKg2` double DEFAULT NULL,
   `vitaminAMgPerKg1` double DEFAULT NULL,
   `supervisorName` varchar(45) DEFAULT NULL,
   `supervisorDate` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_externalFortB2ID`),
   KEY `factoryName` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `wheat_externalfortb2`
 --
 
-INSERT INTO `wheat_externalfortb2` (`wheat_externalFortB2ID`, `inspectionRegistry`, `dates`, `publicHealthOfficer`, `factoryName`, `productionArea`, `packagingArea`, `warehouse`, `staffFacilities`, `hygiene`, `wearingProtective`, `trainnedInTasks`, `receiptAndStorage`, `premixDilutionApplicable`, `feederVerification`, `samplingOfWheatFlour`, `ironSpotTest`, `premixInventory`, `COAReceived`, `premixStored`, `FIFOSystemPremix`, `FIFOSystemFlour`, `premixHandledWell`, `premixDilution`, `homogeneityAssessed`, `adequateStorage`, `recordsOfFeeder`, `premixLevel`, `recordsOfFlour`, `flourSamples`, `ratioWheatProduced`, `ironContent`, `spotTestIron`, `quantitativeMethodIron`, `quantitativeMethodVitaminA`, `dailyCompositeSamples`, `labellingMeetsSpecifications`, `fortifiedWheatFlour`, `FIFOSystemApplied`, `recommendations`, `correctiveActionsTaken`, `assessment`, `comments`, `nonCompliances`, `suggestions`, `typeOfIron`, `IDComposite`, `factoryEstimation`, `ironMgPerKg0`, `vitaminMgPerKg0`, `IDOtherSamples`, `ironMgPerKg1`, `vitaminAMgPerKg1`, `supervisorName`, `supervisorDate`) VALUES
-(8, 'cc', '2012-05-22', 'cncn', 'Kensalt', 'yes', 'yes', 'yes', NULL, 'no', NULL, 'yes', 'yes', 'no', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'n/a', NULL, 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'yes', 'yes', 'yes', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'qe', 'bgb', 'Inadequate', 'bfgb', 'bdf', 'bdb', NULL, '12', NULL, 1, 12, '12', 12, 21, '12', '2012-05-22'),
-(9, 'cc', '2012-05-22', 'cncn', 'Kensalt', 'yes', 'yes', 'yes', NULL, 'no', NULL, 'yes', 'yes', 'no', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'n/a', NULL, 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'yes', 'yes', 'yes', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'qe', 'bgb', 'Inadequate', 'bfgb', 'bdf', 'bdb', NULL, '12', NULL, 1, 12, '12', 12, 21, '12', '2012-05-22'),
-(10, 'cc', '2012-05-22', 'cncn', 'Kensalt', 'yes', 'yes', 'yes', NULL, 'no', NULL, 'yes', 'yes', 'no', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'n/a', NULL, 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'yes', 'yes', 'yes', 'n/a', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'qe', 'bgb', 'Inadequate', 'bfgb', 'bdf', 'bdb', NULL, '12', NULL, 1, 12, '12', 12, 21, '12', '2012-05-22'),
-(13, 'ER34', '2012-05-26', 'Quinto Malin', 'Ken Iodization I', 'yes', 'yes', 'yes', NULL, 'no', 'no', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'yes', 'yes', 'n/a', 'yes', 'n/a', 'n/a', 'yes', 'yes', 'yes', NULL, 'ty', 'ty', 'Adequate', 'ty', 'ty', 'ty', NULL, 'gtry', NULL, 6, 7, 'sad', 7, 7, 'Kamau Mark', '2012-05-26');
+INSERT INTO `wheat_externalfortb2` (`wheat_externalFortB2ID`, `inspectionRegistry`, `dates`, `publicHealthOfficer`, `factoryName`, `productionArea`, `packagingArea`, `warehouse`, `staffFacilities`, `hygiene`, `wearingProtective`, `trainnedInTasks`, `receiptAndStorage`, `premixDilutionApplicable`, `feederVerification`, `samplingOfWheatFlour`, `ironSpotTest`, `premixInventory`, `COAReceived`, `premixStored`, `FIFOSystemPremix`, `FIFOSystemFlour`, `premixHandledWell`, `premixDilution`, `homogeneityAssessed`, `adequateStorage`, `recordsOfFeeder`, `premixLevel`, `recordsOfFlour`, `flourSamples`, `ratioWheatProduced`, `ironContent`, `spotTestIron`, `quantitativeMethodIron`, `quantitativeMethodVitaminA`, `dailyCompositeSamples`, `labellingMeetsSpecifications`, `fortifiedWheatFlour`, `recommendations`, `correctiveActionsTaken`, `assessment`, `comments`, `nonCompliances`, `suggestions`, `typeOfIron`, `compositeID`, `factoryEstimatesIronMgPerKg`, `labResultsIronMgPerKg`, `inspectionVitaminMgPerKg0`, `IDOtherSamples`, `ironMgPerKg2`, `vitaminAMgPerKg1`, `supervisorName`, `supervisorDate`) VALUES
+(17, 'TR56', '2012-06-15', 'Hellen', 'Wheat Mill I', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'n/a', 'yes', 'n/a', 'n/a', 'yes', 'yes', 'yes', 'Recommendations ', 'Corrective actions taken ', 'Adequate', 'Assessment of corrective action(2) ', 'Non-compliances ', 'Suggestions for improvement ', 'Iodine', 'WE34', 11.01, 2.34, 5.66, 'WE67', 2.58, 5.55, 'Allain', '2012-06-15');
 
 -- --------------------------------------------------------
 
@@ -1816,22 +1838,14 @@ CREATE TABLE IF NOT EXISTS `wheat_externalfortb3` (
   `supervisorDate` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_externalFortB3ID`),
   KEY `wheat_externalFortB3_factories` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `wheat_externalfortb3`
 --
 
 INSERT INTO `wheat_externalfortb3` (`wheat_externalFortB3ID`, `inspectionRegistry`, `factoryName`, `dateOfInspection`, `factoryRepresentative`, `areasVisited`, `nonCompliances`, `suggestionsForImprovement`, `publicHealthOfficer`, `receivedBy`, `inspectorDate`, `receivedDate`, `supervisorName`, `supervisorDate`) VALUES
-(1, NULL, 'Kensalt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, 'Kensalt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, NULL, 'Kensalt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, NULL, 'Kensalt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, NULL, 'Kensalt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'vcvcv', 'Kensalt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'cc', 'Kensalt', '2012-05-01', 'wr', NULL, ' xvxv', 'vxvxv', 'vxvx', 'vxvx', '2012-05-01', '2012-05-01', 'vmv', NULL),
-(8, 'A124T', 'Ken Iodization I', '2012-05-16', 'Tom', 'production,packaging,fortification_site,labaratory,wheatWarehouse,rmWheatWarehouse,', 'none', 'none', 'Mutono', 'Tom', '2012-05-25', '2012-05-16', 'Mark', NULL),
-(9, 'yth', 'Ken Iodization I', '2012-05-08', 'Tom', 'labaratory,rmWheatWarehouse,', 'ghbv', 'bv ', 'fgcdg', 'ffx', '2012-05-03', '2012-05-24', 'vhh', NULL);
+(11, 'TR56', 'Wheat Mill I', '2012-06-15', 'Jack', 'production,packaging,rmWheatWarehouse,', 'List of the non-compliances found ', 'Suggestions for Improvement', 'Kellerman', 'Sussy', '2012-06-15', '2012-06-15', 'Allain', '2012-06-15');
 
 -- --------------------------------------------------------
 
@@ -1847,7 +1861,6 @@ CREATE TABLE IF NOT EXISTS `wheat_internalforta1` (
   `purchaseOrderNumber` varchar(45) DEFAULT NULL,
   `dates` varchar(45) DEFAULT NULL,
   `quantity` double DEFAULT NULL,
-  `integrityOfBoxes` varchar(10) DEFAULT NULL,
   `integrityObservation` varchar(45) DEFAULT NULL,
   `lotNumber` varchar(10) DEFAULT NULL,
   `lotObservation` varchar(45) DEFAULT NULL,
@@ -1858,7 +1871,7 @@ CREATE TABLE IF NOT EXISTS `wheat_internalforta1` (
   `micronutrientLevelsInLabel` varchar(10) DEFAULT NULL,
   `micronutrientObservation` varchar(45) DEFAULT NULL,
   `certificateOfAnalysis` varchar(10) DEFAULT NULL,
-  `certifcateOfAnalysisObservation` varchar(45) DEFAULT NULL,
+  `coaObservation` varchar(45) DEFAULT NULL,
   `other` varchar(45) DEFAULT NULL,
   `otherObservation` varchar(45) DEFAULT NULL,
   `accepted` tinyint(1) DEFAULT NULL,
@@ -1867,12 +1880,15 @@ CREATE TABLE IF NOT EXISTS `wheat_internalforta1` (
   PRIMARY KEY (`wheat_internalFortA1ID`),
   KEY `wheat_internalFortA1_premixType` (`productType`),
   KEY `wheat_internalFortA1_manufacturercompound` (`manufacturerCompName`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `wheat_internalforta1`
 --
 
+INSERT INTO `wheat_internalforta1` (`wheat_internalFortA1ID`, `productType`, `manufacturerCompName`, `inspectedBy`, `purchaseOrderNumber`, `dates`, `quantity`, `integrityObservation`, `lotNumber`, `lotObservation`, `productionDate`, `productionObservation`, `expiryDate`, `expiryObservation`, `micronutrientLevelsInLabel`, `micronutrientObservation`, `certificateOfAnalysis`, `coaObservation`, `other`, `otherObservation`, `accepted`, `reasonsForRejection`, `receivedBy`) VALUES
+(1, 'Iodate', 'Oxfirm', 'Quality Manager', '58SW', '2012-06-11', 67, 'ok', 'yes', 'ok', 'yes', 'ok', 'yes', 'ok', 'yes', 'ok', 'yes', 'ok', 'none', 'n/a', 1, 'passed', 'lima'),
+(2, 'Iodate', 'Oxfirm', 'Quality Manager', '58SW67', '2012-06-11', 67, 'ok', 'yes', 'ok', 'yes', 'ok', 'yes', 'ok', 'yes', 'ok', 'yes', 'ok', 'none', 'n/a', 1, 'passed', 'mao');
 
 -- --------------------------------------------------------
 
@@ -1889,27 +1905,19 @@ CREATE TABLE IF NOT EXISTS `wheat_internalforta2` (
   `expiryDate` varchar(45) DEFAULT NULL,
   `dispatchedQuantity` double DEFAULT NULL,
   `lotID1` varchar(45) DEFAULT NULL,
-  `observations` varchar(45) DEFAULT NULL,
   `reportingDate` varchar(45) DEFAULT NULL,
   `transactedBy` varchar(45) DEFAULT NULL,
   `manufacturerCompName` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_internalFortA2ID`),
   KEY `wheat_internalFortA2_ibfk_1` (`manufacturerCompName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `wheat_internalforta2`
 --
 
-INSERT INTO `wheat_internalforta2` (`wheat_internalFortA2ID`, `dates`, `shiftTime`, `quantity`, `lotID0`, `expiryDate`, `dispatchedQuantity`, `lotID1`, `observations`, `reportingDate`, `transactedBy`, `manufacturerCompName`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Object', NULL, 'Salt Iod'),
-(2, '2012-05-16', '12:00', 12, '89', '2012-05-07', 21, '1', NULL, 'Object', '1', 'Salt Iod'),
-(3, '2012-05-03', '12:00', 5, '4', '2012-05-09', 3, '3', NULL, 'Object', '5', 'Salt Iod'),
-(4, '2012-05-03', '12:00', 5, '4', '2012-05-09', 3, '3', NULL, '2012-05-21', '5', 'Salt Iod'),
-(5, '2012-05-03', '12:00', 5, '4', '2012-05-09', 3, '3', NULL, '2012-05-21', '5', 'Salt Iod'),
-(6, '2012-05-03', '12:00', 5, '4', '2012-05-09', 3, '3', NULL, '2012-05-21', '5', 'Salt Iod'),
-(7, '2012-05-03', '12:00', 5, '4', '2012-05-09', 3, '3', NULL, '2012-05-21', '5', 'Salt Iod'),
-(8, '2012-05-03', '12:00', 5, '4', '2012-05-09', 3, '3', NULL, '2012-05-21', '5', 'Salt Iod');
+INSERT INTO `wheat_internalforta2` (`wheat_internalFortA2ID`, `dates`, `shiftTime`, `quantity`, `lotID0`, `expiryDate`, `dispatchedQuantity`, `lotID1`, `reportingDate`, `transactedBy`, `manufacturerCompName`) VALUES
+(9, '2012-06-12', '01:29 PM', 45, 'AQ23', '2012-11-30', 22, 'AQ23', '2012-06-12', 'QS', 'TeraChloro Inc.');
 
 -- --------------------------------------------------------
 
@@ -1928,27 +1936,22 @@ CREATE TABLE IF NOT EXISTS `wheat_internalfortb1` (
   `feederFlow2` double DEFAULT NULL,
   `feederFlow3` double DEFAULT NULL,
   `adjusted` varchar(45) DEFAULT NULL,
-  `responsible` varchar(45) DEFAULT NULL,
   `observations` varchar(45) DEFAULT NULL,
   `transactedBy` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_internalFortB1ID`),
   KEY `wheat_internalFortB1_iodizationcenters` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `wheat_internalfortb1`
 --
 
-INSERT INTO `wheat_internalfortb1` (`wheat_internalFortB1ID`, `factoryName`, `dates`, `shiftTime`, `productionRate`, `theoreticalFeederFlow`, `feederFlow1`, `feederFlow2`, `feederFlow3`, `adjusted`, `responsible`, `observations`, `transactedBy`) VALUES
-(1, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Yes', NULL, NULL, ''),
-(2, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-(3, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-(4, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Yes', NULL, NULL, ''),
-(5, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-(6, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
-(7, 'Salt Iod', '2012-05-07', '12', 1, 1, 1, 1, 1, 'Yes', NULL, '12', '212'),
-(8, 'Salt Iod', '2012-05-07', '12', 1, 1, 1, 1, 1, 'Yes', NULL, '12', '212'),
-(9, 'Salt Iod', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Yes', NULL, NULL, '');
+INSERT INTO `wheat_internalfortb1` (`wheat_internalFortB1ID`, `factoryName`, `dates`, `shiftTime`, `productionRate`, `theoreticalFeederFlow`, `feederFlow1`, `feederFlow2`, `feederFlow3`, `adjusted`, `observations`, `transactedBy`) VALUES
+(10, 'Wheat Mill I', '2012-06-14', '11:40 AM', 3, 50, 5, 7, 5, 'Yes', 'good', 'Darel'),
+(11, 'Wheat Mill I', '2012-06-13', '01:16 PM', 5, 83.33, 6, 8, 5, 'Yes', 'ok', 'Darel'),
+(12, 'Wheat Mill I', '2012-06-12', '02:16 PM', 14, 233.33, 4, 9, 5, 'Yes', 'ok', 'Darel'),
+(13, 'Wheat Mill I', '2012-06-11', '04:16 PM', 34, 566.67, 3, 2, 5, 'No', 'ok', 'Darel'),
+(14, 'Wheat Mill I', '2012-06-10', '10:16 AM', 34, 566.67, 2, 4, 2, 'No', 'ok', 'Darel');
 
 -- --------------------------------------------------------
 
@@ -1968,18 +1971,17 @@ CREATE TABLE IF NOT EXISTS `wheat_internalfortb2` (
   `dates` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_internalFortB2ID`),
   KEY `wheat_internalFortB2_iodizationCenter` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `wheat_internalfortb2`
 --
 
 INSERT INTO `wheat_internalfortb2` (`wheat_internalFortB2ID`, `factoryName`, `shiftTime`, `flourProduced`, `lotID`, `premixUsed`, `responsible`, `observations`, `dates`) VALUES
-(1, 'Salt Iod', NULL, NULL, NULL, NULL, '', NULL, ''),
-(2, 'Salt Iod', '1221', 1, '2', 45, '21', 'v', ''),
-(3, 'Salt Iod', '1221', 1, '2', 45, '21', 'v', '2012-05-21'),
-(4, 'Salt Iod', '1221', 1, '2', 45, 'nm', 'biii', '2012-05-21'),
-(5, 'Salt Iod', '1221', 1, '2', 45, 'nm', 'biii', '2012-05-21');
+(6, 'Wheat Mill I', '12:23 PM', 44, 'AW23', 400000, 'Keri', 'all was fine', '2012-06-14'),
+(7, 'Wheat Mill I', '12:23 PM', 33, 'DS34', 400000, 'Keri', 'ok', '2012-06-14'),
+(8, 'Wheat Mill I', '12:24 PM', 7, 'VB54', 65432, 'Keri', 'great', '2012-06-14'),
+(9, 'Wheat Mill I', '12:40 PM', 45, 'NH6', 54678, 'Keri', 'ok', '2012-06-14');
 
 -- --------------------------------------------------------
 
@@ -1997,21 +1999,18 @@ CREATE TABLE IF NOT EXISTS `wheat_internalfortc1` (
   `comments` varchar(45) DEFAULT NULL,
   `dates` varchar(45) DEFAULT NULL,
   `responsible` varchar(45) DEFAULT NULL,
-  `signature` varchar(45) DEFAULT NULL,
   `factoryName` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wheat_internalFortC1ID`),
   KEY `wheat_internalFortC1_iodizationcenters` (`factoryName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `wheat_internalfortc1`
 --
 
-INSERT INTO `wheat_internalfortc1` (`wheat_internalFortC1ID`, `shiftTime`, `wheatProduced`, `premixUsed`, `wheatFlourVSPremix`, `notes`, `comments`, `dates`, `responsible`, `signature`, `factoryName`) VALUES
-(1, '02:57 PM', 12, 12, 1, '3', '2', '2012-05-21', '3', NULL, 'Kensalt'),
-(2, '02:57 PM', 12, 12, 1, '3', '2', '2012-05-21', '3', NULL, 'Kensalt'),
-(3, '03:04 PM', 1, 12, 1, '2', '2', '2012-05-21', '1', NULL, 'Kensalt'),
-(4, '05:33 AM', 1, 2, 1, '3', '1', '2012-05-22', '3', NULL, 'Kensalt');
+INSERT INTO `wheat_internalfortc1` (`wheat_internalFortC1ID`, `shiftTime`, `wheatProduced`, `premixUsed`, `wheatFlourVSPremix`, `notes`, `comments`, `dates`, `responsible`, `factoryName`) VALUES
+(5, '01:30 PM', 12, 23000, 0.52, 'good', 'none', '2012-06-14', 'lupe', 'Wheat Mill I'),
+(6, '02:30 PM', 41, 12000, 3.42, 'ok', 'ok', '2012-06-14', 'lupe', 'Wheat Mill I');
 
 --
 -- Constraints for dumped tables
@@ -2051,7 +2050,7 @@ ALTER TABLE `externaliodizationb1`
 -- Constraints for table `factories`
 --
 ALTER TABLE `factories`
-  ADD CONSTRAINT `fk_Manufacturer_FCenters_Manufacturer_Fortifier1` FOREIGN KEY (`manufacturerFortName`) REFERENCES `manufacturerfortified` (`manufactuerFortName`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `factories_ibfk_1` FOREIGN KEY (`manufacturerFortName`) REFERENCES `manufacturerfortified` (`manufactuerFortName`);
 
 --
 -- Constraints for table `internalfortifieda1`
@@ -2140,6 +2139,12 @@ ALTER TABLE `maize_internalfortc1`
 ALTER TABLE `manucdevices`
   ADD CONSTRAINT `manucdevices_ibfk_1` FOREIGN KEY (`manufacturerCompName`) REFERENCES `factories` (`factoryName`),
   ADD CONSTRAINT `manucdevices_ibfk_2` FOREIGN KEY (`deviceCompNumber`) REFERENCES `devices` (`deviceSerialNumber`);
+
+--
+-- Constraints for table `manufacturerfortified`
+--
+ALTER TABLE `manufacturerfortified`
+  ADD CONSTRAINT `manufacturerfortified_ibfk_1` FOREIGN KEY (`vehicleName`) REFERENCES `vehicle_type` (`vehicleName`);
 
 --
 -- Constraints for table `oil_tablea1`
@@ -2319,3 +2324,7 @@ ALTER TABLE `wheat_internalfortb2`
 --
 ALTER TABLE `wheat_internalfortc1`
   ADD CONSTRAINT `wheat_internalFortC1_iodizationcenters` FOREIGN KEY (`factoryName`) REFERENCES `factories` (`factoryName`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
