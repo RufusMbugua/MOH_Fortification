@@ -3,13 +3,13 @@
 		<link href="<?php echo base_url(); ?>css/layout.css" rel="stylesheet" type="text/css" />
 		<!-- -->
 		<!-- Attach CSS files -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>css/layout.css"/>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/layout-opt.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/awesomebuttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/buttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/orbit.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/post.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/tabs.css"/>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>css/form.css"/>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/form-opt.css"/>
 		<!-- Attach JavaScript files -->
 		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 		<script src="js/jquery.orbit.js" type="text/javascript"></script>
@@ -32,8 +32,8 @@
 				</section>
 			</section>
 			<section class="date">
-				
-				 <?php echo date("l F d, Y"); ?>
+
+				<?php echo date("l F d, Y"); ?>
 			</section>
 		</section>
 
@@ -41,9 +41,13 @@
 			<?php echo $form; ?>
 		</section>
 		<section class="login">
+			<section class="form-title">
+				<section class="title-text">
+					Sign In
+				</section>
+			</section>
 			<form class="form-login" method="post" accept-charset="utf-8">
 
-			<form class="form-login" method="post">
 				<input name="username" type="text" placeholder="Username / Email Address"/>
 				<p></p>
 				<input  name="secret" type="password" placeholder="Password"/>

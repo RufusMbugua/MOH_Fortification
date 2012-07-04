@@ -9,13 +9,13 @@ $sessionEmail = $this -> session -> userdata('email');
 		<title>Vehicles</title>
 		<!-- -->
 		<!-- Attach CSS files -->
-		<link rel="stylesheet" href="<?php echo base_url()?>css/layout.css"/>
+		<link rel="stylesheet" href="<?php echo base_url()?>css/layout-opt.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/awesomebuttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/buttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/orbit.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/reveal.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/post.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/form.css"/>
+		<link rel="stylesheet" href="<?php echo base_url()?>css/form-opt.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/form-layout.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/fonts.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/mobiscroll-1.6.css"/>
@@ -305,15 +305,15 @@ $sessionEmail = $this -> session -> userdata('email');
 			</ul>
 		</section>
 		<section class="current-body">
-			<section class="container">
-				<section class="within">
-					<nav id="pageheader">
+			<nav id="pageheader" >
+				<section class="links">
 						<ul>
 							<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>">Vehicles</a>
 							<a href="#">Agents</a>
 						</ul>
+						</section>
 					</nav>
-					<section id="content">
+			
 						<section class="form-sidebar">
 										<h3>Actions</h3>
 										<a title="To Save entered info" id="submit_form_data" class="awesome blue medium">Submit</a>
@@ -500,20 +500,15 @@ $sessionEmail = $this -> session -> userdata('email');
 										</section><!-- End of Menu: Wheat Forms -->
 												
 									</section><!-- End of Menu-Container -->
-						<!-- HTML5 TABS CODE -->
-						<article class="tabs">						
+												
 									<section class="form-container">
 										<?php
 										echo $form;
 										?>
 									</section><!-- End of Form-Container Section-->							
 							
-						</article>
-						<!-- /HTML5 TABS CODE -->
-					</section><!-- End of content -->
-					</br>
-				</section><!-- End of Within-->
-			</section><!-- End of Container-->
+						
+					
 		</section>
 		<div id="accountSettings" class="reveal-modal">
 			<div>

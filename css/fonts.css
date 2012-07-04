@@ -89,3 +89,12 @@
 	font-weight: bold;
 	font-style: normal;
 }
+
+/* Weight => Normal
+ * Style => Normal */
+@font-face {
+	font-family: Linux Libertine-DR;
+	src: url("fonts/LinLibertine_DR.ttf");
+	font-weight: bold;
+	font-style: normal;
+}

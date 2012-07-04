@@ -6,6 +6,10 @@ $(document).ready(function() {
 		$(".menu.salt").animate({
 			height : '100%'
 		});
+		$(".menu.oil").hide();
+		$(".menu.maize").hide();
+		$(".menu.wheat").hide();
+		$(".menu.sugar").hide();
 	}
 
 	function saltMin() {
@@ -13,7 +17,11 @@ $(document).ready(function() {
 		$(".max.salt").delay(450).show('fast');
 		$(".menu.salt").animate({
 			height : '25px'
-		});
+		},100);
+		$(".menu.oil").show('fast');
+		$(".menu.maize").show('fast');
+		$(".menu.wheat").show('fast');
+		$(".menu.sugar").show('fast');
 	}
 
 	function oilMax() {
@@ -22,6 +30,10 @@ $(document).ready(function() {
 		$(".menu.oil").animate({
 			height : '100%'
 		});
+		$(".menu.salt").hide();
+		$(".menu.maize").hide();
+		$(".menu.wheat").hide();
+		$(".menu.sugar").hide();
 	}
 
 	function oilMin() {
@@ -29,7 +41,11 @@ $(document).ready(function() {
 		$(".max.oil").delay(450).show('fast');
 		$(".menu.oil").animate({
 			height : '25px'
-		});
+		},100);
+		$(".menu.salt").show('fast');
+		$(".menu.maize").show('fast');
+		$(".menu.wheat").show('fast');
+		$(".menu.sugar").show('fast');
 	}
 
 	function sugarMax() {
@@ -37,7 +53,11 @@ $(document).ready(function() {
 		$(".min.sugar").show('fast');
 		$(".menu.sugar").animate({
 			height : '100%'
-		});
+		},100);
+		$(".menu.oil").hide();
+		$(".menu.maize").hide();
+		$(".menu.wheat").hide();
+		$(".menu.salt").hide();
 	}
 
 	function sugarMin() {
@@ -46,6 +66,10 @@ $(document).ready(function() {
 		$(".menu.sugar").animate({
 			height : '25px'
 		});
+		$(".menu.oil").show('fast');
+		$(".menu.maize").show('fast');
+		$(".menu.wheat").show('fast');
+		$(".menu.salt").show('fast');
 	}
 
 	function maizeMax() {
@@ -53,7 +77,11 @@ $(document).ready(function() {
 		$(".min.maize").show('fast');
 		$(".menu.maize").animate({
 			height : '100%'
-		});
+		},100);
+		$(".menu.oil").hide();
+		$(".menu.salt").hide();
+		$(".menu.wheat").hide();
+		$(".menu.sugar").hide();
 	}
 
 	function maizeMin() {
@@ -62,6 +90,10 @@ $(document).ready(function() {
 		$(".menu.maize").animate({
 			height : '25px'
 		});
+		$(".menu.oil").show('fast');
+		$(".menu.salt").show('fast');
+		$(".menu.wheat").show('fast');
+		$(".menu.sugar").show('fast');
 	}
 
 	function wheatMax() {
@@ -69,7 +101,11 @@ $(document).ready(function() {
 		$(".min.wheat").show('fast');
 		$(".menu.wheat").animate({
 			height : '100%'
-		});
+		},100);
+		$(".menu.oil").hide();
+		$(".menu.maize").hide();
+		$(".menu.salt").hide();
+		$(".menu.sugar").hide();
 	}
 
 	function wheatMin() {
@@ -78,15 +114,16 @@ $(document).ready(function() {
 		$(".menu.wheat").animate({
 			height : '25px'
 		});
+		$(".menu.oil").show('fast');
+		$(".menu.maize").show('fast');
+		$(".menu.salt").show('fast');
+		$(".menu.sugar").show('fast');
 	}
 
 
 	$(".max.salt").click(function() {
 		saltMax();
-		wheatMin();
-		sugarMin();
-		maizeMin();
-		oilMin();
+		
 
 	});
 
@@ -95,10 +132,7 @@ $(document).ready(function() {
 	});
 	$(".max.oil").click(function() {
 		oilMax();
-		saltMin();
-		sugarMin();
-		maizeMin();
-		wheatMin();
+		
 
 	});
 
@@ -108,10 +142,7 @@ $(document).ready(function() {
 
 	$(".max.sugar").click(function() {
 		sugarMax();
-		saltMin();
-		wheatMin();
-		maizeMin();
-		oilMin();
+		
 
 	});
 	$(".min.sugar").click(function() {
@@ -121,10 +152,7 @@ $(document).ready(function() {
 
 	$(".max.maize").click(function() {
 		maizeMax();
-		saltMin();
-		sugarMin();
-		wheatMin();
-		oilMin();
+		
 
 	});
 	$(".min.maize").click(function() {
@@ -133,10 +161,7 @@ $(document).ready(function() {
 
 	$(".max.wheat").click(function() {
 		wheatMax();
-		saltMin();
-		sugarMin();
-		maizeMin();
-		oilMin();
+		
 
 	});
 	$(".min.wheat").click(function() {
