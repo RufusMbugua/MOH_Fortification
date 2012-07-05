@@ -22,8 +22,8 @@
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	background:white;
-	font-family:Linux Libertine-DR;
+	background: white;
+	font-family: Linux Libertine-DR;
 }
 
 .form-container section {
@@ -48,13 +48,17 @@ pre::-webkit-scrollbar-thumb:horizontal {
 	color: #F33;
 	border-color: #F33;
 }
-.form-sidebar {
+.left-side{
 	right: 2%;
 	position: absolute;
 	float: right;
-	top: 240px;
+	top: 108px;
+	width:200px;
+}
+.form-sidebar {
+	
 	background-color: #FFFFFF;
-	width: 13%;
+	width: 100%;
 	padding-top: 10px;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
@@ -63,6 +67,15 @@ pre::-webkit-scrollbar-thumb:horizontal {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+}
+.form-sidebar .buttons{
+	margin:auto;
+	width:70%;
+}
+.form-sidebar .buttons a{
+	
+	width:45%;
+	text-align: center;
 }
 .form-container input {
 	width: 100px;
@@ -73,7 +86,7 @@ input.radio {
 }
 .menu-container {
 	background: #FFF;
-	width: 10%;
+	width: 12%;
 	height: auto;
 	position: absolute;
 	left: 2%;
@@ -88,8 +101,8 @@ input.radio {
 	-webkit-border-radius: 5px;
 	padding: 5px 20px 5px 20px;
 }
-.menu-title{
-	width:100%;
+.menu-title {
+	width: 100%;
 }
 .menu-container-2 {
 	width: 20%;
@@ -97,10 +110,8 @@ input.radio {
 	display: inline-block;
 }
 .menu {
-	
+
 	width: 100%;
-	
-	
 	padding-bottom: 20px;
 	height: 25px;
 	overflow: hidden;
@@ -116,7 +127,7 @@ input.radio {
 	transition-property: height;
 	transition-duration: 0.25s;
 	transition-timing-function: linear;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .min, .max {
@@ -143,12 +154,12 @@ input.radio {
 .menu h2 {
 	margin-top: 5px;
 	text-align: center;
-	font-size: 18px;
+	font-size: 22px;
 	padding-bottom: 5px;
 	width: 70%;
 	display: inline-block;
 	margin-left: 10px;
-	font-weight:bold;
+	font-weight: bold;
 }
 
 .form-sidebar h3 {
@@ -163,15 +174,15 @@ input.radio {
 }
 .menu a {
 	text-decoration: none;
-	margin-left: 10px;
+	margin-left: 5px;
 	font-family: "Times New Roman", Times, serif;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: left;
 	cursor: hand;
 	color: #000;
 	display: block;
 	width: 100%;
-	cursor:pointer;
+	cursor: pointer;
 }
 .form-sidebar a {
 	margin-left: 18px;
@@ -179,9 +190,9 @@ input.radio {
 	font-size: 16px;
 	font-weight: bold;
 }
-.menu a:hover,.menu h2:hover {
+.menu a:hover, .menu h2:hover {
 	color: #039;
-	cursor:hand;
+	cursor: hand;
 }
 .menu ul, .menu ul li {
 	list-style: none;
@@ -205,9 +216,9 @@ input.radio {
 }
 
 .banner {
-	width: 100%;	
+	width: 100%;
 	padding-bottom: 10px;
-	border-bottom:2px solid #999;
+	border-bottom: 2px solid #999;
 }
 /**
  * Logo
@@ -269,7 +280,7 @@ input.radio {
 	width: 35%;
 	background: CCC;
 	height: auto;
-	border:2px solid #999;
+	border: 2px solid #999;
 }
 /* Child Form
  Contents :
@@ -281,16 +292,15 @@ input.radio {
 .form-login {
 	width: 80%;
 	margin: auto;
-	
 }
-.form-title{
-	border-bottom:2px solid #999;
-	font-size:20px;
-	width:100%;
-	margin-bottom:10px;
+.form-title {
+	border-bottom: 1px solid #999;
+	font-size: 20px;
+	width: 100%;
+	margin-bottom: 10px;
 }
-.form-title .title-text{
-	padding:5px 10px 5px 10px;
+.form-title .title-text {
+	padding: 5px 10px 5px 10px;
 }
 /*
  Input fields within Login Form
@@ -348,25 +358,20 @@ form input, form textarea {
 	-webkit-transform: translateY(-570px);
 }
 #profile-before {
-	right: 2%;
-	width: 13%;
-	height: 20px;
+	
+	width: 100%;
+	height: 28px;
 	overflow: hidden;
-	position: absolute;
-	float: right;
-	border: solid 1px #999;
 	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
 	background: -moz-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
-	-webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+	
 	-webkit-border-bottom-left-radius: 6px;
 	-webkit-border-bottom-right-radius: 6px;
-	-moz-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
 	-moz-border-bottom-left-radius: 6px;
 	-moz-border-bottom-right-radius: 6px;
-	box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
-	top: 107px;
+	
 	padding-bottom: 15px;
 	-webkit-transition-property: height;
 	-webkit-transition-duration: 0.75s;
@@ -380,6 +385,7 @@ form input, form textarea {
 	transition-property: height;
 	transition-duration: 0.75s;
 	transition-timing-function: linear;
+	margin-bottom:23px;
 }
 #profile-before:hover {
 
@@ -389,6 +395,20 @@ form input, form textarea {
 	text-align: center;
 	padding-bottom: 5px;
 }
+#profile-before .title {
+	background: url('../images/banner.jpg');
+	padding:10px 10px 12px 10px;
+	height:22px;
+	text-align:center;
+	border-left:2px groove #999;
+	 border-right:2px groove #999;
+	 color:#fff;
+	 text-shadow: 0px -0.7px 0.9px #333333;
+	 font-family:Linux Libertine-DR;
+	 font-size:20px;
+}
+
+
 #profile-fancy {
 	display: block;
 	width: 300px;
