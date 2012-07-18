@@ -1,203 +1,201 @@
 <?php
-   class C_salt extends MY_Controller{
-   
-	
-	public function __construct(){
+class C_salt extends MY_Controller {
+
+	public function __construct() {
 		parent::__construct();
 	}
-   	
+
 	public function internalFort_A1() {
 		$internalFortified_A1 = '';
 		$internalFortified_A1 .= '
 
-		<form name="internalFortified_A1" id="internalFortified_A1" method="POST" action="' . base_url() .'submit/c_form_salt/form_internalFort_A1' . '" >
-			<!-- form for internal salt fortification. 1-a -->
-			<h3 align="center"> FORTIFIED SALT-TABLE A-1</h3>
-			<p align="center">
-				INSPECTION FORM FOR INCOMING IODINE COMPOUNDS
-			</p>
-			<section class="block">
-				<section class="column">
-					<section class="row2">
-						<section class="left">
-							<label>PRODUCT TYPE:</label>
-						</section>
-						<section class="right">
-							<select name="productType" id="productType">
-							<option value="" selected="selected">Select One</option>
-								'.$this->selectPremixType.'
-							</select>
-						</section>
-					</section>
-					<section class="row2">
-						<section class="left">
-							<label>Manufacturer:</label>
-						</section>
-						<section class="right">
-							<select name="manufacturer" id="manufacturer">
-	
-							<option value="" selected="selected">Select One</option>
-							'.$this->selectCompManufacturers.'
-							</select>
-						</section>
-					</section>
-					<section class="row2">
-						<section class="left">
-							<label>Inspected by:</label>
-						</section>
-						<section class="right">
-							<select name="inspectedBy" id="inspectedBy">
-	
-							    <option value="" selected="selected">Select One</option>
-								<option value="Port Official">Port Official</option>
-								<option value="Quality Manager">Quality Manager</option>
-							</select>
-						</section>
-					</section>
+		<form name="internalFortified_A1" id="internalFortified_A1" method="POST" action="' . base_url() . 'submit/c_form_salt/form_internalFort_A1' . '" >
+	<!-- form for internal salt fortification. 1-a -->
+	<h3 align="center"> FORTIFIED SALT-TABLE A-1</h3>
+	<p align="center">
+		INSPECTION FORM FOR INCOMING IODINE COMPOUNDS
+	</p>
+	<section class="block">
+		<section class="column">
+			<section class="row2">
+				<section class="left">
+					<label>PRODUCT TYPE:</label>
 				</section>
-				<section class="column" style="margin-bottom:30px">
-					<section class="row2">
-						<section class="left">
-							<label>Purchase Order #:</label>
-						</section>
-						<section class="right">
-							<input type="text" name="purchaseOrder" id="purchaseOrder"/>
-						</section>
-					</section>
-					<section class="row2">
-						<section class="left">
-							<label>Date:</label>
-						</section>
-						<section class="right">
-							<input type="date" name="date" id="date" readonly="true" placeholder="click for date"/>
-						</section>
-					</section>
+				<section class="right">
+					<select name="productType" id="productType">
+						<option value="" selected="selected">Select One</option>
+						' . $this -> selectPremixType . '
+					</select>
 				</section>
 			</section>
-			<section class="column-wide">
-			<section class="row">
-			  <section class="row-title">
+			<section class="row2">
+				<section class="left">
+					<label>Manufacturer:</label>
+				</section>
+				<section class="right">
+					<select name="manufacturer" id="manufacturer">
+
+						<option value="" selected="selected">Select One</option>
+						' . $this -> selectCompManufacturers . '
+					</select>
+				</section>
+			</section>
+			<section class="row2">
+				<section class="left">
+					<label>Inspected by:</label>
+				</section>
+				<section class="right">
+					<select name="inspectedBy" id="inspectedBy">
+
+						<option value="" selected="selected">Select One</option>
+						<option value="Port Official">Port Official</option>
+						<option value="Quality Manager">Quality Manager</option>
+					</select>
+				</section>
+			</section>
+		</section>
+		<section class="column" style="margin-bottom:30px">
+			<section class="row2">
+				<section class="left">
+					<label>Purchase Order #:</label>
+				</section>
+				<section class="right">
+					<input type="text" name="purchaseOrder" id="purchaseOrder"/>
+				</section>
+			</section>
+			<section class="row2">
+				<section class="left">
+					<label>Date:</label>
+				</section>
+				<section class="right">
+					<input type="date" name="date" id="date" readonly="true" placeholder="click for date"/>
+				</section>
+			</section>
+		</section>
+	</section>
+	<section class="column-wide">
+		<section class="row">
+			<section class="row-title">
 				<section class="left-wide">
 					SPECIFICATIONS
 				</section>
 				<section class="right-wide">
 					OBSERVATIONS
 				</section>
-			  </section>
-		   </section>
-		   <section class="row">
-			  <section class="left">
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
 				<label>Quantity</label>
-			   </section>
-			   <section class="center">
+			</section>
+			<section class="center">
 				<input type="number" name="quantity" id="quantity"/>
-			    </section>
-		    	<section class="right">
-				<textarea name="integrityObservation" id="integrityObservation" rows="3"></textarea>
 			</section>
-		   </section>
-		
-				<section class="row">
-					<section class="left">
-						<label for="lotObservation">Lot number:</label>
-					</section>
-					<section class="center">
-						<input type="checkbox" name="lotNumber" id="lotNumber" value="yes"/>
-						<input type="hidden" id="lotNumber_cb" name="lotNumber" value=""/>
-					</section>
-					<section class="right">
-						<textarea name="lotObservation" id="lotObservation" rows="3"></textarea>
-					</section>
-				</section>
-				<section class="row">
-					<section class="left">
-						<label for="productionDate"> Production Date:</label>
-					</section>
-					<section class="center">
-						<input type="checkbox" name="productionDate" id="productionDate" value="yes" />
-						<input type="hidden" id="productionDate_cb" name="productionDate" value=""/>
-					</section>
-					<section class="right">
-						<textarea name="productObservation" id="productObservation" rows="3"></textarea>
-					</section>
-				</section>
-				<section class="row">
-					<section class="left">
-						<label for="expirationDate">Expiration Date:</label>
-					</section>
-					<section class="center">
-						<input type="checkbox" name="expirationDate" id="expirationDate" value="yes" />
-						<input type="hidden" id="expirationDate_cb" name="expirationDate" value=""/>
-					</section>
-					<section class="right">
-						<textarea name="expirationObservation" id="expirationObservation" rows="3"></textarea>
-					</section>
-				</section>
-		
-				<section class="row">
-					<section class="left">
-						<label for="contentClaimed">Content claimed in label</label>
-					</section>
-					<section class="center">
-						<input type="checkbox" name="contentClaimed" id="contentClaimed" value="yes"/>
-						<input type="hidden" id="contentClaimed_cb" name="contentClaimed" value=""/>
-					</section>
-					<section class="right">
-						<textarea name="contentObservation" id="contentObservation" rows="3"></textarea>
-					</section>
-				</section>
-				<section class="row">
-					<section class="left">
-						<label for="certOfanalysis">Certificate of Analysis(result for every micronutrient)</label>
-					</section>
-					<section class="center">
-						<input type="checkbox" name="certOfanalysis" id="certOfanalysis" value="yes"/>
-						<input type="hidden" id="certOfanalysis_cb" name="certOfanalysis" value=""/>
-					</section>
-					<section class="right">
-						<textarea name="certificateObservation" id="certificateObservation" rows="3"></textarea>
-					</section>
-				</section>
-				<section class="row">
-					<section class="left">
-						<label for="otherObservation">Other:</label>
-						
-					</section>
-					<section class="center"><input type="text" name="other" id="other"/></section>
-					<section class="right">
-						<textarea name="otherObservation" id="otherObservation" rows="3"></textarea>
-					</section>
-				</section>
+		</section>
+
+		<section class="row">
+			<section class="left">
+				<label for="lotObservation">Lot number:</label>
 			</section>
-			<section class="column-wide">
-				<section class="row2">
-					<section class ="left-wide">
-						Accepted:
-						<input type="radio" name="accepted" id="accepted_a" value="1" />
-					</section>
-					<section class ="right-wide">
-						Rejected:
-						<input type="radio" name="accepted" id="accepted_r" value="0"/>
-					</section>
-				</section>
-				<section class="row-title">
-					<label>REASONS FOR REJECTION/ACTIONS TAKEN:</label>
-				</section>
-				<section class="row">
-					<textarea name="actionsTaken" id="actionsTaken"></textarea>
-				</section>
-				<section class="row2">
-					<section class ="left-wide">
-						<label>Received By:</label>
-						<input type="text" name="receivedBy" id="receivedBy"/>
-					</section>
-					<section class ="right-wide">
-						<label>Date:</label>
-						<input type="date" name="inputDate" id="inputDate" readonly="true" placeholder="click for date"/>
-					</section>
-				</section>
+			<section class="center">
+				<input type="checkbox" name="lotNumber" id="lotNumber" value="yes"/>
+				<input type="hidden" id="lotNumber_cb" name="lotNumber" value=""/>
 			</section>
-		</form>';
+			<section class="right">
+				<input type="text" name="lotObservation" id="lotObservation" />
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
+				<label for="productionDate"> Production Date:</label>
+			</section>
+			<section class="center">
+				<input type="checkbox" name="productionDate" id="productionDate" value="yes" />
+				<input type="hidden" id="productionDate_cb" name="productionDate" value=""/>
+			</section>
+			<section class="right">
+				<input type="text" name="productObservation" id="productObservation" class="autoDate"/>
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
+				<label for="expirationDate">Expiration Date:</label>
+			</section>
+			<section class="center">
+				<input type="checkbox" name="expirationDate" id="expirationDate" value="yes" />
+				<input type="hidden" id="expirationDate_cb" name="expirationDate" value=""/>
+			</section>
+			<section class="right">
+				<input type="text" name="expirationObservation" id="expirationObservation" class="futureDate"/>
+			</section>
+		</section>
+
+		<section class="row">
+			<section class="left">
+				<label for="contentClaimed">Content claimed in label</label>
+			</section>
+			<section class="center">
+				<input type="checkbox" name="contentClaimed" id="contentClaimed" value="yes"/>
+				<input type="hidden" id="contentClaimed_cb" name="contentClaimed" value=""/>
+			</section>
+			<section class="right">
+				<input type="text" name="contentObservation" id="contentObservation"/>
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
+				<label for="certOfanalysis">Certificate of Analysis(result for every micronutrient)</label>
+			</section>
+			<section class="center">
+				<input type="checkbox" name="certOfanalysis" id="certOfanalysis" value="yes"/>
+				<input type="hidden" id="certOfanalysis_cb" name="certOfanalysis" value=""/>
+			</section>
+			<section class="right">
+				<input type="text" name="certificateObservation" id="certificateObservation" />
+			</section>
+		</section>
+		<section class="row">
+			<section class="left">
+				<label for="otherObservation">Other:</label>
+
+			</section>
+			<section class="center">
+				<input type="text" name="other" id="other"/>
+			</section>
+			<section class="right">
+				<input type="text" name="otherObservation" id="otherObservation" />
+			</section>
+		</section>
+	</section>
+	<section class="column-wide">
+		<section class="row2">
+			<section class ="left-wide">
+				Accepted:
+				<input type="radio" name="accepted" id="accepted_a" value="1" />
+			</section>
+			<section class ="right-wide">
+				Rejected:
+				<input type="radio" name="accepted" id="accepted_r" value="0"/>
+			</section>
+		</section>
+		<section class="row-title">
+			<label>REASONS FOR REJECTION/ACTIONS TAKEN:</label>
+		</section>
+		<section class="row">
+			<textarea name="actionsTaken" id="actionsTaken"></textarea>
+		</section>
+		<section class="row2">
+			<section class ="left-wide">
+				<label>Received By:</label>
+				<input type="text" name="receivedBy" id="receivedBy"/>
+			</section>
+			<section class ="right-wide">
+				<label>Date:</label>
+				<input type="date" name="inputDate" id="inputDate" readonly="true" placeholder="click for date"/>
+			</section>
+		</section>
+	</section>
+</form>';
 
 		$data['form'] = $internalFortified_A1;
 		$data['form_id'] = 'internalFortified_A1';
@@ -207,115 +205,146 @@
 	}
 
 	public function internalFort_A2() {
-				$internalFortified_A2 = '';
-				$internalFortified_A2 .= '<form id="internalFortified_A2" method="post" action="'.base_url(). 'submit/c_form_salt/form_internalFort_A2'. '">
-			<!--form for internal monitoring of salt fortification- A2-->
-			<h3 align="center"> FORTIFIED SALT QC/QA- TABLE A-2</h3>
-			<p align="center">
-				<strong>IODINE COMPOUND INVENTORY CONTROL LOG.</strong>
-			</p>
-			<p align="center">
-				&nbsp;
-			</p>
-			<p>Compound Manufacturer:<select name="compManufacturer" id="compManufacturer">
-								<option value="" selected="selected">Select One</option>
-								'.$this->selectCompManufacturers.'
-							</select></p>
-			<table border="0" width="98%">
-				<!--<legend>Iodine Compound Inventory Control Log</legend>-->
-				<tr>
-					<td width="144"></td>
-					<td width="144"></td>
-					<td width="144"><strong>RECEIVED</strong></td>
-					<td width="144"></td>
-					<td width="144"></td>
-					<td width="144"><strong>DISPATCHED</strong></td>
-					<td width="144"></td>
-					<td width="144"></td>
-				</tr>
-				<tr>
-					<td width="144">DATE</td>
-					<td width="144">Supplier COA#</td>
-					<td width="144">#DRUMS(A)</td>
-					<td width="144">LOT ID(DRUMS Nos.)</td>
-					<td width="144">EXPIRATION DATE</td>
-					<td width="144">LOT ID (DRUM Nos.)(B=# DRUMS)</td>
-					<td width="144">IN STOCK(C) (C)=(A)-(B)</td>
-					<td width="141">Receipt & QC-Review (Name & signature)</td>
-				</tr>
-				<tr class="clonable">
-					<td width="144">
-					<input type="date"  name="iodineDate_1" id="iodineDate_1"" class="autoDate cloned" readonly="true" placeholder="click for date"/>
-					</td>
-					<td width="144">
-					<input type="text"  name="iodineSupplier_1" id="iodineSupplier_1" class="cloned"/>
-					</td>
-					<td width="144">
-					<input type="number"  name="iodineDrums_1" id="iodineDrums_1" class="cloned fromZero"/>
-					</td>
-					<td width="144">
-					<input type="text"  name="iodineLot_1" id="iodineLot_1" class="cloned"/>
-					</td>
-					<td width="144">
-					<input type="text"  name="iodineExpiration_1" id="iodineExpiration_1" class="futureDate cloned" readonly="true" placeholder="click for date"/>
-					</td>
-					<td width="144">
-					<input type="number" name="iodineDispatched_1" id="iodineDispatched_1" class="cloned fromZero" />
-					</td>
-					<td width="144">
-					<input type="text" name="iodineStock_1" id="iodineStock_1" class="cloned fromZero" placeholder="auto-calculated" readonly="true" />
-					</td>
-					<td width="141">
-					<input type="text" name="iodineReceipt_1" id="iodineReceipt_1" class="cloned"/>
-					</td>
-				</tr>
-				<tr id="formbuttons">
-					<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-					<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
-				</tr>
-			</table>
-			<br/>
-			<table width="100%">
-				<tr>
-					<td width="25%">Fortificant sample sent to external lab:</td>
-					<td width="25%">&nbsp;</td>
-					<td width="25%">Identification:</td>
-					<td width="25%">
-					<input type="text" name="identification" id="identification"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="25%">Iodine(mg/kg)</td>
-					<td width="25%">
-					<input type="number" name="iodineKgs" id="iodineKgs"/>
-					</td>
-					<td width="25%">Identification:</td>
-					<td width="25%">
-					<input type="text" name="iodineIdentification" id="iodineIdentification"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="25%">Iodine(mg/kg)=</td>
-					<td width="25%">
-					<input type="number" name="iodineMgs" id="iodineMgs"/>
-					</td>
-					<td width="25%">Date of reporting:</td>
-					<td width="25%">
-					<input type="text" name="reportingDate" id="reportingDate" readonly="true" placeholder="click for date"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="25%">Name:</td>
-					<td width="25%">
-					<input type="text" name="reportersName" id="reportersName"/>
-					</td>
-					<td width="25%">Signature:</td>
-					<td width="25%">
-					<input type="text" name="reportersSignature" id="reportersSignature"/>
-					</td>
-				</tr>
-			</table>
-		</form>';
+		$internalFortified_A2 = '';
+		$internalFortified_A2 .= '
+
+
+<form id="internalFortified_A2" method="post" action="' . base_url() . 'submit/c_form_salt/form_internalFort_A2' . '">
+	<!--form for internal monitoring of salt fortification- A2-->
+	<h3 align="center"> FORTIFIED SALT QC/QA- TABLE A-2</h3>
+	<p align="center">
+		<strong>IODINE COMPOUND INVENTORY CONTROL LOG.</strong>
+	</p>
+	<p align="center">
+		&nbsp;
+	</p>
+	<p>
+		Compound Manufacturer:
+		<select name="compManufacturer" id="compManufacturer">
+			<option value="" selected="selected">Select One</option>
+			' . $this -> selectCompManufacturers . '
+		</select>
+	</p>
+
+	<!--<legend>Iodine Compound Inventory Control Log</legend>-->
+
+	<article class="tabs">
+		<section  id="received" class="ON">
+
+			<h2>Received</h2>
+			<div>
+				<table border="0" width="98%">
+					<tr>
+						<td width="144">DATE</td>
+						<td width="144">Supplier COA#</td>
+						<td width="144">#DRUMS(A)</td>
+						<td width="144">LOT ID(DRUMS Nos.)</td>
+						<td width="144">EXPIRATION DATE</td>
+
+					</tr>
+					<tr class="clonable">
+						<td width="144">
+						<input type="date"  name="iodineDate_1" id="iodineDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/>
+						</td>
+						<td width="144">
+						<input type="text"  name="iodineSupplier_1" id="iodineSupplier_1" class="cloned"/>
+						</td>
+						<td width="144">
+						<input type="number"  name="iodineDrums_1" id="iodineDrums_1" class="cloned fromZero"/>
+						</td>
+						<td width="144">
+						<input type="text"  name="iodineLot_1" id="iodineLot_1" class="cloned"/>
+						</td>
+						<td width="144">
+						<input type="text"  name="iodineExpiration_1" id="iodineExpiration_1" class="futureDate cloned" readonly="true" placeholder="click for date"/>
+						</td>
+					</tr>
+					<tr id="formbuttons">
+						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+					</tr>
+
+				</table>
+
+			</div>
+
+		</section>
+		<section id="dispatched">
+
+			<h2>Dispatched</h2>
+
+			<div>
+				<table border="0" width="98%">
+					<tr>
+						<td width="144">LOT ID (DRUM Nos.)(B=# DRUMS)</td>
+						<td width="144">IN STOCK(C) (C)=(A)-(B)</td>
+						<td width="141">Receipt & QC-Review (Name & signature)</td>
+					</tr>
+					<tr class="clonable">
+						<td width="144">
+						<input type="number" name="iodineDispatched_1" id="iodineDispatched_1" class="cloned fromZero" />
+						</td>
+						<td width="144">
+						<input type="text" name="iodineStock_1" id="iodineStock_1" class="cloned fromZero" placeholder="auto-calculated" readonly="true" />
+						</td>
+						<td width="141">
+						<input type="text" name="iodineReceipt_1" id="iodineReceipt_1" class="cloned"/>
+						</td>
+					</tr>
+					<tr id="formbuttons">
+						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+					</tr>
+				</table>
+
+			</div>
+
+		</section>
+
+	</article>
+
+	<table width="100%">
+		<tr>
+			<td width="25%">Fortificant sample sent to external lab:</td>
+			<td width="25%">&nbsp;</td>
+			<td width="25%">Identification:</td>
+			<td width="25%">
+			<input type="text" name="identification" id="identification"/>
+			</td>
+		</tr>
+		<tr>
+			<td width="25%">Iodine(mg/kg)</td>
+			<td width="25%">
+			<input type="number" name="iodineKgs" id="iodineKgs"/>
+			</td>
+			<td width="25%">Identification:</td>
+			<td width="25%">
+			<input type="text" name="iodineIdentification" id="iodineIdentification"/>
+			</td>
+		</tr>
+		<tr>
+			<td width="25%">Iodine(mg/kg)=</td>
+			<td width="25%">
+			<input type="number" name="iodineMgs" id="iodineMgs"/>
+			</td>
+			<td width="25%">Date of reporting:</td>
+			<td width="25%">
+			<input type="text" name="reportingDate" id="reportingDate" readonly="true" placeholder="click for date"/>
+			</td>
+		</tr>
+		<tr>
+			<td width="25%">Name:</td>
+			<td width="25%">
+			<input type="text" name="reportersName" id="reportersName"/>
+			</td>
+			<td width="25%">Signature:</td>
+			<td width="25%">
+			<input type="text" name="reportersSignature" id="reportersSignature"/>
+			</td>
+		</tr>
+	</table>
+</form>
+				';
 
 		$data['form'] = $internalFortified_A2;
 		$data['form_id'] = 'internalFortified_A2';
@@ -326,7 +355,7 @@
 
 	public function internalFort_B1() {
 		$internalFortified_B1 = '';
-		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() .'submit/c_form_salt/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
+		$internalFortified_B1 .= '<form name="internalFortified_B1" id="internalFortified_B1" method="post" action="' . base_url() . 'submit/c_form_salt/form_internalFort_B1' . '"><!--Form for internal monitoring of salt fortification- B1-->
 						<h3 align="center"> FORTIFIED SALT QC/QA- TABLE B-1</h3>
 						<p align="center"><strong>PRODUCTION LOG FOR IODINE PREMIX</strong></p>
 						<!--p>Salt factory:<select name="saltFactory" id="saltFactory">
@@ -397,7 +426,7 @@
 
 	public function internalFort_B2() {
 		$internalFortified_B2 = '';
-		$internalFortified_B2 .= '<form name="internalFortified_B2" id="internalFortified_B2" method="post" action="' . base_url() .'submit/c_form_salt/form_internalFort_B2' . '">
+		$internalFortified_B2 .= '<form name="internalFortified_B2" id="internalFortified_B2" method="post" action="' . base_url() . 'submit/c_form_salt/form_internalFort_B2' . '">
 	<!--form for internal monitoring of salt fortification-B2-->
 	<h3>SALT FORTIFICATION: TABLE B-2</h3>
 	<h4>WEEKLY CHECK UP OF EQUIPMENT USED IN SALT FORTIFICATION WITH IODINE</h4>
@@ -509,7 +538,7 @@
 	public function internalFort_C1() {
 		$internalFortified_C1 = '';
 		//php form for internal fortification of salts-C1.
-		$internalFortified_C1 .= '<form name="internalFortified_C1" id="internalFortified_C1" method="post" action="' . base_url() .'submit/c_form_salt/form_internalFort_C1' . '"><!--form for internal fortification of salts-C1-->
+		$internalFortified_C1 .= '<form name="internalFortified_C1" id="internalFortified_C1" method="post" action="' . base_url() . 'submit/c_form_salt/form_internalFort_C1' . '"><!--form for internal fortification of salts-C1-->
                          <h3>FORTIFIED SALT QC/QA- TABLE C-1</h3>
                          <h4> PRODUCTION AND QUALITY CONTROL LOG FOR FORTIFIED SALT<sup>5</sup>WITH IODINE</h4>
                          <table width="99%">
@@ -581,25 +610,25 @@
 		$this -> load -> view('form', $data);
 
 	}
-	
-	private function getFactories(){
-		if($this->session->userdata('affiliation'))
-	    $this->load->model('models_salt/M_ExternalFortifiedB1');
-		$this->$manufacturer=$this->M_ExternalFortifiedB1->getManufacturerNameByUserAffiliation($this->session->userdata('affiliation'));
-		
-		$this->load->model('models_salt/M_ExternalIodizedB1');
-		$this->M_ExternalIodizedB1->getIodizationCentresByFactory($this->manufacturer);
-		
-		foreach($this->M_ExternalIodizedB1->centres as $key=>$value){
-			$this->selectIodizationCentre.= '<option value="'.$value['factoryNumber'].'">'.$value['factoryName'].'</option>'.'<br />';
-			}
-		return $this->selectIodizationCentre;
+
+	private function getFactories() {
+		if ($this -> session -> userdata('affiliation'))
+			$this -> load -> model('models_salt/M_ExternalFortifiedB1');
+		$this -> $manufacturer = $this -> M_ExternalFortifiedB1 -> getManufacturerNameByUserAffiliation($this -> session -> userdata('affiliation'));
+
+		$this -> load -> model('models_salt/M_ExternalIodizedB1');
+		$this -> M_ExternalIodizedB1 -> getIodizationCentresByFactory($this -> manufacturer);
+
+		foreach ($this->M_ExternalIodizedB1->centres as $key => $value) {
+			$this -> selectIodizationCentre .= '<option value="' . $value['factoryNumber'] . '">' . $value['factoryName'] . '</option>' . '<br />';
+		}
+		return $this -> selectIodizationCentre;
 	}
 
 	public function externalFort_B1() {
 		$externalFortified_B1 = '';
 
-		$externalFortified_B1 .= '<form name="externalfortifiedB1" id="externalfortifiedB1" method="post" action="' . base_url() .'submit/c_form_salt/form_externalFort_B1' . '">
+		$externalFortified_B1 .= '<form name="externalfortifiedB1" id="externalfortifiedB1" method="post" action="' . base_url() . 'submit/c_form_salt/form_externalFort_B1' . '">
 	<!--form for externalmonitoring of fortified salt-B1-->
 	<h3> FORTIFIED SALT- AUDITS AND INSPECTION- TABLE B-1</h3>
 	<p align="center">
@@ -634,7 +663,7 @@
 				<section class="right">
 					<select name="saltFactory" id="saltFactory">
 						<option value="" selected="selected">Select One</option>
-					'.$this->selectIodizationCentre.'
+					' . $this -> selectIodizationCentre . '
 					</select>
 
 				</section>
@@ -714,7 +743,7 @@
 	public function externalFort_B2() {
 		$externalFortified_B2 = '';
 		$externalFortified_B2 .= '
-		<form id="externalFortified_B2" action="' . base_url() .'submit/c_form_salt/form_externalFort_B2' . '" method="post">
+		<form id="externalFortified_B2" action="' . base_url() . 'submit/c_form_salt/form_externalFort_B2' . '" method="post">
 	<h3> FORTIFIED SALT-AUDITS AND INSPECTION -TABLE B-2</h3>
 	<p align="center">
 		TECHNICAL AUDIT AND INSPECTION PRELIMINARY REPORT
@@ -1493,7 +1522,7 @@
 ' . '
 <!--start of fortified salt-audits & inspection table-3: ctechnical audit and inspection preliminary report-->
 ' . '
-<form id="externalFortified_B3" action="' . base_url() .'submit/c_form_salt/form_externalFort_B3' . '" method="post">
+<form id="externalFortified_B3" action="' . base_url() . 'submit/c_form_salt/form_externalFort_B3' . '" method="post">
 	<h3> FORTIFIED SALT-AUDITS AND INSPECTION -TABLE B-3</h3>
 	<p align="center">
 		TECHNICAL AUDIT AND INSPECTION PRELIMINARY REPORT
@@ -1649,7 +1678,7 @@
 
 		$externalIodization_B1 = '';
 		$externalIodization_B1 .= '
-<form name="externalIodizationB1" id="externalIodizationB1" method="post" action="' . base_url() .'submit/c_form_salt/form_externalIod_B1' . '">
+<form name="externalIodizationB1" id="externalIodizationB1" method="post" action="' . base_url() . 'submit/c_form_salt/form_externalIod_B1' . '">
 
 	<h3 align="center">IODIZED SALT- AUDITS AND INSPECTION- TABLE B-1</h3>
 	<h4 align="center">CHECKLISTS OF TECHNICAL AUDIT AND INSPECTION VISIT TO IODIZATION CENTERS</h4>
@@ -1671,7 +1700,7 @@
 				<section class="right">
 					<select name="iodizationCenter" id="iodizationCenter">
 					<option value="" selected="selected">Select One</option>
-					'.$this->selectIodizationCentre.'
+					' . $this -> selectIodizationCentre . '
 					</select>
 				</section>
 			</section>
@@ -2045,44 +2074,93 @@
 		//$this->getCompManufacturerNamesAndIds();<--moved to MY_Controller
 
 		$smallScale_A1 = '';
-		$smallScale_A1 .= '<form name="smallScale_A1" id="smallScale_A1" method="post" action="' . base_url() .'submit/c_form_salt/form_smallScale_A1' . '">
-					<h3> IODIZED SALT- QA IN SMALL SCALE OPERATIONS- TABLE A-1</h3>
-					<h4>INVENTORY CONTROL LOG OF POTASSIUM IODATE IN STOCK AND PREMIX PRODUCTION</h4>
-					<p>Harvest Year:<select name="harvestYear" id="harvestYear"></select></p>
-					<table width="100%">
+		$smallScale_A1 .= '
+		<form name="smallScale_A1" id="smallScale_A1" method="post" action="' . base_url() . 'submit/c_form_salt/form_smallScale_A1' . '">
+	<h3> IODIZED SALT- QA IN SMALL SCALE OPERATIONS- TABLE A-1</h3>
+	<h4>INVENTORY CONTROL LOG OF POTASSIUM IODATE IN STOCK AND PREMIX PRODUCTION</h4>
+	<p>
+		Harvest Year:<select name="harvestYear" id="harvestYear"></select>
+	</p>
+	<article class="tabs">
+		<section  id="received" class="ON">
+
+			<h2>Received</h2>
+			<div>
+				<table border="0" width="98%">
 					<tr>
-                       <td width="144"><strong></strong></td>
-                       <td width="250" align="center"><strong>RECEIVED</strong></td>
-     
-                    </tr>
-					<tr>
-						 <td width="144"><strong>DATE</strong></td>
-						 <td width="144"><strong>Supplier Name</strong></td>
-						 <td width="144"><strong>KG(A)</strong></td>
-						 <td width="144"><strong>Lot #</strong></td>
-						 <td width="144"><strong>Content of Iodine(g/kg)</strong></td>
-						 <td width="12.5%"><strong>Amount Used(B)</strong></td>
-						 <td width="144"><strong>In stock (C) &nbsp; (C)=(A)-(B)</strong></td>
-						 <td width="140"><strong>Amount of Premix Produced(kg)</strong></td>
+						<td width="144"><strong>DATE</strong></td>
+						<td width="144"><strong>Supplier Name</strong></td>
+						<td width="144"><strong>KG(A)</strong></td>
+						<td width="144"><strong>Lot #</strong></td>
+						<td width="144"><strong>Content of Iodine(g/kg)</strong></td>
+
 					</tr>
 					<tr class="clonable">
-						 <td width="144"><input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/></td>
-						 <td width="144"><select name="supplierName_1" id="supplierName_1" class="cloned"><option value="" selected="selected">Select One</option>'.$this->selectCompManufacturers.'</select></td>
-						 <td width="144"><input type="number" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/></td>
-						 <td width="144"><input type="text" name="lotNumber_1" id="controlLot_1" class="cloned"/></td>
-						 <td width="144"><input type="number" name="contentOfIodine_1" id="iodineContent_1" class="cloned" /></td>
-						 <td width="144"><input type="number" name="amountUsed_1" id="amountUsed_1" class="cloned fromZero" /></td>
-						 <td width="144"><input type="number" name="inStock_1" id="inStock_1" class="cloned" /></td>
-						 <td width="140"><input type="number" name="premixAmount_1" id="premixAmount_1" class="cloned" /></td>
+						<td width="144">
+						<input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/>
+						</td>
+						<td width="144">
+						<select name="supplierName_1" id="supplierName_1" class="cloned">
+							<option value="" selected="selected">Select One</option>' . $this -> selectCompManufacturers . '
+						</select></td>
+						<td width="144">
+						<input type="number" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/>
+						</td>
+						<td width="144">
+						<input type="text" name="lotNumber_1" id="controlLot_1" class="cloned"/>
+						</td>
+						<td width="144">
+						<input type="number" name="contentOfIodine_1" id="iodineContent_1" class="cloned" />
+						</td>
 					</tr>
 					<tr id="formbuttons">
+						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+					</tr>
 
-					<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-					<input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+				</table>
 
-		            </tr>
-					</table>
-					</form>';
+			</div>
+
+		</section>
+		<section id="dispatched">
+
+			<h2>Dispatched</h2>
+
+			<div>
+				<table border="0" width="98%">
+					<tr>
+
+						<td width="12.5%"><strong>Amount Used(B)</strong></td>
+						<td width="144"><strong>In stock (C) &nbsp; (C)=(A)-(B)</strong></td>
+						<td width="140"><strong>Amount of Premix Produced(kg)</strong></td>
+					</tr>
+					<tr class="clonable">
+						<td width="144">
+						<input type="number" name="amountUsed_1" id="amountUsed_1" class="cloned fromZero" />
+						</td>
+						<td width="144">
+						<input type="number" name="inStock_1" id="inStock_1" class="cloned" />
+						</td>
+						<td width="144">
+						<input type="number" name="premixAmount_1" id="premixAmount_1" class="cloned" />
+						</td>
+					</tr>
+					<tr id="formbuttons">
+						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+					</tr>
+				</table>
+
+			</div>
+
+		</section>
+
+	</article>
+
+</form>
+		
+		';
 		$data['form'] = $smallScale_A1;
 		$data['form_id'] = 'smallScale_A1';
 
@@ -2094,55 +2172,102 @@
 		//$this->getCompManufacturerNamesAndIds();<--moved to MY_Controller
 		$smallScale_A2 = '';
 		$smallScale_A2 .= '
-        <form name="smallScale_A2" id="smallScale_A2" method="post" action="' . base_url() .'submit/c_form_salt/form_smallScale_A2' . '"><!--form for internal monitoring of salt fortification- A2-->
+		<form name="smallScale_A2" id="smallScale_A2" method="post" action="' . base_url() .'submit/c_form_salt/form_smallScale_A2' . '">
+	<!--form for internal monitoring of salt fortification- A2-->
 
-						<h3 align="center"> IODIZED SALT QA IN SMALL SCALE OPERATIONS-TABLE A2</h3>
-						<p align="center"><strong>INVENTORY CONTROL LOG OF POTASSIUM IODATE PREMIX IN STOCK AND SALT PRODUCTION.</strong></p>
-						<p align="center">&nbsp;</p>
-                        <p>Harvest Year:<select name="harvestYear" id="harvestYear"></select></p>
-                        <table border="0" width="100%">
-                        <tr>
-                           <td width="12.5%"></td>
-                           <td width="12.5%">RECEIVED</td>
-                           <td width="12.5%">/</td>
-                           <td width="12.5%">PRODUCED</td>
-                           <td width="12.5%">LOCALLY</td>
-                           <td width="12.5%"></td>
-                           <td width="12.5%"></td>
-                           <td width="12.5%"></td>
-                         </tr>
-                           <tr>
-                           <td width="12.5%">DATE</td>
-                           <td width="12.5%">SUPPLIER NAME</td>
-                           <td width="12.5%">KG(A)</td>
-                           <td width="12.5%">LOT #</td>
-                           <td width="12.5%">CONTENT OF IODINE(G/KG)</td>
-                           <td width="12.5%">AMOUNT USED(B)</td>
-                           <td width="12.5%">IN STOCK(C) (C)=A-B</td>
-                           <td width="12.5%">AMOUNT OF SALT PRODUCED(KG)</td>
-                         </tr>
-                        <tr class="clonable">
-						 <td width="144"><input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/></td>
-						 <td width="144"><select name="supplierName_1" id="supplierName_1" class="cloned"><option value="" selected="selected">Select One</option>'.$this->selectCompManufacturers.'</select></td>
-						 <td width="144"><input type="number" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/></td>
-						 <td width="144"><input type="text" name="lotNumber_1" id="controlLot_1" class="cloned"/></td>
-						 <td width="144"><input type="number" name="contentOfIodine_1" id="iodineContent_1" class="cloned" /></td>
-						 <td width="144"><input type="number" name="amountUsed_1" id="amountUsed_1" class="cloned fromZero" /></td>
-						 <td width="144"><input type="number" name="inStock_1" id="inStock_1" class="cloned" /></td>
-						 <td width="140"><input type="number" name="premixAmount_1" id="premixAmount_1" class="cloned" /></td>
+	<h3 align="center"> IODIZED SALT QA IN SMALL SCALE OPERATIONS-TABLE A2</h3>
+	<p align="center">
+		<strong>INVENTORY CONTROL LOG OF POTASSIUM IODATE PREMIX IN STOCK AND SALT PRODUCTION.</strong>
+	</p>
+	<p align="center">
+		&nbsp;
+	</p>
+	<p>
+		Harvest Year:<select name="harvestYear" id="harvestYear"></select>
+	</p>
+
+	<article class="tabs">
+		<section  id="received" class="ON">
+
+			<h2>Received</h2>
+			<div>
+				<table border="0" width="98%">
+					<tr>
+						<td width="12.5%">DATE</td>
+						<td width="12.5%">SUPPLIER NAME</td>
+						<td width="12.5%">KG(A)</td>
+						<td width="12.5%">LOT #</td>
+						<td width="12.5%">CONTENT OF IODINE(G/KG)</td>
+
 					</tr>
-                         <tr id="formbuttons">
+					<tr class="clonable">
+						<td width="144">
+						<input type="text" name="controlDate_1" id="controlDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/>
+						</td>
+						<td width="144">
+						<select name="supplierName_1" id="supplierName_1" class="cloned">
+							<option value="" selected="selected">Select One</option>'.$this->selectCompManufacturers.'
+						</select></td>
+						<td width="144">
+						<input type="number" name="weightKg_1" id="controlKg_1" class="cloned fromZero"/>
+						</td>
+						<td width="144">
+						<input type="text" name="lotNumber_1" id="controlLot_1" class="cloned"/>
+						</td>
+						<td width="144">
+						<input type="number" name="contentOfIodine_1" id="iodineContent_1" class="cloned" />
+						</td>
+					</tr>
+					<tr id="formbuttons">
+						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+					</tr>
 
-							<input title="Adds a new row after the last" type="button" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-			                <input title="Removes the last row" type="button" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+				</table>
 
-						</tr>
-                        </table></form> ';
-						$data['form'] = $smallScale_A2;
-						$data['form_id'] = 'smallScale_A2';
-				
-						$this -> load -> view('form', $data);
+			</div>
+
+		</section>
+		<section id="dispatched">
+
+			<h2>Dispatched</h2>
+
+			<div>
+				<table border="0" width="98%">
+					<tr>
+						<td width="12.5%">AMOUNT USED(B)</td>
+						<td width="12.5%">IN STOCK(C) (C)=A-B</td>
+						<td width="12.5%">AMOUNT OF SALT PRODUCED(KG)</td>
+					</tr>
+					<tr class="clonable">
+						<td width="144">
+						<input type="number" name="amountUsed_1" id="amountUsed_1" class="cloned fromZero" />
+						</td>
+						<td width="144">
+						<input type="number" name="inStock_1" id="inStock_1" class="cloned" />
+						</td>
+						<td width="140">
+						<input type="number" name="premixAmount_1" id="premixAmount_1" class="cloned" />
+						</td>
+					</tr>
+					<tr id="formbuttons">
+						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+					</tr>
+				</table>
+
+			</div>
+
+		</section>
+
+	</article>
+
+</form>';
+		$data['form'] = $smallScale_A2;
+		$data['form_id'] = 'smallScale_A2';
+
+		$this -> load -> view('form', $data);
 
 	}
-	}
 
+}

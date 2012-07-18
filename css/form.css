@@ -107,7 +107,7 @@ input.radio {
 	transition-property: height;
 	transition-duration: 0.25s;
 	transition-timing-function: linear;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .min, .max {
@@ -164,7 +164,7 @@ input.radio {
 	color: #000;
 	display: block;
 	width: 100%;
-	cursor:pointer;
+	cursor: pointer;
 }
 .form-sidebar a {
 	margin-left: 18px;
@@ -174,7 +174,7 @@ input.radio {
 }
 .menu a:hover {
 	color: #039;
-	cursor:hand;
+	cursor: hand;
 }
 .menu ul, .menu ul li {
 	list-style: none;
@@ -184,7 +184,8 @@ input.radio {
 .menu ul {
 	text-align: center;
 }
-. menu ul li {
+
+.menu ul li {
 	display: inline;
 	margin-right: .75em;
 }
@@ -199,7 +200,6 @@ input.radio {
 
 .banner {
 	width: 100%;
-	
 	padding-bottom: 10px;
 	-webkit-box-shadow: inset 0px -2px 3px 0.2px #333;
 	-moz-box-shadow: inset 0px -2px 3px 0.2px #333;
@@ -344,8 +344,14 @@ form input, form textarea {
 	position: absolute;
 	float: right;
 	border: solid 1px #999;
-	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
-	background: -moz-gradient(linear, left top, left bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
+	background: rgb(254,255,232); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(254,255,232,1) 0%, rgba(214,219,191,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,255,232,1)), color-stop(100%,rgba(214,219,191,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=0 ); /* IE6-9 */
 	-webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
 	-webkit-border-bottom-left-radius: 6px;
 	-webkit-border-bottom-right-radius: 6px;

@@ -21,8 +21,9 @@ $sessionEmail = $this -> session -> userdata('email');
 		<link rel="stylesheet" href="<?php echo base_url()?>css/mobiscroll-1.6.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/inline.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/>
+		<link rel="stylesheet" href="<?php echo base_url()?>css/tabs.css"/>
 		<!-- Attach JavaScript files -->
-		<!--script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script-->
+		<script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
 		<script src="<?php echo base_url()?>js/jquery.cloneform.js"></script>
@@ -36,8 +37,22 @@ $sessionEmail = $this -> session -> userdata('email');
 		<!-- Run the TAB plugin -->
 		<script type="text/javascript">
 			// Place all Javascript code here
-
+$(function() {
+				
 			$(document).ready(function() {
+				$('tabs').animate(
+					overflow:hidden,
+					10
+					
+				);
+				 $('.tabs').hover(function(){
+				 	$('tabs').animate(
+					overflow:auto,
+					10
+					
+				);
+				 });
+				
 				$("#showFancyModal").click(function() {
 					$("#profile-fancy").addClass("show");
 					return false;
@@ -525,6 +540,7 @@ $sessionEmail = $this -> session -> userdata('email');
 			</div>
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
+		
 	</body>
 </html>
 <?php ob_end_flush();?>

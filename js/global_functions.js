@@ -552,5 +552,10 @@ $(document).ready(function() {
 				return h;
 				}
 				/*-----------------------------------------------------------------------------------------------------------------*/
-				
+				// Fast and dirty
+				$('article.tabs section > h2').click(function() {
+					$('article.tabs section').removeClass('ON');
+					$(this).closest('section').addClass('ON');
+				});
+			});
 });/*end of parent document ready function*/
