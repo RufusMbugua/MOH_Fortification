@@ -13,9 +13,14 @@ class E_SmallScaleA2 {
 	 * */
 	private $transactionNumber;
 	/**
-	 * @Column(name="dates", type="string",length=45, nullable=true)
+	 * @Column(name="harvestYear", type="string",length=45, nullable=true)
+	 * */
+	private $harvestYear;
+	/**
+	 * @Column(name="dates", type="decimal", nullable=false)
 	 * */
 	private $dates;
+	
 	/**
 	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
 	 * */
@@ -32,16 +37,18 @@ class E_SmallScaleA2 {
 	 * @Column(name="contentOfIodine", type="decimal", nullable=true)
 	 * */
 	private $contentOfIodine;
-	/**
-	 * @Column(name="amountUsed", type="decimal", nullable=true)
-	 * */
-	private $amountUsed;
-
+	
 	public function getTransactionNumber() {
 		return $this -> transactionNumber;
 	}
 
 	public function setTransactionNumber($transactionNumber) { $this -> transactionNumber = $transactionNumber;
+	}
+	public function getHarvestYear() {
+		return $this -> harvestYear;
+	}
+
+	public function setHarvestYear($harvestYear) { $this -> harvestYear = $harvestYear;
 	}
 
 	public function getDates() {
@@ -77,13 +84,6 @@ class E_SmallScaleA2 {
 	}
 
 	public function setContentOfIodine($contentOfIodine) { $this -> contentOfIodine = $contentOfIodine;
-	}
-
-	public function getAmountUsed() {
-		return $this -> amountUsed;
-	}
-
-	public function setAmountUsed($amountUsed) { $this -> amountUsed = $amountUsed;
 	}
 
 }
