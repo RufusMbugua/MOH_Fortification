@@ -60,6 +60,9 @@ function __construct() {
 			}
 	}
 	
+	
+	
+	
 	/*utilitized in external_B1's*/
 	/*public function getFactoriesByVehicle($vehicle){
 		try{

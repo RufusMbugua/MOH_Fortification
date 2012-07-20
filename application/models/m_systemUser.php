@@ -7,12 +7,13 @@ if (!defined('BASEPATH'))
 use application\models\Entities\E_SystemUser;
 
 class M_SystemUser extends MY_Model {
-	var $isUser,$email,$userRights,$affiliation;
+	var $isUser,$email,$userRights,$affiliation,$vehicle;
 
 	function __construct() {
 		parent::__construct();
 		$this->isUser='false';
 		$this->email='';$this->userRights='';$this->affiliation='';
+		$this->vehicle='';
 	}
 
 	function getUser() {
@@ -38,6 +39,24 @@ class M_SystemUser extends MY_Model {
 		$this->executionTime=round($e-$s,'4');
 		//return $this -> isUser = 'true';
 	} /*end of getUser()*/
+	
+	/*used by controllers/C_Auth */
+	public function getVehicleNameByUser($affiliation)
+	{
+		try{
+			//using DQL
+	      $query = $this->em->createQuery('SELECT m.vehicleName FROM models\Entities\E_ManufacturerFortified m WHERE m.manufactuerFortName
+	                                      IN (SELECT f.manufacturerFortName FROM models\Entities\E_Factories f WHERE f.factoryName= :name)');
+		  $query->setParameter('name', $affiliation);
+          $this->vehicle = $query->getResult();
+		
+			}catch(exception $ex){
+				//ignore
+				//die($ex->getMessage());
+			}
+			
+			return $this->vehicle;
+	}
 	
 	function addUser(){
 		

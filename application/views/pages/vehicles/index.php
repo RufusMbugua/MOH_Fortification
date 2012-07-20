@@ -1,6 +1,8 @@
 <?php
 ob_start();
 $sessionEmail = $this -> session -> userdata('email');
+$accessLevel=$this -> session -> userdata('userRights');
+$vehicle=$this -> session -> userdata('vehicle');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -330,15 +332,29 @@ $sessionEmail = $this -> session -> userdata('email');
 			
 						
 							<section class="menu-container">
+								<?php switch($vehicle){ case "Salt":?>
 										<section class="menu salt">
 											<h2>Salt</h2>
 											<div title="click to expand" class="max salt">+</div>
 												<div title="click to minimize" class="min salt" style="display:none">-</div>
 											<ul>
-																						
+													<?php if($accessLevel==2){?>									
 												<li>
 													<a id = "internalFort_A1_li" class="salt-url">Fortified Salt-Table A-1</a>
 												</li>
+												<li>
+													<a id="externalFort_B1_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<li>
+													<a id="externalFort_B2_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-2</a>
+												</li>
+												<li>
+													<a id="externalFort_B3_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-3</a>
+												</li>
+												<li>
+													<a id="externalIod_B1_li" class="salt-url">Iodized Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<?php }else if($accessLevel==3 || $accessLevel==4){?>
 												<li>
 													<a id = "internalFort_A2_li" class="salt-url">Fortified Salt QC/QA -Table A-2</a>
 													
@@ -353,25 +369,15 @@ $sessionEmail = $this -> session -> userdata('email');
 													<a id="internalFort_C1_li" class="salt-url">Fortified Salt QC/QA -Table C-1</a>
 												</li>
 												<li>
-													<a id="externalFort_B1_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-1</a>
-												</li>
-												<li>
-													<a id="externalFort_B2_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-2</a>
-												</li>
-												<li>
-													<a id="externalFort_B3_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-3</a>
-												</li>
-												<li>
-													<a id="externalIod_B1_li" class="salt-url">Iodized Salt - Audits and Inspection - Table B-1</a>
-												</li>
-												<li>
 													<a id="smallScale_A1_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-1</a>
 												</li>
 												<li>
 													<a id="smallScale_A2_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-2</a>
 												</li>
+												<?php } ?>
 											</ul>
 										</section><!-- End of Menu: Salt Forms -->
+										<?php break; case "Oil": ?>
 										<section class="menu oil">
 											<h2>Oil</h2>
 											<div title="click to expand" class="max oil">+</div>
@@ -391,6 +397,7 @@ $sessionEmail = $this -> session -> userdata('email');
 												</li>
 											</ul>
 										</section><!-- End of Menu: Oil Forms -->
+										<?php break; case "Sugar": ?>
 											<section class="menu sugar">
 												
 											<h2>Sugar</h2>
@@ -444,7 +451,7 @@ $sessionEmail = $this -> session -> userdata('email');
 												</li>
 											</ul>
 										</section><!-- End of Menu: Sugar Forms -->
-										
+										<?php break; case "Maize": ?>
 										<section class="menu maize">
 											<h2>Maize</h2>
 											<div title="click to expand" class="max maize">+</div>
@@ -475,6 +482,8 @@ $sessionEmail = $this -> session -> userdata('email');
 												</li>
 											</ul>
 										</section><!-- End of Menu: Maize Forms -->
+										
+										<?php break; case "Wheat": ?>
 										
 										<section class="menu wheat">
 											<h2>Wheat</h2>
@@ -507,7 +516,7 @@ $sessionEmail = $this -> session -> userdata('email');
 												</li>
 											</ul>
 										</section><!-- End of Menu: Wheat Forms -->
-												
+												<?php break;}?>
 									</section><!-- End of Menu-Container -->
 												
 									<section class="form-container">

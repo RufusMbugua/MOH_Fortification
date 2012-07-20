@@ -5,7 +5,7 @@ class  MY_Controller  extends  CI_Controller  {
 
 public $em, $response, $theForm, $rowsInserted, $executionTime,$data,
       $selectCompManufacturers,$selectPremixType, $selectIodizationCentre,$selectFactoryByManufacturer,$manufacturer,
-      $factoriesSalt,$factoriesSugar,$factoriesMaize,$factoriesWheat,$factoriesOil;
+      $factories;
 
 function __construct()  {
 		parent::__construct();
@@ -79,6 +79,8 @@ function __construct()  {
 		}
 		return true;
 	}
+
+   
 
 
 }  

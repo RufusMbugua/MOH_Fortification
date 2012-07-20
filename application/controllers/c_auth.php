@@ -11,9 +11,14 @@ class C_Auth extends MY_Controller {
 		$this->load->model('M_SystemUser');
 		$this->M_SystemUser->getUser();
 	    if ($this->M_SystemUser->isUser=='true') {
+	    	
+			/*retrieve vehicle name by affiliation*/
+			$this->M_SystemUser->getVehicleNameByUser($this->M_SystemUser->affiliation);
+			
+			
 			/*create session data*/
-			$newdata = array('email' => $this->M_SystemUser->email, 'logged_in' => TRUE,
-			          'affiliation'=>$this->M_SystemUser->affiliation);
+			$newdata = array('email' => $this->M_SystemUser->email, 'logged_in' => TRUE, 'userRights'=>$this->M_SystemUser->userRights,
+			          'affiliation'=>$this->M_SystemUser->affiliation, 'vehicle'=>$this->M_SystemUser->vehicle[0]['vehicleName']);
 
 			$this -> session -> set_userdata($newdata);
 			
@@ -35,7 +40,8 @@ class C_Auth extends MY_Controller {
 					redirect(base_url() . 'c_back', 'refresh');
 					break;
 				case 2:
-					redirect(base_url() . 'c_back', 'refresh');
+					#redirect(base_url() . 'c_back', 'refresh');
+					redirect(base_url() . 'c_front/vehicles', 'refresh');
 					break;
 				case 3:
 					redirect(base_url() . 'c_front/vehicles', 'refresh');
