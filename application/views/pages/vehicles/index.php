@@ -12,7 +12,8 @@ $affiliation=$this -> session -> userdata('affilitiation');
 		<title>Vehicles</title>
 		<!-- -->
 		<!-- Attach CSS files -->
-		<link rel="stylesheet" href="<?php echo base_url()?>css/layout-opt.css"/>
+		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
+		<!--link rel="stylesheet" href="<?php echo base_url()?>css/layout-opt.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/awesomebuttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/buttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/orbit.css"/>
@@ -23,18 +24,19 @@ $affiliation=$this -> session -> userdata('affilitiation');
 		<link rel="stylesheet" href="<?php echo base_url()?>css/fonts.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/mobiscroll-1.6.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/inline.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/>
+		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/-->
 		<!-- Attach JavaScript files -->
-		<script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
+		<!--script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script-->
+		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script-->
+		<script src="<?php echo base_url()?>js/js_libraries.js"></script>
+		<!--script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
 		<script src="<?php echo base_url()?>js/jquery.cloneform.js"></script>
 		<script src="<?php echo base_url()?>js/jquery.validate.js"></script>
 		<script src="<?php echo base_url()?>js/mobiscroll-1.6.min.js"></script>
 		<script src="<?php echo base_url()?>js/jquery.orbit.js"></script>
 		<script src="<?php echo base_url()?>js/validation.js"></script>
 		<script src="<?php echo base_url()?>js/jquery.reveal.js"></script>
-		<script src="<?php echo base_url()?>js/menuloader.js"></script>
+		<script src="<?php echo base_url()?>js/menuloader.js"></script-->
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
 		<script type="text/javascript">
@@ -223,14 +225,15 @@ $affiliation=$this -> session -> userdata('affilitiation');
 				});/*end of reset_current_form click event*/
 				
 				/*----------------------------------------------------------------------------------------------------------------*/
-				
+				var loaded=false;
 				function loadGlobalScript(){
-					var scripts=['<?php echo base_url().'js/global_functions.js';?>',
-					'<?php echo base_url().'js/validation.js';?>','<?php echo base_url().'js/jquery.form.js';?>']
+					loaded=true;
+					var scripts=['<?php echo base_url().'js/js_ajax_load.js';?>'];
 					for(i=0;i<scripts.length;i++){
 						loadGlobalJS(scripts[i],function(){});
 					}
-					form_id='#'+$(".form-container").find('form').attr('id'); 
+					form_id='#'+$(".form-container").find('form').attr('id');
+					
 				}
 				/*----------------------------------------------------------------------------------------------------------------*/
 				
@@ -260,6 +263,7 @@ $affiliation=$this -> session -> userdata('affilitiation');
 				if(linkDomain)
 				$(".form-container").load('<?php echo base_url();?>'+linkDomain+'/'+linkIdUrl,function(){
 				//delegate events
+				//if(loaded==false)
 				loadGlobalScript();
 				
 				 });
