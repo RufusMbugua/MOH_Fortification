@@ -3,6 +3,7 @@ ob_start();
 $sessionEmail = $this -> session -> userdata('email');
 $accessLevel=$this -> session -> userdata('userRights');
 $vehicle=$this -> session -> userdata('vehicle');
+$affiliation=$this -> session -> userdata('affilitiation');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -24,7 +25,7 @@ $vehicle=$this -> session -> userdata('vehicle');
 		<link rel="stylesheet" href="<?php echo base_url()?>css/inline.css"/>
 		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/>
 		<!-- Attach JavaScript files -->
-		<!--script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script-->
+		<script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
 		<script src="<?php echo base_url()?>js/jquery.cloneform.js"></script>
@@ -332,7 +333,8 @@ $vehicle=$this -> session -> userdata('vehicle');
 			
 						
 							<section class="menu-container">
-								<?php switch($vehicle){ case "Salt":?>
+								<?php #if($affiliation !="KEBS" || $affiliation !="MOPHS" ){
+									 switch($vehicle){ case "Salt": ?>
 										<section class="menu salt">
 											<h2>Salt</h2>
 											<div title="click to expand" class="max salt">+</div>
@@ -516,8 +518,13 @@ $vehicle=$this -> session -> userdata('vehicle');
 												</li>
 											</ul>
 										</section><!-- End of Menu: Wheat Forms -->
-												<?php break;}?>
+												<?php break;
+													case "N/A":
+														$this->load->view('menu');
+													break;}?>
 									</section><!-- End of Menu-Container -->
+									
+									
 												
 									<section class="form-container">
 										<?php

@@ -13,12 +13,19 @@ class C_Auth extends MY_Controller {
 	    if ($this->M_SystemUser->isUser=='true') {
 	    	
 			/*retrieve vehicle name by affiliation*/
-			$this->M_SystemUser->getVehicleNameByUser($this->M_SystemUser->affiliation);
+			if($this->M_SystemUser->affiliation=="KEBS" || $this->M_SystemUser->affiliation=="MOPHS"){
+			   $vehicle="N/A";
+				//die(print "KEBS/MOH Login: ".$vehicle);
+			}else{
+				$this->M_SystemUser->getVehicleNameByUser($this->M_SystemUser->affiliation);
+				$vehicle=$this->M_SystemUser->vehicle[0]['vehicleName'];
+				//die(print "Manufacturer Login: ".$vehicle);
+			}
 			
 			
 			/*create session data*/
 			$newdata = array('email' => $this->M_SystemUser->email, 'logged_in' => TRUE, 'userRights'=>$this->M_SystemUser->userRights,
-			          'affiliation'=>$this->M_SystemUser->affiliation, 'vehicle'=>$this->M_SystemUser->vehicle[0]['vehicleName']);
+			          'affiliation'=>$this->M_SystemUser->affiliation, 'vehicle'=>$vehicle);
 
 			$this -> session -> set_userdata($newdata);
 			
