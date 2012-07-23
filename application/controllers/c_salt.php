@@ -390,10 +390,20 @@
 
 		$data['form'] = $internalFortified_B1;
 		$data['form_id'] = 'internalFortified_B1';
+		
 
 		$this -> load -> view('form', $data);
 
 	}
+
+    public function getRecordsViaJSON(){
+    	/*retrieve files under this form if any*/
+		$this->load->model('models_salt/M_InternalFortifiedB1');
+		if(($this->M_InternalFortifiedB1->retrieveForms($this -> session -> userdata('affiliation')))==true){
+			//retrieve existing data..else just load a blank form
+			print $this->M_InternalFortifiedB1->formRecords;
+		}
+    }
 
 	public function internalFort_B2() {
 		$internalFortified_B2 = '';

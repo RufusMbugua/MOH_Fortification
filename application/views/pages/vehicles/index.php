@@ -3,7 +3,7 @@ ob_start();
 $sessionEmail = $this -> session -> userdata('email');
 $accessLevel=$this -> session -> userdata('userRights');
 $vehicle=$this -> session -> userdata('vehicle');
-$affiliation=$this -> session -> userdata('affilitiation');
+$affiliation=$this -> session -> userdata('affiliation');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -13,30 +13,10 @@ $affiliation=$this -> session -> userdata('affilitiation');
 		<!-- -->
 		<!-- Attach CSS files -->
 		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
-		<!--link rel="stylesheet" href="<?php echo base_url()?>css/layout-opt.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/awesomebuttons.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/buttons.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/orbit.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/reveal.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/post.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/form-opt.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/form-layout.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/fonts.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/mobiscroll-1.6.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/inline.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/-->
+		
 		<!-- Attach JavaScript files -->
-		<!--script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script-->
 		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script-->
 		<script src="<?php echo base_url()?>js/js_libraries.js"></script>
-		<!--script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.cloneform.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.validate.js"></script>
-		<script src="<?php echo base_url()?>js/mobiscroll-1.6.min.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.orbit.js"></script>
-		<script src="<?php echo base_url()?>js/validation.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.reveal.js"></script>
-		<script src="<?php echo base_url()?>js/menuloader.js"></script-->
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
 		<script type="text/javascript">

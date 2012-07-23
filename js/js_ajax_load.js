@@ -1,7 +1,7 @@
 /**
  * @author TAR
  * @Modified July 21st 2012
- * @Description combines the 2 ajax loaded scripts (validation.js, jquery.form.js & global_functions.js)to minimize server slack time
+ * @Description combines the 3 ajax loaded scripts (validation.js, jquery.form.js & global_functions.js)to minimize server slack time
  */
 
 /*---------------------------start of validation.js------------------------------------------------------------------------------------------------------------------*/
@@ -3146,11 +3146,48 @@ $(document).ready(function() {
 				/*start of clone_remove*/
 				$('#cloneremove').click(function() {
 					//alert($(".clonable").find("tr:last").attr('name'));
-					if($(".clonable").length>1)
+					if($(".clonable").length>1)//{
 					$(".clonable:last").after().remove();
+					//}else{
+						//('#cloneremove').disable();
+					//}
 				 return false;
 				 });
 				 /*end of clone_remove*/
+				/*-----------------------------------------------------------------------------------------------------------------*/
+				
+				/*-----------------------------------------------------------------------------------------------------------------*/
+				/*start of ajax data requests*/
+				function getRecordsByForm(s_by,s_val){
+    			 $.ajax({
+		            type: "GET",
+		            url: "<?php echo base_url()?>/c_salt/getRecordsViaJSON",
+		            dataType:"json",
+		            cache:"false",
+		            data: "s_event="+s_val+"&g_by="+s_by,
+		            success: function(data){
+		            	$("#results_panel").show();
+		            	if(data.count >0){
+		            	$("#search_err").html("Found "+data.count+" event(s)");
+		            	$("#display_res").html(data.content);
+		            	}else{
+		            		$("#display_res").html("No Results found");
+		            		$("#search_err").html("No Event Matched your Search");
+		            	}
+		            },
+		            beforeSend:function()
+					{
+						 $("#results_panel").show();
+		                 $("#search_err").html("Loading...");
+		          },
+		           afterSend:function()
+					{
+		                 $("#search_err").html("Still working...");
+		            }
+		        });
+         return false;
+    		}
+				/*end of ajax data requests*/
 				/*-----------------------------------------------------------------------------------------------------------------*/
 				
 				/*start of datetime functions*/
