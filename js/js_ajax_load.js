@@ -3158,21 +3158,50 @@ $(document).ready(function() {
 				
 				/*-----------------------------------------------------------------------------------------------------------------*/
 				/*start of ajax data requests*/
-				function getRecordsByForm(s_by,s_val){
+				function getRecordsByForm(){
     			 $.ajax({
 		            type: "GET",
-		            url: "<?php echo base_url()?>/c_salt/getRecordsViaJSON",
+		            url: "<?php echo base_url()?>c_salt/getRecordsViaJSON",
 		            dataType:"json",
 		            cache:"false",
-		            data: "s_event="+s_val+"&g_by="+s_by,
+		            data:"",
 		            success: function(data){
-		            	$("#results_panel").show();
-		            	if(data.count >0){
-		            	$("#search_err").html("Found "+data.count+" event(s)");
-		            	$("#display_res").html(data.content);
-		            	}else{
-		            		$("#display_res").html("No Results found");
-		            		$("#search_err").html("No Event Matched your Search");
+		            	//$("#edit_panel").show();
+		            	if(data.rTotal >0){
+		            	var yourclass = ".clonable";
+					//The class you have used in your form
+					var clonecount = $(yourclass).length;
+					//how many clones do we already have?
+					var newid = Number(clonecount) + 1;
+					//Id of the new clone
+
+					$(yourclass + ":first").fieldclone({//Clone the original element
+						newid_ : newid, //Id of the new clone, (you can pass your own if you want)
+						target_ : $("#formbuttons"), //where do we insert the clone? (target element)
+						insert_ : "before", //where do we insert the clone? (after/before/append/prepend...)
+						limit_ : data.rTotal  //Maximum Number of Clones
+					});
+					
+					
+					/*reinitialize datepicker options on the cloned item*/
+					$('.clonable label.error').remove();
+					$('.cloned').removeClass('error');
+					$('.autoDate').removeClass('hasDatepicker error');
+					$('.futureDate').removeClass('hasDatepicker error');
+		            $('.autoDate').datepicker({changeMonth: true,changeYear: true,dateFormat:"yy-mm-dd",minDate: '-10y', maxDate: "0D"});
+		            $('.futureDate').datepicker({changeMonth: true,changeYear: true,dateFormat:"yy-mm-dd",minDate: '0y', maxDate: "2y"});
+		          
+		            /*reinitialize timepicker options on the cloned item*/
+		            $('.mobiscroll').removeClass('scroller');
+                    $('.mobiscroll').scroller({preset:'time'});
+
+					var t = 'default';
+					var m = 'mixed';
+					$('.mobiscroll').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
+					
+					//render data into the cloned elements
+					$(yourclass+":last input[name=yourinput]").val(data.rData);
+
 		            	}
 		            },
 		            beforeSend:function()

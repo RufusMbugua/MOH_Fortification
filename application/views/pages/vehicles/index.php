@@ -241,15 +241,96 @@ $affiliation=$this -> session -> userdata('affiliation');
 					break;
 				}/*close the case*/
 				if(linkDomain)
+				
 				$(".form-container").load('<?php echo base_url();?>'+linkDomain+'/'+linkIdUrl,function(){
 				//delegate events
 				//if(loaded==false)
-				loadGlobalScript();
+				loadGlobalScript();getRecordsByForm();
 				
 				 });
 				
 				})/*end of which link was clicked*/
 				/*----------------------------------------------------------------------------------------------------------------*/
+				
+				/*-----------------------------------------------------------------------------------------------------------------*/
+				/*start of ajax data requests*/
+				function getRecordsByForm(){
+    			 $.ajax({
+		            type: "GET",
+		            url: "<?php echo base_url()?>c_salt/getRecordsViaJSON",
+		            dataType:"json",
+		            cache:"true",
+		            data:"",
+		            success: function(data){
+		            	//$("#edit_panel").show();
+		            	if(data.rTotal >0)
+		            	//alert(data.rTotal);
+		            	var clone_max=data.rTotal; //limit of values to be cloned
+		            	do{
+		            	var yourclass = ".clonable";
+					//The class you have used in your form
+					var clonecount = $(yourclass).length;
+					//how many clones do we already have?
+					var newid = Number(clonecount) + 1;
+					//Id of the new clone
+					
+					
+
+					$(yourclass + ":first").fieldclone({//Clone the original element
+						newid_ : newid, //Id of the new clone, (you can pass your own if you want)
+						target_ : $("#formbuttons"), //where do we insert the clone? (target element)
+						insert_ : "before", //where do we insert the clone? (after/before/append/prepend...)
+						limit_ : clone_max  //Maximum Number of Clones
+					});
+					
+					
+					/*reinitialize datepicker options on the cloned item*/
+					$('.clonable label.error').remove();
+					$('.cloned').removeClass('error');
+					$('.autoDate').removeClass('hasDatepicker error');
+					$('.futureDate').removeClass('hasDatepicker error');
+		            $('.autoDate').datepicker({changeMonth: true,changeYear: true,dateFormat:"yy-mm-dd",minDate: '-10y', maxDate: "0D"});
+		            $('.futureDate').datepicker({changeMonth: true,changeYear: true,dateFormat:"yy-mm-dd",minDate: '0y', maxDate: "2y"});
+		          
+		            /*reinitialize timepicker options on the cloned item*/
+		            $('.mobiscroll').removeClass('scroller');
+                    $('.mobiscroll').scroller({preset:'time'});
+
+					var t = 'default';
+					var m = 'mixed';
+					$('.mobiscroll').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
+					
+					
+					data.rTotal--;
+                   }while(data.rTotal>1);
+                   //render data into the cloned elements
+                   $.each(data.rData,function(i,n){
+                   //	alert((i+1)+"th val: "+n["transactedBy"]);
+                   	$("#fortifiedDate_"+(i+1)).val(n["dates"]);
+                   	$("#fortifiedWeight_"+(i+1)).val(n["fillerWeight"]);
+                   	$("#compoundWeight_"+(i+1)).val(n["iodineWeight"]);
+                   	$("#finalWeight_"+(i+1)).val(n["finalPremixWeight1"]);
+                   	$("#startTime_"+(i+1)).val(n["startTime"]);
+                   	$("#endTime_"+(i+1)).val(n["endTime"]);
+                   	$("#iodineWeight_"+(i+1)).val(n["finalPremixWeight"]);
+                   	$("#qcReview_"+(i+1)).val(n["transactedBy"]);
+		            		});
+		            	//return false;
+		            },
+		            beforeSend:function()
+					{
+						 $("#results_panel").show();
+		                 $("#search_err").html("Loading...");
+		          },
+		           afterSend:function()
+					{
+		                 $("#search_err").html("Still working...");
+		            }
+		        });
+         return false;
+    		}
+				/*end of ajax data requests*/
+				/*-----------------------------------------------------------------------------------------------------------------*/
 		  
 		}); /*close document ready*/
 		</script>

@@ -130,7 +130,7 @@ class M_InternalFortifiedB1 extends MY_Model {
 	function retrieveForms($factory){
 	      /*using DQL*/
 	      try{
-	      $query = $this->em->createQuery('SELECT r FROM models\Entities\entities_salt\E_IntFortifiedB1 r WHERE r.factoryName= :name');
+	      $query = $this->em->createQuery('SELECT r FROM models\Entities\entities_salt\E_IntFortifiedB1 r WHERE r.factoryName= :name ORDER BY r.dates DESC');
 		  $query->setParameter('name',$factory);
           
           $this->formRecords = $query->getArrayResult();
