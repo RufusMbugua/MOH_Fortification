@@ -109,4 +109,9 @@ class M_Oil_FortifiedA1  extends MY_Model {
 		return $this -> response = 'ok';
 	}
 
+
+function checkPending(){
+	
+}
+
 }//end of class InternalFortifiedA2

@@ -44,6 +44,10 @@ private $transactedBy;
 * @Column(name="factoryName", type="string",length=45, nullable=true)
 * */
 private $factoryName;
+/**
+* @Column(name="status", type="string",length=45, nullable=true)
+* */
+private $status;
  
 
 public function getFortifiedOilA1ID() {
@@ -99,6 +103,12 @@ public function getFactoryName() {
 }
 
 public function setFactoryName($factoryName) { $this -> factoryName = $factoryName;
+}
+public function getStatus() {
+		return $this -> status;
+}
+
+public function setFactoryName($status) { $this -> status = $status;
 }
 }
  ?>
