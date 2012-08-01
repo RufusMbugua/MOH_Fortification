@@ -116,8 +116,8 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 	public function getFactoriesByVehicle($vehicle){
 		try{
 			 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f WHERE f.manufacturerFortName
-	                                      IN (SELECT m.manufactuerFortName FROM models\Entities\E_ManufacturerFortified m WHERE m.vehicleName= :name)');
+	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\e_factories f WHERE f.manufacturerFortName
+	                                      IN (SELECT m.manufactuerFortName FROM models\Entities\e_manufacturerfortified m WHERE m.vehicleName= :name)');
 		  $query->setParameter('name', $vehicle);
           $this->factories = $query->getResult();
 		

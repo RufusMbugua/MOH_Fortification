@@ -114,7 +114,7 @@ class M_ExternalFortifiedB1  extends MY_Model {
 
    public function getManufacturerNameByUserAffiliation($affiliation){
 	     try{
-			$this->manufacturer=$this->em->getRepository('models\Entities\E_Factories')
+			$this->manufacturer=$this->em->getRepository('models\Entities\e_factories')
 			                       ->findOneBy( array('factoryName'=>$affiliation));
 			}catch(exception $ex){
 				//ignore
