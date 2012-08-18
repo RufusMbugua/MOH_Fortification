@@ -1,6 +1,9 @@
 <?php
 ob_start();
 $sessionEmail = $this -> session -> userdata('email');
+$accessLevel=$this -> session -> userdata('userRights');
+$vehicle=$this -> session -> userdata('vehicle');
+$affiliation=$this -> session -> userdata('affiliation');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -9,50 +12,18 @@ $sessionEmail = $this -> session -> userdata('email');
 		<title>Vehicles</title>
 		<!-- -->
 		<!-- Attach CSS files -->
-		<link rel="stylesheet" href="<?php echo base_url()?>css/layout-opt.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/awesomebuttons.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/buttons.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/orbit.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/reveal.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/post.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/form-opt.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/form-layout.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/fonts.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/mobiscroll-1.6.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/inline.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui-1.8.18.custom.css"/>
-		<link rel="stylesheet" href="<?php echo base_url()?>css/tabs.css"/>
+		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
+		
 		<!-- Attach JavaScript files -->
-		<script src="<?php echo base_url()?>js/jquery-1.7.2.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="<?php echo base_url()?>js/jquery-ui-1.8.18.custom.min.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.cloneform.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.validate.js"></script>
-		<script src="<?php echo base_url()?>js/mobiscroll-1.6.min.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.orbit.js"></script>
-		<script src="<?php echo base_url()?>js/validation.js"></script>
-		<script src="<?php echo base_url()?>js/jquery.reveal.js"></script>
-		<script src="<?php echo base_url()?>js/menuloader.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+
+		<script src="<?php echo base_url()?>js/js_libraries.js"></script>
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
 		<script type="text/javascript">
 			// Place all Javascript code here
-$(function() {
-				
+
 			$(document).ready(function() {
-				$('tabs').animate(
-					overflow:hidden,
-					10
-					
-				);
-				 $('.tabs').hover(function(){
-				 	$('tabs').animate(
-					overflow:auto,
-					10
-					
-				);
-				 });
-				
 				$("#showFancyModal").click(function() {
 					$("#profile-fancy").addClass("show");
 					return false;
@@ -235,14 +206,15 @@ $(function() {
 				});/*end of reset_current_form click event*/
 				
 				/*----------------------------------------------------------------------------------------------------------------*/
-				
+				var loaded=false;
 				function loadGlobalScript(){
-					var scripts=['<?php echo base_url().'js/global_functions.js';?>',
-					'<?php echo base_url().'js/validation.js';?>','<?php echo base_url().'js/jquery.form.js';?>']
+					loaded=true;
+					var scripts=['<?php echo base_url().'js/js_ajax_load.js';?>'];
 					for(i=0;i<scripts.length;i++){
 						loadGlobalJS(scripts[i],function(){});
 					}
-					form_id='#'+$(".form-container").find('form').attr('id'); 
+					form_id='#'+$(".form-container").find('form').attr('id');
+					
 				}
 				/*----------------------------------------------------------------------------------------------------------------*/
 				
@@ -254,30 +226,112 @@ $(function() {
 				//load url based on the class and id returned
 				switch(linkSub){
 					case "salt-url":
-					linkDomain='C_Salt';
+					linkDomain='c_salt';
 					break;
 					case "oil-url":
-					linkDomain='C_Oil';
+					linkDomain='c_oil';
 					break;
 					case "maize-url":
-					linkDomain='C_Maize';
+					linkDomain='c_maize';
 					break;
 					case "wheat-url":
-					linkDomain='C_Wheat';
+					linkDomain='c_wheat';
 					break;
 					case "sugar-url":
-					linkDomain='C_Sugar';
+					linkDomain='c_sugar';
 					break;
 				}/*close the case*/
 				if(linkDomain)
+				
 				$(".form-container").load('<?php echo base_url();?>'+linkDomain+'/'+linkIdUrl,function(){
 				//delegate events
-				loadGlobalScript();
+				//if(loaded==false)
+				loadGlobalScript();getRecordsByForm();
 				
 				 });
 				
 				})/*end of which link was clicked*/
 				/*----------------------------------------------------------------------------------------------------------------*/
+				
+				/*-----------------------------------------------------------------------------------------------------------------*/
+				/*start of ajax data requests*/
+				function getRecordsByForm(){
+    			 $.ajax({
+		            type: "GET",
+		            url: "<?php echo base_url()?>c_salt/getRecordsViaJSON",
+		            dataType:"json",
+		            cache:"true",
+		            data:"",
+		            success: function(data){
+		            	//$("#edit_panel").show();
+		            	if(data.rTotal >0)
+		            	//alert(data.rTotal);
+		            	var clone_max=data.rTotal; //limit of values to be cloned
+		            	do{
+		            	var yourclass = ".clonable";
+					//The class you have used in your form
+					var clonecount = $(yourclass).length;
+					//how many clones do we already have?
+					var newid = Number(clonecount) + 1;
+					//Id of the new clone
+					
+					
+
+					$(yourclass + ":first").fieldclone({//Clone the original element
+						newid_ : newid, //Id of the new clone, (you can pass your own if you want)
+						target_ : $("#formbuttons"), //where do we insert the clone? (target element)
+						insert_ : "before", //where do we insert the clone? (after/before/append/prepend...)
+						limit_ : clone_max  //Maximum Number of Clones
+					});
+					
+					
+					/*reinitialize datepicker options on the cloned item*/
+					$('.clonable label.error').remove();
+					$('.cloned').removeClass('error');
+					$('.autoDate').removeClass('hasDatepicker error');
+					$('.futureDate').removeClass('hasDatepicker error');
+		            $('.autoDate').datepicker({changeMonth: true,changeYear: true,dateFormat:"yy-mm-dd",minDate: '-10y', maxDate: "0D"});
+		            $('.futureDate').datepicker({changeMonth: true,changeYear: true,dateFormat:"yy-mm-dd",minDate: '0y', maxDate: "2y"});
+		          
+		            /*reinitialize timepicker options on the cloned item*/
+		            $('.mobiscroll').removeClass('scroller');
+                    $('.mobiscroll').scroller({preset:'time'});
+
+					var t = 'default';
+					var m = 'mixed';
+					$('.mobiscroll').scroller('destroy').scroller({ preset: 'time', theme: t, mode: m });
+					
+					
+					data.rTotal--;
+                   }while(data.rTotal>1);
+                   //render data into the cloned elements
+                   $.each(data.rData,function(i,n){
+                   //	alert((i+1)+"th val: "+n["transactedBy"]);
+                   	$("#fortifiedDate_"+(i+1)).val(n["dates"]);
+                   	$("#fortifiedWeight_"+(i+1)).val(n["fillerWeight"]);
+                   	$("#compoundWeight_"+(i+1)).val(n["iodineWeight"]);
+                   	$("#finalWeight_"+(i+1)).val(n["finalPremixWeight1"]);
+                   	$("#startTime_"+(i+1)).val(n["startTime"]);
+                   	$("#endTime_"+(i+1)).val(n["endTime"]);
+                   	$("#iodineWeight_"+(i+1)).val(n["finalPremixWeight"]);
+                   	$("#qcReview_"+(i+1)).val(n["transactedBy"]);
+		            		});
+		            	//return false;
+		            },
+		            beforeSend:function()
+					{
+						 $("#results_panel").show();
+		                 $("#search_err").html("Loading...");
+		          },
+		           afterSend:function()
+					{
+		                 $("#search_err").html("Still working...");
+		            }
+		        });
+         return false;
+    		}
+				/*end of ajax data requests*/
+				/*-----------------------------------------------------------------------------------------------------------------*/
 		  
 		}); /*close document ready*/
 		</script>
@@ -345,15 +399,30 @@ $(function() {
 			
 						
 							<section class="menu-container">
+								<?php #if($affiliation !="KEBS" || $affiliation !="MOPHS" ){
+									 switch($vehicle){ case "Salt": ?>
 										<section class="menu salt">
 											<h2>Salt</h2>
 											<div title="click to expand" class="max salt">+</div>
 												<div title="click to minimize" class="min salt" style="display:none">-</div>
 											<ul>
-																						
+													<?php if($accessLevel==2){?>									
 												<li>
 													<a id = "internalFort_A1_li" class="salt-url">Fortified Salt-Table A-1</a>
 												</li>
+												<li>
+													<a id="externalFort_B1_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<li>
+													<a id="externalFort_B2_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-2</a>
+												</li>
+												<li>
+													<a id="externalFort_B3_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-3</a>
+												</li>
+												<li>
+													<a id="externalIod_B1_li" class="salt-url">Iodized Salt - Audits and Inspection - Table B-1</a>
+												</li>
+												<?php }else if($accessLevel==3 || $accessLevel==4){?>
 												<li>
 													<a id = "internalFort_A2_li" class="salt-url">Fortified Salt QC/QA -Table A-2</a>
 													
@@ -368,25 +437,15 @@ $(function() {
 													<a id="internalFort_C1_li" class="salt-url">Fortified Salt QC/QA -Table C-1</a>
 												</li>
 												<li>
-													<a id="externalFort_B1_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-1</a>
-												</li>
-												<li>
-													<a id="externalFort_B2_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-2</a>
-												</li>
-												<li>
-													<a id="externalFort_B3_li" class="salt-url">Fortified Salt - Audits and Inspection - Table B-3</a>
-												</li>
-												<li>
-													<a id="externalIod_B1_li" class="salt-url">Iodized Salt - Audits and Inspection - Table B-1</a>
-												</li>
-												<li>
 													<a id="smallScale_A1_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-1</a>
 												</li>
 												<li>
 													<a id="smallScale_A2_li" class="salt-url">Fortified Salt - QA In Small Scale Operations - Table A-2</a>
 												</li>
+												<?php } ?>
 											</ul>
 										</section><!-- End of Menu: Salt Forms -->
+										<?php break; case "Oil": ?>
 										<section class="menu oil">
 											<h2>Oil</h2>
 											<div title="click to expand" class="max oil">+</div>
@@ -406,6 +465,7 @@ $(function() {
 												</li>
 											</ul>
 										</section><!-- End of Menu: Oil Forms -->
+										<?php break; case "Sugar": ?>
 											<section class="menu sugar">
 												
 											<h2>Sugar</h2>
@@ -459,7 +519,7 @@ $(function() {
 												</li>
 											</ul>
 										</section><!-- End of Menu: Sugar Forms -->
-										
+										<?php break; case "Maize": ?>
 										<section class="menu maize">
 											<h2>Maize</h2>
 											<div title="click to expand" class="max maize">+</div>
@@ -490,6 +550,8 @@ $(function() {
 												</li>
 											</ul>
 										</section><!-- End of Menu: Maize Forms -->
+										
+										<?php break; case "Wheat": ?>
 										
 										<section class="menu wheat">
 											<h2>Wheat</h2>
@@ -522,8 +584,13 @@ $(function() {
 												</li>
 											</ul>
 										</section><!-- End of Menu: Wheat Forms -->
-												
+												<?php break;
+													case "N/A":
+														$this->load->view('menu');
+													break;}?>
 									</section><!-- End of Menu-Container -->
+									
+									
 												
 									<section class="form-container">
 										<?php
@@ -540,7 +607,6 @@ $(function() {
 			</div>
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
-		
 	</body>
 </html>
 <?php ob_end_flush();?>

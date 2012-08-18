@@ -8,12 +8,24 @@ class C_Auth extends MY_Controller {
 	}
 
 	public function login() {
-		$this->load->model('M_SystemUser');
-		$this->M_SystemUser->getUser();
-	    if ($this->M_SystemUser->isUser=='true') {
+		$this->load->model('m_systemuser');
+		$this->m_systemuser->getUser();
+	    if ($this->m_systemuser->isUser=='true') {
+	    	
+			/*retrieve vehicle name by affiliation*/
+			if($this->m_systemuser->affiliation=="KEBS" || $this->m_systemuser->affiliation=="MOPHS"){
+			   $vehicle="N/A";
+				//die(print "KEBS/MOH Login: ".$vehicle);
+			}else{
+				$this->m_systemuser->getVehicleNameByUser($this->m_systemuser->affiliation);
+				$vehicle=$this->m_systemuser->vehicle[0]['vehicleName'];
+				//die(print "Manufacturer Login: ".$vehicle);
+			}
+			
+			
 			/*create session data*/
-			$newdata = array('email' => $this->M_SystemUser->email, 'logged_in' => TRUE,
-			          'affiliation'=>$this->M_SystemUser->affiliation);
+			$newdata = array('email' => $this->m_systemuser->email, 'logged_in' => TRUE, 'userRights'=>$this->m_systemuser->userRights,
+			          'affiliation'=>$this->m_systemuser->affiliation, 'vehicle'=>$vehicle);
 
 			$this -> session -> set_userdata($newdata);
 			
@@ -30,12 +42,13 @@ class C_Auth extends MY_Controller {
 			 */
 			
 			
-			switch($this->M_SystemUser->userRights) {
+			switch($this->m_systemuser->userRights) {
 				case 1:
 					redirect(base_url() . 'c_back', 'refresh');
 					break;
 				case 2:
-					redirect(base_url() . 'c_back', 'refresh');
+					#redirect(base_url() . 'c_back', 'refresh');
+					redirect(base_url() . 'c_front/vehicles', 'refresh');
 					break;
 				case 3:
 					redirect(base_url() . 'c_front/vehicles', 'refresh');
@@ -55,10 +68,10 @@ class C_Auth extends MY_Controller {
 	}
 
    public function doRetrieveIodizationCentreDevices(){/**gets the devices by the iodization centre and stores in the session*/
-		$this->load->model('models_salt/M_InternalFortifiedB2');
+		$this->load->model('models_salt/m_internalfortifiedb2');
 		try{
-		$this->M_InternalFortifiedB2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
-		$device_array=array('devices'=>$this->M_InternalFortifiedB2->equipment);
+		$this->m_internalfortifiedb2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
+		$device_array=array('devices'=>$this->m_internalfortifiedb2->equipment);
 		$this -> session -> set_userdata($device_array);
 		
 		}catch(exception $ex){
@@ -68,11 +81,11 @@ class C_Auth extends MY_Controller {
 	}
    
    public function doRetrieveCompoundManufacturerNames(){
-   	    $this->load->model('models_salt/M_InternalFortifiedA1');
+   	    $this->load->model('models_salt/m_internalfortifieda1');
 		
 		try{
-		$this->M_InternalFortifiedA1->getCompoundManufacturerNames();
-		$compFName_array=array('compoundManufacturers'=>$this->M_InternalFortifiedA1->compoundManufacturers);
+		$this->m_internalfortifieda1->getCompoundManufacturerNames();
+		$compFName_array=array('compoundManufacturers'=>$this->m_internalfortifieda1->compoundManufacturers);
 		//die(var_dump($compFName_array));
 		$this -> session -> set_userdata($compFName_array);
 		}catch(exception $ex){
@@ -81,11 +94,11 @@ class C_Auth extends MY_Controller {
    }
    
    public function doRetrievePremixTypes(){
-   	    $this->load->model('models_salt/M_InternalFortifiedA1');
+   	    $this->load->model('models_salt/m_internalfortifieda1');
 		
 		try{
-		$this->M_InternalFortifiedA1->getPremixTypes();
-		$premixType_array=array('premixType'=>$this->M_InternalFortifiedA1->premixType);
+		$this->m_internalfortifieda1->getPremixTypes();
+		$premixType_array=array('premixType'=>$this->m_internalfortifieda1->premixType);
 		$this -> session -> set_userdata($premixType_array);
 		}catch(exception $ex){
 			//ignore
@@ -93,11 +106,11 @@ class C_Auth extends MY_Controller {
    }
    
    public function doRetrieveIodizationCentreNames(){
-   	    $this->load->model('models_salt/M_ExternalIodizedB1');
+   	    $this->load->model('models_salt/m_externaliodizedb1');
 		
 		try{
-		$this->M_ExternalIodizedB1->getIodizationCentres();
-		$centreName_array=array('iodizationCentre'=>$this->M_ExternalIodizedB1->centres);
+		$this->m_externaliodizedb1->getIodizationCentres();
+		$centreName_array=array('iodizationCentre'=>$this->m_externaliodizedb1->centres);
 		//die(var_dump($centreName_array));
 		$this -> session -> set_userdata($centreName_array);
 		}catch(exception $ex){

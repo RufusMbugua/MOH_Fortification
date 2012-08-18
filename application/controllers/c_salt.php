@@ -423,6 +423,16 @@ class C_salt extends MY_Controller {
 		$this -> load -> view('form', $data);
 
 	}
+	
+	 public function getRecordsViaJSON(){
+    	/*retrieve files under this form if any*/
+		$this->load->model('models_salt/m_internalfortifiedb1');
+		if(($this->M_InternalFortifiedB1->retrieveForms($this -> session -> userdata('affiliation')))==true){
+			//retrieve existing data..else just load a blank form
+			print $this->m_Internalfortifiedb1->formRecords;
+		}
+    }
+	
 
 	public function internalFort_B2() {
 		$internalFortified_B2 = '';
