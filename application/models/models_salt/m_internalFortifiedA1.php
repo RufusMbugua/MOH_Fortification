@@ -140,7 +140,7 @@ class M_InternalFortifiedA1  extends MY_Model {
 
 	function getCompoundManufacturerNames(){
 		 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\E_ManufacturerCompound n');
+	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\e_manufacturercompound n');
           $this->compoundManufacturers = $query->getResult();
 						/*foreach ($this->compoundManufacturers as $key=>$value) {
 									print $value['manufacturerId'].'<br />';
@@ -152,7 +152,7 @@ class M_InternalFortifiedA1  extends MY_Model {
 	
 	function getPremixTypes(){
 		 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT p.productId,p.productName FROM models\Entities\E_PremixType p');
+	      $query = $this->em->createQuery('SELECT p.productId,p.productName FROM models\Entities\e_premixtype p');
           $this->premixType = $query->getResult();
 		return $this->premixType;
 	}/*end of getPremixTypes*/
