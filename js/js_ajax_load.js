@@ -14,6 +14,7 @@
 
 	});*/
 $().ready(function() {
+
     $.validator.addMethod('positiveNumber',
     function (value) { 
         return Number(value) > 0;
@@ -3439,6 +3440,18 @@ $(document).ready(function() {
 				return h;
 				}
 				/*-----------------------------------------------------------------------------------------------------------------*/
+					$('.received.title').click(function(){
+$('.tab.received').show();    
+$('.tab.dispatched').hide();
+
+});
+
+$('.dispatched.title').click(function(){
+
+$('.tab.dispatched').show();    
+$('.tab.received').hide();
+
+});
 				
 });/*end of parent document ready function*/
 /*---------------------------end of global_functions.js------------------------------------------------------------------------------------------------------------------*/

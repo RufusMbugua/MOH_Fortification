@@ -208,7 +208,6 @@ class C_salt extends MY_Controller {
 		$internalFortified_A2 = '';
 		$internalFortified_A2 .= '
 
-
 <form id="internalFortified_A2" method="post" action="' . base_url() . 'submit/c_form_salt/form_internalFort_A2' . '">
 	<!--form for internal monitoring of salt fortification- A2-->
 	<h3 align="center"> FORTIFIED SALT QC/QA- TABLE A-2</h3>
@@ -227,81 +226,73 @@ class C_salt extends MY_Controller {
 	</p>
 
 	<!--<legend>Iodine Compound Inventory Control Log</legend>-->
+	<div class="tab-title">
+		<div class="title received awesome blue medium">
+			Received
+		</div>
+		<div class="title dispatched awesome blue medium">
+			Dispatched
+		</div>
+	</div>
+	<div class="tab received">
+		<table border="0" width="98%">
+			<tr>
+				<td width="144">DATE</td>
+				<td width="144">Supplier COA#</td>
+				<td width="144">#DRUMS(A)</td>
+				<td width="144">LOT ID(DRUMS Nos.)</td>
+				<td width="144">EXPIRATION DATE</td>
 
-	<article class="tabs">
-		<section  id="received" class="ON">
+			</tr>
+			<tr class="clonable">
+				<td width="144">
+				<input type="date"  name="iodineDate_1" id="iodineDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/>
+				</td>
+				<td width="144">
+				<input type="text"  name="iodineSupplier_1" id="iodineSupplier_1" class="cloned"/>
+				</td>
+				<td width="144">
+				<input type="number"  name="iodineDrums_1" id="iodineDrums_1" class="cloned fromZero"/>
+				</td>
+				<td width="144">
+				<input type="text"  name="iodineLot_1" id="iodineLot_1" class="cloned"/>
+				</td>
+				<td width="144">
+				<input type="text"  name="iodineExpiration_1" id="iodineExpiration_1" class="futureDate cloned" readonly="true" placeholder="click for date"/>
+				</td>
+			</tr>
+			<tr id="">
+				<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+				<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+			</tr>
 
-			<h2>Received</h2>
-			<div>
-				<table border="0" width="98%">
-					<tr>
-						<td width="144">DATE</td>
-						<td width="144">Supplier COA#</td>
-						<td width="144">#DRUMS(A)</td>
-						<td width="144">LOT ID(DRUMS Nos.)</td>
-						<td width="144">EXPIRATION DATE</td>
+		</table>
+	</div>
+	<div class="tab dispatched" style="display:none">
+		<table border="0" width="98%">
+			<tr>
+				<td width="144">LOT ID (DRUM Nos.)(B=# DRUMS)</td>
+				<td width="144">IN STOCK(C) (C)=(A)-(B)</td>
+				<td width="141">Receipt & QC-Review (Name & signature)</td>
+			</tr>
+			<tr class="clonable">
+				<td width="144">
+				<input type="number" name="iodineDispatched_1" id="iodineDispatched_1" class="cloned fromZero" />
+				</td>
+				<td width="144">
+				<input type="text" name="iodineStock_1" id="iodineStock_1" class="cloned fromZero" placeholder="auto-calculated" readonly="true" />
+				</td>
+				<td width="141">
+				<input type="text" name="iodineReceipt_1" id="iodineReceipt_1" class="cloned"/>
+				</td>
+			</tr>
+			<tr id="formbuttons">
+				<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
+				<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
+			</tr>
+		</table>
 
-					</tr>
-					<tr class="clonable">
-						<td width="144">
-						<input type="date"  name="iodineDate_1" id="iodineDate_1" class="autoDate cloned" readonly="true" placeholder="click for date"/>
-						</td>
-						<td width="144">
-						<input type="text"  name="iodineSupplier_1" id="iodineSupplier_1" class="cloned"/>
-						</td>
-						<td width="144">
-						<input type="number"  name="iodineDrums_1" id="iodineDrums_1" class="cloned fromZero"/>
-						</td>
-						<td width="144">
-						<input type="text"  name="iodineLot_1" id="iodineLot_1" class="cloned"/>
-						</td>
-						<td width="144">
-						<input type="text"  name="iodineExpiration_1" id="iodineExpiration_1" class="futureDate cloned" readonly="true" placeholder="click for date"/>
-						</td>
-					</tr>
-					<tr id="formbuttons">
-						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
-					</tr>
-
-				</table>
-
-			</div>
-
-		</section>
-		<section id="dispatched">
-
-			<h2>Dispatched</h2>
-
-			<div>
-				<table border="0" width="98%">
-					<tr>
-						<td width="144">LOT ID (DRUM Nos.)(B=# DRUMS)</td>
-						<td width="144">IN STOCK(C) (C)=(A)-(B)</td>
-						<td width="141">Receipt & QC-Review (Name & signature)</td>
-					</tr>
-					<tr class="clonable">
-						<td width="144">
-						<input type="number" name="iodineDispatched_1" id="iodineDispatched_1" class="cloned fromZero" />
-						</td>
-						<td width="144">
-						<input type="text" name="iodineStock_1" id="iodineStock_1" class="cloned fromZero" placeholder="auto-calculated" readonly="true" />
-						</td>
-						<td width="141">
-						<input type="text" name="iodineReceipt_1" id="iodineReceipt_1" class="cloned"/>
-						</td>
-					</tr>
-					<tr id="formbuttons">
-						<input type="button" title="Adds a new row after the last" class="awesome myblue medium" id="clonetrigger" value="Add a row"/>
-						<input type="button" title="Removes the last row" class="awesome myblue medium" id="cloneremove" value="Remove Row"/>
-					</tr>
-				</table>
-
-			</div>
-
-		</section>
-
-	</article>
+	</div>
 
 	<table width="100%">
 		<tr>
@@ -344,6 +335,8 @@ class C_salt extends MY_Controller {
 		</tr>
 	</table>
 </form>
+
+
 				';
 
 		$data['form'] = $internalFortified_A2;
