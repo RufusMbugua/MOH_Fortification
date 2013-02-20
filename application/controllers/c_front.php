@@ -24,6 +24,15 @@ class C_Front extends CI_Controller {
 		//echo 'Vehicles';
 	}
 
+	public function graphs() {
+		$data['status']="";
+		$data['response']="";
+		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
+		$data['form_id']='';
+		$this -> load -> view('graphs', $data);
+		//echo 'Vehicles';
+	}
+
 	public function formviewer() {
 		$data['form'] = '<p class="error"><br/><br/>Choose a Form from the left panel to get started<br/><br/><p>';
 		$this -> load -> view('form', $data);

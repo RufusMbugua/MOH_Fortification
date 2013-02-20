@@ -391,9 +391,9 @@ $('.tab.received').hide();
 						</section>
 						
 						
-						<section class="right-side-nav">
-		<?php echo anchor(base_url().'c_auth/logout','Logout')
-					?>
+						<section class="right-side-nav" style="width:20%">
+							<section class="sessionUser"><?php echo 'Welcome  '.$sessionEmail ?></section>
+		<section style="float:right"><?php echo anchor(base_url().'c_auth/logout','Logout') ?></section>
 	
 						</section>
 					
