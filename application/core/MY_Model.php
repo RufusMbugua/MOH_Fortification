@@ -3,7 +3,7 @@
 
 class  MY_Model  extends  CI_Model{
 
-public $em, $response, $theForm,$centre,$compoundManufacturer,$premix,$manufacturer,$factories;
+public $em, $response, $theForm,$centre,$compoundManufacturer,$premix,$manufacturer,$factories,$formRecords;
 
 function __construct() {
 		parent::__construct();
@@ -59,6 +59,9 @@ function __construct() {
 				//die($ex->getMessage());
 			}
 	}
+	
+	
+	
 	
 	/*utilitized in external_B1's*/
 	/*public function getFactoriesByVehicle($vehicle){

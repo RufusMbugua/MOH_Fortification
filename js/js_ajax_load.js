@@ -3440,6 +3440,7 @@ $(document).ready(function() {
 				return h;
 				}
 				/*-----------------------------------------------------------------------------------------------------------------*/
+
 					$('.received.title').click(function(){
 $('.tab.received').show();    
 $('.tab.dispatched').hide();
@@ -3452,6 +3453,7 @@ $('.tab.dispatched').show();
 $('.tab.received').hide();
 
 });
+
 				
 });/*end of parent document ready function*/
 /*---------------------------end of global_functions.js------------------------------------------------------------------------------------------------------------------*/

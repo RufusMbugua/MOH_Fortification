@@ -1,17 +1,17 @@
 <?php
 /*helps authenticate a user*/
 class C_Auth extends MY_Controller {
-	
+
 	public function __construct() {
 		parent::__construct();
-		
+
 	}
 
 	public function login() {
 		$this->load->model('m_systemuser');
 		$this->m_systemuser->getUser();
 	    if ($this->m_systemuser->isUser=='true') {
-	    	
+
 			/*retrieve vehicle name by affiliation*/
 			if($this->m_systemuser->affiliation=="KEBS" || $this->m_systemuser->affiliation=="MOPHS"){
 			   $vehicle="N/A";
@@ -21,14 +21,14 @@ class C_Auth extends MY_Controller {
 				$vehicle=$this->m_systemuser->vehicle[0]['vehicleName'];
 				//die(print "Manufacturer Login: ".$vehicle);
 			}
-			
-			
+
+
 			/*create session data*/
 			$newdata = array('email' => $this->m_systemuser->email, 'logged_in' => TRUE, 'userRights'=>$this->m_systemuser->userRights,
 			          'affiliation'=>$this->m_systemuser->affiliation, 'vehicle'=>$vehicle);
 
 			$this -> session -> set_userdata($newdata);
-			
+
 			$this->doRetrieveIodizationCentreDevices();
 			$this->doRetrieveCompoundManufacturerNames();
 			$this->doRetrievePremixTypes();
@@ -40,8 +40,8 @@ class C_Auth extends MY_Controller {
 			 * 2. Supervisor
 			 * 3. Inspector      =>  LOWEST
 			 */
-			
-			
+
+
 			switch($this->m_systemuser->userRights) {
 				case 1:
 					redirect(base_url() . 'c_back', 'refresh');
@@ -73,16 +73,16 @@ class C_Auth extends MY_Controller {
 		$this->m_internalfortifiedb2->getManucDevicesByIodizationCenter($this->session->userdata('affiliation'));
 		$device_array=array('devices'=>$this->m_internalfortifiedb2->equipment);
 		$this -> session -> set_userdata($device_array);
-		
+
 		}catch(exception $ex){
 			//ignore
 		}
-		
+
 	}
    
    public function doRetrieveCompoundManufacturerNames(){
    	    $this->load->model('models_salt/m_internalfortifieda1');
-		
+
 		try{
 		$this->m_internalfortifieda1->getCompoundManufacturerNames();
 		$compFName_array=array('compoundManufacturers'=>$this->m_internalfortifieda1->compoundManufacturers);
@@ -95,7 +95,7 @@ class C_Auth extends MY_Controller {
    
    public function doRetrievePremixTypes(){
    	    $this->load->model('models_salt/m_internalfortifieda1');
-		
+
 		try{
 		$this->m_internalfortifieda1->getPremixTypes();
 		$premixType_array=array('premixType'=>$this->m_internalfortifieda1->premixType);
@@ -107,7 +107,7 @@ class C_Auth extends MY_Controller {
    
    public function doRetrieveIodizationCentreNames(){
    	    $this->load->model('models_salt/m_externaliodizedb1');
-		
+
 		try{
 		$this->m_externaliodizedb1->getIodizationCentres();
 		$centreName_array=array('iodizationCentre'=>$this->m_externaliodizedb1->centres);
@@ -118,7 +118,7 @@ class C_Auth extends MY_Controller {
 			//die ($ex->getMessage());
 		}
    }
-	
+
 	public function logout(){
 		$data['form'] = '<p>You need to login.<p>';
 		$this -> load -> view('index', $data);

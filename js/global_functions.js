@@ -325,8 +325,6 @@ $(document).ready(function() {
 					//alert($(".clonable").find("tr:last").attr('name'));
 					if($(".clonable").length>1)
 					$(".clonable:last").after().remove();
-					
-				 
 				 return false;
 				 });
 				 /*end of clone_remove*/

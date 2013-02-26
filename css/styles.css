@@ -72,6 +72,7 @@ nav {
 	-webkit-box-shadow: 0px 2px 5px 0.4px #333;
 	box-shadow: 0px 2px 5px 0.4px #333;
 	-moz-box-shadow: 0px 2px 5px 0.4px #333;
+
 }
 .credentials {
 	margin-top: 10px;
@@ -86,44 +87,41 @@ nav {
 	font: Arial, "Helvetica", sans-serif;
 	font-size: 15px;
 }
-.right-nav {
-	width: 70%;
-	border: 1px solid black;
+.right-nav{
+	width:70%;
+	border:1px solid black;
 }
-.right-side-nav {
-	display: inline-block;
-	width: 10%;
-	float: right;
-}
-.sessionUser {
-	width: 50%;
-	font-size: 1.1em;
-	float: left;
-	margin-top: 5px;
+.right-side-nav{
+	display:inline-block;
+	width:10%;
+	float:right;
 }
 .links {
 	width: 60%;
 	margin: auto;
-	display: inline-block;
+display:inline-block;
+
 }
-.left-side a {
+.left-side a{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding: 10px 10px 10px 10px;
 	margin: 0;
 	text-shadow: 0px -0.7px 0.9px #333333;
 	filter: dropshadow(color=#333333, offx=0.9, offy=0.2);
-	color: white;
-	text-decoration: none;
-	font-size: 1.3em;
-	border: 1px solid black;
+	color:white;
+	text-decoration:none;
+	font-size:1.3em;
+	border:1px solid black;
+
+
 }
-.links a {
+.links a{
 
 	margin: 0;
 	text-shadow: 0px -0.7px 0.9px #333333;
 	filter: dropshadow(color=#333333, offx=0.9, offy=0.2);
-	padding: 1%;
+	padding:1%;
 }
 nav a {
 	font-size: 20px;
@@ -132,7 +130,7 @@ nav a {
 	width: 100px;
 }
 nav a:hover, a.current {
-	color: #FF6666;
+	color:#FF6666;
 }
 ul, li {
 	list-style: none;
@@ -153,11 +151,12 @@ ul li.last {
 	height: 100%;
 	width: 16%;
 	display: inline-block;
-	margin-right: 2%;
+	margin-right:2%;
+
 }
 input[type=search] {
 	width: 100%;
-	border-radius: 4px;
+	border-radius:4px;
 }
 .articles {
 	width: 100%;
@@ -947,10 +946,10 @@ pre::-webkit-scrollbar-thumb:horizontal {
 	border-color: #F33;
 }
 .left-side {
-	float: right;
-	border: 1px solid black;
-	border-top: 0;
-	position: absolute;
+	float:right;
+	border:1px solid black;
+	border-top:0;
+	position:absolute;
 }
 .form-sidebar {
 	background-color: #FFFFFF;
@@ -989,7 +988,7 @@ input.radio {
 	height: auto;
 	position: absolute;
 	left: 2%;
-	top: 22%;
+	top: 10.7em;
 	margin-bottom: 10px;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
@@ -1141,8 +1140,8 @@ input.radio {
 	font-weight: bold;
 }
 
-.menu a:hover {
-	color: #0033CC;
+.menu a:hover{
+	color:#0033CC;
 }
 .menu ul, .menu ul li {
 	list-style: none;
@@ -1205,18 +1204,64 @@ input.radio {
 	font-weight: bold;
 }
 .message {
-	margin: auto;
-	margin-top: 100px;
-	width: 33.5%;
-	background: #FF6666;
-	height: auto;
-	border: 1px solid #999;
-	color: #FFF;
-	text-align: center;
-	font-size: 16px;
-	font: "Verdana";
-	border: 1.4px solid #CC3333;
+	background: red;
+	background-image: linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -o-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -moz-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -webkit-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -ms-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(179,43,43)),
+	color-stop(0.99, rgb(194,74,74))
+	);
+	color: white;
+	padding: 0.1em;
 	border-radius: 5px;
+	font-size: 16px;
+	-webkit-box-shadow: 0 2px 6px 0.5px #000;
+	-moz-box-shadow: 0 2px 6px 0.5px #000;
+	box-shadow: 0 2px 6px 0.5px #000;
+	-o--box-shadow: 0 2px 6px 0.5px #000;
+	text-align: center;
+	margin: auto;
+	margin-top: 1em;
+	width: 33.5%;
+	text-align: center;
+	font: "Verdana";
+}
+.message {
+	filter: dropshadow(color=#000000, offx=0, offy=-0.5);
+	padding: 2px;
+	font-size: 1.5em;
+	text-align: center;
+	color: white;
+	box-shadow: 0 0.5px 1px 0.6px #000;
+	-moz-box-shadow: 0 0.5px 6px 1px #000;
+	-webkit-box-shadow: 0 1px 5px 0 #000;
+	-o-box-shadow: 0 0.5px 1px 0.6px #000;
+}
+.success {
+	background: green;
+	background-image: linear-gradient(bottom, rgb(71,217,88) 34%, rgb(99,255,117) 67%, rgb(130,255,130) 84%);
+	background-image: -o-linear-gradient(bottom, rgb(71,217,88) 34%, rgb(99,255,117) 67%, rgb(130,255,130) 84%);
+	background-image: -moz-linear-gradient(bottom, rgb(71,217,88) 34%, rgb(99,255,117) 67%, rgb(130,255,130) 84%);
+	background-image: -webkit-linear-gradient(bottom, rgb(71,217,88) 34%, rgb(99,255,117) 67%, rgb(130,255,130) 84%);
+	background-image: -ms-linear-gradient(bottom, rgb(71,217,88) 34%, rgb(99,255,117) 67%, rgb(130,255,130) 84%);
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.34, rgb(71,217,88)),
+	color-stop(0.67, rgb(99,255,117)),
+	color-stop(0.84, rgb(130,255,130))
+	);
+}
+.message p {
+	font-size: 1em;
+	text-shadow: 0px -0.2px 0.4px #333333;
 }
 /* Parent Container
  *  Login Form */
@@ -3908,14 +3953,14 @@ button.ui-button::-moz-focus-inner {
 /*---------------------------end of jquery-ui-1.8.18.custom.css------------------------------------------------------------------------------------------------------------------*/
 
 /*---------------------------start of tabs.css------------------------------------------------------------------------------------------*/
-.tab-title {
-	border-bottom: 1px groove black;
+.tab-title{
+ border-bottom:1px groove black;   
 }
-.title {
-	display: inline-block;
-	margin-right: 0.4em;
+.title{
+    display:inline-block;
+    margin-right:0.4em;
 }
-.tab {
-	border: 1px solid black;
-	height: auto;
+.tab{
+ border:1px solid black;
+height:auto;    
 }

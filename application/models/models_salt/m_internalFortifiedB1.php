@@ -125,6 +125,32 @@ class M_InternalFortifiedB1 extends MY_Model {
 								  }*/
 		return $this->compoundManufacturers;
 	}/*end of getCompoundManufacturerNames*/
+	
+	/*retrieve form files by factory*/
+	function retrieveForms($factory){
+	      /*using DQL*/
+	      try{
+	      //geting server side param: $store=$this->uri->segment(param_position_from_base_url);
+	      $query = $this->em->createQuery('SELECT r FROM models\Entities\entities_salt\E_IntFortifiedB1 r WHERE r.factoryName= :name ORDER BY r.dates DESC');
+		  $query->setParameter('name',$factory);
+          
+          $this->formRecords = $query->getArrayResult();
+		 
+		  if(max($this->formRecords) !=0)
+		  $this->response=array('rTotal'=>count($this->formRecords),'rData'=>$this->formRecords);
+		 //json format
+		 $this->formRecords= json_encode($this->response);
+		 // var_dump($this->formRecords);
+
+		  }catch(exception $ex){
+		  	//ignore
+		  //	die($ex->message());
+		  	return false;
+		  }
+		 
+		   return true;
+		   
+	}/*close retrieveForms($factory)*/
 
 
 

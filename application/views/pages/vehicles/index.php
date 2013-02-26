@@ -17,7 +17,9 @@ minimum-scale=0.5" />
 		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
 		
 		<!-- Attach JavaScript files -->
+
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+
 
 		<script src="<?php echo base_url()?>js/js_libraries.js"></script>
 		<!--script to form client side validation functions-->
@@ -471,7 +473,7 @@ $('.tab.received').hide();
 											</ul>
 										</section><!-- End of Menu: Oil Forms -->
 										<?php break; case "Sugar": ?>
-										
+
 											<section class="menu sugar">
 											<section class="top">	
 											<h2>Sugar</h2>
