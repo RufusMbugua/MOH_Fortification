@@ -20,7 +20,7 @@ class C_Front extends CI_Controller {
 		$data['response']="";
 		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
 		$data['form_id']='';
-		$this -> load -> view('pages/vehicles/index', $data);
+		$this -> load -> view('template', $data);
 		//echo 'Vehicles';
 	}
 

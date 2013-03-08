@@ -10,6 +10,7 @@ body {
 	margin: auto;
 	height: 1000px;
 	font-family: Linux Libertine-DR;
+	padding-top: 13%;
 }
 .container {
 	margin-top: -1%;
@@ -32,15 +33,14 @@ body {
 	margin-bottom: 10px;
 }
 header {
-	-webkit-box-shadow: inset -0px -1px 5px 1px #000;
-	-moz-box-shadow: inset -0px -1px 5px 1px #000;
-	box-shadow: inset -0px -1px 5px 1px #000;
-	height: 60px;
+	top: 0;
+	padding: 0 0 0 0;
+	position: fixed;
+	width: 100%;
+	opacity: 1;
 }
 footer {
-	-webkit-box-shadow: inset -0px 1px 5px 1px #000;
-	-moz-box-shadow: inset -0px 1px 5px 1px #000;
-	box-shadow: inset -0px 1px 5px 1px #000;
+
 	position: relative;
 	margin-top: -180px; /* negative value of footer height */
 	height: 180px;
@@ -60,7 +60,8 @@ nav {
 	width: 100%;
 	margin-bottom: 20px;
 	background-size: 100%;
-	background: #5180ba; /* Old browsers */
+	height: 5%;
+	backgroud: #5180ba; /* Old browsers */
 	background: #336eb7; /* Old browsers */
 	background: -moz-linear-gradient(top, #336eb7 0%, #004089 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#336eb7), color-stop(100%,#004089)); /* Chrome,Safari4+ */
@@ -72,7 +73,6 @@ nav {
 	-webkit-box-shadow: 0px 2px 5px 0.4px #333;
 	box-shadow: 0px 2px 5px 0.4px #333;
 	-moz-box-shadow: 0px 2px 5px 0.4px #333;
-
 }
 .credentials {
 	margin-top: 10px;
@@ -87,41 +87,38 @@ nav {
 	font: Arial, "Helvetica", sans-serif;
 	font-size: 15px;
 }
-.right-nav{
-	width:70%;
-	border:1px solid black;
+.right-nav {
+	width: 70%;
+	border: 1px solid black;
 }
-.right-side-nav{
-	display:inline-block;
-	width:10%;
-	float:right;
+.right-side-nav {
+	display: inline-block;
+	width: 10%;
+	float: right;
 }
 .links {
 	width: 60%;
 	margin: auto;
-display:inline-block;
-
+	display: inline-block;
 }
-.left-side a{
+.left-side a {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding: 10px 10px 10px 10px;
 	margin: 0;
 	text-shadow: 0px -0.7px 0.9px #333333;
 	filter: dropshadow(color=#333333, offx=0.9, offy=0.2);
-	color:white;
-	text-decoration:none;
-	font-size:1.3em;
-	border:1px solid black;
-
-
+	color: white;
+	text-decoration: none;
+	font-size: 1.3em;
+	border: 1px solid black;
 }
-.links a{
+.links a {
 
 	margin: 0;
 	text-shadow: 0px -0.7px 0.9px #333333;
 	filter: dropshadow(color=#333333, offx=0.9, offy=0.2);
-	padding:1%;
+	padding: 1%;
 }
 nav a {
 	font-size: 20px;
@@ -130,7 +127,7 @@ nav a {
 	width: 100px;
 }
 nav a:hover, a.current {
-	color:#FF6666;
+	color: #FF6666;
 }
 ul, li {
 	list-style: none;
@@ -151,12 +148,11 @@ ul li.last {
 	height: 100%;
 	width: 16%;
 	display: inline-block;
-	margin-right:2%;
-
+	margin-right: 2%;
 }
 input[type=search] {
 	width: 100%;
-	border-radius:4px;
+	border-radius: 4px;
 }
 .articles {
 	width: 100%;
@@ -233,7 +229,7 @@ body:before {/* thanks to Maleika (Kohoutec)*/
 	-moz-border-radius: 5px;
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	padding: 5px 10px 6px;
-	position: relative;
+	
 	text-decoration: none;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 	-webkit-border-radius: 5px;
@@ -907,13 +903,12 @@ div.slider-nav span.left {
  * */
 @import url('fonts.css');
 .form-container {
-
+	float: left;
 	width: 60%;
 	height: 600px;
 	overflow: auto;
 	padding: 1%;
-	margin: auto;
-	margin-top: 10px;
+	margin: 0 0 2% 1%;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
 	-moz-box-shadow: inset 0px 0px 6px 0px #000;
@@ -946,19 +941,16 @@ pre::-webkit-scrollbar-thumb:horizontal {
 	border-color: #F33;
 }
 .left-side {
-	float:right;
-	border:1px solid black;
-	border-top:0;
-	position:absolute;
+	float: right;
+	border: 1px solid black;
+	border-top: 0;
+	position: absolute;
 }
 .form-sidebar {
 	background-color: #FFFFFF;
 	width: 14%;
-	right: 2%;
-	position: absolute;
+	margin-right: 2%;
 	float: right;
-	top: 10.7em;
-	padding-top: 10px;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
 	-moz-box-shadow: inset 0px 0px 6px 0px #000;
@@ -984,12 +976,10 @@ input.radio {
 }
 .menu-container {
 	background: #FFF;
-	width: 12%;
+	width: 13%;
 	height: auto;
-	position: absolute;
-	left: 2%;
-	top: 10.7em;
-	margin-bottom: 10px;
+	float: left;
+	margin: 0 0 2% 2%;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
 	-moz-box-shadow: inset 0px 0px 6px 0px #000;
@@ -1140,8 +1130,8 @@ input.radio {
 	font-weight: bold;
 }
 
-.menu a:hover{
-	color:#0033CC;
+.menu a:hover {
+	color: #0033CC;
 }
 .menu ul, .menu ul li {
 	list-style: none;
@@ -1165,8 +1155,8 @@ input.radio {
 }
 .banner {
 	width: 100%;
-	padding-bottom: 10px;
 	border-bottom: 2px solid #999;
+	background-color: white;
 }
 /**
  * Logo
@@ -3953,14 +3943,14 @@ button.ui-button::-moz-focus-inner {
 /*---------------------------end of jquery-ui-1.8.18.custom.css------------------------------------------------------------------------------------------------------------------*/
 
 /*---------------------------start of tabs.css------------------------------------------------------------------------------------------*/
-.tab-title{
- border-bottom:1px groove black;   
+.tab-title {
+	border-bottom: 1px groove black;
 }
-.title{
-    display:inline-block;
-    margin-right:0.4em;
+.title {
+	display: inline-block;
+	margin-right: 0.4em;
 }
-.tab{
- border:1px solid black;
-height:auto;    
+.tab {
+	border: 1px solid black;
+	height: auto;
 }
