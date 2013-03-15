@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, maximum-scale=3,
 minimum-scale=0.5" />
-		<title>Vehicles</title>
+		
 		<!-- -->
 		<!-- Attach CSS files -->
 		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>

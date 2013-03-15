@@ -12,7 +12,9 @@ class C_Front extends CI_Controller {
 
 	public function index() {
 		$data['form'] = '<p>You need to login.<p>';
-		$this -> load -> view('index', $data);
+		$data['page']='Login';
+		$data['title']='Welcome';
+		$this -> load -> view('template', $data);
 	}//End of index file
 
 	public function vehicles() {
@@ -20,6 +22,8 @@ class C_Front extends CI_Controller {
 		$data['response']="";
 		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
 		$data['form_id']='';
+		$data['page']='Vehicles';
+		$data['title']='Vehicles';
 		$this -> load -> view('template', $data);
 		//echo 'Vehicles';
 	}
