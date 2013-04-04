@@ -29,7 +29,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 				
 	<section class="links">
 		<ul>
-			<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>">Forms</a>
+			<a href="<?php echo base_url().'c_front/vehicles' ?>">Forms</a>
 			<a href="<?php echo base_url().'c_front/reports' ?>">Reports</a>
 		</ul>
 	</section>
@@ -298,8 +298,8 @@ $affiliation = $this -> session -> userdata('affiliation');
 			<h3>Actions</h3>
 			<section class="buttons">
 				<a title="To Save entered info" id="submit_form_data" class="awesome blue medium">Submit</a>
-				<a title="To clear entire form" id="reset_current_form" class="awesome magenta medium">Reset</a>
 				<a title="To close the form." id="close_opened_form" class="awesome red medium">Close</a>
+				<a title="To get PDF version of the form."  class="awesome green medium">PDF</a>
 			</section>
 		</section><!-- End of Form-SideBar -->
 		<?php

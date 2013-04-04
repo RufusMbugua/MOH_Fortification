@@ -967,6 +967,7 @@ pre::-webkit-scrollbar-thumb:horizontal {
 .form-sidebar .buttons a {
 	width: 45%;
 	text-align: center;
+	margin-left: 15%;
 }
 .form-container input {
 	width: 100px;
@@ -1122,9 +1123,6 @@ input.radio {
 	cursor: pointer;
 }
 .form-sidebar a {
-	margin-left: 18px;
-	margin-top: 20px;
-	font-size: 16px;
 	font-weight: bold;
 }
 
