@@ -22,18 +22,22 @@ class C_Front extends CI_Controller {
 		$data['response']="";
 		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
 		$data['form_id']='';
-		$data['page']='Vehicles';
+		$data['page']='Front-End';
+		$data['content'] = 'Vehicles';
 		$data['title']='Vehicles';
 		$this -> load -> view('template', $data);
 		//echo 'Vehicles';
 	}
 
-	public function graphs() {
+	public function reports() {
 		$data['status']="";
 		$data['response']="";
 		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
 		$data['form_id']='';
-		$this -> load -> view('graphs', $data);
+		$data['page']='Front-End';
+		$data['content'] = 'Reports';
+		$data['title']='Reports';
+		$this -> load -> view('template', $data);
 		//echo 'Vehicles';
 	}
 
@@ -42,13 +46,6 @@ class C_Front extends CI_Controller {
 		$this -> load -> view('form', $data);
 	}
 	
-	public function reports() {
-		$data['status']="";
-		$data['response']="";
-		$data['form'] = '<p class="error"><br/><br/>No report has been chosen<br/><br/><p>';
-		$data['form_id']='';
-		$this -> load -> view('reports', $data);
-		//echo 'Vehicles';
-	}
+	
 	
 }?>

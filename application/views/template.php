@@ -22,7 +22,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 			<?php $this -> load -> view('sections/header'); ?>
 			
 			<?php
-			if($page=="Vehicles"){
+			if($page=="Front-End"){
 			?>
 			<nav id="pageheader" >
 				
@@ -48,7 +48,9 @@ $affiliation = $this -> session -> userdata('affiliation');
 		</header>
 
 		<section class="current-body">
-			
+			<?php 
+			if($content=="Vehicles"){
+				?>
 			<section class="menu-container">
 	<?php #if($affiliation !="KEBS" || $affiliation !="MOPHS" ){
 									 switch($vehicle){ case "Salt":
@@ -300,6 +302,26 @@ $affiliation = $this -> session -> userdata('affiliation');
 				<a title="To close the form." id="close_opened_form" class="awesome red medium">Close</a>
 			</section>
 		</section><!-- End of Form-SideBar -->
+		<?php
+		}
+		
+		if($content=="Reports"){
+			?>
+			<section class="menu-container">
+				
+			</section>
+			
+			<section class="form-container">
+				<?php
+				echo $form;
+				?>
+			</section><!-- End of Form-Container Section-->
+			
+			<?php
+			
+		}
+			?>
+			
 		</section>
 		
 		<?php
@@ -335,4 +357,3 @@ $affiliation = $this -> session -> userdata('affiliation');
 	End of Body
 	-->
 </html>
-
