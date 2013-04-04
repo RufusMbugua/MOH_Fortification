@@ -2206,7 +2206,7 @@ $(document).ready(function() {
 		$(".max.salt").hide('fast');
 		$(".min.salt").show('fast');
 		$(".menu.salt").animate({
-			height : '100%'
+			height : '70%'
 		});
 		$(".menu.oil").hide();
 		$(".menu.maize").hide();
@@ -2230,7 +2230,7 @@ $(document).ready(function() {
 		$(".max.oil").hide('fast');
 		$(".min.oil").show('fast');
 		$(".menu.oil").animate({
-			height : '100%'
+			height : '70%'
 		});
 		$(".menu.salt").hide();
 		$(".menu.maize").hide();
@@ -2254,7 +2254,7 @@ $(document).ready(function() {
 		$(".max.sugar").hide('fast');
 		$(".min.sugar").show('fast');
 		$(".menu.sugar").animate({
-			height : '100%'
+			height : '70%'
 		},100);
 		$(".menu.oil").hide();
 		$(".menu.maize").hide();
@@ -2278,7 +2278,7 @@ $(document).ready(function() {
 		$(".max.maize").hide('fast');
 		$(".min.maize").show('fast');
 		$(".menu.maize").animate({
-			height : '100%'
+			height : '70%'
 		},100);
 		$(".menu.oil").hide();
 		$(".menu.salt").hide();
@@ -2302,7 +2302,7 @@ $(document).ready(function() {
 		$(".max.wheat").hide('fast');
 		$(".min.wheat").show('fast');
 		$(".menu.wheat").animate({
-			height : '100%'
+			height : '70%'
 		},100);
 		$(".menu.oil").hide();
 		$(".menu.maize").hide();

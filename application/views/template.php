@@ -25,28 +25,24 @@ $affiliation = $this -> session -> userdata('affiliation');
 			if($page=="Vehicles"){
 			?>
 			<nav id="pageheader" >
-	<section class="search">
-		<form>
-			<input type="search" placeholder="Search Here" />
-		</form>
-	</section>
 				
 				
 	<section class="links">
 		<ul>
-			<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>">Vehicles</a>
+			<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>"Formss</a>
 			<a href="<?php echo base_url().'c_front/reports' ?>">Reports</a>
 		</ul>
 	</section>
 						
-						
-	<section class="right-side-nav" style="width:20%">
-		
-			<section class="sessionUser"><?php echo 'Welcome  '.$sessionEmail ?></section>
-		    <section style="float:right"><?php echo anchor(base_url().'c_auth/logout','Logout') ?></section>
-	
-	</section>
 				
+</nav>
+
+<nav id="specific">
+	<ul class="links">
+	<a>Notifications</a>
+	<a>Messages</a>
+	<?php echo anchor(base_url().'c_auth/logout','Logout') ?>
+</ul>
 </nav>
 		</header>
 
