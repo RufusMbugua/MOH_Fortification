@@ -29,7 +29,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 				
 	<section class="links">
 		<ul>
-			<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>"Formss</a>
+			<a class="current" href="<?php echo base_url().'c_front/vehicles' ?>">Forms</a>
 			<a href="<?php echo base_url().'c_front/reports' ?>">Reports</a>
 		</ul>
 	</section>
@@ -38,10 +38,11 @@ $affiliation = $this -> session -> userdata('affiliation');
 </nav>
 
 <nav id="specific">
+	<div style="float:left" class="user">Welcome</div>
 	<ul class="links">
 	<a>Notifications</a>
 	<a>Messages</a>
-	<?php echo anchor(base_url().'c_auth/logout','Logout') ?>
+	<a href"<?php echo base_url().'c_auth/logout'?>">Logout</a>
 </ul>
 </nav>
 		</header>
