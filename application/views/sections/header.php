@@ -16,6 +16,6 @@
 			</section>
 			<section class="date">
 				
-				 <?php echo date("l F d, Y"); ?>
+				 <?php echo date("l, F d Y"); ?>
 			</section>
 </section>

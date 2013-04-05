@@ -4,12 +4,13 @@
 /* CSS Document */
 body {
 	margin: auto;
+	font-family: Helvetica;
 }
 .current-body {
 	background-color: #CCC;
 	margin: auto;
 	height: 80%;
-	font-family: Linux Libertine-DR;
+	
 	padding: 13% 0 5% 0;
 }
 .container {
@@ -120,7 +121,7 @@ nav {
 	padding: 1%;
 }
 nav a {
-	font-size: 20px;
+	font-size: 1.1em;
 	text-decoration: none;
 	color: #FFF;
 	width: 100px;
