@@ -30,7 +30,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 	<section class="links">
 		<ul>
 			<a href="<?php echo base_url().'c_front/vehicles' ?>">Forms</a>
-			<a href="<?php echo base_url().'c_front/reports' ?>">Reports</a>
+			<a href="<?php echo base_url().'c_charts/index' ?>">Reports</a>
 		</ul>
 	</section>
 						

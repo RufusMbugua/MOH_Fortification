@@ -12,7 +12,7 @@ class C_Charts extends CI_Controller{
 	public function index() {
 		$data['status']="";
 		$data['response']="";
-		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
+		$data['form'] = '<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>';
 		$data['form_id']='';
 		$data['page']='Front-End';
 		$data['content'] = 'Reports';
