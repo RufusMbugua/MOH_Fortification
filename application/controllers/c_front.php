@@ -29,17 +29,6 @@ class C_Front extends CI_Controller {
 		//echo 'Vehicles';
 	}
 
-	public function reports() {
-		$data['status']="";
-		$data['response']="";
-		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
-		$data['form_id']='';
-		$data['page']='Front-End';
-		$data['content'] = 'Reports';
-		$data['title']='Reports';
-		$this -> load -> view('template', $data);
-		//echo 'Vehicles';
-	}
 
 	public function formviewer() {
 		$data['form'] = '<p class="error"><br/><br/>Choose a Form from the left panel to get started<br/><br/><p>';
