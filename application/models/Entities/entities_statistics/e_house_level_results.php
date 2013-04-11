@@ -2,9 +2,15 @@
 namespace models\Entities\entities_statistics;
 /**
  * @Entity
- * @Table(name="house_level_results")
+ * @Table(name="household_level_results")
  */
 class E_House_Level_Results {
+ 	/**
+* @Id
+* @Column(name="id", type="integer", length=11, nullable=false)
+* @GeneratedValue(strategy="AUTO")
+* */
+private $id;
 
 	/**
 	 * @Column(name="province", type="string", length=10, nullable=true)
@@ -27,7 +33,7 @@ class E_House_Level_Results {
 	private $school;
 
 	/**
-	 * @Column(name="sampleNumber", type="date", nullable=true)
+	 * @Column(name="sampleNumber", type="string", nullable=true)
 	 * */
 	private $sampleNumber;
 

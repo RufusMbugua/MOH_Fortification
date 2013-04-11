@@ -20,6 +20,11 @@ class C_Charts extends CI_Controller{
 		$this -> load -> view('template', $data);
 	}//End of index file
 	
+	public function houseLevelResults(){
+		$this->load->model('models_statistics/m_house_level_results');
+		$results = $this->m_house_level_results->viewRecords();
+		var_dump($results);
+	}
 }
 
 ?>

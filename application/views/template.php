@@ -42,7 +42,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 	<ul class="links">
 	<a>Notifications</a>
 	<a>Messages</a>
-	<a href"<?php echo base_url().'c_auth/logout'?>">Logout</a>
+	<a href="<?php echo base_url().'c_auth/logout'?>">Logout</a>
 </ul>
 </nav>
 		</header>
