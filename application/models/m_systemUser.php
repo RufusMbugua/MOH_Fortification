@@ -22,8 +22,7 @@ class M_SystemUser extends MY_Model {
 		if ($this -> input -> post()) {//check if a post was made
 			
        //Working with an object of the entity
-		$user = $this->em->getRepository('models\Entities\e_systemuser')
-						->findOneBy(array('username' => $this -> input -> post('username'), 'password' => $this -> input -> post('secret')));
+		$user = $this->em->getRepository('models\Entities\e_systemuser')->findOneBy(array('username' => $this -> input -> post('username'), 'password' => $this -> input -> post('secret')));
 	    
 		
 		
@@ -37,7 +36,7 @@ class M_SystemUser extends MY_Model {
 		}//close the this->input->post
 		$e=microtime(true);
 		$this->executionTime=round($e-$s,'4');
-		//return $this -> isUser = 'true';
+		return $this -> isUser = 'true';
 	} /*end of getUser()*/
 	
 	/*used by controllers/C_Auth */

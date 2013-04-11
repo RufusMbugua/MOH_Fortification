@@ -430,11 +430,8 @@ a._keyEvent=!1;return K},_generateMonthYearHeader:function(a,b,c,d,e,f,g,h){var 
  * http://bassistance.de/jquery-plugins/jquery-plugin-validation/
  * http://docs.jquery.com/Plugins/Validation
  *
-<<<<<<< HEAD
- * Copyright (c) 2006 - 2011 JÃ¶rn Zaefferer
-=======
  * Copyright (c) 2006 - 2011 Jörn Zaefferer
->>>>>>> upstream/master
+
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php

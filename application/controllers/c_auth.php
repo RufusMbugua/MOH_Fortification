@@ -4,7 +4,6 @@ class C_Auth extends MY_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		
 	}
 
 	public function login() {

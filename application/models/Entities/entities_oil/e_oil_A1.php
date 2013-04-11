@@ -111,4 +111,3 @@ public function getStatus() {
 public function setFactoryName($status) { $this -> status = $status;
 }
 }
- ?>
