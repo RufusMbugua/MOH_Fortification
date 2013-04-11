@@ -37,6 +37,11 @@ class E_IntFortifiedA2 {
 	 * @Column(name="expiryDate", type="string", nullable=true)
 	 * */
 	private $expiryDate;
+	/**
+	 * @OneToMany(targetEntity="manufacturerCompound", mappedBy="manufacturerCompName")
+	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
+	 * */
+	private $manufacturerCompName;
 	
 	/**
 	 * @Column(name="transactedBy", type="string",length=45, nullable=true)
@@ -48,11 +53,7 @@ class E_IntFortifiedA2 {
 	 * */
 	private $dateOfReporting;
 	
-	/**
-	 * @OneToMany(targetEntity="manufacturerCompound", mappedBy="manufacturerCompName")
-	 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
-	 * */
-	private $manufacturerCompName;
+	
 
 	public function getTranscationNumber() {
 		return $this -> transactionNumber;
@@ -95,6 +96,13 @@ class E_IntFortifiedA2 {
 
 	public function setExpiryDate($expiryDate) { $this -> expiryDate = $expiryDate;
 	}
+	public function getManufacturerCompName() {
+		return $this -> manufacturerCompName;
+	}
+
+	public function setManufacturerCompName($manufacturerCompName) { $this -> manufacturerCompName = $manufacturerCompName;
+	}
+	
 
 	public function getTransactedBy() {
 		return $this -> transactedBy;
@@ -110,12 +118,6 @@ class E_IntFortifiedA2 {
 	public function setDateOfReporting($dateOfReporting) { $this -> dateOfReporting = $dateOfReporting;
 	}
 
-	public function getManufacturerCompName() {
-		return $this -> manufacturerCompName;
-	}
-
-	public function setManufacturerCompName($manufacturerCompName) { $this -> manufacturerCompName = $manufacturerCompName;
-	}
-
+	
 }
 ?>

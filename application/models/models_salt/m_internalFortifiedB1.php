@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to IntFortifiedB1 entity
  */
-use application\models\Entities\entities_salt\E_IntFortifiedB1;
+use application\models\Entities\entities_salt\e_intfortifiedb1;
 
 class M_InternalFortifiedB1 extends MY_Model {
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
@@ -60,7 +60,7 @@ class M_InternalFortifiedB1 extends MY_Model {
 			
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
-			 $this -> theForm = new \models\Entities\entities_salt\E_IntFortifiedB1(); //create an object of the model
+			 $this -> theForm = new \models\Entities\entities_salt\e_intfortifiedb1(); //create an object of the model
 		       // $this->theForm->setTransactionNumber('NULL');
 			 	//$this -> theForm -> setFactoryName($this->centre->getFactoryName());
 			 	$this -> theForm -> setFactoryName($factory);/*param factory*/
@@ -116,7 +116,7 @@ class M_InternalFortifiedB1 extends MY_Model {
 	
 	function getFactories(){
 		 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\E_ManufacturerCompound n');
+	      $query = $this->em->createQuery('SELECT n.manufacturerId,n.manufacturerCompName FROM models\Entities\e_manufacturercompound n');
           $this->compoundManufacturers = $query->getResult();
 						/*foreach ($this->compoundManufacturers as $key=>$value) {
 									print $value['manufacturerId'].'<br />';

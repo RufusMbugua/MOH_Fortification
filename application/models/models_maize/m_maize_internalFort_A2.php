@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to IntFortifiedA2 entity
  */
-use application\models\Entities\entities_maize\E_Maize_InternalFort_A2;
+use application\models\Entities\entities_maize\e_maize_internalfort_a2;
 
 class M_Maize_InternalFort_A2  extends MY_Model {
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
@@ -55,7 +55,7 @@ class M_Maize_InternalFort_A2  extends MY_Model {
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
-			 $this -> theForm = new \models\Entities\entities_maize\E_Maize_InternalFort_A2(); //create an object of the model
+			 $this -> theForm = new \models\Entities\entities_maize\e_maize_internalfort_a2(); //create an object of the model
 		      
 			 	
 				$this -> theForm -> setDates($this->elements[$i]['theDate']);

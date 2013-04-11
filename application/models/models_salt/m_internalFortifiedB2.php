@@ -181,7 +181,7 @@ class M_InternalFortifiedB2 extends MY_Model {
 			                       
 			                       
 	      /*using DQL*/
-	      $query = $this->em->createQuery('SELECT d.deviceCompNumber FROM models\Entities\E_ManucDevices d WHERE d.manufacturerFortName = :name');
+	      $query = $this->em->createQuery('SELECT d.deviceCompNumber FROM models\Entities\e_manucdevices d WHERE d.manufacturerFortName = :name');
           $query->setParameter('name', $iodizationCentreName);
           $this->equipment = $query->getResult();
 						/*foreach ($this->equipment as $key=>$value) {

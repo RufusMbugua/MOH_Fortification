@@ -59,9 +59,9 @@ function __construct()  {
 	}
 	
 	public function getFactoriesByVehicle(){
-		$this->load->model('models_wheat/M_Wheat_ExternalFort_B1');
+		$this->load->model('models_wheat/m_wheat_externalfort_b1');
 		//$this->factories=array('factoriesByVehicle'=>$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('wheat'));
-		$this->factories=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('wheat');
+		$this->factories=$this->m_wheat_externalfort_b1->getFactoriesByVehicle('wheat');
 		//$this->factoriesWheat=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('wheat'); /*later, use ajax to determine which vehicle*/
 		//$this->factoriesMaize=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('maize');
 		//$this->factoriesSugar=$this->M_Wheat_ExternalFort_B1->getFactoriesByVehicle('sugar');

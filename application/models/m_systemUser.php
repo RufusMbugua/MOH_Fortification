@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to SystemUser entity
  */
-use application\models\Entities\E_SystemUser;
+use application\models\Entities\e_systemuser;
 
 class M_SystemUser extends MY_Model {
 	var $isUser,$email,$userRights,$affiliation,$vehicle;
@@ -22,7 +22,7 @@ class M_SystemUser extends MY_Model {
 		if ($this -> input -> post()) {//check if a post was made
 			
        //Working with an object of the entity
-		$user = $this->em->getRepository('models\Entities\E_SystemUser')
+		$user = $this->em->getRepository('models\Entities\e_systemuser')
 						->findOneBy(array('username' => $this -> input -> post('username'), 'password' => $this -> input -> post('secret')));
 	    
 		

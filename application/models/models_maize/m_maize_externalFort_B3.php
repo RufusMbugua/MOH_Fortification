@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to E_ExternalFortifiedB2 entity
  */
-use application\models\Entities\entities_maize\E_maize_ExternalFort_B3;
+use application\models\Entities\entities_maize\e_maize_externalfort_b3;
 
 class M_Maize_ExternalFort_B3  extends MY_Model {
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
@@ -46,7 +46,7 @@ class M_Maize_ExternalFort_B3  extends MY_Model {
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
-			 $this -> theForm = new \models\Entities\entities_maize\E_maize_ExternalFort_B3(); //create an object of the model
+			 $this -> theForm = new \models\Entities\entities_maize\e_maize_externalfort_b3(); //create an object of the model
 		      
 			  $this -> theForm -> setInspectionRegistry($this->elements['inspectionRegistry']);
 			  $this -> theForm -> setDateOfInspection($this->elements['inspectionDate']);

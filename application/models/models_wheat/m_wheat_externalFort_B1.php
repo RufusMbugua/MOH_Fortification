@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to E_ExternalFortifiedB1 entity
  */
-use application\models\Entities\entities_wheat\E_Wheat_ExternalFort_B1;
+use application\models\Entities\entities_wheat\e_wheat_externalfort_b1;
 
 class M_Wheat_ExternalFort_B1  extends MY_Model {
 	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $batchSize;
@@ -60,7 +60,7 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 		
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
-			 $this -> theForm = new \models\Entities\entities_wheat\E_Wheat_ExternalFort_B1(); //create an object of the model
+			 $this -> theForm = new \models\Entities\entities_wheat\e_wheat_externalfort_b1(); //create an object of the model
 		      
 			 	
 				$this -> theForm -> setDates(new DateTime()); /*timestamp option*/
@@ -116,8 +116,8 @@ class M_Wheat_ExternalFort_B1  extends MY_Model {
 	public function getFactoriesByVehicle($vehicle){
 		try{
 			 /*using DQL*/
-	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\E_Factories f WHERE f.manufacturerFortName
-	                                      IN (SELECT m.manufactuerFortName FROM models\Entities\E_ManufacturerFortified m WHERE m.vehicleName= :name)');
+	      $query = $this->em->createQuery('SELECT f.factoryNumber,f.factoryName FROM models\Entities\e_factories f WHERE f.manufacturerFortName
+	                                      IN (SELECT m.manufactuerFortName FROM models\Entities\e_manufacturerfortified m WHERE m.vehicleName= :name)');
 		  $query->setParameter('name', $vehicle);
           $this->factories = $query->getResult();
 		

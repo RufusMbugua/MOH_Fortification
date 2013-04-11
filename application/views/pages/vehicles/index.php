@@ -15,7 +15,9 @@ $affiliation=$this -> session -> userdata('affiliation');
 		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
 		
 		<!-- Attach JavaScript files -->
-		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script-->
+
+		<script src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+
 		<script src="<?php echo base_url()?>js/js_libraries.js"></script>
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
@@ -225,19 +227,19 @@ $affiliation=$this -> session -> userdata('affiliation');
 				//load url based on the class and id returned
 				switch(linkSub){
 					case "salt-url":
-					linkDomain='C_Salt';
+					linkDomain='c_salt';
 					break;
 					case "oil-url":
-					linkDomain='C_Oil';
+					linkDomain='c_oil';
 					break;
 					case "maize-url":
-					linkDomain='C_Maize';
+					linkDomain='c_maize';
 					break;
 					case "wheat-url":
-					linkDomain='C_Wheat';
+					linkDomain='c_wheat';
 					break;
 					case "sugar-url":
-					linkDomain='C_Sugar';
+					linkDomain='c_sugar';
 					break;
 				}/*close the case*/
 				if(linkDomain)

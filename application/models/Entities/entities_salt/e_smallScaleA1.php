@@ -17,6 +17,10 @@ private $transactonNumber;
 * */
 private $dates;
 /**
+* @Column(name="harvestYear", type="integer",length=11, nullable=false)
+* */
+private $harvestYear;
+/**
 * @Column(name="manufacturerCompName", type="string",length=45, nullable=true)
 * */
 private $manufacturerCompName;
@@ -24,7 +28,7 @@ private $manufacturerCompName;
 * @Column(name="weightKg", type="decimal", nullable=true)
 * */
 private $weightKg;
-/**
+/**4*
 * @Column(name="lotNumber", type="string",length=45, nullable=true)
 * */
 private $lotNumber;
@@ -34,10 +38,6 @@ private $lotNumber;
 * */
 
 private $contentOfIodine;
-/**
-* @Column(name="amountUsed", type="decimal", nullable=true)
-* */
-private $amountUsed;
 
 public function getTransactionNumber() {
 		return $this -> transactionNumber;
@@ -50,6 +50,12 @@ public function getDates() {
 }
 
 public function setDates($dates) { $this -> dates = $dates;
+}
+public function getHarvestYear() {
+		return $this -> harvestYear;
+}
+
+public function setHarvestYear($harvestYear) { $this -> harvestYear = $harvestYear;
 }
 public function getManufacturerCompName() {
 		return $this -> manufacturerCompName;
@@ -77,20 +83,6 @@ public function getContentOfIodine() {
 public function setContentOfIodine($contentOfIodine) { $this -> contentOfIodine= $contentOfIodine;
 }
 
-
-public function getAmountUsed() {
-		return $this -> amountUsed;
-}
-
-public function setAmountUsed($amountUsed) { $this -> amountUsed= $amountUsed;
-}
-
- 
- 
- 
- 
- 
- 
  
  
  
