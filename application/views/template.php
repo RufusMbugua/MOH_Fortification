@@ -307,6 +307,40 @@ $affiliation = $this -> session -> userdata('affiliation');
 		
 		if($content=="Reports"){
 			?>
+			<script>
+	
+   $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Stacked bar chart'
+            },
+            xAxis: {
+                categories: ['ONE', 'TWO', 'THREE']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total fruit consumption'
+                }
+            },
+            legend: {
+                backgroundColor: '#FFFFFF',
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{"name":"VIJIWENI","data":[51,52,36]},{"name":"VIJIWENI","data":[51,52,36]},{"name":"VUMALE","data":[51,52,36]},{"name":"VUMALE","data":[51,52,36]},{"name":"VUMALE","data":[51,52,36]},{"name":"WALDA NOMADIC","data":[51,52,36]},{"name":"WALDA NOMADIC","data":[51,52,36]},{"name":"WALDA NOMADIC","data":[51,52,36]},{"name":"WEBUYE TOWNSHIP","data":[51,52,36]},{"name":"WEBUYE TOWNSHIP","data":[51,52,36]},{"name":"WEBUYE TOWNSHIP","data":[51,52,36]},{"name":"YUMBANI","data":[51,52,36]},{"name":"YUMBANI","data":[51,52,36]},{"name":"YUMBANI","data":[51,52,36]}]
+        });
+    });
+    
+
+	</script>
 			<section class="menu-container">
 				
 			</section>
