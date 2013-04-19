@@ -1,6 +1,6 @@
 <?php
 ## Extend CI_Controller to include Doctrine Entity Manager
-
+error_reporting(0);
 class  MY_Controller  extends  CI_Controller  {
 
 public $em, $response, $theForm, $rowsInserted, $executionTime,$data,

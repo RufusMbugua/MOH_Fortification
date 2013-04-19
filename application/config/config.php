@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].':85/moh_fortification/';
+$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].'/moh_fortification/';
 
 /*
 |--------------------------------------------------------------------------

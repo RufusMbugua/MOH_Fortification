@@ -1,5 +1,6 @@
 <?php
 /*helps authenticate a user*/
+//error_reporting(0);
 class C_Auth extends MY_Controller {
 
 	public function __construct() {
@@ -9,7 +10,7 @@ class C_Auth extends MY_Controller {
 	public function login() {
 		$this->load->model('m_systemuser');
 		$this->m_systemuser->getUser();
-	    if ($this->m_systemuser->isUser=='true') {
+	    if ($this->m_systemuser->isUser===TRUE) {
 
 			/*retrieve vehicle name by affiliation*/
 			if($this->m_systemuser->affiliation=="KEBS" || $this->m_systemuser->affiliation=="MOPHS"){
