@@ -11,7 +11,7 @@ class M_SystemUser extends MY_Model {
 
 	function __construct() {
 		parent::__construct();
-		$this->isUser='false';
+		$this->isUser=FALSE;
 		$this->email='';$this->userRights='';$this->affiliation='';
 		$this->vehicle='';
 	}
@@ -25,18 +25,19 @@ class M_SystemUser extends MY_Model {
 		$user = $this->em->getRepository('models\Entities\e_systemuser')->findOneBy(array('username' => $this -> input -> post('username'), 'password' => $this -> input -> post('secret')));
 	    
 		
-		
 	    if($user){
 	    	$this->email = $user -> getUsername();
 			$this->userRights=$user->getUserRights();
 			$this->affiliation=$user->getAffiliation();
-			return $this->isUser='true';
+			return $this->isUser=TRUE;
+	    }else{
+	    	return $this -> isUser = FALSE;
 	    }
 		
 		}//close the this->input->post
 		$e=microtime(true);
 		$this->executionTime=round($e-$s,'4');
-		return $this -> isUser = 'true';
+		
 	} /*end of getUser()*/
 	
 	/*used by controllers/C_Auth */
@@ -51,7 +52,7 @@ class M_SystemUser extends MY_Model {
 		
 			}catch(exception $ex){
 				//ignore
-				//die($ex->getMessage());
+				die($ex->getMessage());
 			}
 			
 			return $this->vehicle;
