@@ -7,7 +7,7 @@ if (!defined('BASEPATH'))
 use application\models\Entities\entities_statistics\e_house_level_results;
 
 class M_House_Level_Results  extends MY_Model {
-	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $results, $school, $chart, $prevSchool, $currSchool, $iodate;
+	var $id, $attr, $frags, $elements, $theIds, $noOfInserts, $schools, $categories, $data1, $data2, $data3, $data10, $data20, $data30, $school, $chart, $prevSchool, $currSchool, $iodate;
 
 	function __construct() {
 		parent::__construct();
@@ -39,34 +39,52 @@ class M_House_Level_Results  extends MY_Model {
 
 		try {
 
-			$query = $this -> em -> createQuery('SELECT u.school,u.iodate,u.sampleNumber FROM models\Entities\entities_statistics\e_house_level_results u GROUP BY u.school,u.sampleNumber');
-			$this -> results = $query -> getArrayResult();
+			$query = $this -> em -> createQuery('SELECT u.school FROM models\Entities\entities_statistics\e_house_level_results u GROUP BY u.school,u.sampleNumber');
+			$this -> schools = $query -> getArrayResult();
 
-			foreach ($this->results as $result => $value) {
-				$this -> prevSchool == $value['school'];
-				foreach ($this->results as $result1 => $value1) {
-					$this -> currSchool == $value['school'];
-					if ($this -> currSchool == $this -> prevSchool) {
-						$this -> iodate += "," . $value['iodate'];
-					} else {
-						$this -> iodate=$value['iodate'];
+			$query = $this -> em -> createQuery('SELECT u.iodate FROM models\Entities\entities_statistics\e_house_level_results u WHERE u.sampleNumber=10 GROUP BY u.school,u.sampleNumber');
+			$this -> data1 = $query -> getArrayResult();
 
-					}
-				}
+			$query = $this -> em -> createQuery('SELECT u.iodate FROM models\Entities\entities_statistics\e_house_level_results u WHERE u.sampleNumber=20 GROUP BY u.school,u.sampleNumber');
+			$this -> data2 = $query -> getArrayResult();
 
-				$this -> chart[$indexName] = array('name'=>$value['school'], 'data'=>array(51,52,36));
-				//$this -> chart['data'][$indexName] = $value['iodate'];
+			$query = $this -> em -> createQuery('SELECT u.iodate FROM models\Entities\entities_statistics\e_house_level_results u WHERE u.sampleNumber=30 GROUP BY u.school,u.sampleNumber');
+			$this -> data3 = $query -> getArrayResult();
 
-				$indexName++;
-				$iodate='';
+			$categoriesArray = array();
+			$seriesArray = array();
+
+			foreach ($this->schools as $key => $value) {
+				$categoriesArray[] = $value['school'];
 			}
+
+			foreach ($this->data1 as $key => $value) {
+				$data10[] = (int) $value['iodate'];
+			}
+
+			foreach ($this->data2 as $key => $value) {
+				$data20[] = (int)$value['iodate'];
+			}
+
+			foreach ($this->data3 as $key => $value) {
+				$data30[] = (int)$value['iodate'];
+			}
+			$categoriesArray = array_values(array_unique($categoriesArray));
+
+			$seriesArray = array( array('name' => '10', 'data' => $data10), array('name' => '20', 'data' => $data20), array('name' => '30', 'data' => $data30));
+			$seriesArray = json_encode($seriesArray);
+			//var_dump($categoriesArray);
+			//echo $seriesArray;
+			$categoriesArray = json_encode($categoriesArray); 
+            
+			 
+			$results = array($categoriesArray, $seriesArray);
 
 		} catch(exception $ex) {
 			//ignore
 			//$ex->getMessage();
 		}
-		return json_encode($this -> chart);
-
+		return $results;
 	}
 
 	function viewSpecificRecord($value) {

@@ -22,6 +22,7 @@ class C_Charts extends CI_Controller{
 	public function houseLevelResults(){
 		$this->load->model('models_statistics/m_house_level_results');
 		$results = $this->m_house_level_results->plotRecords();
+		
 		$data['status']="";
 		$data['response']="";
 		$data['form'] = '<div id="container" style="min-width: 400px; height: 20000px; margin: 0 auto"></div>';

@@ -78,6 +78,15 @@ h3 {
 	-moz-box-shadow: inset 0px 2px 5px 0.4px #333;
 	-o-box-shadow: inset 0px 2px 5px 0.4px #333;
 }
+#admin{
+	width:2.5%;
+	height:80%;
+	float:left;
+	background:#666;
+	border-radius:2px;
+	box-shadow:1px 0 2px 0.5px #000;
+	-webkit-box-shadow:1px 0 2px 0.5px #000;
+}
 nav {
 	background:white;
 	width: 100%;
@@ -1005,7 +1014,7 @@ input.radio {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	padding: 1% 2% 1% 2%;
+	padding: 1% 1% 1% 1%;
 }
 .menu-title {
 	width: 100%;

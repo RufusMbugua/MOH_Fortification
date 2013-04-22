@@ -7,12 +7,12 @@ minimum-scale=0.5" />
 		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
 		
 		<!-- Attach JavaScript files -->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+			<script src="<?php echo base_url()?>js/js_libraries.js"></script>
         <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
 
-		<script src="<?php echo base_url()?>js/js_libraries.js"></script>
+	
 		<!--script to form client side validation functions-->
 		<!-- Run the TAB plugin -->
 		<script type="text/javascript">

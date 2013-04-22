@@ -48,6 +48,9 @@ $affiliation = $this -> session -> userdata('affiliation');
 		</header>
 
 		<section class="current-body">
+			<nav id="admin">
+	
+</nav>
 			<?php 
 			if($content=="Vehicles"){
 				?>
@@ -288,6 +291,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 	break;}
 	?>
 </section><!-- End of Menu-Container -->
+
 			<section class="form-container">
 				<?php
 				echo $form;
@@ -309,7 +313,7 @@ $affiliation = $this -> session -> userdata('affiliation');
 			?>
 			<script>
 	
-   $(function () {
+  $(function () {
         $('#container').highcharts({
             chart: {
                 type: 'bar'
@@ -318,8 +322,8 @@ $affiliation = $this -> session -> userdata('affiliation');
                 text: 'Stacked bar chart'
             },
             xAxis: {
-                categories: ['ONE', 'TWO', 'THREE']
-            },
+               categories: <?php echo $seriesdata[0]?>
+                },
             yAxis: {
                 min: 0,
                 title: {
@@ -335,9 +339,13 @@ $affiliation = $this -> session -> userdata('affiliation');
                     stacking: 'normal'
                 }
             },
-                series: [{"name":"VIJIWENI","data":[51,52,36]},{"name":"VIJIWENI","data":[51,52,36]},{"name":"VUMALE","data":[51,52,36]},{"name":"VUMALE","data":[51,52,36]},{"name":"VUMALE","data":[51,52,36]},{"name":"WALDA NOMADIC","data":[51,52,36]},{"name":"WALDA NOMADIC","data":[51,52,36]},{"name":"WALDA NOMADIC","data":[51,52,36]},{"name":"WEBUYE TOWNSHIP","data":[51,52,36]},{"name":"WEBUYE TOWNSHIP","data":[51,52,36]},{"name":"WEBUYE TOWNSHIP","data":[51,52,36]},{"name":"YUMBANI","data":[51,52,36]},{"name":"YUMBANI","data":[51,52,36]},{"name":"YUMBANI","data":[51,52,36]}]
+                 series: 
+<?php echo $seriesdata[1]; ?>
+
         });
     });
+    
+
     
 
 	</script>
