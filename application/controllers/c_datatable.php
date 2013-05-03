@@ -18,9 +18,10 @@ class C_Datatable extends MY_Controller {
 	}
 
 	function load() {
-		$data['ish'] = $this -> ajax_datatable();
+		$data['table'] = $this -> ajax_datatable();
+		$data['content']='datatable';
 		//print_r($data['ish']);
-		$this -> load -> view('datatableview', $data);
+		$this -> load -> view('template', $data);
 	}
 
 	function ajax_datatable() {

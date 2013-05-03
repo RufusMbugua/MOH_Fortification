@@ -308,12 +308,12 @@ $affiliation = $this -> session -> userdata('affiliation');
 		</section><!-- End of Form-SideBar -->
 		<?php
 		}
-		
+
 		if($content=="Reports"){
 			?>
 			<script>
 	
-  $(function () {
+  								$(function () {
         $('#container').highcharts({
             chart: {
                 type: 'bar'
@@ -323,7 +323,7 @@ $affiliation = $this -> session -> userdata('affiliation');
             },
             xAxis: {
                categories: <?php echo $seriesdata[0]?>
-                },
+                								},
             yAxis: {
                 min: 0,
                 title: {
@@ -339,14 +339,9 @@ $affiliation = $this -> session -> userdata('affiliation');
                     stacking: 'normal'
                 }
             },
-                 series: 
-<?php echo $seriesdata[1]; ?>
-
-        });
-    });
-    
-
-    
+                 series: <?php echo $seriesdata[1]; ?>
+					});
+					});
 
 	</script>
 			<section class="menu-container">
@@ -360,8 +355,40 @@ $affiliation = $this -> session -> userdata('affiliation');
 			</section><!-- End of Form-Container Section-->
 			
 			<?php
-			
-		}
+
+			}
+			if($content=='datatable'){
+	?>
+	<section class="form-container">
+		<table id="datatables" class="display">
+		<thead>
+			<tr>
+				<th>sugar_externalfortB3ID</th>
+				<th>factoryName</th>
+				<th>dates</th>
+				<th>suggestionsForImprovement</th>
+				<th>affiliation</th>
+
+			</tr>
+			</thead>
+
+                            <?php
+                        foreach ($table as $value) { ?>
+<tr>
+    
+<td><?php echo $value['sugar_externalfortB3ID']; ?></td>
+<td><?php echo $value['factoryName']; ?></td>
+<td><?php echo $value['dates']; ?></td>
+<td><?php echo $value['suggestionsForImprovement']; ?></td>
+<td><?php echo $value['supervisorName']; ?></td>
+</tr>
+
+    <?php } ?>
+</table>
+		
+	</section>
+	<?php
+	}
 			?>
 			
 		</section>
