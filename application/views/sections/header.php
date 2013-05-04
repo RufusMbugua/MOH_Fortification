@@ -15,6 +15,10 @@
 		</section>
 	</section>
 	<section class="date">
+<<<<<<< HEAD
 		<?php echo date("l, F d Y"); ?>
+=======
+		<?php //echo date("l, F d Y"); ?>
+>>>>>>> 9deb97857dc3c7675313dd3f9e097831911076bc
 	</section>
 </section>
