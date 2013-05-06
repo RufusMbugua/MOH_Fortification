@@ -38,7 +38,7 @@ class C_Auth extends MY_Controller {
 			/* Check Authority / User Level
 			 * Where:
 			 * 1. Administrator  =>  HIGHEST
-			 * 2. Supervisor
+			 * 2. Supervisor		
 			 * 3. Inspector      =>  LOWEST
 			 */
 

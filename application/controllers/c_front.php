@@ -1,6 +1,6 @@
 <?php
 
-class C_Front extends CI_Controller {
+class C_Front extends MY_Controller {
 	var $data;
 
 	public function __construct() {
@@ -11,22 +11,32 @@ class C_Front extends CI_Controller {
 	}
 
 	public function index() {
+		if(!$this -> session -> userdata('logged_in')){
+		    $this->access_site();
+		}else{
+		 $this->vehicles();
+		}
+	}//End of index file
+	
+	//function to load the login view if session is timed-out
+	public function access_site(){
 		$data['form'] = '<p>You need to login.<p>';
 		$data['page']='Login';
 		$data['title']='Welcome';
 		$this -> load -> view('template', $data);
-	}//End of index file
+	}
 
 	public function vehicles() {
+		if(!$this -> session -> userdata('logged_in')){
+		    $this->access_site();
+		}else{
 		$data['status']="";
 		$data['response']="";
 		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
 		$data['form_id']='';
-		$data['page']='Front-End';
-		$data['content'] = 'Vehicles';
-		$data['title']='Vehicles';
-		$this -> load -> view('template', $data);
-		//echo 'Vehicles';
+		$this->load_template_view();
+		
+		}
 	}
 
 

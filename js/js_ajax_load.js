@@ -238,15 +238,15 @@ $().ready(function() {
 			iodineReceipt:"required",
 			identification:"required",
 			iodineKgs:{
-				required:true,
+				required:false,
 				positiveNumber:true},
-			iodineIdentification:"required",
+			iodineIdentification:{required:false},
 			iodineMgs:{
-				required:true,
+				required:false,
 				positiveNumber:true},
-			reportingDate:"required",
-			reportersName:"required",
-			reportersSignature:"required",
+			reportingDate:{required:true},
+			reportersName:{required:true},
+			reportersSignature:{required:false},
 			
 			
 			iodineDate_1: {
