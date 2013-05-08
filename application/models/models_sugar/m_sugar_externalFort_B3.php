@@ -112,6 +112,24 @@ class M_Sugar_ExternalFort_B3  extends MY_Model {
 		return $this -> response = 'ok';
 	}
 
+   function get_table()
+    {
+               
+     /*   $this->db->select('table.*');
+        $this->db->like('table.field',$this->input->post('sSearch'));
+        $this->db->where('table.field2',$this->input->post('field2'));
+        $this->db->limit(
+            $this->input->post('iDisplayLength'),
+            $this->input->post('iDisplayStart')
+        );
+        $query = $this->db->get('table');
+        return $query->result();
+ */
+           $query = $this->em->createQuery('SELECT m FROM models\Entities\entities_sugar\E_Sugar_ExternalFort_B3 m');
+           $dataresult = $query->getArrayResult();
+           return $dataresult;
+    }
+ 
 }//end of class ExtternalFortifiedB2
 
 
