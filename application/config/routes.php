@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "c_front";
 $route['404_override'] = '';
+//$route['submit/c_form_salt/([a-z]+)']='c_front/vehicles';
 
 
 /* End of file routes.php */

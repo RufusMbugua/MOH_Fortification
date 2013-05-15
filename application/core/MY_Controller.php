@@ -80,6 +80,13 @@ function __construct()  {
 		return true;
 	}
 
+   public function load_template_view(){
+   	        $this->data['page']='Front-End';
+			$this->data['content'] = 'Vehicles';
+			$this->data['title']='Vehicles';
+			$this -> load -> view('template', $this->data);
+   }
+
    
 
 

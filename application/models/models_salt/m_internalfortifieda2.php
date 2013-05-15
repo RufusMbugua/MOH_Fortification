@@ -17,46 +17,54 @@ class M_InternalFortifiedA2  extends MY_Model {
         $s=microtime(true); /*mark the timestamp at the beginning of the transaction*/
 		
 		if ($this -> input -> post()) {//check if a post was made
-		
+		    //var_dump($this->input->post());exit;
 			$this->elements = array();
 			$this->theIds=array();
-			foreach ($this -> input -> post() as $key => $val) {//For every posted values
-		    //print(($key." ".$val)).'<br \>';
-			   
-			//check if posted value is among the cloned ones   
-			 if(!strpos("_",$key)){//useful to keep all the  non-cloned elements in the loop
-			 	$key=$key."_1";
-			 }
-			  		//we separate the attribute name from the number
-					
-					 $this->frags = explode("_", $key);
-				   
-				    $this->id = $this->frags[1];  // the id
-				    
-				  
-				   $this->attr = $this->frags[0];//the attribute name
-				   
-				  $this->theIds[$this->attr]=$this->id;
-			//print($this->attr."  ".$this->id."  ".$val).'<br />';
-				   
-			
-				   if (!empty($val)) {
+			foreach ($this -> input -> post(NULL,TRUE) as $key => $val) {//For every posted values
+			echo $key."<br/>";
+		   if(strpos($key,'iodine','iod')===TRUE){//select cloned-row data only
+			   //we separate the attribute name from the number
+                    
+                   if(strpos($key,"_")===TRUE){
+				  $this->frags = explode("_", $key);
+
+				  //$this->id = $this->frags[1];  // the id
+
+				  $this->id = $count;  // the id
+
+				  $this->attr = $this->frags[0];//the attribute name
+
+
+				     //mark the end of 1 row...for record count
+				if($this->attr=="iodineExpiration"){
+					print 'count at:'.$count.'<br />';
+					$finalCount=$count;
+					 $count++;
+					 // print 'DOM: '.$key.' Attr: '.$this->attr.' val='.$val.' id='.$this->id.' <br />';
+				}
+
+				 if (!empty($val)) {
 					//We then store the value of this attribute for this element.
 					 $this->elements[$this->id][$this->attr]=htmlentities($val);
+					//$this->elements[$this->attr]=htmlentities($val);
 				   }else{
 				   	$this->elements[$this->id][$this->attr]='';
-				   } 
+				   }
+				   
+				   }
 
+			 }//end of cloned-data row selection
 					
 			} //close foreach($_POST)
 			
+			exit;
 			//get the highest value of the array that will control the number of inserts to be done
 			$this->noOfInsertsBatch=max($this->theIds);
 			
 			//get the compound manufacturer name by id
 			$this->getCompoundManufacturerName($this->input->post('compManufacturer'));/*method defined in MY_Model*/
 
-		
+		    
 			 for($i=1; $i<=$this->noOfInsertsBatch;++$i){
 			 	
 			 $this -> theForm = new \models\Entities\entities_salt\E_IntFortifiedA2(); //create an object of the model
@@ -75,7 +83,7 @@ class M_InternalFortifiedA2  extends MY_Model {
 				$this -> em -> persist($this -> theForm);
 
 
-        	//now do a batched insert, default at 5
+        	  //now do a batched insert, default at 5
 			  $this->batchSize=5;
 		if($i % $this->batchSize==0){
 		try{
@@ -83,6 +91,7 @@ class M_InternalFortifiedA2  extends MY_Model {
 				$this -> em -> flush();
 				$this->em->clear(); //detactes all objects from doctrine
 				}catch(Exception $ex){
+					return $this -> response = 'Nok';
 					//die($ex->getMessage());
 					/*display user friendly message*/
 					
@@ -99,7 +108,7 @@ class M_InternalFortifiedA2  extends MY_Model {
 				}catch(Exception $ex){
 					//die($ex->getMessage());
 					/*display user friendly message*/
-					
+					return $this -> response = 'Nok';
 				}//end of catch
 	
 			}//end of batch condition

@@ -12,12 +12,12 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_InternalFortifiedA1->response='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['status'] = "ok";
-			$data['form']='<p><b>'.$this->M_InternalFortifiedA1->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['status'] = "ok";
+			$this->data['form']='<p><b>'.$this->M_InternalFortifiedA1->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_InternalFortifiedA1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location')
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -32,11 +32,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_InternalFortifiedA2->response='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_InternalFortifiedA2->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_InternalFortifiedA2->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_InternalFortifiedA2->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -52,11 +52,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_InternalFortifiedB1->response='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_InternalFortifiedB1->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_InternalFortifiedB1->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_InternalFortifiedB1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -72,11 +72,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_InternalFortifiedB2->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_InternalFortifiedB2->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_InternalFortifiedB2->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_InternalFortifiedB2->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -92,11 +92,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_InternalFortifiedC1->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_InternalFortifiedC1->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_InternalFortifiedC1->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_InternalFortifiedC1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -112,11 +112,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_ExternalFortifiedB1->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_ExternalFortifiedB1->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_ExternalFortifiedB1->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_ExternalFortifiedB1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -131,11 +131,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_ExternalFortifiedB2->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_ExternalFortifiedB2->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_ExternalFortifiedB2->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_ExternalFortifiedB2->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -150,11 +150,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_ExternalFortifiedB3->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_ExternalFortifiedB3->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_ExternalFortifiedB3->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_ExternalFortifiedB3->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -169,11 +169,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_ExternalIodizedB1->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_ExternalIodizedB1->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_ExternalIodizedB1->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_ExternalIodizedB1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -188,11 +188,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_smallScaleA1->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_smallScaleA1->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_smallScaleA1->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_smallScaleA1->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
@@ -207,11 +207,11 @@ class C_Form_Salt extends MY_Controller{
 		
 		if($this->M_smallScaleA2->response=='ok'){
 			//notify user of success
-			$data['form_id']="";
-			$data['form']='<p><b>'.$this->M_smallScaleA2->rowsInserted.'</b> record(s) submitted successfully in 
+			$this->data['form_id']="";
+			$this->data['form']='<p><b>'.$this->M_smallScaleA2->rowsInserted.'</b> record(s) submitted successfully in 
 			approximately <b>'.$this->M_smallScaleA2->executionTime.'</b> seconds.</p>';
 			//redirect(base_url() . 'c_front/vehicles/index', 'location');
-			$this -> load -> view('pages/vehicles/index', $data);
+			$this->load_template_view();
 			
 			
 		}else{
