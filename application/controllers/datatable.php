@@ -24,6 +24,21 @@ class datatable extends MY_Controller {
    	$this -> load -> view('datatableview',$data);
    }
    
+   function neweditable()
+   {
+   	$data['ish']=$this->ajax_datatable();
+   	$this->load -> view('newdatatable',$data);
+       
+   }
+   
+   function DeleteData(){
+   	$id = $_GET['id'];
+	
+	$this->load->database();
+	$this->db->where('sugar_externalfortB3ID',$id);
+	$this->db->delete('sugar_externalfortb3');
+	echo "item deleted";
+    }
    
     function ajax_datatable()
     {
@@ -39,6 +54,7 @@ class datatable extends MY_Controller {
 		//$injson = json_encode($result);
 //		print_r($result);
 		//$data['ish'] = $result;
+ //		var_dump($result);
 		return $result;
         
   //      var_dump($result);
@@ -61,9 +77,49 @@ class datatable extends MY_Controller {
 //         echo json_encode($json);
   
     }
+    public function form_externalFort_B3() {
+		$this -> load -> model('models_sugar/M_Sugar_ExternalFort_B3');
+		$this -> M_Sugar_ExternalFort_B3 -> update_data($this->post('id'));
+		if ($this -> M_Sugar_ExternalFort_B3 -> response = 'ok') {
+			//notify user of success
+			$data['form_id'] = "";
+			$data['form'] = '<p><b>' . $this -> M_Sugar_ExternalFort_B3 -> rowsInserted . '</b> records were inserted successfully in 
+			approximately <b>' . $this -> M_Sugar_ExternalFort_B3 -> executionTime . '</b> seconds.</p>';
+			//redirect(base_url() . 'front/vehicles/index', 'location');
+ 		} else {
+			//notify user of error/failure
+		}
+	}//close form_internalFort_C1()
+	
     
+	//function to update jquery data. receives data VIA $_POST[]
+	public function UpdateData()
+	{
+	//	Values passed from the POST[''] request from the view
+	//	$id is the id in the database for the particular row. corresponds to the id of a <tr>
+	//	column name is the column that has been editted.
+	
+  $id = $_GET['id'] ;
+  $factoryName = $_GET['factoryName'] ;
+  $suggestionsForImprovement = $_GET['suggestionsForImprovement'] ;
+  $dates = $_GET['dates'];
+//  $column = 'set'.$column;
+	//	CI swag for pushing updates
+ 
+
+	//	the Doctrine swag for pushing edits
+	
+	$this-> M_Sugar_ExternalFort_B3 -> update_table($id,$dates,$suggestionsForImprovement);
+
+	}// end of function UpdateData
+	
+	public function LoadData($value='')
+	{
+		$this->$ret = $_GET['id'];
+		return $ret;
+	}
     public function getTable() 
-{
+    {
  $this -> load -> model('models_sugar/M_Sugar_ExternalFort_B3');
 /* Array of database columns which should be read and sent back to DataTables. Use a space where
  * you want to insert a non-database field (for example a counter or static image)
