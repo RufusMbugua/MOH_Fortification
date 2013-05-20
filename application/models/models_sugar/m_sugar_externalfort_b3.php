@@ -154,6 +154,36 @@ class M_Sugar_ExternalFort_B3  extends MY_Model {
            $dataresult = $query->getArrayResult();
            return $dataresult;
     }
+	function update_table($id,$dates,$suggestionsForImprovement){
+		 
+//		$this -> ish = $this->em->getRepository('models\Entities\entities_sugar\E_Sugar_ExternalFort_B3')->findOneBysugar_externalfortB3ID($id);
+//						->findOneBy(array('sugar_externalfortB3ID' => $id));
+		$this -> ish = $this->em->getRepository('models\Entities\entities_sugar\E_Sugar_ExternalFort_B3')
+						->findOneBy(array('sugar_externalfortB3ID' => $id));
+
+
+//		$this -> theForm = new \models\Entities\entities_sugar\E_Sugar_ExternalFort_B3(); //create an object of the model
+		      
+//			  $this -> ish -> setFactoryName($factoryName);
+//			  $this -> ish -> setDates($dates);
+//			  $this -> ish -> setSuggestionsForImprovement($suggestionsForImprovement);
+//			  $this -> em -> persist($this -> ish);
+//			  $this -> em -> save();
+
+
+			  $qb = $this->em->createQueryBuilder();
+			  $q = $qb->update('models\Entities\entities_sugar\E_Sugar_ExternalFort_B3', 'u')
+        	  ->set('u.dates', '?1')
+        	  ->set('u.suggestionsForImprovement', '?2')
+        	  ->where('u.sugar_externalfortB3ID = ?3')
+        	  ->setParameter(1, $dates)
+        	  ->setParameter(2, $suggestionsForImprovement)
+        	  ->setParameter(3, $id)
+        	  ->getQuery();
+        	  $p = $q->execute();
+			  
+			  echo $id . " " . $dates . " " . $suggestionsForImprovement; 
+	}
  
 }//end of class ExtternalFortifiedB2
 
