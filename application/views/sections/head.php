@@ -6,11 +6,9 @@
 		<link rel="stylesheet" href="<?php echo base_url()?>css/styles.css"/>
 		
 		<!-- Attach JavaScript files -->
-<<<<<<< HEAD
+
 			<script src="<?php echo base_url()?>js/js_libraries.js"></script>
-=======
-		<!--script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
->>>>>>> 75ee927b9eb948e38988448ea09f876a282c3dad
+
         <script src="http://code.highcharts.com/highcharts.js"></script>
 		<script src="http://code.highcharts.com/modules/exporting.js"></script-->
 

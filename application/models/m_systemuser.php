@@ -26,6 +26,7 @@ class M_SystemUser extends MY_Model {
 	    
 		
 	    if($user){
+	    	$user->setUsername($this->input->post());
 	    	$this->email = $user -> getUsername();
 			$this->userRights=$user->getUserRights();
 			$this->affiliation=$user->getAffiliation();
