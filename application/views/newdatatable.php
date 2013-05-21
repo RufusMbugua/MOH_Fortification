@@ -141,7 +141,7 @@
         <button id="formEditDataOk" type="submit">Ok</button>
 		<button id="formEditDataCancel" type="button">Cancel</button>
 </form>		
-				<form id="formAddNewRow" action="#" title="Add item" style="width:600px;min-width:600px">
+				<form id="formAddNewRow" action="#" title="Add item" style="width:400px;min-width:400px">
 					<input type="hidden" name="userName" id="item_id" class="" rel="0" /><br />
         
          <label for="factoryName">Factory Name</label><br />
